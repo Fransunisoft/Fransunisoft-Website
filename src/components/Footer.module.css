@@ -1,0 +1,184 @@
+.footer {
+  background-color: #0D519A;
+  color: #F1F5F9;
+  padding: 4rem 2rem 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.topSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.branding {
+  flex: 1 1 300px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+  flex: 1 1 300px;
+}
+
+.linkGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.linkGroup h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.linkGroup a {
+  color: #F1F5F9;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.linkGroup a:hover {
+  text-decoration: underline;
+}
+
+.newsletter {
+  flex: 1 1 300px;
+}
+
+.newsletter h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.newsletter p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.form input {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.95rem;
+}
+
+.form button {
+  background-color: #F97316;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: #fb923c;
+}
+
+.bottomNote {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #D1D5DB;
+}
+
+/* 🌐 Responsive */
+@media (max-width: 768px) {
+  .topSection {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .form input,
+  .form button {
+    width: 100%;
+  }
+
+  .bottomNote {
+    font-size: 0.75rem;
+  }
+}
+
+
+
+.footer {
+  position: relative;
+  background-color: #111927;
+  color: #F1F5F9;
+  padding: 4rem 2rem 2rem;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+/* Background image layer */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/footer-bg.jpg'); /* Replace with your actual image path */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2; /* Adjust for visibility */
+  z-index: 0;
+}
+
+/* Overlay color layer */
+.footer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111927;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+/* Content stays above layers */
+.topSection,
+.bottomNote {
+  position: relative;
+  z-index: 2;
+}
