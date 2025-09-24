@@ -1,0 +1,64 @@
+.aboutMain {
+  font-family: 'Inter', sans-serif;
+  background-color: #111927;
+  color: #F1F5F9;
+  padding: 2rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.advantage {
+  margin-bottom: 3rem;
+}
+
+.advantage h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.values {
+  margin-bottom: 3rem;
+}
+
+.values h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.values ul {
+  list-style: none;
+  padding: 0;
+}
+
+.values li {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.ceo {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.ceoImage {
+  width: 200px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.contactSection {
+  margin-top: 4rem;
+}

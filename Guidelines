@@ -1,0 +1,19 @@
+/* Colours */
+ // Background #FFFFFF
+
+TEXT
+Headdings - #2C3E50
+Sub-Headings - #7C8084
+Body -  #2C3E50
+Dark white -  #E1E7EF
+Light white -  #FFFFFF
+
+
+BRAND
+Primary/buttons -  #0D519A
+Secondary -  #20A89F
+Seconday/Buttons - #FF6B35
+
+Ensure images are in public folder
+Footer  - #111927 //
+ 

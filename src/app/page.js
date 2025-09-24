@@ -1,127 +1,233 @@
-// src/app/page.js
+'use client';
+
 import styles from './page.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
+import CountUp from 'react-countup';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
 
 
 export default function HomePage() {
+
+  useEffect(() => {
+  setTimeout(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, 100); // slight delay to ensure DOM is ready
+}, []);
+
   return (
     <main>
-       
-    <section className={styles.hero}>
-      <div className={styles.overlay}>
-        <h1 className={styles.title}>Building Smarter, Scaling Faster in Nigeria</h1>
-        <p className={styles.description}>
-         Fransunisoft (FSX) is a Nigeria-based ecosystem designed to fuel innovation, 
-         empower brands, and connect communities. With six dynamic branches — FSX Events, FSX Consulting,
-          FSX Tech, FSX Academy, FSX Labs, and FSX Connect. We provide solutions that help businesses and 
-          individuals thrive in today’s fast-changing world.
-        </p>
-        <div className={styles.buttons}>
-          <Link href="/fsx page" className={styles.discoverBtn}>Discover FSX Brand Family</Link>
-          <Link href="/start" className={styles.startBtn}>Start Your Journey Today</Link>
+      <section className={styles.hero} data-aos="fade-up">
+        <div className={styles.overlay}>
+          <h1 className={styles.typewriter} >
+            <span className={styles.typingText}>Building Smarter, Scaling Faster in <br/> Nigeria</span>
+          </h1>
+
+          <p className={styles.description}>
+            Fransunisoft (FSX) is a Nigeria-based ecosystem designed to fuel innovation, 
+            empower brands, and connect communities. With six dynamic branches — FSX Events, FSX Consulting,
+            FSX Tech, FSX Academy, FSX Labs, and FSX Connect. We provide solutions that help businesses and 
+            individuals thrive in today’s fast-changing world.
+          </p>
+          <div className={styles.buttons}>
+            <Link href="/fsx page" className={styles.discoverBtn}>Discover FSX Brand Family</Link>
+            <Link href="/start" className={styles.startBtn}>Start Your Journey Today</Link>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section data-aos="fade-up">
+        <div className={styles.fsxSection}>
+          <div className={styles.fsxHeading}>
+            <h2>What Makes Us Different</h2>
+            <p>Beyond traditional boundaries – we integrate, execute, and transform</p>
+          </div>
+
+          <div className={styles.fsxRow}>
+            <div className={styles.fsxContent}>
+              <h3>The FSX Advantage</h3>
+              <p>
+                Unlike traditional consulting firms or tech companies that focus on one area, <span style={{ color: '#0D519A', fontWeight: 'bold' }}>Fransunisoft</span> integrates strategy, technology, learning, community, and industries under one ecosystem (FSX).
+                <br /><br />
+                We deliver holistic solutions on short and long-term execution, focusing on outcomes for individuals, communities, businesses, and industries.
+              </p>
+
+              <h3>How We Deliver Results</h3>
+              <ul className={styles.fsxList}>
+                <li>Integrated ecosystem – strategy, tech, training, and community partnerships with continuous support</li>
+                <li>End-to-end execution with hands-on implementation</li>
+                <li>Long-term partnerships with continuous support</li>
+                <li>Outcome-driven execution with measurable value</li>
+                <li>Deep African market expertise with global standards</li>
+              </ul>
+              <a href="/about" className={styles.fsxButton}>Learn More About Our Journey</a>
+            </div>
+
+            <div className={styles.fsxImage}>
+              <Image
+                src="/F_What.png"
+                alt="FSX Advantage"
+                width={1000}
+                height={1000}
+                style={{ width: '100%', height: 'auto' }}
+                className={styles.fsxImage}
+              />
+            </div>
+          </div>
+
+          <div className={styles.fsxStats}>
+            <div className={styles.stat}>
+              <div className={styles.countBlock}>
+                <CountUp end={50} duration={2} separator="," enableScrollSpy />
+                <span className={styles.plus}>+</span>
+              </div>
+              <div className={styles.label}>Events Coordinated</div>
+            </div>
+
+            <div className={styles.stat}>
+              <div className={styles.countBlock}>
+                <CountUp end={100000} duration={2.5} separator="," enableScrollSpy />
+                <span className={styles.plus}>+</span>
+              </div>
+              <div className={styles.label}>Youth Trained</div>
+            </div>
+
+            <div className={styles.stat}>
+              <div className={styles.countBlock}>
+                <CountUp end={3} duration={1.5} separator="," enableScrollSpy />
+                <span className={styles.plus}>+</span>
+              </div>
+              <div className={styles.label}>Community Managed</div>
+            </div>
+
+            <div className={styles.stat}>
+              <div className={styles.countBlock}>
+                <CountUp end={10} duration={2} separator="," enableScrollSpy />
+                <span className={styles.plus}>+</span>
+              </div>
+              <div className={styles.label}>Start Up Launched</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
 
-
- <section className={styles.differenceSection}>
+      <section className={styles.brandFamily} data-aos="fade-up">
   <div className={styles.intro}>
-    <h1 className={styles.mainHeading}>What Makes Fransunisoft Different?</h1>
-    <p className={styles.subText}>
-      Beyond traditional boundaries — we integrate, execute, and transform
-    </p>
-  </div>
-<div className={styles.contentRow}>
-  <div className={styles.contentBlock}>
-    <h2 className={styles.heading}>The FSX Advantage</h2>
-    <p className={styles.text}>
-   Unlike traditional consulting firms or tech companies that focus on only one area, Fransunisoft integrates strategy,
-    technology, learning, community, and experiences under one ecosystem (FSX).
-We deliver holistic solutions that dont just consult, but execute, train, and connect -
- creating scalable impact that transforms businesses, communities, and industries.
-    </p>
-   
-  </div>
+    <div className={styles.ecosystemBanner}>
+  <span>Our Ecosystem Services</span>
+</div>
 
-  <div className={styles.contentBlock}>
-    <h2 className={styles.heading}>How We Deliver Different Results</h2>
-    <ul className={styles.list}>
-      <li>Integrated ecosystem — strategy, tech, training, and community working together</li>
-      <li>End-to-end execution with hands-on implementation</li>
-      <li>Long-term partnerships with continuous support</li>
-      <li>Community-driven solutions with local adaptation</li>
-      <li>Deep African market expertise with global standards</li>
-    </ul>
-  </div>
-  </div>
-   <div className={styles.buttonWrapper}>
-      <Link href="/about" className={styles.learnMoreBtn}>Learn More About Our Journey</Link>
-    </div>
-</section>
-
-
-
-<section className={styles.brandFamily}>
-  <div className={styles.intro}>
     <h2 className={styles.heading}>The FSX Brand Family</h2>
     <p className={styles.subText}>
-     Fransunisoft is more than one company <br></br>
-it’s a family of solutions tailored to help businesses and individuals succeed
+      Fransunisoft is more than one company <br />
+      it’s a family of solutions tailored to help businesses and individuals succeed.
     </p>
   </div>
 
   <div className={styles.grid}>
-    {[
-      {
-        title: 'FSX Consulting',
-        tagline: '"Build Smarter. Scale Faster."',
-        description: 'Business consulting, digital transformation, and community programs that bridge strategy with real tech execution and community impact.',
+    <div className={styles.card}>
+      <h3 className={styles.cardTitle}>FSX Consulting</h3>
+            <p className={styles.cardTagline}>``Build Smarter. Scale Faster.``</p>
+      <p className={styles.cardDescription}>
+        Business consulting, digital transformation, and community programs that bridge strategy with real tech execution and impact.
+      </p>
+
+      <Link href="/fsx-consulting" className={styles.learnMoreBtn}>Learn More</Link>
+    </div>
+
+    <div className={styles.card}>
+      <h3 className={styles.cardTitle}>FSX Labs</h3>
+       <p className={styles.cardTagline}>``Empowering innovators today, not tomorrow.``</p>
+      <p className={styles.cardDescription}>
+        Platforms, automation, and innovation programs for building scalable solutions from scratch.
+      </p>
      
-      },
-      {
-        title: 'FSX Labs',
-        description: 'Platforms, automation, and innovative programs for building scalable solutions from scratch to solve real-world problems.',
-        tagline: '"Empowering innovators today, not tomorrow."',
-      },
-      {
-        title: 'FSX Tech',
-        description: 'Comprehensive, affordable, and scalable technology solutions.',
-        tagline: '"Smart Tech. Simplified."',
-      },
-      {
-        title: 'FSX Events',
-        description: 'Brand activations, corporate events, and community programs to create global-standard events with local relevance.',
-        tagline: '"Where brands come to life"',
-      },
-      {
-        title: 'FSX Connect',
-        description: 'Connecting communities and brands through digital platforms and strategic partnerships.',
-        tagline: '"Connecting Ideas, Empowering Impact."',
-      },
-      {
-        title: 'FSX Academy',
-        description: 'Training and learning programs designed to empower individuals and teams with future-ready skills.',
-        tagline: '"From Learning to Leading."',
-      },
-    ].map((branch, index) => (
-      <div key={index} className={styles.card}>
-        <h3 className={styles.cardTitle}>{branch.title}</h3>
-        {branch.tagline && <p className={styles.cardTagline}><em>{branch.tagline}</em></p>}
-        <p className={styles.cardDescription}>{branch.description}</p>
-        
-        <Link href={`/fsx page/${branch.title.toLowerCase().split(' ')[1]}`} className={styles.learnMoreBtn}>
-          Learn more
-        </Link>
-      </div>
-    ))}
+      <Link href="/fsx-labs" className={styles.learnMoreBtn}>Learn More</Link>
+    </div>
+
+    <div className={styles.card}>
+      <h3 className={styles.cardTitle}>FSX Tech</h3>
+      <p className={styles.cardTagline}>``Smart Tech. Simplified.``</p>
+      <p className={styles.cardDescription}>
+        Comprehensive, affordable, and scalable technology solutions.
+      </p>
+      
+      <Link href="/fsx-tech" className={styles.learnMoreBtn}>Learn More</Link>
+    </div>
+
+    <div className={styles.card}>
+      <h3 className={styles.cardTitle}>FSX Events</h3>
+       <p className={styles.cardTagline}>``Where brands come to life.``</p>
+      <p className={styles.cardDescription}>
+        Brand activations, corporate events, and community programs with global-standard execution.
+      </p>
+     
+      <Link href="/fsx-events" className={styles.learnMoreBtn}>Learn More</Link>
+    </div>
+
+    <div className={styles.card}>
+      <h3 className={styles.cardTitle}>FSX Connect</h3>
+      <p className={styles.cardTagline}>``Connecting Ideas, Empowering Impact.``</p>
+      <p className={styles.cardDescription}>
+        Connecting communities and brands through digital platforms and strategic partnerships.
+      </p>
+      
+      <Link href="/fsx-connect" className={styles.learnMoreBtn}>Learn More</Link>
+    </div>
+
+    <div className={styles.card}>
+      <h3 className={styles.cardTitle}>FSX Academy</h3>
+      <p className={styles.cardTagline}>``From Learning to Leading.``</p>
+      <p className={styles.cardDescription}>
+        Training and learning programs designed to empower individuals and teams with future-ready skills.
+      </p>
+      
+      <Link href="/fsx-academy" className={styles.learnMoreBtn}>Learn More</Link>
+    </div>
   </div>
 </section>
 
 
-      
+<section className={styles.partnersSection} data-aos="fade-up">
+  <div className={styles.partnersIntro}>
+    <h2 className={styles.partnersHeading}>Our Partners</h2>
+    <p className={styles.partnersSubText}>
+      Join Hundreds of Brands and Organisations <br/> That Partner With Us
+    </p>
+  </div>
 
-      
+  <div className={styles.logoScroller}>
+    <div className={styles.logoTrack}>
+
+      <div className={styles.logoItem}><Image src="/F_3MTT.png" alt="SMIT" width={100} height={100} /></div>
+      <div className={styles.logoItem}><Image src="/F_GDG.png" alt="GDG" width={100} height={60} /></div>
+      <div className={styles.logoItem}><Image src="/F_FMCIDE.png" alt="Nigeria Coat of Arms" width={100} height={60} /></div>
+      <div className={styles.logoItem}><Image src="/F_NITDA.png" alt="NITDA" width={100} height={60} /></div>
+      <div className={styles.logoItem}><Image src="/F_IHS.png" alt="IHS" width={100} height={60} /></div>
+      <div className={styles.logoItem}><Image src="/F_NITDA_.png" alt="NITDA Alt" width={100} height={60} /></div>
+      <div className={styles.logoItem}><Image src="/F_HUAWEI.png" alt="Huawei" width={100} height={60} /></div>
+     
+     {/* Repeat logos for infinite scroll */}
+      <div className={styles.logoItem}><Image src="/F_3MTT.png" alt="SMIT" width={100} height={60} /></div>
+      <div className={styles.logoItem}><Image src="/F_GDG.png" alt="GDG" width={100} height={60} /></div>
+      <div className={styles.logoItem}><Image src="/F_FMCIDE.png" alt="Nigeria Coat of Arms" width={100} height={60} /></div>
+      <div className={styles.logoItem}><Image src="/F_NITDA.png" alt="NITDA" width={100} height={60} /></div>
+      <div className={styles.logoItem}><Image src="/F_IHS.png" alt="IHS" width={100} height={60} /></div>
+      <div className={styles.logoItem}><Image src="/F_NITDA_.png" alt="NITDA Alt" width={100} height={60} /></div>
+      <div className={styles.logoItem}><Image src="/F_HUAWEI.png" alt="Huawei" width={100} height={60} /></div>
+    </div>
+  </div>
+</section>
+
+
     </main>
   );
 }

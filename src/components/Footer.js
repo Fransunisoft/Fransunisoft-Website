@@ -5,6 +5,7 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className={styles.footer}>
+      
       <div className={styles.topSection}>
         <div className={styles.branding}>
          
@@ -24,11 +25,11 @@ export default function Footer() {
             Engineering innovation and impact across Africa and beyond through the FSX ecosystem
           </p>
           <div className={styles.socialIcons}>
-            <Image src="/icons/facebook.png" alt="Facebook" width={24} height={24} />
-            <Image src="/icons/twitter.png" alt="Twitter" width={24} height={24} />
-            <Image src="/icons/linkedin.png" alt="LinkedIn" width={24} height={24} />
-            <Image src="/icons/instagram.png" alt="Instagram" width={24} height={24} />
-            <Image src="/icons/youtube.png" alt="YouTube" width={24} height={24} />
+            <Image src="/Facebook.png" alt="Facebook" width={24} height={24} />
+            <Image src="/X-Twitter.png" alt="Twitter" width={24} height={24} />
+            <Image src="/Linkedin.png" alt="LinkedIn" width={24} height={24} />
+            <Image src="/Instagram.png" alt="Instagram" width={24} height={24} />
+            <Image src="/Youtube.png" alt="YouTube" width={24} height={24} />
           </div>
         </div>
 
@@ -47,7 +48,7 @@ export default function Footer() {
             <h4>Quick Links</h4>
             <Link href="/about">About Us</Link>
             <Link href="/blog">Blog</Link>
-            <Link href="/blog">Contact</Link>
+            <Link href="/contact">Contact</Link>
           </div>
         </div>
 

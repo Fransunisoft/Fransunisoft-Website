@@ -20,29 +20,12 @@
 
 .introText {
   font-size: 1.1rem;
-  color: #A0A5AA;
+  color: #7C8084;
   margin-bottom: 2rem;
 }
 
-/* Headings row */
-.headingRow {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  width: 100%;
-  max-width: 1200px;
-}
-
-.heading {
-  font-size: 1.4rem;
-  color: #0D519A;
-  margin: 0;
-  flex: 1;
-  text-align: left;
-}
-
-/* Content blocks side-by-side */
-.contentRow {
+/* Grid layout for contact section */
+.contactGrid {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
@@ -51,35 +34,82 @@
   flex-wrap: wrap;
 }
 
-.contactInfo,
-.contactAction {
+/* Left column: Contact Info */
+.contactInfoBox {
   flex: 1 1 45%;
   background-color: #ffffff;
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+ 
 }
 
-/* Info items */
-.infoItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
+.hparagraph {
+  font-size: 1.1rem;
+  color: #7C8084;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+/* Right column: Get In Touch */
+.contactActionBox {
+  flex: 1 1 45%;
+  background-color: #ffffff;
+  padding: 2rem;
+ border-radius: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  
+}
+
+/* Headings */
+.heading {
+  font-size: 1.4rem;
+  color: #0D519A;
   margin-bottom: 1rem;
 }
 
+
+/* Info items */
+.infoItem {
+  margin-bottom: 2rem;
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
 .paragraph {
+  font-size: 1.1rem;
   color: #2C3E50;
-  font-size: 1rem;
   margin: 0;
 }
 
 .subText {
-  font-size: 0.9rem;
-  color:#A0A5AA;
+  font-size: 0.95rem;
+  color: #A0A5AA;
+  margin: 0.25rem 0;
+  margin-left: 3rem;
+}
+
+.detail {
+  font-size: 1rem;
+  color: #0D519A;
+  font-weight: 500;
+  margin-top: 0.25rem;
+  margin-left: 3rem;
 }
 
 /* Button and tagline */
+
+.contactActionBox {
+  display: flex;
+  flex-direction: column; /* stack children vertically */
+  align-items: center;     /* center horizontally */
+  text-align: center;
+}
+
+/* Centered button */
 .contactBtn {
   display: inline-block;
   background-color: #FF6B35;
@@ -88,17 +118,50 @@
   border-radius: 12px;
   text-decoration: none;
   font-weight: bold;
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
 
+/* Hover effect */
 .contactBtn:hover {
   background-color: #20A89F;
 }
 
+/* Centered tagline */
 .tagline {
-  margin-top: 1rem;
+  position: relative;
+  display: inline-block;
   font-style: italic;
-  color: #A0A5AA;
+  color:  #2C3E50;
+  text-align: center;
+  margin-top: 3rem;
+  padding: 0 1rem;
+}
+
+.tagline::before,
+.tagline::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 2px;
+  background-color:  #2C3E50;
+}
+
+.tagline::before {
+  left: -50px; /* line before the text */
+}
+
+.tagline::after {
+  right: -50px; /* line after the text */
+}
+
+/* Wrapper to center the email link */
+.emailWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+  width: 100%;
 }
 
 /* Gmail link */
@@ -106,58 +169,90 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-top: 1rem;
-  color:#F1F5F9;
+  color: #0D519A;
   font-weight: 500;
   text-decoration: none;
+  margin: 0; 
+  margin-top: 3rem;
 }
 
-.emailLink:hover {
-  text-decoration: underline;
-}
 
-/* 🌐 Responsive styles */
+/* 🌐 Tablet View (max-width: 1024px) */
 @media (max-width: 1024px) {
-  .headingRow {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .contentRow {
+  .contactGrid {
     flex-direction: column;
     align-items: center;
   }
 
-  .contactInfo,
-  .contactAction {
-    max-width: 100%;
+  .contactInfoBox,
+  .contactActionBox {
+    width: 100%;
+    max-width: 700px;
+    padding: 2rem;
+  }
+
+  .heading {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+
+  .hparagraph {
+    text-align: center;
+    margin: 0 auto 2rem auto;
+  }
+
+  .labelRow {
+    justify-content: center;
+  }
+
+  .subText,
+  .detail {
+    margin-left: 0;
+    text-align: center;
   }
 }
 
+/* 📱 Mobile View (max-width: 768px) */
 @media (max-width: 768px) {
   .contactSection {
     padding: 2rem 1rem;
   }
 
   .mainHeading {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    text-align: center;
   }
 
   .introText {
     font-size: 1rem;
+    text-align: center;
   }
 
   .contactBtn {
     width: 100%;
     text-align: center;
+    margin: 1rem auto;
   }
 
   .emailLink {
     justify-content: center;
+    text-align: center;
   }
 
-  .heading {
+  .paragraph,
+  .subText,
+  .detail {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .labelRow {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .infoItem {
     text-align: center;
   }
 }
