@@ -13,10 +13,10 @@ export default function Navbar() {
       <div className={styles.logo}>
         <Link href="/">
          <Image
-  src="/fransunisoft-logo.png"
+  src="/Fransunisoft Logo2.png"
   alt="Fransunisoft Logo"
-  width={160}
-  height={25}
+  width={300}
+  height={50}
   priority
 />
 
