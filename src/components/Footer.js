@@ -12,10 +12,10 @@ export default function Footer() {
           <h2 className={styles.logo}>
         <Link href="/">
          <Image
-  src="/fransunisoft-logo.png"
+  src="/Fransunisoft Logo2.png"
   alt="Fransunisoft Logo"
-  width={160}
-  height={25}
+  width={250}
+  height={50}
   priority
 />
 
@@ -25,11 +25,11 @@ export default function Footer() {
             Engineering innovation and impact across Africa and beyond through the FSX ecosystem
           </p>
           <div className={styles.socialIcons}>
-            <Image src="/Facebook.png" alt="Facebook" width={24} height={24} />
-            <Image src="/X-Twitter.png" alt="Twitter" width={24} height={24} />
-            <Image src="/Linkedin.png" alt="LinkedIn" width={24} height={24} />
-            <Image src="/Instagram.png" alt="Instagram" width={24} height={24} />
-            <Image src="/Youtube.png" alt="YouTube" width={24} height={24} />
+            <Image src="/Facebook.png" alt="Facebook" width={40} height={40} />
+            <Image src="/X-Twitter.png" alt="Twitter" width={40} height={40} />
+            <Image src="/Linkedin.png" alt="LinkedIn" width={40} height={40} />
+            <Image src="/Instagram.png" alt="Instagram" width={40} height={40} />
+            <Image src="/Youtube.png" alt="YouTube" width={40} height={40} />
           </div>
         </div>
 
