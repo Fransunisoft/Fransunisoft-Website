@@ -42,6 +42,14 @@
  
 }
 
+/* Headings */
+.contactInfoBox  .heading {
+  font-size: 1.4rem;
+  color:  #0D519A;
+  margin-bottom: 1rem;
+}
+
+
 .hparagraph {
   font-size: 1.1rem;
   color: #7C8084;
@@ -61,8 +69,8 @@
 
 /* Headings */
 .heading {
-  font-size: 1.4rem;
-  color: #0D519A;
+  font-size: 1.2rem;
+  color: #2C3E50;
   margin-bottom: 1rem;
 }
 
@@ -81,7 +89,7 @@
 
 .paragraph {
   font-size: 1.1rem;
-  color: #2C3E50;
+  color: #7C8084;
   margin: 0;
 }
 
@@ -131,7 +139,7 @@
   position: relative;
   display: inline-block;
   font-style: italic;
-  color:  #2C3E50;
+  color:  #7C8084;
   text-align: center;
   margin-top: 3rem;
   padding: 0 1rem;
@@ -142,26 +150,29 @@
   content: "";
   position: absolute;
   top: 50%;
-  width: 40px;
-  height: 2px;
-  background-color:  #2C3E50;
+  width: 80px;
+  height: 1px;
+  background-color:  #7C8084;
 }
 
 .tagline::before {
-  left: -50px; /* line before the text */
+  left: -80px; /* line before the text */
 }
 
 .tagline::after {
-  right: -50px; /* line after the text */
+  right: -80px; /* line after the text */
 }
 
 /* Wrapper to center the email link */
 .emailWrapper {
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 24px;
+  border: 2px solid #0D519A; /* Add this for visible border */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-top: 2.5rem;
-  width: 100%;
+  justify-content: center;
 }
 
 /* Gmail link */
@@ -169,11 +180,11 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #0D519A;
+
   font-weight: 500;
   text-decoration: none;
   margin: 0; 
-  margin-top: 3rem;
+  margin-top: 2.5rem;
 }
 
 
@@ -215,7 +226,7 @@
 /* 📱 Mobile View (max-width: 768px) */
 @media (max-width: 768px) {
   .contactSection {
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
   }
 
   .mainHeading {

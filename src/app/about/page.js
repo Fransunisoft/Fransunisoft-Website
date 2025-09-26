@@ -2,59 +2,146 @@
 
 import styles from './about.module.css';
 import Image from 'next/image';
-import Contact from '@/components/Contact';
-import NavBars from '@/components/NavBars';
+
+const values = [
+  {
+    title: 'Innovation',
+    description: 'We embrace creativity and technology to design bold solutions.',
+    icon: '/Core value section Icon.png',
+  },
+  {
+    title: 'Excellence',
+    description: 'We deliver with quality, professionalism, and attention to detail.',
+    icon: '/Core value section Icon (1).png',
+  },
+  {
+    title: 'Integrity',
+    description: 'We act with honesty and transparency in everything we do.',
+    icon: '/Core value section Icon (2).png',
+  },
+  {
+    title: 'Growth',
+    description: 'We empower people, businesses, and communities to scale and thrive.',
+    icon: '/Core value section Icon (3).png',
+  },
+  {
+    title: 'Community',
+    description: 'We invest in people and networks that create lasting change.',
+    icon: '/Core value section Icon (4).png',
+  },
+  {
+    title: 'Collaboration',
+    description: 'We believe in partnerships and collective impact.',
+    icon: '/Core value section Icon (5).png',
+  },
+];
 
 export default function AboutPage() {
   return (
     <main className={styles.aboutMain}>
-      <NavBars />
-
+      {/* Hero Section */}
       <section className={styles.hero}>
-        <h1>About Fransunisoft (FSX)</h1>
-        <p>
-          Fransunisoft is a Nigeria-based ecosystem designed to fuel innovation, empower brands, and connect communities.
-          With six dynamic branches—FSX Events, FSX Consulting, FSX Tech, FSX Academy, FSX Labs, and FSX Connect—we help businesses and individuals thrive in today’s fast-changing world.
-        </p>
-      </section>
-
-      <section className={styles.advantage}>
-        <h2>What Makes Us Different</h2>
-        <p>
-          We integrate strategy, technology, learning, and community under one ecosystem. FSX delivers holistic solutions with measurable outcomes for individuals, businesses, and industries.
-        </p>
-      </section>
-
-      <section className={styles.values}>
-        <h2>Core Values</h2>
-        <ul>
-          <li><strong>Innovation</strong> – Creativity and forward-thinking.</li>
-          <li><strong>Excellence</strong> – High standards and continuous improvement.</li>
-          <li><strong>Integrity</strong> – Honesty and transparency.</li>
-          <li><strong>Growth</strong> – Personal and professional development.</li>
-          <li><strong>Collaboration</strong> – Teamwork and shared success.</li>
-        </ul>
-      </section>
-
-      <section className={styles.ceo}>
-        <h2>Meet Our CEO</h2>
-        <div className={styles.ceoImage}>
+        <div className={styles.imageWrapper}>
           <Image
-            src="/CEO Profile Photo 1.png"
-            alt="Alexander Francis Adebisi"
-            width={1000}
-            height={1000}
-            style={{ width: '100%', height: 'auto' }}
-            className={styles.fsxImage}
+            src="/About_hands.png"
+            alt="FSX Hero Background"
+            fill
+            priority
+            className={styles.heroImage}
+          />
+          <div className={styles.overlay}>
+            <h1>About Fransunisoft (FSX)</h1>
+            <p>Innovation and Growth in Nigeria</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Story, Vision, Mission Section */}
+      <section className={styles.svmSection}>
+        <div className={styles.textColumn}>
+          <div className={styles.block}>
+            <h2>Our Story</h2>
+            <p>
+              FSX is a technology company that builds business and financial tools for African businesses. Our mission is to empower businesses with the tools they need to grow and thrive in the global digital economy.
+            </p>
+          </div>
+
+          <div className={styles.block}>
+            <h2>Our Vision</h2>
+            <p>
+              To become the leading provider of business and financial tools for African businesses, enabling them to compete globally.
+            </p>
+          </div>
+
+          <div className={styles.block}>
+            <h2>Our Mission</h2>
+            <p>
+              To empower African businesses with innovative, easy-to-use, and affordable business and financial tools.
+            </p>
+          </div>
+        </div>
+
+        <div className={styles.imageColumn}>
+          <Image
+            src="/F_Vision.png"
+            alt="FSX Story, Vision, Mission"
+            width={600}
+            height={600}
+            className={styles.responsiveImage}
           />
         </div>
-        <p>
-          Francis leads FSX with a vision rooted in innovation, execution, and impact. His experience spans software engineering, business strategy, and community development.
-        </p>
       </section>
 
-      
-        
-      </main>
+      {/* Core Values Section */}
+      <section className={styles.coreSection}>
+        <h2 className={styles.heading}>Our Core Values</h2>
+        <div className={styles.grid}>
+          {values.map((value, index) => (
+            <div key={index} className={styles.card}>
+              <div className={styles.icon}>
+                <Image
+                  src={value.icon}
+                  alt={`${value.title} icon`}
+                  width={50}
+                  height={50}
+                />
+              </div>
+              <h3>{value.title}</h3>
+              <p>{value.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CEO Section */}
+      <section className={styles.ceoSection}>
+        <h2 className={styles.heading}>Meet Our CEO</h2>
+        <div className={styles.content}>
+          <div className={styles.imageWrapper}>
+            <Image
+              src="/CEO Profile Photo 1.png"
+              alt="Oluwaseyi Francis Ayodele"
+              width={500}
+              height={600}
+              className={styles.ceoImage}
+            />
+          </div>
+          <div className={styles.bio}>
+            <p>
+              <strong>Oluwaseyi Francis Ayodele</strong> is a software engineer, community manager, and innovation advocate focused on building scalable solutions and empowering Africa’s next generation of tech leaders.
+            </p>
+            <p>
+              His experience spans open-source development, fintech, and technology leadership. He has mentored thousands of young talents and facilitated programs impacting over 150,000 youths across Nigeria and Africa.
+            </p>
+            <p>
+              As the founder of Fransioutlet, the parent company behind the FSX brand family, he drives innovation across technology, consulting, events, training, and community building.
+            </p>
+            <p>
+              He actively speaks at conferences, mentors aspiring founders, and champions opportunities for young Africans in the global digital economy.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

@@ -26,9 +26,12 @@ export default function HomePage() {
     <main>
       <section className={styles.hero} data-aos="fade-up">
         <div className={styles.overlay}>
-          <h1 className={styles.typewriter} >
-            <span className={styles.typingText}>Building Smarter, Scaling Faster in <br/> Nigeria</span>
-          </h1>
+   <h1 className={styles.typewriter}>
+        <span className={styles.typingText}>
+          Building Smarter, Scaling <span className={styles.mobileBreak}><br /></span>Faster
+          <span className={styles.desktopBreak}><br /></span> in Nigeria
+        </span>
+      </h1>
 
           <p className={styles.description}>
             Fransunisoft (FSX) is a Nigeria-based ecosystem designed to fuel innovation, 
@@ -43,6 +46,8 @@ export default function HomePage() {
         </div>
       </section>
 
+
+
       <section data-aos="fade-up">
         <div className={styles.fsxSection}>
           <div className={styles.fsxHeading}>
@@ -55,7 +60,7 @@ export default function HomePage() {
               <h3>The FSX Advantage</h3>
               <p>
                 Unlike traditional consulting firms or tech companies that focus on one area, <span style={{ color: '#0D519A', fontWeight: 'bold' }}>Fransunisoft</span> integrates strategy, technology, learning, community, and industries under one ecosystem (FSX).
-                <br /><br />
+                <br />
                 We deliver holistic solutions on short and long-term execution, focusing on outcomes for individuals, communities, businesses, and industries.
               </p>
 
@@ -117,6 +122,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+
+
+
+
+
 
 
       <section className={styles.brandFamily} data-aos="fade-up">
@@ -209,20 +220,25 @@ export default function HomePage() {
 
       <div className={styles.logoItem}><Image src="/F_3MTT.png" alt="SMIT" width={100} height={100} /></div>
       <div className={styles.logoItem}><Image src="/F_GDG.png" alt="GDG" width={100} height={60} /></div>
-      <div className={styles.logoItem}><Image src="/F_FMCIDE.png" alt="Nigeria Coat of Arms" width={100} height={60} /></div>
+      <div className={styles.logoItem}><Image src="/F_Andela.jpg" alt="GDG" width={100} height={60} /></div>
+      {/* <div className={styles.logoItem}><Image src="/F_FMCIDE.png" alt="Nigeria Coat of Arms" width={100} height={60} /></div>
       <div className={styles.logoItem}><Image src="/F_NITDA.png" alt="NITDA" width={100} height={60} /></div>
       <div className={styles.logoItem}><Image src="/F_IHS.png" alt="IHS" width={100} height={60} /></div>
       <div className={styles.logoItem}><Image src="/F_NITDA_.png" alt="NITDA Alt" width={100} height={60} /></div>
-      <div className={styles.logoItem}><Image src="/F_HUAWEI.png" alt="Huawei" width={100} height={60} /></div>
+      <div className={styles.logoItem}><Image src="/F_HUAWEI.png" alt="Huawei" width={100} height={60} /></div> */}
      
      {/* Repeat logos for infinite scroll */}
       <div className={styles.logoItem}><Image src="/F_3MTT.png" alt="SMIT" width={100} height={60} /></div>
       <div className={styles.logoItem}><Image src="/F_GDG.png" alt="GDG" width={100} height={60} /></div>
-      <div className={styles.logoItem}><Image src="/F_FMCIDE.png" alt="Nigeria Coat of Arms" width={100} height={60} /></div>
+      <div className={styles.logoItem}><Image src="/F_Andela.jpg" alt="GDG" width={100} height={60} /></div>
+   <div className={styles.logoItem}><Image src="/F_3MTT.png" alt="SMIT" width={100} height={60} /></div>
+      <div className={styles.logoItem}><Image src="/F_GDG.png" alt="GDG" width={100} height={60} /></div>
+      <div className={styles.logoItem}><Image src="/F_Andela.jpg" alt="GDG" width={100} height={60} /></div>
+      {/* <div className={styles.logoItem}><Image src="/F_FMCIDE.png" alt="Nigeria Coat of Arms" width={100} height={60} /></div>
       <div className={styles.logoItem}><Image src="/F_NITDA.png" alt="NITDA" width={100} height={60} /></div>
       <div className={styles.logoItem}><Image src="/F_IHS.png" alt="IHS" width={100} height={60} /></div>
       <div className={styles.logoItem}><Image src="/F_NITDA_.png" alt="NITDA Alt" width={100} height={60} /></div>
-      <div className={styles.logoItem}><Image src="/F_HUAWEI.png" alt="Huawei" width={100} height={60} /></div>
+      <div className={styles.logoItem}><Image src="/F_HUAWEI.png" alt="Huawei" width={100} height={60} /></div> */}
     </div>
   </div>
 </section>

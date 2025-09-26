@@ -1,4 +1,4 @@
-
+ 
 /* src/app/page.module.css */
 .hero {
   position: relative;
@@ -45,6 +45,29 @@
   display: inline-block;
 }
 
+
+.typewriter {
+  font-size: 3.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.typingText {
+  display: inline-block;
+}
+
+/* Desktop line break - visible by default */
+.desktopBreak {
+  display: inline;
+}
+
+/* Mobile line break - hidden by default */
+.mobileBreak {
+  display: none;
+}
+
+
 /* Typing animation */
 @keyframes typing {
   from {
@@ -68,33 +91,28 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .typewriter {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 }
 
 @media (max-width: 480px) {
   .typewriter {
-    font-size: 1rem;
+    font-size: 1.8rem;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  /* On mobile: hide desktop break, show mobile break */
+  .desktopBreak {
+    display: none;
+  }
+
+  .mobileBreak {
+    display: inline;
   }
 }
 
 
-.title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #F1F5F9;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.cursor {
-  display: inline-block;
-  margin-left: 2px;
-  margin-right: 2px;
-  animation: blink 0.8s infinite;
-  color: #F1F5F9;
-}
 
 @keyframes blink {
   0%, 50% {
@@ -122,7 +140,7 @@
 .discoverBtn,
 .startBtn {
   padding: 0.75rem 1.5rem;
-  border-radius: 5px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: bold;
   color: #F1F5F9;
@@ -134,7 +152,7 @@
 }
 
 .startBtn {
-/*   background-color: #1d3557; */
+/*   background-color: #0D519A; */
 border-color: #E1E7EF;
   border: 2px solid #E1E7EF;
   color: #E1E7EF;
@@ -143,11 +161,12 @@ border-color: #E1E7EF;
 /* 🌐 Responsive Styles */
 @media (max-width: 768px) {
   .title {
-    font-size: 2rem;
+    font-size: 5rem;
   }
 
   .description {
-    font-size: 1rem;
+    font-size: 0.85rem;
+    margin-top: 2rem;
   }
 
   .buttons {
@@ -157,22 +176,28 @@ border-color: #E1E7EF;
 
   .discoverBtn,
   .startBtn {
-    width: 100%;
-    max-width: 300px;
+    width: 650%;
+    max-width: 250px;
+    padding: 0.75rem;
+    border-radius: 15px;
+    margin: 0.4rem;
   }
 }
 
 @media (max-width: 480px) {
   .title {
-    font-size: 1.6rem;
+    font-size: 5rem;
+    margin-top: 10px;
   }
 
   .description {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
 
   .hero {
     padding: 1rem;
+    margin-top: 0;
+    min-height: 60vh;
   }
 }
 
@@ -235,10 +260,10 @@ border-color: #E1E7EF;
 
 .fsxContent p {
   margin-bottom: 30px;
-  max-width: 600px;  
+  max-width: 500px;  
   color: #2C3E50;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.8rem;
   text-align: left;
 }
 
@@ -246,14 +271,16 @@ border-color: #E1E7EF;
 .fsxList {
   list-style: none;
   padding-left: 0;
-    max-width: 600px;  
+  max-width: 500px;  
 }
 
 .fsxList li {
   position: relative;
-  padding-left: 30px;
-  margin-bottom: 20px;
-  font-size: 0.95rem;
+  padding-left: 50px;
+
+  margin-top: 30px ;
+  font-size: 1rem;
+  line-height: 2.1rem;
   color: #2C3E50;
 }
 
@@ -261,19 +288,20 @@ border-color: #E1E7EF;
   content: '';
   position: absolute;
   left: 0;
-  top: 4px;
-  width: 24px;
-  height: 24px;
+  top: 0;
+  width: 40px;
+  height: 40px;
   background-image: url('/tick 1.png'); 
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 50%;
+  margin-bottom: 2rem;
 }
 
 /* Image Block */
 .fsxImage {
   flex: 1.5;
-  min-width: 600px;
+  min-width: 800px;
   margin-top: 1.5rem;
   order: 3; /* For mobile stacking */
 }
@@ -286,7 +314,7 @@ border-color: #E1E7EF;
 
 .fsxButton {
   display: inline-block;
-  margin-top: 10px; /* Reduced spacing */
+  margin-top: 30px; /* Reduced spacing */
   padding: 10px 20px;
   background-color: #0D519A;
   color: #ffffff;
@@ -297,18 +325,21 @@ border-color: #E1E7EF;
 
 /* Stats Block */
 .fsxStats {
-  background:#ffffff;
-  border-radius: 20%;
+  background: #ffffff;
+  border-radius: 15px; 
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 30px;
-  order: 2; 
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0  2px 2px hsl(211, 84%, 90%); 
 }
 
 .stat {
   font-size: 1rem;
-  color: #222;
+  color: #2C3E50;
   font-weight: bold;
   flex: 1 1 150px;
 }
@@ -349,10 +380,48 @@ border-color: #E1E7EF;
     flex-direction: column;
   }
 
-    .fsxContent {
-    margin-left: 1rem; 
-    padding: 10px 0;   
+  .fsxHeading {
+    text-align: center; 
+    margin-bottom: 10px;
+    font-size: 0.65rem;
   }
+
+  .fsxHeading h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .fsxHeading p {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    max-width: 300;
+    justify-content: center;
+    margin-inline-start: 2.5rem;
+  }
+
+    .fsxContent {
+    margin-inline-start: 1rem; 
+    padding: 10px 0;
+    flex: 10;
+    margin-left: 0;
+  }
+
+.fsxContent h3{
+    font-size: 1.2rem;
+
+}
+
+
+  .fsxList {
+    max-width: 350px;
+    line-height: 1rem; 
+  }
+
+  .fsxList li,
+  .fsxList p {
+    margin-bottom: 0.3rem; 
+  }
+
 
 
   @media (max-width: 1024px) {
@@ -381,17 +450,61 @@ border-color: #E1E7EF;
 
   .fsxButton {
     order: 2;
-    width: 80%;
+    width: 70%;
     text-align: center;
     justify-content: center;
+    border-radius: 10px;
+   margin-top: 1rem;
+  }
+
+  .fsxStats {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 15px;
+    border-radius: 12px;
+    margin-top: 0;
+  }
+
+  .fsxStats .stat {
+    width: 50%;
+    text-align: center;
+  }
+
+ 
+}
+
+
+/* Mobile: shrink horizontally */
+@media (max-width: 480px) {
+  .fsxStats {
+    flex-direction: column;
+    gap: 2px;
+    padding: 0 10px; /* tighter horizontal padding */
+    margin: 0 auto 10px auto; /* center horizontally */
+    max-width: 55%; /* shrink container width */
+    border-radius: 12px;
+   
    
   }
 
-  .stat {
+  .fsxStats .stat {
+    width: 90%; 
+    text-align: center;
+    margin-bottom: 4px;
+  }
+
+  .fsxStats .countBlock {
+    font-size: 1.5rem;
+  }
+.fsxStats .plus {
+    font-size: 1.5rem;
+  }
+  .fsxStats .label {
+    font-size: 1rem;
+    margin-top: 10px;
     text-align: center;
   }
 }
-
 
 
 
@@ -410,16 +523,16 @@ border-color: #E1E7EF;
 .ecosystemBanner {
   display: inline-block;
   margin: 0 auto 2rem;
-  padding: 0.75rem 1.5rem;
-  max-width: 300px;
-  border: 2px solid #0D519A; 
-  border-radius: 25px;
+  padding: 0.3rem 1rem;
+  max-width: 170px;
+  border: 1px solid #3D74AE;; 
+  border-radius: 10px;
   background-color:  #F9FBFC;
-  color: #0D519A;
+  color:#3D74AE;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 0.7rem;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .brandFamily .ecosystemBanner {
@@ -441,16 +554,20 @@ border-color: #E1E7EF;
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 23px;
   justify-content: center;
+  margin-top: 3rem;
+  margin-left: 3rem;
 }
 
 .card {
   background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   text-align: left;
+  height: 300px;
+  width: 80%;
 }
 
 .cardTitle {
@@ -463,6 +580,8 @@ border-color: #E1E7EF;
   font-size: 1rem;
   color: #2C3E50;
   margin-bottom: 0.5rem;
+  max-width: 350px;
+  line-height: 1.6rem;
 }
 
 .cardTagline {
@@ -474,12 +593,13 @@ border-color: #E1E7EF;
 .learnMoreBtn {
   background-color: #0D519A;
   color: #F1F5F9;
-  padding: 0.5rem 1rem;
-  border-radius: 15px;
+  padding: 0.85rem;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: bold;
   display: inline-block;
   transition: background 0.3s ease;
+  margin-top: 2rem;
 }
 
 .learnMoreBtn:hover {
@@ -498,10 +618,86 @@ border-color: #E1E7EF;
     grid-template-columns: 1fr;
   }
 
+    .heading {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .subText {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
   .card {
     text-align: center;
   }
+
+
+  .cardDescription {
+    margin: 0 auto;
+  }
 }
+
+@media (max-width: 430px) {
+  .heading {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .subText {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 383px;
+    height: auto; /* Let content define height */
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  .cardTitle {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+
+  .cardTagline {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  .cardDescription {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+
+  .learnMoreBtn {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    margin-top: 1.5rem;
+    display: inline-block;
+  }
+}
+
 
 
 
@@ -516,22 +712,23 @@ border-color: #E1E7EF;
 
 .partnersIntro {
   max-width: 800px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 2.5rem;
 }
 
 .partnersHeading {
- display: inline-block;
+
+  display: inline-block;
   margin: 0 auto 2rem;
-  padding: 0.75rem 1.5rem;
-  max-width: 300px;
-  border: 2px solid #0D519A; 
-  border-radius: 20px;
-  background-color:  #F9FBFC;
-  color: #0D519A;
+  padding: 0.4rem 1rem;
+  max-width: 170px;
+  border: 1px solid #3D74AE;; 
+  border-radius: 10px;
+  background-color:  #E7EEF5;
+  color:#3D74AE;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 0.7rem;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .partnersSubText {
@@ -601,11 +798,12 @@ border-color: #E1E7EF;
 
 @media (max-width: 480px) {
   .partnersHeading {
-    font-size: 1.6rem;
+    font-size: 0.85rem;
   }
 
   .partnersSubText {
-    font-size: 0.95rem;
+    font-size: 2rem;
+    line-height: 2.5rem;
   }
 
   .logoItem {
