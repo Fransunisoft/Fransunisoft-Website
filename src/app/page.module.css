@@ -334,7 +334,8 @@ border-color: #E1E7EF;
   padding: 20px;
   justify-content: center;
   align-items: center;
-  box-shadow: 0  2px 2px hsl(211, 84%, 90%); 
+  box-shadow: 0 1px 1px  #2C3E50; 
+  margin-left: 4rem;
 }
 
 .stat {
@@ -735,10 +736,9 @@ border-color: #E1E7EF;
 }
 
 .partnersSubText {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #2C3E50;
-
-
+  font-weight: bold;
 
 }
 /* Auto-Scrolling Logo Strip */
@@ -805,8 +805,9 @@ border-color: #E1E7EF;
   }
 
   .partnersSubText {
-    font-size: 2rem;
+    font-size: 1.75rem;
     line-height: 2.5rem;
+    font-weight: bold;
   }
 
   .logoItem {

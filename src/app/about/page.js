@@ -86,7 +86,7 @@ export default function AboutPage() {
             src="/F_Vision.png"
             alt="FSX Story, Vision, Mission"
             width={800}
-            height={900}
+            height={1000}
             className={styles.responsiveImage}
           />
         </div>
@@ -102,8 +102,8 @@ export default function AboutPage() {
                 <Image
                   src={value.icon}
                   alt={`${value.title} icon`}
-                  width={50}
-                  height={50}
+                  width={80}
+                  height={80}
                 />
               </div>
               <h3>{value.title}</h3>
@@ -117,25 +117,28 @@ export default function AboutPage() {
       <section className={styles.ceoSection}>
         <h2 className={styles.heading}>Meet Our CEO</h2>
         <div className={styles.content}>
-          <div className={styles.imageWrapper}>
-            <Image
-              src="/CEO Profile Photo 1.png"
-              alt="Oluwaseyi Francis Ayodele"
-              width={500}
-              height={600}
-              className={styles.ceoImage}
-            />
-          </div>
+     <div className={styles.imageWrapper}>
+  <Image
+    src="/CEO Profile_Photo.png"
+    alt="Oluwaseyi Francis Ayodele"
+    width={643}
+    height={613}
+    className={styles.ceoImage}
+  />
+</div>
+
+
           <div className={styles.bio}>
             <p>
               <strong>Oluwaseyi Francis Ayodele</strong> is a software engineer, community manager, and innovation advocate focused on building scalable solutions and empowering Africa’s next generation of tech leaders.
-            </p>
+               With over a decade of experience across software development, fintech solutions, IT consulting, and community growth, he has led impactful projects that bridge technology and people.
+            </p> <br/>
             <p>
               His experience spans open-source development, fintech, and technology leadership. He has mentored thousands of young talents and facilitated programs impacting over 150,000 youths across Nigeria and Africa.
-            </p>
+            </p> <br/>
             <p>
-              As the founder of Fransioutlet, the parent company behind the FSX brand family, he drives innovation across technology, consulting, events, training, and community building.
-            </p>
+              As the founder of Fransunisoft, the parent company behind the FSX brand family, he drives innovation across technology, consulting, events, training, and community building.
+            </p> <br/>
             <p>
               He actively speaks at conferences, mentors aspiring founders, and champions opportunities for young Africans in the global digital economy.
             </p>
