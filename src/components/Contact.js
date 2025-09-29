@@ -1,11 +1,12 @@
 'use client';
 
 import styles from './Contact.module.css';
-import Link from 'next/link';
+/* import Link from 'next/link'; */
 import Image from 'next/image';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+/* import ContactForm from './ContactForm';  */
 
 export default function Contact() {
   useEffect(() => {
@@ -58,25 +59,46 @@ export default function Contact() {
 </div>
         </div>
 
-        {/* Right Column: Get In Touch */}
-        <div className={styles.contactActionBox}>
-          <h3 className={styles.heading}>Get In Touch</h3>
-          <p className={styles.paragraph}>
-            Contact fransunisoft (FSX) today for event management, consulting, technology solutions, training, and networking opportunities in Nigeria.
-          </p>
 
-          <Link href="/contact/form" className={styles.contactBtn}>
-            Open Contact Form
-          </Link>
+{/* Right Column: Get In Touch */}
+<div className={styles.contactActionBox}>
+  <form className={styles.form}>
+    <h3 className={styles.heading}>Get In Touch</h3>
+    <p className={styles.paragraph}>
+      Contact Fransunisoft (FSX) today for event management, consulting, technology solutions, training, and networking opportunities in Nigeria.
+    </p>
 
-          <p className={styles.tagline}><span>Or send us a mail</span></p>
- <div className="emailWrapper">
-          <a href="mailto:hello@fransunisoft.com" className={styles.emailLink}>
-            <Image src="/Gmail.png" alt="Gmail logo" width={80} height={80} />
-          
-          </a>
-        </div>
-         </div>
+    <div className={styles.row}>
+      <input type="text" name="firstName" placeholder="First Name" required />
+      <input type="text" name="lastName" placeholder="Last Name" required />
+    </div>
+
+    <div className={styles.row}>
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="tel" name="phone" placeholder="+234 Phone Number" required />
+    </div>
+
+    <select name="serviceType" required>
+      <option value="">Select FSX Brand</option>
+      <option value="FSX Consulting">FSX Consulting</option>
+      <option value="FSX Labs">FSX Labs</option>
+      <option value="FSX Tech">FSX Tech</option>
+      <option value="FSX Events">FSX Events</option>
+      <option value="FSX Connect">FSX Connect</option>
+      <option value="FSX Academy">FSX Academy</option>
+    </select>
+
+    <input type="text" name="company" placeholder="Company" />
+
+    <textarea name="message" placeholder="How can we be of help?" rows={5} required />
+
+    <input type="file" name="file" accept=".pdf,.doc,.docx,.jpg,.png" />
+
+    <button type="submit" className={styles.contactBtn}>Contact Us</button>
+  </form>
+</div>
+
+
       </div>
     </section>
   );

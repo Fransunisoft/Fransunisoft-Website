@@ -15,8 +15,8 @@ export default function Navbar() {
          <Image
   src="/Fransunisoft Logo2.png"
   alt="Fransunisoft Logo"
-  width={300}
-  height={50}
+  width={250}
+  height={40}
   priority
 />
 
@@ -42,12 +42,12 @@ export default function Navbar() {
           <span>FSX Brands ▾</span>
           {showDropdown && (
             <ul className={styles.dropdownMenu}>
-              <li><Link href="/fsx page/consulting">FSX Consulting</Link></li>
-              <li><Link href="/fsx page/tech">FSX Tech</Link></li>
-              <li><Link href="/fsx page/labs">FSX Labs</Link></li>
-              <li><Link href="/fsx page/events">FSX Events</Link></li>
-              <li><Link href="/fsx page/connect">FSX Connect</Link></li>
-              <li><Link href="/fsx page/academy">FSX Academy</Link></li>
+              <li><Link href="/fsx-page/consulting">FSX Consulting</Link></li>
+              <li><Link href="/fsx-page/tech">FSX Tech</Link></li>
+              <li><Link href="/fsx-page/labs">FSX Labs</Link></li>
+              <li><Link href="/fsx-page/events">FSX Events</Link></li>
+              <li><Link href="/fsx-page/connect">FSX Connect</Link></li>
+              <li><Link href="/fsx-page/academy">FSX Academy</Link></li>
             </ul>
           )}
         </li>
