@@ -85,8 +85,8 @@ export default function AboutPage() {
           <Image
             src="/F_Vision.png"
             alt="FSX Story, Vision, Mission"
-            width={600}
-            height={600}
+            width={800}
+            height={900}
             className={styles.responsiveImage}
           />
         </div>
