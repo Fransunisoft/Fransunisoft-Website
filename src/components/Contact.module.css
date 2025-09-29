@@ -3,8 +3,9 @@
   flex-direction: column;
   gap: 2rem;
   padding: 4rem 2rem;
-  background-color: #0D519A;;
+  background-color: #0D519A;
   align-items: center;
+  margin-left: auto;
 }
 
 .intro {
@@ -14,54 +15,98 @@
 
 .mainHeading {
   font-size: 2rem;
-  color: #2C3E50;
+  color: #ffffff;
   margin-bottom: 1rem;
 }
 
 .introText {
   font-size: 1.1rem;
-  color: #7C8084;
+  color: #A0A5AA;
   margin-bottom: 2rem;
 }
 
-/* Grid layout for contact section */
-.contactActionBox{
- background-color:  #ffffff;
-}
-
-
+/* === Grid layout === */
 .contactGrid {
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 6rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
   flex-wrap: wrap;
+  margin-left: -10rem;
 }
 
-/* Left column: Contact Info */
+/* === Left Column === */
 .contactInfoBox {
   flex: 1 1 45%;
- /*  background-color: #ffffff; */
   padding: 2rem;
+  order: 1; /* Left column second on mobile */
+}
+
+.contactInfoBox .heading {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.contactInfoBox .paragraph {
+  color: #ffffff;
+  margin-top: -3.5rem;
+  margin-left: 5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.contactInfoBox .hparagraph {
+  color: #A0A5AA;
+  max-width: 450px;
+  margin-top: 1rem;
+}
+
+.contactInfoBox .subText {
+  color: #A0A5AA;
+  margin-left: 5rem;
+  margin-top: -1rem;
+
+}
+
+.contactInfoBox .detail {
+  color: #ffffff;
+  margin-left: 5rem;
+  margin-top: 0.35rem;
+}
+
+.contactInfoBox .labelRow {
+  margin-top: 2rem;
  
 }
 
-/* Headings */
-.contactInfoBox  .heading {
+/* === Right Column === */
+.contactActionBox {
+  flex: 5 2 45%;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px #7C8084;
+  margin-right: -5rem;
+  order: 2; /* Right column first on mobile */
+}
+
+.contactActionBox .heading {
   font-size: 1.4rem;
-  color:  #2C3E50;
+  color: #2C3E50;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
-
-.hparagraph {
-  font-size: 1.1rem;
-  color: #7C8084;
-  margin-bottom: 2rem;
+.contactActionBox .paragraph {
+  font-size: 1rem;
+  color: #A0A5AA;
+  margin-bottom: 1rem;
   max-width: 500px;
+  text-align: center;
 }
 
+/* === Form === */
 .form {
   display: flex;
   flex-direction: column;
@@ -80,7 +125,7 @@
 .form textarea {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #ccc;
+  border: 1px solid #7C8084;
   border-radius: 6px;
   font-size: 1rem;
 }
@@ -89,9 +134,37 @@
   resize: vertical;
 }
 
-.form .contactBtn {
-  background-color: #FF6B35;
-  color: white;
+/* === Phone Input === */
+.phoneInput {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.phoneField {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  padding-left: 50px !important;
+  border: 1px solid #7C8084 !important;
+  border-radius: 6px !important;
+  font-size: 1rem !important;
+  box-sizing: border-box !important;
+}
+
+.phoneButton {
+  border: none !important;
+  background: transparent !important;
+  padding-left: 0.5rem !important;
+}
+
+.react-tel-input .flag {
+  background-size: 20px 15px;
+  transform: scale(1);
+}
+
+/* === Button === */
+.contactBtn {
+  background-color: #0D519A;
+  color: #F1F5F9;
   padding: 0.75rem;
   border: none;
   border-radius: 12px;
@@ -100,22 +173,43 @@
   margin-top: 1rem;
 }
 
-.form .contactBtn:hover {
+.contactBtn:hover {
   background-color: #20A89F;
 }
 
-/* Responsive tweaks */
+/* === Tablet === */
 @media (max-width: 1024px) {
+  .contactGrid {
+    flex-direction: column;
+    gap: 3rem;
+    margin-left: 0;
+  }
+
+  .contactInfoBox,      
+  .contactActionBox {
+    flex: 1 1 100%;
+    margin: 0;
+  }
+
   .row {
     flex-direction: column;
   }
 
-  .form .contactBtn {
+  .contactBtn {
     width: 100%;
     text-align: center;
   }
+
+  .contactInfoBox {
+    order: 2;
+  }
+
+  .contactActionBox {
+    order: 1;
+  }
 }
 
+/* === Mobile === */
 @media (max-width: 768px) {
   .form {
     padding: 1rem;
@@ -127,9 +221,109 @@
     font-size: 0.95rem;
   }
 
-  .form .contactBtn {
+  .contactBtn {
     font-size: 1rem;
     padding: 0.75rem 1rem;
+  }
+
+  .contactGrid {
+    gap: 2rem;
+  }
+
+  .contactInfoBox .subText,
+  .contactInfoBox .detail {
+    margin-left: 2rem;
+  }
+
+  .contactInfoBox {
+    order: 2;
+    margin-left: 2rem;
+  }
+
+  .contactActionBox {
+    order: 1;
+  }
+}
+
+/* === Small Mobile === */
+@media (max-width: 430px) {
+  .contactSection {
+    padding: 2rem 1rem;
+  }
+
+  .mainHeading {
+    font-size: 1.5rem;
+  }
+
+  .introText {
+    font-size: 1rem;
+  }
+
+  .contactGrid {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-left: 0;
+  }
+
+  .contactInfoBox,
+  .contactActionBox {
+    padding: 1rem;
+    margin: 0;
+   
+  }
+
+  .contactInfoBox .heading {
+    font-size: 1.5rem;
+  }
+
+  .contactInfoBox.hparagraph {
+    font-size: 0.95rem;
+    margin-left: 1.5rem;
+  }
+
+   .contactInfoBox .paragraph {
+    font-size: 0.95rem;
+    margin-left: 1rem;
+  }
+
+
+  .form input,
+  .form select,
+  .form textarea {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .contactBtn {
+    font-size: 0.95rem;
+    padding: 1.2rem 1rem;
+  }
+
+  .contactInfoBox.labelRow {
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-left: 0.65rem;
+  }
+
+
+   .contactInfoBox .paragraph {
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-left: 4rem;
+    margin-top: -3.5rem;
+  }
+  .contactInfoBox .subText,
+  .contactInfoBox .detail {
+    margin-left: 4rem;
+    margin-top: 0.55rem;
+  }
+
+  .contactInfoBox {
+    order: 2;
+  }
+
+  .contactActionBox {
+    order: 1;
   }
 }
 
