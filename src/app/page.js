@@ -220,7 +220,7 @@ export default function HomePage() {
 
       <div className={styles.logoItem}><Image src="/F_3MTT.png" alt="SMIT" width={100} height={100} /></div>
       <div className={styles.logoItem}><Image src="/F_GDG.png" alt="GDG" width={100} height={60} /></div>
-      <div className={styles.logoItem}><Image src="/F_Andela.jpg" alt="GDG" width={100} height={60} /></div>
+      <div className={styles.logoItem}><Image src="/F_Andela2.png" alt="GDG" width={100} height={60} /></div>
       {/* <div className={styles.logoItem}><Image src="/F_FMCIDE.png" alt="Nigeria Coat of Arms" width={100} height={60} /></div>
       <div className={styles.logoItem}><Image src="/F_NITDA.png" alt="NITDA" width={100} height={60} /></div>
       <div className={styles.logoItem}><Image src="/F_IHS.png" alt="IHS" width={100} height={60} /></div>
@@ -230,10 +230,10 @@ export default function HomePage() {
      {/* Repeat logos for infinite scroll */}
       <div className={styles.logoItem}><Image src="/F_3MTT.png" alt="SMIT" width={100} height={60} /></div>
       <div className={styles.logoItem}><Image src="/F_GDG.png" alt="GDG" width={100} height={60} /></div>
-      <div className={styles.logoItem}><Image src="/F_Andela.jpg" alt="GDG" width={100} height={60} /></div>
+      <div className={styles.logoItem}><Image src="/F_Andela2.png" alt="GDG" width={100} height={60} /></div>
    <div className={styles.logoItem}><Image src="/F_3MTT.png" alt="SMIT" width={100} height={60} /></div>
       <div className={styles.logoItem}><Image src="/F_GDG.png" alt="GDG" width={100} height={60} /></div>
-      <div className={styles.logoItem}><Image src="/F_Andela.jpg" alt="GDG" width={100} height={60} /></div>
+      <div className={styles.logoItem}><Image src="/F_Andela2.png" alt="GDG" width={100} height={60} /></div>
       {/* <div className={styles.logoItem}><Image src="/F_FMCIDE.png" alt="Nigeria Coat of Arms" width={100} height={60} /></div>
       <div className={styles.logoItem}><Image src="/F_NITDA.png" alt="NITDA" width={100} height={60} /></div>
       <div className={styles.logoItem}><Image src="/F_IHS.png" alt="IHS" width={100} height={60} /></div>

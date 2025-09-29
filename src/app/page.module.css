@@ -334,7 +334,8 @@ border-color: #E1E7EF;
   padding: 20px;
   justify-content: center;
   align-items: center;
-  box-shadow: 0  2px 2px hsl(211, 84%, 90%); 
+  box-shadow: 0 1px 1px  #2C3E50; 
+  margin-left: 4rem;
 }
 
 .stat {
@@ -455,6 +456,7 @@ border-color: #E1E7EF;
     justify-content: center;
     border-radius: 10px;
    margin-top: 1rem;
+   font-size: 0.95rem;
   }
 
   .fsxStats {
@@ -554,10 +556,11 @@ border-color: #E1E7EF;
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 23px;
+  gap: 10px;
   justify-content: center;
   margin-top: 3rem;
   margin-left: 3rem;
+
 }
 
 .card {
@@ -567,7 +570,8 @@ border-color: #E1E7EF;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   text-align: left;
   height: 300px;
-  width: 80%;
+  width: 90%;
+  margin-top: 2rem;
 }
 
 .cardTitle {
@@ -580,7 +584,7 @@ border-color: #E1E7EF;
   font-size: 1rem;
   color: #2C3E50;
   margin-bottom: 0.5rem;
-  max-width: 350px;
+  max-width: 320px;
   line-height: 1.6rem;
 }
 
@@ -732,10 +736,9 @@ border-color: #E1E7EF;
 }
 
 .partnersSubText {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #2C3E50;
-
-
+  font-weight: bold;
 
 }
 /* Auto-Scrolling Logo Strip */
@@ -802,8 +805,9 @@ border-color: #E1E7EF;
   }
 
   .partnersSubText {
-    font-size: 2rem;
+    font-size: 1.75rem;
     line-height: 2.5rem;
+    font-weight: bold;
   }
 
   .logoItem {

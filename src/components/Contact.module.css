@@ -3,8 +3,9 @@
   flex-direction: column;
   gap: 2rem;
   padding: 4rem 2rem;
-  background-color: #FAFDFF;
+  background-color: #0D519A;
   align-items: center;
+  margin-left: auto;
 }
 
 .intro {
@@ -14,256 +15,315 @@
 
 .mainHeading {
   font-size: 2rem;
-  color: #2C3E50;
+  color: #ffffff;
   margin-bottom: 1rem;
 }
 
 .introText {
   font-size: 1.1rem;
-  color: #7C8084;
+  color: #A0A5AA;
   margin-bottom: 2rem;
 }
 
-/* Grid layout for contact section */
+/* === Grid layout === */
 .contactGrid {
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 6rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
   flex-wrap: wrap;
+  margin-left: -10rem;
 }
 
-/* Left column: Contact Info */
+/* === Left Column === */
 .contactInfoBox {
   flex: 1 1 45%;
-  background-color: #ffffff;
   padding: 2rem;
+  order: 1; /* Left column second on mobile */
+}
+
+.contactInfoBox .heading {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.contactInfoBox .paragraph {
+  color: #ffffff;
+  margin-top: -3.5rem;
+  margin-left: 5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.contactInfoBox .hparagraph {
+  color: #A0A5AA;
+  max-width: 450px;
+  margin-top: 1rem;
+}
+
+.contactInfoBox .subText {
+  color: #A0A5AA;
+  margin-left: 5rem;
+  margin-top: -1rem;
+
+}
+
+.contactInfoBox .detail {
+  color: #ffffff;
+  margin-left: 5rem;
+  margin-top: 0.35rem;
+}
+
+.contactInfoBox .labelRow {
+  margin-top: 2rem;
  
 }
 
-/* Headings */
-.contactInfoBox  .heading {
-  font-size: 1.4rem;
-  color:  #0D519A;
-  margin-bottom: 1rem;
-}
-
-
-.hparagraph {
-  font-size: 1.1rem;
-  color: #7C8084;
-  margin-bottom: 2rem;
-  max-width: 500px;
-}
-
-/* Right column: Get In Touch */
+/* === Right Column === */
 .contactActionBox {
-  flex: 1 1 45%;
-  background-color: #ffffff;
+  flex: 5 2 45%;
   padding: 2rem;
- border-radius: 40px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px #7C8084;
+  margin-right: -5rem;
+  order: 2; /* Right column first on mobile */
 }
 
-/* Headings */
-.heading {
-  font-size: 1.2rem;
+.contactActionBox .heading {
+  font-size: 1.4rem;
   color: #2C3E50;
   margin-bottom: 1rem;
-}
-
-
-/* Info items */
-.infoItem {
-  margin-bottom: 2rem;
-}
-
-.labelRow {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.paragraph {
-  font-size: 1.1rem;
-  color: #7C8084;
-  margin: 0;
-}
-
-.subText {
-  font-size: 0.95rem;
-  color: #A0A5AA;
-  margin: 0.25rem 0;
-  margin-left: 3rem;
-}
-
-.detail {
-  font-size: 1rem;
-  color: #0D519A;
-  font-weight: 500;
-  margin-top: 0.25rem;
-  margin-left: 3rem;
-}
-
-/* Button and tagline */
-
-.contactActionBox {
-  display: flex;
-  flex-direction: column; /* stack children vertically */
-  align-items: center;     /* center horizontally */
   text-align: center;
 }
 
-/* Centered button */
-.contactBtn {
-  display: inline-block;
-  background-color: #FF6B35;
-  color: #F1F5F9;
-  padding: 0.75rem 1.5rem;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 3rem;
+.contactActionBox .paragraph {
+  font-size: 1rem;
+  color: #A0A5AA;
+  margin-bottom: 1rem;
+  max-width: 500px;
+  text-align: center;
 }
 
-/* Hover effect */
+/* === Form === */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #7C8084;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form textarea {
+  resize: vertical;
+}
+
+/* === Phone Input === */
+.phoneInput {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.phoneField {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  padding-left: 50px !important;
+  border: 1px solid #7C8084 !important;
+  border-radius: 6px !important;
+  font-size: 1rem !important;
+  box-sizing: border-box !important;
+}
+
+.phoneButton {
+  border: none !important;
+  background: transparent !important;
+  padding-left: 0.5rem !important;
+}
+
+.react-tel-input .flag {
+  background-size: 20px 15px;
+  transform: scale(1);
+}
+
+/* === Button === */
+.contactBtn {
+  background-color: #0D519A;
+  color: #F1F5F9;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
 .contactBtn:hover {
   background-color: #20A89F;
 }
 
-/* Centered tagline */
-.tagline {
-  position: relative;
-  display: inline-block;
-  font-style: italic;
-  color:  #7C8084;
-  text-align: center;
-  margin-top: 3rem;
-  padding: 0 1rem;
-}
-
-.tagline::before,
-.tagline::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 80px;
-  height: 1px;
-  background-color:  #7C8084;
-}
-
-.tagline::before {
-  left: -80px; /* line before the text */
-}
-
-.tagline::after {
-  right: -80px; /* line after the text */
-}
-
-/* Wrapper to center the email link */
-.emailWrapper {
-  background-color: #ffffff;
-  padding: 1rem 2rem;
-  border-radius: 24px;
-  border: 2px solid #0D519A; /* Add this for visible border */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Gmail link */
-.emailLink {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  font-weight: 500;
-  text-decoration: none;
-  margin: 0; 
-  margin-top: 2.5rem;
-}
-
-
-/* 🌐 Tablet View (max-width: 1024px) */
+/* === Tablet === */
 @media (max-width: 1024px) {
   .contactGrid {
     flex-direction: column;
-    align-items: center;
-  }
-
-  .contactInfoBox,
-  .contactActionBox {
-    width: 100%;
-    max-width: 700px;
-    padding: 2rem;
-  }
-
-  .heading {
-    text-align: center;
-    font-size: 1.3rem;
-  }
-
-  .hparagraph {
-    text-align: center;
-    margin: 0 auto 2rem auto;
-  }
-
-  .labelRow {
-    justify-content: center;
-  }
-
-  .subText,
-  .detail {
+    gap: 3rem;
     margin-left: 0;
-    text-align: center;
-  }
-}
-
-/* 📱 Mobile View (max-width: 768px) */
-@media (max-width: 768px) {
-  .contactSection {
-    padding: 3rem 1rem;
   }
 
-  .mainHeading {
-    font-size: 1.5rem;
-    text-align: center;
+  .contactInfoBox,      
+  .contactActionBox {
+    flex: 1 1 100%;
+    margin: 0;
   }
 
-  .introText {
-    font-size: 1rem;
-    text-align: center;
+  .row {
+    flex-direction: column;
   }
 
   .contactBtn {
     width: 100%;
     text-align: center;
-    margin: 1rem auto;
   }
 
-  .emailLink {
-    justify-content: center;
-    text-align: center;
+  .contactInfoBox {
+    order: 2;
   }
 
-  .paragraph,
-  .subText,
-  .detail {
-    text-align: center;
+  .contactActionBox {
+    order: 1;
+  }
+}
+
+/* === Mobile === */
+@media (max-width: 768px) {
+  .form {
+    padding: 1rem;
+  }
+
+  .form input,
+  .form select,
+  .form textarea {
+    font-size: 0.95rem;
+  }
+
+  .contactBtn {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .contactGrid {
+    gap: 2rem;
+  }
+
+  .contactInfoBox .subText,
+  .contactInfoBox .detail {
+    margin-left: 2rem;
+  }
+
+  .contactInfoBox {
+    order: 2;
+    margin-left: 2rem;
+  }
+
+  .contactActionBox {
+    order: 1;
+  }
+}
+
+/* === Small Mobile === */
+@media (max-width: 430px) {
+  .contactSection {
+    padding: 2rem 1rem;
+  }
+
+  .mainHeading {
+    font-size: 1.5rem;
+  }
+
+  .introText {
+    font-size: 1rem;
+  }
+
+  .contactGrid {
+    flex-direction: column;
+    gap: 1.5rem;
     margin-left: 0;
   }
 
-  .labelRow {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+  .contactInfoBox,
+  .contactActionBox {
+    padding: 1rem;
+    margin: 0;
+   
   }
 
-  .infoItem {
-    text-align: center;
+  .contactInfoBox .heading {
+    font-size: 1.5rem;
+  }
+
+  .contactInfoBox.hparagraph {
+    font-size: 0.95rem;
+    margin-left: 1.5rem;
+  }
+
+   .contactInfoBox .paragraph {
+    font-size: 0.95rem;
+    margin-left: 1rem;
+  }
+
+
+  .form input,
+  .form select,
+  .form textarea {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .contactBtn {
+    font-size: 0.95rem;
+    padding: 1.2rem 1rem;
+  }
+
+  .contactInfoBox.labelRow {
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-left: 0.65rem;
+  }
+
+
+   .contactInfoBox .paragraph {
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-left: 4rem;
+    margin-top: -3.5rem;
+  }
+  .contactInfoBox .subText,
+  .contactInfoBox .detail {
+    margin-left: 4rem;
+    margin-top: 0.55rem;
+  }
+
+  .contactInfoBox {
+    order: 2;
+  }
+
+  .contactActionBox {
+    order: 1;
   }
 }
+
