@@ -97,15 +97,16 @@ export default function Contact() {
 
             </div>
 
-            <select name="serviceType" required>
-              <option value="">Select FSX Brand</option>
-              <option value="FSX Consulting">FSX Consulting</option>
-              <option value="FSX Labs">FSX Labs</option>
-              <option value="FSX Tech">FSX Tech</option>
-              <option value="FSX Events">FSX Events</option>
-              <option value="FSX Connect">FSX Connect</option>
-              <option value="FSX Academy">FSX Academy</option>
-            </select>
+       <select name="serviceType" required className="brandSelect">
+  <option value="">Select FSX Brand</option>
+  <option value="FSX Consulting">FSX Consulting</option>
+  <option value="FSX Labs">FSX Labs</option>
+  <option value="FSX Tech">FSX Tech</option>
+  <option value="FSX Events">FSX Events</option>
+  <option value="FSX Connect">FSX Connect</option>
+  <option value="FSX Academy">FSX Academy</option>
+</select>
+
 
             <input type="text" name="company" placeholder="Company" />
             <textarea name="message" placeholder="How can we be of help?" rows={5} required />

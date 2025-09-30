@@ -130,17 +130,21 @@ export default function AboutPage() {
 
           <div className={styles.bio}>
             <p>
-              <strong>Oluwaseyi Francis Ayodele</strong> is a software engineer, community manager, and innovation advocate focused on building scalable solutions and empowering Africa’s next generation of tech leaders.
-               With over a decade of experience across software development, fintech solutions, IT consulting, and community growth, he has led impactful projects that bridge technology and people.
+              <strong>Oluwaseyi Francis Ayodele</strong> is a software engineer, community manager, and innovation advocate passionate about building scalable solutions and empowering Africa’s next generation of tech leaders. 
+              With over a decade of experience across software development, fintech solutions, IT consulting, and community growth, he has led impactful projects that bridge technology and people.
+            </p> <br/>
+           
+            <p>
+              
+Seyi has trained and mentored thousands of young talents, facilitated programs that have engaged over 150,000 youths across Nigeria and Africa, and supported startups from idea to launch. 
+His leadership spans community-driven initiatives, corporate collaborations, and digital transformation strategies that enable organizations to scale smarter and faster.
             </p> <br/>
             <p>
-              His experience spans open-source development, fintech, and technology leadership. He has mentored thousands of young talents and facilitated programs impacting over 150,000 youths across Nigeria and Africa.
+              He is the founder of Fransunisoft, the parent company behind the FSX brand family, which focuses on technology, consulting, events, training, and community building. 
+              Through this ecosystem, he is driving innovation and creating sustainable impact in Africa’s tech and business landscap
             </p> <br/>
             <p>
-              As the founder of Fransunisoft, the parent company behind the FSX brand family, he drives innovation across technology, consulting, events, training, and community building.
-            </p> <br/>
-            <p>
-              He actively speaks at conferences, mentors aspiring founders, and champions opportunities for young Africans in the global digital economy.
+             Beyond his work in business and technology, Seyi actively speaks at conferences, mentors aspiring founders, and champions opportunities for young Africans in the global digital economy.
             </p>
           </div>
         </div>
