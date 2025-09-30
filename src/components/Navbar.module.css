@@ -43,20 +43,20 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 1rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1001;
   display: none;
   width: 100%;
-    border-radius: 10px;
-    margin-left: 10rem;
-    margin-bottom: 2rem;
+  border-radius: 10px;
+  margin-left: 10rem;
+  margin-bottom: 2rem;
 }
 
 .navLinks.mobile.active {
   display: flex;
 }
 
-/* === Link Styling === */
+/* === Default Link Styling === */
 .navLinks li a,
 .navLinks li span {
   color: #2C3E50;
@@ -65,12 +65,25 @@
   cursor: pointer;
   margin-top: auto;
   margin-left: 1rem;
+  transition: color 0.3s ease, font-weight 0.3s ease;
 }
 
+/* === Hover State === */
 .navLinks li a:hover,
 .navLinks li span:hover {
-  text-decoration: underline;
+  color: #0D519A;
+  font-weight: 600;
+  text-decoration: none;
 }
+
+/* === Active Link Styling === */
+.activeLink {
+  color: #0D519A !important;
+  font-weight: 800 !important;
+  text-decoration: none;
+}
+
+
 
 /* === Dropdown Container === */
 .dropdown {

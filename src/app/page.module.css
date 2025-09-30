@@ -97,9 +97,10 @@
 
 @media (max-width: 480px) {
   .typewriter {
-    font-size: 1.8rem;
+    font-size: 1.55rem;
     max-width: 350px;
     margin: 0 auto;
+    margin-right: 1rem;
   }
 
   /* On mobile: hide desktop break, show mobile break */
@@ -151,12 +152,25 @@
   background-color: #FF6B35;
 }
 
+.discoverBtn:hover {
+  background-color: #B54C26;
+}
+
+
 .startBtn {
 /*   background-color: #0D519A; */
 border-color: #E1E7EF;
   border: 2px solid #E1E7EF;
   color: #E1E7EF;
 }
+
+.startBtn:hover {
+/*   background-color: #0D519A; */
+border-color: #E1E7EF;
+  border: 2px solid #E1E7EF;
+  color: #A0A5AA;
+}
+
 
 /* 🌐 Responsive Styles */
 @media (max-width: 768px) {
@@ -316,12 +330,17 @@ border-color: #E1E7EF;
   display: inline-block;
   margin-top: 30px; /* Reduced spacing */
   padding: 10px 20px;
-  background-color: #0D519A;
+  background-color: #0D519A; 
   color: #ffffff;
   text-decoration: none;
   border-radius: 5px;
   text-align: center;
 }
+
+.fsxButton:hover {
+   background-color: #3D74AE;
+}
+
 
 /* Stats Block */
 .fsxStats {
@@ -362,7 +381,7 @@ border-color: #E1E7EF;
 }
 
 .plus {
-  color: #20A89F; 
+  color: #0D519A; 
   font-size: 2rem;
   font-weight: bold;
 }
@@ -607,7 +626,7 @@ border-color: #E1E7EF;
 }
 
 .learnMoreBtn:hover {
-  background-color: #20A89F;
+  background-color: #3D74AE;
 }
 
 /* 🌐 Responsive Styles */
@@ -751,6 +770,7 @@ border-color: #E1E7EF;
 .logoTrack {
   display: flex;
   gap: 2rem;
+
   animation: scrollLogos 30s linear infinite;
 }
 
@@ -759,12 +779,9 @@ border-color: #E1E7EF;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  min-width: 120px;
-  height: 80px;
+  padding: 2rem;
+  min-width: 150px;
+  height: 100px;
 }
 
 /* Keyframes for scrolling */
@@ -810,13 +827,19 @@ border-color: #E1E7EF;
     font-weight: bold;
   }
 
+    .logoTrack {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: max-content; /* ✅ ensures full width for animation */
+    animation: scrollLogos 25s linear infinite; /* ✅ SAME animation name */
+  }
+
   .logoItem {
-    min-width: 80px;
-    height: 50px;
+    flex: 0 0 auto;
+    min-width: 150px;
+    height: 80px;
     padding: 0.5rem;
   }
 
-  .logoTrack {
-    animation-duration: 15s;
-  }
 }
