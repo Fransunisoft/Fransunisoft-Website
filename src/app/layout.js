@@ -10,7 +10,9 @@ export default function RootLayout({ children }) {
       <body>
         <Navbar />
         {children}
-         <Contact />
+           <section id="contact">
+          <Contact />
+        </section>
         <Footer />
       </body>
     </html>

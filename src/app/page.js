@@ -8,30 +8,45 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-
-
-
 export default function HomePage() {
-
   useEffect(() => {
-  setTimeout(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, 100); // slight delay to ensure DOM is ready
-}, []);
+    setTimeout(() => {
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    }, 100);
+  }, []);
+
+  // Scroll to Brand Family section
+  const scrollToBrandFamily = (e) => {
+    e.preventDefault();
+    const section = document.getElementById('brand-family');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Scroll to Contact section
+  const scrollToContact = (e) => {
+    e.preventDefault();
+    const section = document.getElementById('contact');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <main>
+      {/* === HERO === */}
       <section className={styles.hero} data-aos="fade-up">
         <div className={styles.overlay}>
-   <h1 className={styles.typewriter}>
-        <span className={styles.typingText}>
-          Building Smarter, Scaling <span className={styles.mobileBreak}><br /></span>Faster
-          <span className={styles.desktopBreak}><br /></span> in Nigeria
-        </span>
-      </h1>
+          <h1 className={styles.typewriter}>
+            <span className={styles.typingText}>
+              Building Smarter, Scaling <span className={styles.mobileBreak}><br /></span>Faster
+              <span className={styles.desktopBreak}><br /></span> in Nigeria
+            </span>
+          </h1>
 
           <p className={styles.description}>
             Fransunisoft (FSX) is a Nigeria-based ecosystem designed to fuel innovation, 
@@ -39,15 +54,24 @@ export default function HomePage() {
             FSX Tech, FSX Academy, FSX Labs, and FSX Connect. We provide solutions that help businesses and 
             individuals thrive in today’s fast-changing world.
           </p>
+
           <div className={styles.buttons}>
-            <Link href="/fsx page" className={styles.discoverBtn}>Discover FSX Brand Family</Link>
-            <Link href="/start" className={styles.startBtn}>Start Your Journey Today</Link>
+            <a href="#brand-family" 
+            onClick={scrollToBrandFamily} 
+            className={styles.discoverBtn}>
+              Discover FSX Brand Family
+            </a>
+
+            <a href="#contact" 
+            onClick={scrollToContact} 
+            className={styles.startBtn}>
+              Start Your Journey Today
+            </a>
           </div>
         </div>
       </section>
 
-
-
+      {/* === WHAT MAKES US DIFFERENT === */}
       <section data-aos="fade-up">
         <div className={styles.fsxSection}>
           <div className={styles.fsxHeading}>
@@ -59,7 +83,9 @@ export default function HomePage() {
             <div className={styles.fsxContent}>
               <h3>The FSX Advantage</h3>
               <p>
-                Unlike traditional consulting firms or tech companies that focus on one area, <span style={{ color: '#0D519A', fontWeight: 'bold' }}>Fransunisoft</span> integrates strategy, technology, learning, community, and industries under one ecosystem (FSX).
+                Unlike traditional consulting firms or tech companies that focus on one area, 
+                <span style={{ color: '#0D519A', fontWeight: 'bold' }}> Fransunisoft </span> 
+                integrates strategy, technology, learning, community, and industries under one ecosystem (FSX).
                 <br />
                 We deliver holistic solutions on short and long-term execution, focusing on outcomes for individuals, communities, businesses, and industries.
               </p>
@@ -123,127 +149,104 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* === BRAND FAMILY SECTION === */}
+      <section id="brand-family" className={styles.brandFamily} data-aos="fade-up">
+        <div className={styles.intro}>
+          <div className={styles.ecosystemBanner}>
+            <span>Our Ecosystem Services</span>
+          </div>
 
+          <h2 className={styles.heading}>The FSX Brand Family</h2>
+          <p className={styles.subText}>
+            Fransunisoft is more than one company <br />
+            it’s a family of solutions tailored to help businesses and individuals succeed.
+          </p>
+        </div>
 
+        <div className={styles.grid}>
+          <div className={styles.card}>
+            <h3 className={styles.cardTitle}>FSX Consulting</h3>
+            <p className={styles.cardTagline}>“Build Smarter. Scale Faster.”</p>
+            <p className={styles.cardDescription}>
+              Business consulting, digital transformation, and community programs that bridge strategy with real tech execution and impact.
+            </p>
+            <Link href="/fsx-consulting" className={styles.learnMoreBtn}>Learn More</Link>
+          </div>
 
+          <div className={styles.card}>
+            <h3 className={styles.cardTitle}>FSX Labs</h3>
+            <p className={styles.cardTagline}>“Empowering innovators today, not tomorrow.”</p>
+            <p className={styles.cardDescription}>
+              Platforms, automation, and innovation programs for building scalable solutions from scratch.
+            </p>
+            <Link href="/fsx-labs" className={styles.learnMoreBtn}>Learn More</Link>
+          </div>
 
+          <div className={styles.card}>
+            <h3 className={styles.cardTitle}>FSX Tech</h3>
+            <p className={styles.cardTagline}>“Smart Tech. Simplified.”</p>
+            <p className={styles.cardDescription}>
+              Comprehensive, affordable, and scalable technology solutions.
+            </p>
+            <Link href="/fsx-tech" className={styles.learnMoreBtn}>Learn More</Link>
+          </div>
 
+          <div className={styles.card}>
+            <h3 className={styles.cardTitle}>FSX Events</h3>
+            <p className={styles.cardTagline}>“Where brands come to life.”</p>
+            <p className={styles.cardDescription}>
+              Brand activations, corporate events, and community programs with global-standard execution.
+            </p>
+            <Link href="/fsx-events" className={styles.learnMoreBtn}>Learn More</Link>
+          </div>
 
+          <div className={styles.card}>
+            <h3 className={styles.cardTitle}>FSX Connect</h3>
+            <p className={styles.cardTagline}>“Connecting Ideas, Empowering Impact.”</p>
+            <p className={styles.cardDescription}>
+              Connecting communities and brands through digital platforms and strategic partnerships.
+            </p>
+            <Link href="/fsx-connect" className={styles.learnMoreBtn}>Learn More</Link>
+          </div>
 
-      <section className={styles.brandFamily} data-aos="fade-up">
-  <div className={styles.intro}>
-    <div className={styles.ecosystemBanner}>
-  <span>Our Ecosystem Services</span>
-</div>
+          <div className={styles.card}>
+            <h3 className={styles.cardTitle}>FSX Academy</h3>
+            <p className={styles.cardTagline}>“From Learning to Leading.”</p>
+            <p className={styles.cardDescription}>
+              Training and learning programs designed to empower individuals and teams with future-ready skills.
+            </p>
+            <Link href="/fsx-academy" className={styles.learnMoreBtn}>Learn More</Link>
+          </div>
+        </div>
+      </section>
 
-    <h2 className={styles.heading}>The FSX Brand Family</h2>
-    <p className={styles.subText}>
-      Fransunisoft is more than one company <br />
-      it’s a family of solutions tailored to help businesses and individuals succeed.
-    </p>
-  </div>
+      {/* === PARTNERS === */}
+      <section className={styles.partnersSection} data-aos="fade-up">
+        <div className={styles.partnersIntro}>
+          <h2 className={styles.partnersHeading}>Our Partners</h2>
+          <p className={styles.partnersSubText}>
+            Join Brands and Organisations <br /> That Partner With Us
+          </p>
+        </div>
 
-  <div className={styles.grid}>
-    <div className={styles.card}>
-      <h3 className={styles.cardTitle}>FSX Consulting</h3>
-            <p className={styles.cardTagline}>``Build Smarter. Scale Faster.``</p>
-      <p className={styles.cardDescription}>
-        Business consulting, digital transformation, and community programs that bridge strategy with real tech execution and impact.
-      </p>
+        <div className={styles.logoScroller}>
+          <div className={styles.logoTrack}>
+            <div className={styles.logoItem}><Image src="/F_3MTT Landscape_Logo.png" alt="SMIT" width={200} height={100} /></div>
+             <div className={styles.logoItem}><Image src="/F_trevauty.png" alt="SMIT" width={220} height={100} /></div>
+             <div className={styles.logoItem}><Image src="/F_GDG.png" alt="GDG" width={200} height={100} /></div>
+            <div className={styles.logoItem}><Image src="/F_Andela2.png" alt="Andela" width={200} height={100} /></div>
+             <div className={styles.logoItem}><Image src="/F_Subtract.png" alt="SMIT" width={200} height={100} /></div>
+             
 
-      <Link href="/fsx-consulting" className={styles.learnMoreBtn}>Learn More</Link>
-    </div>
-
-    <div className={styles.card}>
-      <h3 className={styles.cardTitle}>FSX Labs</h3>
-       <p className={styles.cardTagline}>``Empowering innovators today, not tomorrow.``</p>
-      <p className={styles.cardDescription}>
-        Platforms, automation, and innovation programs for building scalable solutions from scratch.
-      </p>
-     
-      <Link href="/fsx-labs" className={styles.learnMoreBtn}>Learn More</Link>
-    </div>
-
-    <div className={styles.card}>
-      <h3 className={styles.cardTitle}>FSX Tech</h3>
-      <p className={styles.cardTagline}>``Smart Tech. Simplified.``</p>
-      <p className={styles.cardDescription}>
-        Comprehensive, affordable, and scalable technology solutions.
-      </p>
-      
-      <Link href="/fsx-tech" className={styles.learnMoreBtn}>Learn More</Link>
-    </div>
-
-    <div className={styles.card}>
-      <h3 className={styles.cardTitle}>FSX Events</h3>
-       <p className={styles.cardTagline}>``Where brands come to life.``</p>
-      <p className={styles.cardDescription}>
-        Brand activations, corporate events, and community programs with global-standard execution.
-      </p>
-     
-      <Link href="/fsx-events" className={styles.learnMoreBtn}>Learn More</Link>
-    </div>
-
-    <div className={styles.card}>
-      <h3 className={styles.cardTitle}>FSX Connect</h3>
-      <p className={styles.cardTagline}>``Connecting Ideas, Empowering Impact.``</p>
-      <p className={styles.cardDescription}>
-        Connecting communities and brands through digital platforms and strategic partnerships.
-      </p>
-      
-      <Link href="/fsx-connect" className={styles.learnMoreBtn}>Learn More</Link>
-    </div>
-
-    <div className={styles.card}>
-      <h3 className={styles.cardTitle}>FSX Academy</h3>
-      <p className={styles.cardTagline}>``From Learning to Leading.``</p>
-      <p className={styles.cardDescription}>
-        Training and learning programs designed to empower individuals and teams with future-ready skills.
-      </p>
-      
-      <Link href="/fsx-academy" className={styles.learnMoreBtn}>Learn More</Link>
-    </div>
-  </div>
-</section>
-
-
-<section className={styles.partnersSection} data-aos="fade-up">
-  <div className={styles.partnersIntro}>
-    <h2 className={styles.partnersHeading}>Our Partners</h2>
-    <p className={styles.partnersSubText}>
-      Join Hundreds of Brands and Organisations <br/> That Partner With Us
-    </p>
-  </div>
-
-  <div className={styles.logoScroller}>
-    <div className={styles.logoTrack}>
-
-      <div className={styles.logoItem}><Image src="/F_3MTT.png" alt="SMIT" width={100} height={100} /></div>
-      <div className={styles.logoItem}><Image src="/F_GDG.png" alt="GDG" width={100} height={60} /></div>
-      <div className={styles.logoItem}><Image src="/F_Andela2.png" alt="GDG" width={100} height={60} /></div>
-      {/* <div className={styles.logoItem}><Image src="/F_FMCIDE.png" alt="Nigeria Coat of Arms" width={100} height={60} /></div>
-      <div className={styles.logoItem}><Image src="/F_NITDA.png" alt="NITDA" width={100} height={60} /></div>
-      <div className={styles.logoItem}><Image src="/F_IHS.png" alt="IHS" width={100} height={60} /></div>
-      <div className={styles.logoItem}><Image src="/F_NITDA_.png" alt="NITDA Alt" width={100} height={60} /></div>
-      <div className={styles.logoItem}><Image src="/F_HUAWEI.png" alt="Huawei" width={100} height={60} /></div> */}
-     
-     {/* Repeat logos for infinite scroll */}
-      <div className={styles.logoItem}><Image src="/F_3MTT.png" alt="SMIT" width={100} height={60} /></div>
-      <div className={styles.logoItem}><Image src="/F_GDG.png" alt="GDG" width={100} height={60} /></div>
-      <div className={styles.logoItem}><Image src="/F_Andela2.png" alt="GDG" width={100} height={60} /></div>
-   <div className={styles.logoItem}><Image src="/F_3MTT.png" alt="SMIT" width={100} height={60} /></div>
-      <div className={styles.logoItem}><Image src="/F_GDG.png" alt="GDG" width={100} height={60} /></div>
-      <div className={styles.logoItem}><Image src="/F_Andela2.png" alt="GDG" width={100} height={60} /></div>
-      {/* <div className={styles.logoItem}><Image src="/F_FMCIDE.png" alt="Nigeria Coat of Arms" width={100} height={60} /></div>
-      <div className={styles.logoItem}><Image src="/F_NITDA.png" alt="NITDA" width={100} height={60} /></div>
-      <div className={styles.logoItem}><Image src="/F_IHS.png" alt="IHS" width={100} height={60} /></div>
-      <div className={styles.logoItem}><Image src="/F_NITDA_.png" alt="NITDA Alt" width={100} height={60} /></div>
-      <div className={styles.logoItem}><Image src="/F_HUAWEI.png" alt="Huawei" width={100} height={60} /></div> */}
-    </div>
-  </div>
-</section>
-
-
+<div className={styles.logoItem}><Image src="/F_3MTT Landscape_Logo.png" alt="SMIT" width={200} height={100} /></div>
+             <div className={styles.logoItem}><Image src="/F_trevauty.png" alt="SMIT" width={220} height={100} /></div>
+             <div className={styles.logoItem}><Image src="/F_GDG.png" alt="GDG" width={200} height={100} /></div>
+            <div className={styles.logoItem}><Image src="/F_Andela2.png" alt="Andela" width={200} height={100} /></div>
+             <div className={styles.logoItem}><Image src="/F_Subtract.png" alt="SMIT" width={200} height={100} /></div>
+            
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

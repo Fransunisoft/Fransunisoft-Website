@@ -17,3 +17,21 @@ Seconday/Buttons - #FF6B35
 Ensure images are in public folder
 Footer  - #111927 //
  
+ Contact
+ #7C8084
+ button - #0D519A
+ button words - #F1F5F9
+ Words in form gray 700 - #A0A5AA
+
+
+
+
+
+Header -
+    Hover state - Bold - Brand Blue(0D519A)
+    Active - Bold - Brand Blue Blue(0D519A)
+
+Blue Button -
+    Hover - #3D74AE
+Orange Button - 
+    Hover - #B54C26
