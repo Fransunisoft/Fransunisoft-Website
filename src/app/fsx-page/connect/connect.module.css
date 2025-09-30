@@ -1,19 +1,424 @@
-.container {
-  padding: 2rem;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+:root {
+  --font-bahns: "Bahnschrift", sans-serif;
+
+}
+/* * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+} */
+html {
+  font-size: 18px;
+}
+.fsxSection {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  font-family: var(--font-roboto);
+  color: #2c3e50;
+}
+
+.heroSection {
+  background: linear-gradient(
+    to right,
+    /* direction of the gradient */ #0d519a,
+    /* solid blue */ #0d519ab2,
+    /* blue with transparency */ #20a89fb2 /* teal with transparency */
+  );
+  color: #ffffff;
+  padding: 0rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.heroTitle {
+  font-family: var(--font-bahns);
+  font-size: 2.1rem;
+  font-weight: 700;
+}
+.heroDescription {
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin: 1rem 0;
+  width: 100%;
+  max-width: 450px;
+}
+
+.heroBtnContainer {
+  display: flex;
+  gap: 1rem;
+}
+.exploreBtn,
+.joinBtn {
+  padding: 0.45rem 0.7rem;
+  font-family: var(--font-roboto);
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 0.6rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.64rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+.exploreBtn {
+  background-color: #ff6b35;
+}
+.exploreBtn:hover {
+  background-color:  #B54C26;
+}
+.joinBtn {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+}
+.joinBtn:hover {
+  background-color: #3D74AE;
+}
+
+.cardParticipation {
+  font-family: var(--font-bahns);
+  margin: 2rem 5rem;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem;
+  box-shadow: 0 1px 7px #00000026;
+  border-radius: 0.5rem;
+}
+
+.communityMem {
+  text-align: center;
+}
+.communityMem h3 {
+  font-size: 1.4rem;
+  color: #0d519a;
+}
+
+.communityMem p {
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.connectionSection {
+  margin: 0 5rem;
+  text-align: center;
+  font-family: var(--font-bahns);
+}
+
+.connectionTitle {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+.connectionDescription {
+  font-size: 0.7rem;
+  font-weight: 400;
+  width: 100%;
   max-width: 600px;
-  margin: 2rem auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  color: #7c8084;
 }
-
-.title {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 1rem;
+.connectionCardsContainer {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  font-family: var(--font-bahns);
 }
-
-.description {
+.connectionCard {
+  box-shadow: 0 4px 8px #0000000a;
+  border-radius: 0.5rem;
+}
+.cardTitle {
+  color: #0d519a;
   font-size: 1.2rem;
-  color: #666;
+  font-weight: 600;
+}
+.cardDescription {
+  color: #2c3e50;
+  font-size: 0.5rem;
+  width: 100%;
+  max-width: 200px;
+  margin: 1rem auto;
+}
+
+.joinCommunitySection {
+  margin: 3rem 5rem;
+  font-family: var(--font-bahns);
+  text-align: center;
+}
+.joinCommunityTitle {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+.joinCommunityDescription {
+  font-size: 0.7rem;
+  font-weight: 400;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #7c8084;
+}
+.communityCard{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  /* column-gap: 8rem; */
+}
+.communityCardEntrepreneur{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.communityCardContent{
+  text-align: start;
+  width: 100%;
+  max-width: 400px;
+}
+.communityCardImage{
+  width: 100%;
+  max-width: 400px;
+}
+.communityCardTitle{
+  font-size: 1.3rem;
+  font-family: var(--font-bahns);
+  font-weight: 600;
+  color: #0D519A;
+}
+.communityCardDescription{
+  color: #2C3E50;
+  font-size: 0.6rem;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 0.5rem;
+}
+
+.communityCardsContainer{
+  margin: 1.2rem 0;
+}
+.joinCommunityButton{
+  /* margin-top: 1rem; */
+  padding: 0.45rem 0.7rem;
+  font-family: var(--font-bahns);
+  font-weight: 600;
+  font-size: 0.68rem;
+  border-radius: 0.6rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #0C4A8C;
+  width: 100%;
+  max-width: 23rem;
+}
+.joinCommunityButton:hover{
+ background-color: #3D74AE;
+}
+
+.whyJoinSection{
+  margin: 3rem 5rem;
+  font-family: var(--font-bahns);
+  text-align: center;
+}
+
+.whyJoinTitle {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+.whyJoinDescription {
+  font-size: 0.7rem;
+  font-weight: 400;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #7c8084;
+  margin: 1rem auto;
+  margin-bottom: 2rem;
+}
+.whyJoinCardsContainer {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  font-family: var(--font-bahns);
+}
+.whyJoinCard {
+  box-shadow: 0 4px 8px #0000000a;
+  border-radius: 0.5rem;
+}
+.whyJoinCardTitle {
+  color: #0d519a;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.whyJoinCardDescription {
+  color: #2c3e50;
+  font-size: 0.5rem;
+  width: 100%;
+  max-width: 200px;
+  margin: 0.5rem auto;
+  margin-bottom: 2rem;
+}
+
+.ctaSection{
+  margin: 2rem 5rem;
+  background-color: #0C4A8C;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  justify-content: space-between;
+  border-radius: 1.1rem;
+}
+.ctaContainer{
+  padding: 1rem 1rem 1rem 1rem;
+}
+.ctaDescription{
+  font-family: var(--font-bahns);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.ctaButton{
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  font-family: var(--font-bahns);
+  background-color: #FF6B35;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.ctaButton:hover{
+   background-color:  #B54C26;
+}
+
+@media screen and (max-width: 1053px) {
+  .ctaSection .ctaImage{
+    width: 500px;
+    height: 400px;
+  }
+  .heroImage{
+    width: 420px;
+    height: 420px;
+  }
+  .heroTextContainer{
+    margin-right: 1rem;
+  }
+}
+@media screen and (max-width: 1030px) {
+  .communityCardContent{
+    margin-left: 2rem;
+  }
+  .communityCardEntrepreneur .communityCardContent{
+    margin-left: 0rem;
+  }
+}
+@media screen and (max-width: 982px) {
+ 
+ /* .communityCardEntrepreneur{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+} */
+.communityCardImage{
+  height: 260px;
+}
+
+.communityImg{
+  width: 350px;
+  height: 290px;
+  object-fit: contain;
+}
+.ctaSection .ctaImage{
+    width: 400px;
+    height: 330px;
+  }
+}
+
+@media screen and (max-width: 982px) {
+ 
+.ctaSection .ctaImage{
+    width: 400px;
+    height: 330px;
+  }
+  .ctaDescription{
+  font-family: var(--font-bahns);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+}
+
+@media screen and (max-width: 900px) {
+ .connectionCardsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-family: var(--font-bahns);
+}
+}
+
+@media screen and (max-width: 870px) {
+   .heroImage{
+    width: 300px;
+    height: 300px;
+  }
+ .connectionCardsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-family: var(--font-bahns);
+}
+.whyJoinCardsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: evenly;
+  align-items: center;
+}
+.ctaSection .ctaImage{
+    width: 400px;
+    height: 350px;
+  }
+  .ctaSection{
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media screen and (max-width: 860px) {
+  .communityCardsContainer .communityCard{
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .communityCardEntrepreneur{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .communityCardEntrepreneur .communityCardContent{
+    order: -1;
+    margin-left: 1.7rem;
+  }
+  .communityCardEntrepreneur .communityCardImage{
+    order: -2;
+  }
+
+  .communityImg{
+    /* width: 400px;
+    height: 300px; */
+    object-fit: contain;
+    margin: 0 auto;
+  }
 }
