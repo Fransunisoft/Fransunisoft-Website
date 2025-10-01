@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./404.module.css";
+import styles from "./not-found.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
