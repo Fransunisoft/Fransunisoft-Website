@@ -2,6 +2,7 @@
 
 import React, { useState, useRef } from 'react';
 import { Mail, Phone, MapPin, Paperclip, X, Send } from 'lucide-react';
+import Image from 'next/image';
 import styles from './contact.module.css'; // fixed filename
 
 function Page() {
@@ -155,15 +156,22 @@ function Page() {
               <input className={styles.input} placeholder="Email Address" type="email" />
               <div className={styles.phoneRow}>
                 <div className={styles.flagSelectWrapper}>
-                  <img src={flagSrc} alt="Country Flag" className={styles.flag} />
+                  <Image
+                    src={flagSrc}
+                    alt="Country Flag"
+                    className={styles.flag}
+                    width={24}
+                    height={16}
+                    unoptimized
+                  />
                   <select 
                     ref={countrySelectRef}
                     className={styles.countryArrow}
                     value={countryCode} 
                     onChange={handleCountryChange}
                   >
-                    <option value="+234">NG</option>
-                    <option value="+1">US</option>
+                    <option value="+234">NGN</option>
+                    <option value="+1">USA</option>
                   </select>
                 </div>
                 <input 
