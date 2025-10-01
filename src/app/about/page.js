@@ -141,7 +141,7 @@ His leadership spans community-driven initiatives, corporate collaborations, and
             </p> <br/>
             <p>
               He is the founder of Fransunisoft, the parent company behind the FSX brand family, which focuses on technology, consulting, events, training, and community building. 
-              Through this ecosystem, he is driving innovation and creating sustainable impact in Africa’s tech and business landscap
+              Through this ecosystem, he is driving innovation and creating sustainable impact in Africa’s tech and business landscape
             </p> <br/>
             <p>
              Beyond his work in business and technology, Seyi actively speaks at conferences, mentors aspiring founders, and champions opportunities for young Africans in the global digital economy.
