@@ -1,16 +1,8 @@
 /** @type {import('next').NextConfig} */
-/* const nextConfig = {};
-
-export default nextConfig;
- */
-
-
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   turbopack: {
-    enabled: true
+    root: import.meta.dirname,  // Keeps root fix for lockfiles
   },
-  // other config options...
-}
+};
 
-export default nextConfig
+export default nextConfig;
