@@ -553,6 +553,14 @@
     margin: 0 4px;
 }
 
+.swiperCustom .productCard {
+  padding-bottom: 32px !important; /* Forces bottom space despite Swiper reset */
+}
+
+.swiperCustom .swiper-slide .productCard {
+  padding: 32px 32px 32px 32px !important; /* Full padding control: 48px bottom for breathing room */
+}
+
 .swiper-pagination-bullet-active {
     background: #2563eb;
     opacity: 1;
@@ -562,7 +570,9 @@
 /* Product card: White rounded card with shadow and flex layout. */
 .productCard {
     width: 384px;
-    height: 405px;
+  
+    min-height: 405px; /* Keeps desktop size, but allows growth for padding/content */
+    height: auto;
     gap: 36px;
     transform: rotate(0deg);
     opacity: 1;
