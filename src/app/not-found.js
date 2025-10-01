@@ -1,5 +1,4 @@
 "use client";
-
 import styles from "./not-found.module.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,3 +27,4 @@ const NotFound = () => {
 };
 
 export default NotFound;
+
