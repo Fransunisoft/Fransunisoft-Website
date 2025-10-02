@@ -3,7 +3,7 @@
 import React, { useState, useRef } from 'react';
 import { Mail, Phone, MapPin, Paperclip, X, Send } from 'lucide-react';
 import Image from 'next/image';
-import styles from './Contact.module.css'; // fixed filename, C not c  
+import styles from './Contact.module.css'; // fixed filename
 
 function Page() {
   const [selectedFile, setSelectedFile] = useState(null); // store File object

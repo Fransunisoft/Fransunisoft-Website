@@ -90,6 +90,14 @@ export default function Footer() {
             >
               <Image src="/Youtube.png" alt="YouTube" width={40} height={40} />
             </a>
+            <a
+              href="https://www.tiktok.com/@fransunisoft"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="tiktok"
+            >
+              <Image src="/tiktok.png" alt="tiktok" width={40} height={40} />
+            </a>
           </div>
         </div>
 
