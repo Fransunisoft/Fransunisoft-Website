@@ -2,7 +2,7 @@
 import '@/app/globals.css';
 import Navbar from '@/components/NavBars';
 import Footer from '@/components/Footer';
-import Contact from '@/components/contact';
+import Contact from '@/components/Contact';
 
 export default function RootLayout({ children }) {
   return (
