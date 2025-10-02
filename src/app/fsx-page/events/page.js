@@ -3,10 +3,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './events.module.css';
+import OurProcess from './component';
 
 // --- DATA: Part 1 Hero Section ---
 const PAGE_TITLE = "FSX Events";
 const PAGE_DESCRIPTION = "We design and execute world-class events that combines cutting-edge technologies and creative storytelling. From intimate corporate gatherings to large-scale brand activations, we transform your vision into unforgettable experiences across Nigeria and Africa.";
+
 
 
 // --- DATA: Part 2 Event Services Section ---
@@ -14,80 +16,83 @@ const ALL_CARDS = [
   // Card 1: Product Launch
   { 
     id: 1, 
-    title: "Card 1: Product Launch",
-    description: "Description for Card 1. This is a shorter summary for the first product launch event.",
+    title: "Product Launch",
+    description: "Create buzz and excitement around your new product with a memorable launch experience that captures media attention and drives sales.",
     linkText: "Discover Product Services",
-    imageSrc: "/images/card1_product_launch.jpg",
+    imageSrc: "/sec2.1.png",
     services: [
-        { text: "C1: Concept development and ideation." },
-        { text: "C1: Full event production and management." },
-        { text: "C1: Strategic marketing and media outreach." },
-        { text: "C1: Comprehensive post-event analysis." },
+        { text: "Strategic reveal moments" },
+        { text: "Media and influencer engagement" },
+        { text: "Interactive product demonstrations" },
+        { text: "Digital and social integration" },
     ],
   }, 
-  // Card 2: Conference Planning
+  
   { 
     id: 2, 
-    title: "Card 2: Conference Planning",
-    description: "Description for Card 2. This focuses on large-scale conference and exhibition planning.",
+    title: "Coporate Mixers",
+    description: "Foster connections and build relationships in a relaxed yet professional setting designed for networking and team building.",
     linkText: "View Conference Solutions",
-    imageSrc: "/images/card2_conference.jpg",
+    imageSrc: "/sec2.2.png",
     services: [
-        { text: "C2: Delegate registration management system." },
-        { text: "C2: Venue sourcing and contract negotiation." },
-        { text: "C2: Speaker and content management process." },
-        { text: "C2: On-site logistics and support staff." },
+        { text: "Strategic networking activities" },
+        { text: "Professional yet relaxed atmosphere" },
+        { text: "Catering and entertainment options" },
+        { text: "Brand-aligned theming" },
     ],
+     
   }, 
-  // Card 3: Gala Dinners & Awards
+  
   { 
     id: 3, 
-    title: "Card 3: Gala Dinners & Awards",
-    description: "Description for Card 3. Detail on high-end gala dinners, award ceremonies, and formal events.",
-    linkText: "Explore Gala Packages",
-    imageSrc: "/images/card3_gala.jpg",
+    title: "Conferences",
+    description: " Host impactful gatherings that educate, inspire, and connect industry leaders through thoughtfully curated content and experiences.",
+    linkText: "Plan Your Conference ",
+    imageSrc: "/sec2.3.png",
     services: [
-        { text: "C3: Custom decor, lighting design, and stage setup." },
-        { text: "C3: Multi-course catering and beverage service." },
-        { text: "C3: VIP management, seating charts, and guest design." },
-        { text: "C3: Entertainment booking and high-quality production." },
+        { text: "Content strategy and speaker management" },
+        { text: "Interactive breakout sessions" },
+        { text: "Networking opportunities" },
+        { text: "Technology integration and live streaming" },
     ],
+
   },  
-  // Card 4: Team Building Retreats
+
   { 
     id: 4, 
-    title: "Card 4: Team Building Retreats",
-    description: "Description for Card 4. Focused on corporate retreats and engaging team-building activities.",
+    title: "Award Ceremonies",
+    description: "Celebrate achievements and honor excellence with a sophisticated ceremony that leaves lasting memories for honorees and attendees",
     linkText: "Book Team Retreats",
-    imageSrc: "/images/card4_retreats.jpg",
+    imageSrc: "/sec2.4.jpg",
     services: [
-        { text: "C4: Destination research and activity planning." },
-        { text: "C4: Full travel, accommodation, and transportation." },
-        { text: "C4: Facilitation of workshops and development sessions." },
-        { text: "C4: Post-event feedback and analysis report preparation." },
+        { text: "Red carpet reception" },
+        { text: "Professional staging and lighting" },
+        { text: "Custom trophy and award design" },
+        { text: "Live entertainment and presentation" },
     ],
   },  
-  // Card 5: Digital & Hybrid Events
+  
   { 
     id: 5, 
-    title: "Card 5: Digital & Hybrid Events",
-    description: "Description for Card 5. Expertise in blending physical and virtual event components.",
+    title: "Team Building Events",
+    description: "Strengthen collaboration and morale with engaging activities designed to improve communication and foster team unity.",
     linkText: "Digital Event Solutions",
-    imageSrc: "/images/card5_hybrid.jpg",
+    imageSrc: "/sec2.5.jpg",
     services: [
-        { text: "C5: Selection and setup of virtual platforms." },
-        { text: "C5: Management of remote speakers and virtual booths." },
-        { text: "C5: Seamless integration of audience experience." },
-        { text: "C5: Detailed digital metrics and participant analytics." },
+        { text: "Customized team challenges" },
+        { text: "Professional facilitators" },
+        { text: "Indoor and outdoor options" },
+        { text: "Post-event assessment and feedback" },
     ],
+
   },  
-  // Card 6: Exhibition Management
+  
   { 
     id: 6, 
     title: "Immersive Experiences",
-    description: "",
+    description: "Transport your audience to new dimensions with cutting-edge engagement and virtual reality technologies that create unforgettable brand moments.",
     linkText: "Create Your Experience",
-    imageSrc: "/images/card6_exhibition.jpg",
+    imageSrc: "/sec2.6.png",
     services: [
         { text: " Custom AR/VR content developments" },
         { text: " Multi-sensory experiences" },
@@ -197,9 +202,9 @@ export default function EventHeroPage() {
               <h2 className={styles.sectionTitle}>Our Event Services</h2>
             </div>
             <div className={styles.subtitleTextLayout}>
-              <p className={styles.sectionSubtitle}>
-                Comprehensive event solutions designed to elevate your brand and engage your audience.
-              </p>
+              <p className={styles.sectionSubtitle}> <b>
+                Comprehensive event solutions designed to elevate your brand and engage your audience. </b>
+              </p> 
             </div>
           </div>
           
@@ -224,11 +229,8 @@ export default function EventHeroPage() {
         </div>
       </section>
       
-      {/* 3. THIRD SECTION will go here */}
-      <section className={`${styles.placeholderSection} ${styles.animated}`} style={{ animationDelay: '1s' }}>
-        <h2 className={styles.placeholderTitle}>Our Process</h2>
-      </section>
-      
+      {/* 3. THIRD SECTION will go here below Component for the slidng cards comes in here */}
+      <OurProcess/> 
     </div>
   );
 }
