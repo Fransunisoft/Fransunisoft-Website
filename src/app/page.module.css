@@ -1,7 +1,7 @@
  
 /* src/app/page.module.css */
 .hero {
-  margin-top: 80px;
+  margin-top: 100px;
   position: relative;
   min-height: 100vh;
   background: linear-gradient(to right, #0D519A, #0D519A, #20A89F );
@@ -43,7 +43,9 @@
 }
 
 .typingText {
+  margin-top: 50px;
   display: inline-block;
+  max-width: auto;
 }
 
 
@@ -92,16 +94,16 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .typewriter {
-    font-size: 0.95rem;
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 480px) {
   .typewriter {
     font-size: 1.55rem;
-    max-width: 350px;
+    max-width: auto;
     margin: 0 auto;
-    margin-right: 1rem;
+    margin-right: 3rem;
   }
 
   /* On mobile: hide desktop break, show mobile break */
@@ -114,6 +116,14 @@
   }
 }
 
+@media (max-width: 375px) {
+  .typewriter {
+    font-size: 1.2rem;
+    max-width: auto;
+    margin: 0rem 0.5rem;
+    margin-right: 3rem;
+  }
+}
 
 
 @keyframes blink {
@@ -354,7 +364,7 @@ border-color: #E1E7EF;
   padding: 20px;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 1px 1px  #2C3E50; 
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); 
   margin-left: 4rem;
 }
 

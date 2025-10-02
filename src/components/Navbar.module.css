@@ -162,6 +162,7 @@
   flex-wrap: nowrap;
 }
   .menuToggle {
+    margin-right: 1rem;
     display: block;
   }
 
@@ -184,6 +185,7 @@
   flex-wrap: nowrap;
 }
   .menuToggle {
+    margin-right: 1rem;
     display: block;
   }
 
@@ -205,6 +207,7 @@
     border-radius: 10px;
     z-index: 1001;
     gap: 1.5rem;
+    margin-right: 1rem;
   }
 
   .navLinks.mobile.active {
@@ -263,6 +266,7 @@
   }
 
   .menuToggle {
+    margin-right: 1rem;
     font-size: 1.6rem;
   }
 
