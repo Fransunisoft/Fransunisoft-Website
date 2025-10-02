@@ -43,8 +43,8 @@ export default function HomePage() {
         <div className={styles.overlay}>
           <h1 className={styles.typewriter}>
             <span className={styles.typingText}>
-              Building Smarter, Scaling<span className={styles.mobileBreak}><br /></span>Faster
-              <span className={styles.desktopBreak}><br /></span> Engineering Experiences, and Empowering Growth
+              Building Smarter, Scaling<span className={styles.mobileBreak}></span> Faster
+              <span className={styles.desktopBreak}></span> <br /> Engineering Experiences, <br />and Empowering Growth
             </span>
           </h1>
 
@@ -186,7 +186,8 @@ export default function HomePage() {
             <h3 className={styles.cardTitle}>FSX Tech</h3>
             <p className={styles.cardTagline}>“Smart Tech. Simplified.”</p>
             <p className={styles.cardDescription}>
-              Comprehensive, affordable, and scalable technology solutions.
+              Computer accessories, gadgets, and electronics procurement providing reliable, affordable enterprise technology solutions.
+
             </p>
             <Link href="/fsx-tech" className={styles.learnMoreBtn}>Learn More</Link>
           </div>
