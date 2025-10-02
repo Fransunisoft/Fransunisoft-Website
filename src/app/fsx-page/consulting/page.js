@@ -1,6 +1,17 @@
+'use client'
 import React from "react";
-import styles from "../styles/consulting.module.css";
+import styles from "./consulting.module.css";
 import Image from "next/image";
+import Link from "next/link";
+
+const scrollToContact = (e) => {
+    e.preventDefault();
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+    closeMobileMenu();
+  };
 
 const Consulting = () => {
   return (
@@ -10,38 +21,59 @@ const Consulting = () => {
         <div className={styles.heroText}>
           <h1>FSX Consulting</h1>
           <p>
-            Businesses don’t just need advice they need strategies that work. 
-            FSX Consulting provides expert guidance for startups and established 
-            enterprises, helping them overcome challenges and unlock growth opportunities 
-            in Nigeria and across Africa.
+            Businesses don’t just need advice they need strategies that work.
+            FSX Consulting provides expert guidance for startups and established
+            enterprises, helping them overcome challenges and unlock growth
+            opportunities in Nigeria and across Africa.
           </p>
           <div className={styles.heroBtns}>
-            <button className={styles.btnPrimary}>Book Consultation</button>
-            <button className={styles.btnSecondary}>Back to Brand Family</button>
+            <Link href="#contact" onClick={scrollToContact}><button className={styles.btnPrimary}>Book Consultation</button></Link>
+            <button className={styles.btnSecondary}>
+              Back to Brand Family
+            </button>
           </div>
-          <p className={styles.subNote}>We have 6K+ Customers across Africa</p>
+          <div className={styles.customers}>
+            <Image
+              src="/customerConsulting.png"
+              alt="customers image"
+              width={153}
+              height={48}
+              className={styles.responsiveImage}
+            />
+            <p className={styles.subNote}>
+              We have 6K+ Customers across Africa
+            </p>
+          </div>
         </div>
         <div className={styles.heroImg}>
           <Image
-          src="/heroConsulting.png"
-          alt="error 404 image"
-          width={380}
-          height={300}
-          className={styles.responsiveImage}
-        />
+            src="/heroConsulting.png"
+            alt="error 404 image"
+            width={700}
+            height={400}
+            className={styles.responsiveImage}
+          />
         </div>
       </section>
 
       {/* Services */}
       <section className={styles.services}>
-        <h2>Our Consulting Services</h2>
-        <p>
-          We bridge the gap between business strategy and technology execution,
-          delivering comprehensive solutions that drive sustainable growth for Nigerian businesses.
-        </p>
+        <div className={styles.sectionHead}>
+          <h2>Our Consulting Services</h2>
+          <p>
+            We bridge the gap between business strategy and technology
+            execution, delivering comprehensive solutions that drive sustainable
+            growth for Nigerian businesses.
+          </p>
+        </div>
+
         <div className={styles.servicesGrid}>
           <div className={styles.card}>
             <h3>Business Consulting</h3>
+            <p>
+              Strategic guidance to optimize operations, improve efficiency, and
+              drive growth.
+            </p>
             <ul>
               <li>Strategy & Development</li>
               <li>Market Analysis & Positioning</li>
@@ -51,6 +83,10 @@ const Consulting = () => {
           </div>
           <div className={styles.card}>
             <h3>Digital Transformation</h3>
+            <p>
+              Modernize your business with cutting-edge technology solutions and
+              digital strategies.
+            </p>
             <ul>
               <li>Technology Strategy</li>
               <li>System Integration</li>
@@ -60,6 +96,10 @@ const Consulting = () => {
           </div>
           <div className={styles.card}>
             <h3>Community Programs</h3>
+            <p>
+              Build engaged communities around your brand and foster meaningful
+              connections.
+            </p>
             <ul>
               <li>Community Strategy</li>
               <li>Engagement Planning</li>
@@ -72,37 +112,161 @@ const Consulting = () => {
 
       {/* Approach */}
       <section className={styles.approach}>
-        <h2>Our Proven Approach</h2>
-        <div className={styles.approachSteps}>
-          <div className={styles.step}>1. Strategic Analysis</div>
-          <div className={styles.step}>2. Solution Design</div>
-          <div className={styles.step}>3. Implementation</div>
-          <div className={styles.step}>4. Optimization</div>
+        <div className={styles.sectionHead}>
+          <h2>Our Proven Approach</h2>
+          <p>
+            We follow a systematic methodology that bridges strategic thinking
+            with practical execution, ensuring every project delivers measurable
+            results and sustainable growth.
+          </p>
+        </div>
+
+        <div className={styles.approachStages}>
+          <div className={styles.approachStagesCardContainer}>
+            <div className={styles.approachStagesCard}>
+              <p className={styles.approachStagesCount}>1</p>
+              <h4>Strategic Analysis</h4>
+              <p>Deep dive into your business goals and challenges</p>
+            </div>
+            <div className={styles.approachStagesCard}>
+              <p className={styles.approachStagesCount}>2</p>
+              <h4>Solution Design</h4>
+              <p>Deep dive into your business goals and challenges</p>
+            </div>
+            <div className={styles.approachStagesCard}>
+              <p className={styles.approachStagesCount}>3</p>
+              <h4>Implementation</h4>
+              <p>Deep dive into your business goals and challenges</p>
+            </div>
+            <div className={styles.approachStagesCard}>
+              <p className={styles.approachStagesCount}>4</p>
+              <h4>Optimization</h4>
+              <p>Deep dive into your business goals and challenges</p>
+            </div>
+          </div>
+
+          <div>
+            <Image
+              src="/approachConsulting.png"
+              alt="consulting approach image"
+              width={500}
+              height={400}
+              className={styles.responsiveImage}
+            />
+          </div>
         </div>
       </section>
 
       {/* Mission */}
       <section className={styles.mission}>
-        <h2>Our Mission</h2>
-        <p>
-          The Core Mission Behind all our work is to equip startups and enterprises 
-          with smart strategies to build smarter and scale faster.
-        </p>
+        <h2 className={styles.sectionHead}>Our Mission</h2>
+        <div className={styles.coreMission}>
+          <Image
+            src="/missionConsulting.png"
+            alt="consulting approach image"
+            width={650}
+            height={350}
+            className={styles.responsiveImage}
+          />
+
+          <div className={styles.coreMissionContainer}>
+            <div className={styles.consultMissionAbout}>
+              <Image
+                src="/consultingMissionIcon.png"
+                alt="consulting coremission icon"
+                width={16}
+                height={16}
+                className={styles.responsiveImage}
+              />
+              <p>About us</p>
+            </div>
+
+            <div className={styles.coreMissionText}>
+              <h3>
+                The Core Mission Behind
+                <span>all our work</span>
+              </h3>
+              <p>
+                Equips startups and enterprises with smart strategies to build
+                smarter and scale faster
+              </p>
+            </div>
+            <Link href="/about">
+              <button className={styles.LearnMoreBtn}>Learn More</button>
+            </Link>
+          </div>
+        </div>
+
         <div className={styles.stats}>
-          <div><h3>12+</h3><p>Years in Business</p></div>
-          <div><h3>100+</h3><p>Projects Delivered</p></div>
-          <div><h3>95%</h3><p>Client Retention Rate</p></div>
-          <div><h3>200+</h3><p>Businesses Impacted</p></div>
+          <div>
+            <h3>12+</h3>
+            <h6>Years in Business</h6>
+            <span className={styles.statp}>A decade of trusted consulting experience.</span>
+          </div>
+          <div>
+            <h3>100+</h3>
+            <h6>Projects Delivered</h6>
+            <span className={styles.statp}>Real-world solution that achieved measurable results</span>
+          </div>
+          <div>
+            <h3>95%</h3>
+            <h6>Client Retention Rate</h6>
+            <span className={styles.statp}>Our clients comes back, which says everything</span>
+          </div>
+          <div>
+            <h3>200+</h3>
+            <h6>Businesses Impacted</h6>
+            <span className={styles.statp}>
+              A lot of business has benefited from our solutions spanrovided.
+            </span>
+          </div>
         </div>
       </section>
 
       {/* Why Us */}
       <section className={styles.whyUs}>
-        <h2>Why Our Expertise Matters</h2>
+        <div className={styles.sectionHead}>
+          <h2>Why Our Expertise Matters</h2>
+          <p>
+            Empowering businesses with expert insights to thrive, adapt, and
+            grow.
+          </p>
+        </div>
+
         <div className={styles.whyGrid}>
-          <div className={styles.card}>Experience</div>
-          <div className={styles.card}>Data Driven Insights</div>
-          <div className={styles.card}>Clients Approach</div>
+          <div className={styles.whyCard}>
+            <Image
+              src="/consultingMissionIcon.png"
+              alt="consulting approach image"
+              width={40}
+              height={40}
+              className={styles.responsiveImage}
+            />
+            <h3>Experience</h3>
+            <p>Decade of insight fuel smarter decisions and faster execution</p>
+          </div>
+          <div className={styles.whyCard}>
+            <Image
+              src="/consultingMissionIcon.png"
+              alt="consulting approach image"
+              width={40}
+              height={40}
+              className={styles.responsiveImage}
+            />
+            <h3>Client Approach</h3>
+            <p>Decade of insight fuel smarter decisions and faster execution</p>
+          </div>
+          <div className={styles.whyCard}>
+            <Image
+              src="/consultingMissionIcon.png"
+              alt="consulting approach image"
+              width={40}
+              height={40}
+              className={styles.responsiveImage}
+            />
+            <h3>Data Driven Insight</h3>
+            <p>Decade of insight fuel smarter decisions and faster execution</p>
+          </div>
         </div>
       </section>
     </div>

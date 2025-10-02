@@ -186,7 +186,8 @@ export default function HomePage() {
             <h3 className={styles.cardTitle}>FSX Tech</h3>
             <p className={styles.cardTagline}>“Smart Tech. Simplified.”</p>
             <p className={styles.cardDescription}>
-              Comprehensive, affordable, and scalable technology solutions.
+              Computer accessories, gadgets, and electronics procurement providing reliable, affordable enterprise technology solutions.
+
             </p>
             <Link href="/fsx-tech" className={styles.learnMoreBtn}>Learn More</Link>
           </div>

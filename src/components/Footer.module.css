@@ -2,7 +2,7 @@
 .footer {
   position: relative;
   color: #F1F5F9;
-  padding: 4rem 2rem 2rem;
+  padding: 3rem 6rem 2rem;
   font-family: 'Inter', sans-serif;
   overflow: visible;
   
@@ -175,6 +175,10 @@
 
 /* 🌐 Small Tablets & Landscape Phones */
 @media (max-width: 768px) {
+
+  .footer{
+    padding: 2rem 3rem 2rem; ;
+  }
   .topSection {
     flex-direction: column;
     align-items: center;
@@ -205,6 +209,10 @@
 
 /* 🌐 Medium Tablets (Surface Pro, iPad Air, iPad Mini) */
 @media (max-width: 1024px) {
+  .footer{
+    padding: 2rem 3rem 2rem;
+  }
+
   .topSection {
     flex-direction: column;
     align-items: flex-start;
@@ -262,7 +270,7 @@
 /* 📱 Mobile Phones */
 @media (max-width: 480px) {
   .footer {
-    padding: 2rem 1rem;
+    padding: 0rem 1rem;
   }
 
   .topSection {
@@ -297,6 +305,13 @@
     gap: 2rem;
     align-items: flex-start;
   }
+
+  .socialIcons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2px;
+
+}
 
   .form {
     flex-direction: column;
