@@ -1,25 +1,6 @@
 /* FSXTech.module.css */
 
 /* =============================================================================
-   GLOBAL RESET AND BASE STYLES
-   ============================================================================= */
-
-/* Reset all elements to ensure consistent box-sizing and remove default margins/padding. */
-:global(*) {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Set base font family, line height, and color for the entire page. Ensure no top margin on body. */
-:global(body) {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    margin-top: 0 !important;
-}
-
-/* =============================================================================
    LAYOUT UTILITIES
    ============================================================================= */
 
@@ -797,7 +778,7 @@
 }
 
 /* Global override for variant8Button to ensure transparency. */
-:global(.variant8Button) {
+.variant8Button {
     background: transparent !important;
     border: 1px solid #E1E7EF !important;
 }
@@ -886,11 +867,15 @@
     line-height: 1.5;
     width: 100%;
     margin: 1rem 0 2rem;
+    height: auto !important;
+    overflow: visible !important;
+    white-space: normal !important;
   }
 
   .heroImage {
     justify-self: center;
-    order: -1; /* Image above text on mobile */
+    order: unset; /* Remove image-first order to match Figma text-first flow */
+    margin-top: 1rem;
   }
 
   .heroImage img {
@@ -900,14 +885,15 @@
   }
 
   .heroActions {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     gap: 1rem;
     width: 100%;
   }
 
   .accentButtonHero,
   .variant8Button {
-    width: 100%;
+    width: auto;
     max-width: 250px;
     justify-content: center;
   }

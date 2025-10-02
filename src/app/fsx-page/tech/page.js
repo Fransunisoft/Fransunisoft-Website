@@ -277,7 +277,7 @@ const App = (props) => {
             </motion.div>
             <motion.div className={styles.aboutImage} variants={itemVariants}>
               <ImageWithFallback 
-                src="/rectangle-22.png" 
+                src="/Workstation.png" 
                 fallback="/placeholder.png"
                 alt="3D Workstation" 
               />
