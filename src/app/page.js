@@ -43,8 +43,8 @@ export default function HomePage() {
         <div className={styles.overlay}>
           <h1 className={styles.typewriter}>
             <span className={styles.typingText}>
-              Building Smarter, Scaling <span className={styles.mobileBreak}><br /></span>Faster
-              <span className={styles.desktopBreak}><br /></span> in Nigeria
+              Building Smarter, Scaling<span className={styles.mobileBreak}><br /></span>Faster
+              <span className={styles.desktopBreak}><br /></span> Engineering Experiences, and Empowering Growth
             </span>
           </h1>
 
