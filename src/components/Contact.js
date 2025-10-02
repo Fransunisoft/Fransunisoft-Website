@@ -1,4 +1,3 @@
-// src/components/Contact.js
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './Contact.module.css';
@@ -43,9 +42,7 @@ export default function Contact() {
 
         // Set Nigeria as default if available
         const nigeria = formatted.find((c) => c.name === 'Nigeria');
-        if (nigeria) {
-          setSelectedCountry(nigeria);
-        }
+        if (nigeria) setSelectedCountry(nigeria);
       })
       .catch((err) => console.error('Failed to fetch countries:', err));
   }, []);
@@ -57,11 +54,7 @@ export default function Contact() {
         setIsOpen(false);
       }
     };
-
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-
+    if (isOpen) document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isOpen]);
 
@@ -75,9 +68,7 @@ export default function Contact() {
     setAttachedFile(file);
   };
 
-  const handleRemoveFile = () => {
-    setAttachedFile(null);
-  };
+  const handleRemoveFile = () => setAttachedFile(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -88,22 +79,13 @@ export default function Contact() {
     try {
       const form = e.target;
       const formData = new FormData(form);
+      if (attachedFile) formData.set('file', attachedFile);
 
-      // Add file if selected
-      if (attachedFile) {
-        formData.set('file', attachedFile);
-      }
-
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        body: formData,
-      });
-
+      const res = await fetch('/api/contact', { method: 'POST', body: formData });
       const data = await res.json();
 
-      if (!res.ok) {
-        setErrorMessage(data.error || 'Failed to send email');
-      } else {
+      if (!res.ok) setErrorMessage(data.error || 'Failed to send email');
+      else {
         setSuccessMessage('✅ Message sent successfully!');
         form.reset();
         setAttachedFile(null);
@@ -120,37 +102,34 @@ export default function Contact() {
   return (
     <section className={styles.contactSection}>
       <div className={styles.container}>
-        {/* Heading */}
         <div className={styles.topContent}>
           <h2 className={styles.contactHeading}>Let’s Build Smarter, Together.</h2>
           <p className={styles.contactLead}>
-Whether you’re looking to host an unforgettable event, scale your business, simplify your technology, or expand your network, FSX is here for you.          </p>
+            Whether you’re looking to host an unforgettable event, scale your business, simplify your technology, or expand your network, FSX is here for you.
+          </p>
         </div>
 
-        {/* Grid */}
         <div className={styles.contactGrid}>
-          {/* Left */}
           <div className={styles.leftColumn}>
             <h3 className={styles.infoTitle}>Contact Information</h3>
-            
             <p className={styles.infoLead}>We’d love to hear from you. please fill out the contact form and we’ll reply soon</p>
             <div className={styles.contactInfo}>
               <div className={styles.infoItem}>
-                <div className={styles.infoIconCircle}></div>
+                <div className={styles.infoIconCircle}><img src="/email.png" alt="Email Icon" /></div>
                 <div className={styles.infoText}>
                   <span className={styles.infoLabel}>Email</span>
                   <span className={styles.infoValue}>hello@fransunisoft.com</span>
                 </div>
               </div>
               <div className={styles.infoItem}>
-                <div className={styles.infoIconCircle}></div>
+                <div className={styles.infoIconCircle}><img src="/Vector (1).png" alt="Phone Icon" /></div>
                 <div className={styles.infoText}>
                   <span className={styles.infoLabel}>Phone</span>
                   <span className={styles.infoValue}>+2348130706942</span>
                 </div>
               </div>
               <div className={styles.infoItem}>
-                <div className={styles.infoIconCircle}></div>
+                <div className={styles.infoIconCircle}><img src="/Vector (2).png" alt="Location Icon" /></div>
                 <div className={styles.infoText}>
                   <span className={styles.infoLabel}>Address</span>
                   <span className={styles.infoValue}>Lagos, Nigeria</span>
@@ -159,88 +138,41 @@ Whether you’re looking to host an unforgettable event, scale your business, si
             </div>
           </div>
 
-          {/* Right/Form */}
           <div className={styles.rightColumn}>
             <h3 className={styles.cardTitle}>Get In Touch</h3>
-            <p className={styles.cardIntro}>Contact Fransunisoft (FSX) today for event management, consulting, technology solutions, training, and networking opportunities in Nigeria</p>
+            <p className={styles.cardIntro}>
+              Contact Fransunisoft (FSX) today for event management, consulting, technology solutions, training, and networking opportunities in Nigeria
+            </p>
 
-            <form
-              className={styles.contactForm}
-              onSubmit={handleSubmit}
-              encType="multipart/form-data"
-            >
-              <div className={styles.formRow}>
-                <input type="text" name="firstName" className={styles.input} placeholder="First Name" required />
-              </div>
-              <div className={styles.formRow}>
-                <input type="text" name="lastName" className={styles.input} placeholder="Last Name" required />
-              </div>
-              <div className={styles.formRow}>
-                <input type="email" name="email" className={styles.input} placeholder="Email" required />
-              </div>
+            <form className={styles.contactForm} onSubmit={handleSubmit} encType="multipart/form-data">
+              <div className={styles.formRow}><input type="text" name="firstName" className={styles.input} placeholder="First Name" required /></div>
+              <div className={styles.formRow}><input type="text" name="lastName" className={styles.input} placeholder="Last Name" required /></div>
+              <div className={styles.formRow}><input type="email" name="email" className={styles.input} placeholder="Email" required /></div>
 
-              {/* Phone Row with Custom Selector */}
+              {/* Phone Row */}
               <div className={styles.formRow}>
                 <div className={styles.phoneRow}>
-                  <div 
-                    ref={countrySelectorWrapperRef}
-                    className={`${styles.countrySelectorWrapper} ${isOpen ? styles.open : ''}`}
-                    onClick={() => setIsOpen(!isOpen)}
-                  >
-                    <img
-                      src={selectedCountry.flag}
-                      alt={selectedCountry.name}
-                      className={styles.flag}
-                    />
+                  <div ref={countrySelectorWrapperRef} className={`${styles.countrySelectorWrapper} ${isOpen ? styles.open : ''}`} onClick={() => setIsOpen(!isOpen)}>
+                    <img src={selectedCountry.flag} alt={selectedCountry.name} className={styles.flag} />
                     <span className={styles.selectArrow}>▼</span>
                     <span className={styles.selectedCode}>{selectedCountry.code}</span>
-
                     {isOpen && (
                       <div className={styles.countryDropdown}>
                         {countries.map((country) => (
-                          <div
-                            key={country.code}
-                            className={styles.countryOption}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleCountrySelect(country);
-                            }}
-                          >
-                            <img 
-                              src={country.flag} 
-                              alt={country.name} 
-                              className={styles.dropdownFlag} 
-                            />
-                            {country.name} ({country.code})
+                          <div key={country.code} className={styles.countryOption} onClick={(e) => { e.stopPropagation(); handleCountrySelect(country); }}>
+                            <img src={country.flag} alt={country.name} className={styles.dropdownFlag} /> {country.name} ({country.code})
                           </div>
                         ))}
                       </div>
                     )}
                   </div>
 
-                  {/* Phone number input */}
-                  <input
-                    type="tel"
-                    name="phoneNumber"
-                    className={styles.phoneInput}
-                    placeholder="8123456789"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    required
-                  />
-
-                  {/* Hidden input → full phone for backend */}
-                  <input
-                    type="hidden"
-                    name="phone"
-                    value={`${selectedCountry.code}${phone}`}
-                  />
+                  <input type="tel" name="phoneNumber" className={styles.phoneInput} placeholder="8123456789" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+                  <input type="hidden" name="phone" value={`${selectedCountry.code}${phone}`} />
                 </div>
               </div>
 
-              <div className={styles.formRow}>
-                <input type="text" name="company" className={styles.input} placeholder="Company" required />
-              </div>
+              <div className={styles.formRow}><input type="text" name="company" className={styles.input} placeholder="Company" required /></div>
               <div className={styles.formRow}>
                 <select name="serviceType" className={styles.select} required>
                   <option value="">Select Service Type</option>
@@ -253,17 +185,10 @@ Whether you’re looking to host an unforgettable event, scale your business, si
               <div className={styles.formRow}>
                 <div className={styles.textareaWrapper}>
                   <textarea name="message" className={styles.textarea} placeholder="Your Message" required></textarea>
-
-                  {/* Attach label with Paperclip */}
                   <label className={styles.attachLabel}>
                     <Paperclip className={styles.attachIcon} />
                     Attach a File
-                    <input
-                      type="file"
-                      name="file"
-                      className={styles.fileInputHidden}
-                      onChange={handleFileChange}
-                    />
+                    <input type="file" name="file" className={styles.fileInputHidden} onChange={handleFileChange} />
                   </label>
                 </div>
               </div>
@@ -272,22 +197,15 @@ Whether you’re looking to host an unforgettable event, scale your business, si
                 <div className={styles.attachedFile}>
                   <div className={styles.filePreviewMeta}>
                     <span className={styles.filePreviewName}>{attachedFile.name}</span>
-                    <span className={styles.filePreviewSize}>
-                      {(attachedFile.size / 1024).toFixed(2)} KB
-                    </span>
+                    <span className={styles.filePreviewSize}>{(attachedFile.size / 1024).toFixed(2)} KB</span>
                   </div>
                   <div className={styles.fileActions}>
-                    <button type="button" className={styles.removeButton} onClick={handleRemoveFile}>
-                      ✕
-                    </button>
+                    <button type="button" className={styles.removeButton} onClick={handleRemoveFile}>✕</button>
                   </div>
                 </div>
               )}
 
-              <button type="submit" className={styles.submitButton} disabled={loading}>
-                {loading ? 'Sending...' : 'Send Message'}
-              </button>
-
+              <button type="submit" className={styles.submitButton} disabled={loading}>{loading ? 'Sending...' : 'Send Message'}</button>
               {successMessage && <p style={{ color: '#16a34a', marginTop: '8px', textAlign: 'center' }}>{successMessage}</p>}
               {errorMessage && <p style={{ color: '#b91c1c', marginTop: '8px', textAlign: 'center' }}>{errorMessage}</p>}
             </form>
