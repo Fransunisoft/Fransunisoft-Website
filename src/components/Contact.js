@@ -1,121 +1,270 @@
 'use client';
 
-import styles from './Contact.module.css';
+import React, { useState, useRef } from 'react';
+import { Mail, Phone, MapPin, Paperclip, X, Send } from 'lucide-react';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import 'react-phone-input-2/lib/style.css';
-import PhoneInput from 'react-phone-input-2';
+import styles from './Contact.module.css'; // fixed filename, C not c  
 
-export default function Contact() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
+function Page() {
+  const [selectedFile, setSelectedFile] = useState(null); // store File object
+  const [message, setMessage] = useState('');
+  const [countryCode, setCountryCode] = useState('+234'); // Default
+  const [phoneNumber, setPhoneNumber] = useState(''); // Local number only
+  const fileInputRef = useRef(null);
+  const countrySelectRef = useRef(null);
+  const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState(null);
 
-  const [phone, setPhone] = useState('');
+  // Flag URL mapping (using Wikimedia SVGs for free, scalable icons)
+  const countryFlags = {
+    '+234': 'https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria.svg', // Nigeria
+    '+1': 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg', // USA
+    // Add more as needed, e.g., '+44': 'https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg',
+  };
+
+  const flagSrc = countryFlags[countryCode] || countryFlags['+234'];
+
+  const handleCountryChange = (e) => {
+    const newCode = e.target.value;
+    setCountryCode(newCode);
+    // Prepend new code to existing number if any, or update placeholder
+    if (phoneNumber) {
+      const localNum = phoneNumber.replace(/^\+\d+\s*/, ''); // Strip old code
+      setPhoneNumber(`${newCode} ${localNum}`);
+    }
+  };
+
+  const handlePhoneChange = (e) => {
+    let value = e.target.value;
+    // Ensure code is prepended if user clears it
+    if (value.startsWith(' ')) {
+      value = `${countryCode}${value}`;
+    } else if (!value.startsWith(countryCode)) {
+      value = `${countryCode} ${value}`;
+    }
+    setPhoneNumber(value);
+  };
+
+  const handleFileChange = (e) => {
+    const f = e.target.files && e.target.files[0];
+    if (f) setSelectedFile(f);
+    else setSelectedFile(null);
+  };
+
+  const removeFile = () => {
+    setSelectedFile(null);
+    if (fileInputRef.current) fileInputRef.current.value = '';
+    setUploadError(null);
+  };
+
+  const formatBytes = (bytes) => {
+    if (!bytes) return '';
+    const sizes = ['B','KB','MB','GB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(1024));
+    return `${(bytes / Math.pow(1024, i)).toFixed(1)} ${sizes[i]}`;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setUploading(true);
+    setUploadError(null);
+    try {
+      const formData = new FormData();
+      formData.append('message', message);
+      if (selectedFile) formData.append('file', selectedFile);
+      formData.append('phone', phoneNumber); // Full phone with code
+      // change endpoint as needed
+      const res = await fetch('/api/contact', { method: 'POST', body: formData });
+      if (!res.ok) throw new Error('Upload failed');
+      // success: reset
+      setSelectedFile(null);
+      if (fileInputRef.current) fileInputRef.current.value = '';
+      setMessage('');
+      setPhoneNumber('');
+    } catch (err) {
+      setUploadError(err.message || 'Upload failed');
+    } finally {
+      setUploading(false);
+    }
+  };
 
   return (
-    <section className={styles.contactSection} data-aos="fade-up">
-      <div className={styles.intro}>
-        <h2 className={styles.mainHeading}>Let’s Build Smarter, Together.</h2>
-        <p className={styles.introText}>
-          Whether you are planning an unforgettable event, scaling your business, simplifying your tech, or expanding your network—FSX is here to help.
-        </p>
-      </div>
-
-      <div className={styles.contactGrid}>
-        {/* Left Column */}
-        <div className={styles.contactInfoBox}>
-          <h3 className={styles.heading}>Contact Information</h3>
-          <p className={styles.hparagraph}>
-            We’d love to hear from you! Please fill out the contact form and we’ll reply soon.
+    <section className={styles.contactSection}>
+      <div className={styles.container}>
+        {/* Top Full-Width: Heading and Paragraph - White on blue, centered */}
+        <div className={styles.topContent}>
+          <h2 className={styles.contactHeading}>Let’s Build Smarter, Together.</h2>
+          <p className={styles.contactLead}>
+            Whether you&#39;re looking to host an unforgettable event, scale your business,
+            simplify your technology, or expand your network, FSX is here for you.
           </p>
-
-          <div className={styles.infoItem}>
-            <div className={styles.labelRow}>
-              <Image src="/contact email.png" alt="Email icon" width={56} height={56} />
-              <p className={styles.paragraph}><strong>Email</strong></p>
-            </div>
-            <p className={styles.subText}>Contact us by email, and we’ll respond shortly</p>
-            <p className={styles.detail}>hello@fransunisoft.com</p>
-          </div>
-
-          <div className={styles.infoItem}>
-            <div className={styles.labelRow}>
-              <Image src="/Phone icon.png" alt="Phone icon" width={56} height={56} />
-              <p className={styles.paragraph}><strong>Phone</strong></p>
-            </div>
-            <p className={styles.subText}>Call us on (Weekdays 9AM - 5PM)</p>
-            <p className={styles.detail}>0800 234 567 89</p>
-          </div>
-
-          <div className={styles.infoItem}>
-            <div className={styles.labelRow}>
-              <Image src="/contact location.png" alt="Location icon" width={56} height={56} />
-              <p className={styles.paragraph}><strong>Location</strong></p>
-            </div>
-            <p className={styles.subText}>Where we are located</p>
-            <p className={styles.detail}>Lagos, Nigeria</p>
-          </div>
         </div>
 
-        {/* Right Column */}
-        <div className={styles.contactActionBox}>
-          <form className={styles.form}>
-            <h3 className={styles.heading}>Get In Touch</h3>
-            <p className={styles.paragraph}>
-              Contact Fransunisoft (FSX) today for event management, consulting, technology solutions, training, and networking opportunities in Nigeria.
+        {/* Grid: Left - Contact Info Icons, Right - Get In Touch Form Card */}
+        <div className={styles.contactGrid}>
+          {/* Left Column: Contact Information with Icons */}
+          <div className={styles.leftColumn}>
+            <h3 className={styles.infoTitle}>Contact Information</h3>
+            <p className={styles.infoLead}>
+              We’d love to hear from you. Please fill out the contact form and we’ll reply soon
+            </p>
+            <div className={styles.contactInfo}>
+              <div className={styles.infoItem}>
+                <div className={styles.infoIconCircle}>
+                  <Mail size={20} color="blue" />
+                </div>
+                <div className={styles.infoText}>
+                  <h6 className={styles.infoLabel}>Email</h6>
+                  <span className={styles.infoValue}>Contact us by email, and we’ll respond shortly</span>
+                  <span className={styles.infoSubValue}>hello@fransunisoft.com</span>
+                </div>
+              </div>
+              <div className={styles.infoItem}>
+                <div className={styles.infoIconCircle}>
+                  <Phone size={20} color="blue" />
+                </div>
+                <div className={styles.infoText}>
+                  <h6 className={styles.infoLabel}>Phone</h6>
+                  <span className={styles.infoValue}>Call us on weekdays from 9AM - 5PM</span>
+                  <span className={styles.infoSubValue}>08130706942</span>
+                </div>
+              </div>
+              <div className={styles.infoItem}>
+                <div className={styles.infoIconCircle}>
+                  <MapPin size={20} color="blue" />
+                </div>
+                <div className={styles.infoText}>
+                  <h6 className={styles.infoLabel}>Location</h6>
+                  <span className={styles.infoValue}>Where we are located</span>
+                  <span className={styles.infoSubValue}>Lagos, Nigeria</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Get In Touch White Card with Intro and Form */}
+          <aside className={styles.rightColumn}>
+            <h3 className={styles.cardTitle}>Get In Touch</h3>
+            <p className={styles.cardIntro}>
+              Contact Fransunisoft (FSX) today for event management, consulting,
+              technology solutions, training, and networking opportunities in Nigeria.
             </p>
 
-            <div className={styles.row}>
-              <input type="text" name="firstName" placeholder="First Name" required />
-              <input type="text" name="lastName" placeholder="Last Name" required />
-            </div>
+            <form className={styles.contactForm} onSubmit={handleSubmit}>
+              <input className={styles.input} placeholder="First Name" type="text" />
+              <input className={styles.input} placeholder="Last Name" type="text" />
+              <input className={styles.input} placeholder="Email Address" type="email" />
+              <div className={styles.phoneRow}>
+                <div className={styles.flagSelectWrapper}>
+                  <Image
+                    src={flagSrc}
+                    alt="Country Flag"
+                    className={styles.flag}
+                    width={24}
+                    height={16}
+                    unoptimized
+                  />
+                  <select 
+                    ref={countrySelectRef}
+                    className={styles.countryArrow}
+                    value={countryCode} 
+                    onChange={handleCountryChange}
+                  >
+                    <option value="+234">NGN</option>
+                    <option value="+1">USA</option>
+                  </select>
+                </div>
+                <input 
+                  className={styles.phoneInput} 
+                  placeholder={`${countryCode} 1234567890`} 
+                  type="tel" 
+                  value={phoneNumber}
+                  onChange={handlePhoneChange}
+                />
+              </div>
+              <select className={`${styles.input} ${styles.select}`}>
+                <option>Service Type</option>
+                <option>Event Management</option>
+                <option>IT Consulting</option>
+                <option>Security</option>
+                <option>Training</option>
+                <option>Networking</option>
+              </select>
+              <input className={styles.input} placeholder="Company" type="text" />
 
-            <div className={styles.row}>
-              <input type="email" name="email" placeholder="Email Address" required />
-             <PhoneInput
-  country={'ng'}
-  value={phone}
-  onChange={setPhone}
-  inputProps={{
-    name: 'phone',
-    required: true,
-    autoFocus: false
-  }}
-  enableSearch
-  placeholder="Phone Number"
-  containerClass={styles.phoneInput}
-  inputClass={styles.phoneField}
-  buttonClass={styles.phoneButton}
-  separateDialCode={true}
-/>
+              {/* textarea with attach UI */}
+              <div className={styles.textareaWrapper}>
+                <textarea
+                  className={styles.textarea}
+                  placeholder="How can we be of help?"
+                  rows={6}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                />
+                {!selectedFile && (
+                  <label
+                    htmlFor="fileUpload"
+                    className={styles.attachLabel}
+                    tabIndex={0}
+                    onKeyDown={(e) => { if (e.key === 'Enter') fileInputRef.current?.click(); }}
+                  >
+                    <Paperclip size={16} />
+                    <span><strong>Attach a file</strong></span>
+                  </label>  
+                )}
+                <input
+                  id="fileUpload"
+                  ref={fileInputRef}
+                  type="file"
+                  className={styles.fileInputHidden}
+                  onChange={handleFileChange}
+                />
+              </div>
 
-            </div>
+              {selectedFile && (
+                <div className={styles.attachedFile}>
+                  <div className={styles.filePreviewIcon}>
+                    <Paperclip size={16} />
+                  </div>
+                  <div className={styles.filePreviewMeta}>
+                    <div className={styles.filePreviewName} title={selectedFile.name}>
+                      {selectedFile.name}
+                    </div>
+                    <div className={styles.filePreviewSize}>{formatBytes(selectedFile.size)}</div>
+                    {uploadError && <div className={styles.fileError}>{uploadError}</div>}
+                  </div>
 
-       <select name="serviceType" required className="brandSelect">
-  <option value="">Select FSX Brand</option>
-  <option value="FSX Consulting">FSX Consulting</option>
-  <option value="FSX Labs">FSX Labs</option>
-  <option value="FSX Tech">FSX Tech</option>
-  <option value="FSX Events">FSX Events</option>
-  <option value="FSX Connect">FSX Connect</option>
-  <option value="FSX Academy">FSX Academy</option>
-</select>
+                  <div className={styles.fileActions}>
+                    <button
+                      type="button"
+                      className={styles.removeButton}
+                      onClick={removeFile}
+                      aria-label="Remove attached file"
+                    >
+                      <X size={14} />
+                    </button>
 
+                    <button
+                      type="submit"
+                      className={styles.sendButton}
+                      disabled={uploading}
+                      aria-disabled={uploading}
+                    >
+                      {uploading ? 'Sending…' : <><Send size={14} /> Send</>}
+                    </button>
+                  </div>
+                </div>
+              )}
 
-            <input type="text" name="company" placeholder="Company" />
-            <textarea name="message" placeholder="How can we be of help?" rows={5} required />
-            <input type="file" name="file" accept=".pdf,.doc,.docx,.jpg,.png" />
-
-            <button type="submit" className={styles.contactBtn}>Contact Us</button>
-          </form>
+              {!selectedFile && (
+                <button className={styles.submitButton} type="submit">Contact Us</button>
+              )}
+            </form>
+          </aside>
         </div>
       </div>
     </section>
   );
 }
+
+export default Page;
