@@ -11,9 +11,6 @@ import {
   CheckCircle,
   ChevronLeft,
   ChevronRight,
-  Mail,
-  Phone,
-  MapPin,
 } from "lucide-react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
@@ -205,16 +202,21 @@ const App = (props) => {
                 and smarter.
               </motion.p>
               <motion.div className={styles.heroActions} variants={itemVariants}>
-                <motion.button 
+                <motion.a 
+                  href="/contact" // Linked to a contact page; adjust if needed
                   className={styles.accentButtonHero}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <span className={styles.getStartedText}>Get Started</span>
-                </motion.button>
-                <motion.button className={styles.variant8Button} whileHover={{ scale: 1.02 }}>
+                </motion.a>
+                <motion.a 
+                  href="/" // Back to brand family overview
+                  className={styles.variant8Button} 
+                  whileHover={{ scale: 1.02 }}
+                >
                   <span className={styles.variant8Text}>Back To Brand Family</span>
-                </motion.button>
+                </motion.a>
               </motion.div>
             </motion.div>
 
@@ -458,13 +460,14 @@ const App = (props) => {
             >
               Need custom configurations or bulk orders?
             </motion.p>
-            <motion.button 
+            <motion.a 
+              href="/contact" // Linked to a contact page for quotes; adjust if needed
               className={styles.accentButton}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
               Request Custom Quote
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
       </motion.section>
