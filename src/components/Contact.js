@@ -1,270 +1,217 @@
 'use client';
+import React, { useState, useEffect, useRef } from 'react';
+import styles from './Contact.module.css';
+import { Paperclip } from 'lucide-react';
 
-import React, { useState, useRef } from 'react';
-import { Mail, Phone, MapPin, Paperclip, X, Send } from 'lucide-react';
-import Image from 'next/image';
-import styles from './Contact.module.css'; // fixed filename
+const getInitialCountries = () => [
+  { name: 'Nigeria', code: '+234', flag: 'https://flagcdn.com/ng.svg', cca2: 'NG' },
+  { name: 'United States', code: '+1', flag: 'https://flagcdn.com/us.svg', cca2: 'US' },
+  { name: 'United Kingdom', code: '+44', flag: 'https://flagcdn.com/gb.svg', cca2: 'GB' },
+  { name: 'India', code: '+91', flag: 'https://flagcdn.com/in.svg', cca2: 'IN' },
+];
 
-function Page() {
-  const [selectedFile, setSelectedFile] = useState(null); // store File object
-  const [message, setMessage] = useState('');
-  const [countryCode, setCountryCode] = useState('+234'); // Default
-  const [phoneNumber, setPhoneNumber] = useState(''); // Local number only
-  const fileInputRef = useRef(null);
-  const countrySelectRef = useRef(null);
-  const [uploading, setUploading] = useState(false);
-  const [uploadError, setUploadError] = useState(null);
+export default function Contact() {
+  const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [attachedFile, setAttachedFile] = useState(null);
 
-  // Flag URL mapping (using Wikimedia SVGs for free, scalable icons)
-  const countryFlags = {
-    '+234': 'https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria.svg', // Nigeria
-    '+1': 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg', // USA
-    // Add more as needed, e.g., '+44': 'https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg',
-  };
+  // Phone state
+  const [countries, setCountries] = useState(getInitialCountries());
+  const [selectedCountry, setSelectedCountry] = useState(getInitialCountries()[0]);
+  const [phone, setPhone] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+  const countrySelectorWrapperRef = useRef(null);
 
-  const flagSrc = countryFlags[countryCode] || countryFlags['+234'];
+  // Fetch countries dynamically
+  useEffect(() => {
+    fetch('https://restcountries.com/v3.1/all?fields=name,cca2,idd')
+      .then((res) => res.json())
+      .then((data) => {
+        const formatted = data
+          .filter((country) => country.idd && country.idd.root)
+          .map((country) => ({
+            name: country.name.common,
+            code: country.idd.root + (country.idd.suffixes ? country.idd.suffixes[0] || '' : ''),
+            flag: `https://flagcdn.com/${country.cca2.toLowerCase()}.svg`,
+            cca2: country.cca2,
+          }))
+          .sort((a, b) => a.name.localeCompare(b.name));
 
-  const handleCountryChange = (e) => {
-    const newCode = e.target.value;
-    setCountryCode(newCode);
-    // Prepend new code to existing number if any, or update placeholder
-    if (phoneNumber) {
-      const localNum = phoneNumber.replace(/^\+\d+\s*/, ''); // Strip old code
-      setPhoneNumber(`${newCode} ${localNum}`);
-    }
-  };
+        setCountries(formatted);
 
-  const handlePhoneChange = (e) => {
-    let value = e.target.value;
-    // Ensure code is prepended if user clears it
-    if (value.startsWith(' ')) {
-      value = `${countryCode}${value}`;
-    } else if (!value.startsWith(countryCode)) {
-      value = `${countryCode} ${value}`;
-    }
-    setPhoneNumber(value);
+        // Set Nigeria as default if available
+        const nigeria = formatted.find((c) => c.name === 'Nigeria');
+        if (nigeria) setSelectedCountry(nigeria);
+      })
+      .catch((err) => console.error('Failed to fetch countries:', err));
+  }, []);
+
+  // Handle click outside country dropdow
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (countrySelectorWrapperRef.current && !countrySelectorWrapperRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    if (isOpen) document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isOpen]);
+
+  const handleCountrySelect = (country) => {
+    setSelectedCountry(country);
+    setIsOpen(false);
   };
 
   const handleFileChange = (e) => {
-    const f = e.target.files && e.target.files[0];
-    if (f) setSelectedFile(f);
-    else setSelectedFile(null);
+    const file = e.target.files[0];
+    setAttachedFile(file);
   };
 
-  const removeFile = () => {
-    setSelectedFile(null);
-    if (fileInputRef.current) fileInputRef.current.value = '';
-    setUploadError(null);
-  };
-
-  const formatBytes = (bytes) => {
-    if (!bytes) return '';
-    const sizes = ['B','KB','MB','GB'];
-    const i = Math.floor(Math.log(bytes) / Math.log(1024));
-    return `${(bytes / Math.pow(1024, i)).toFixed(1)} ${sizes[i]}`;
-  };
+  const handleRemoveFile = () => setAttachedFile(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setUploading(true);
-    setUploadError(null);
+    setLoading(true);
+    setSuccessMessage('');
+    setErrorMessage('');
+
     try {
-      const formData = new FormData();
-      formData.append('message', message);
-      if (selectedFile) formData.append('file', selectedFile);
-      formData.append('phone', phoneNumber); // Full phone with code
-      // change endpoint as needed
+      const form = e.target;
+      const formData = new FormData(form);
+      if (attachedFile) formData.set('file', attachedFile);
+
       const res = await fetch('/api/contact', { method: 'POST', body: formData });
-      if (!res.ok) throw new Error('Upload failed');
-      // success: reset
-      setSelectedFile(null);
-      if (fileInputRef.current) fileInputRef.current.value = '';
-      setMessage('');
-      setPhoneNumber('');
+      const data = await res.json();
+
+      if (!res.ok) setErrorMessage(data.error || 'Failed to send email');
+      else {
+        setSuccessMessage('✅ Message sent successfully!');
+        form.reset();
+        setAttachedFile(null);
+        setPhone('');
+      }
     } catch (err) {
-      setUploadError(err.message || 'Upload failed');
+      setErrorMessage('An unexpected error occurred');
+      console.error(err);
     } finally {
-      setUploading(false);
+      setLoading(false);
     }
   };
 
   return (
     <section className={styles.contactSection}>
       <div className={styles.container}>
-        {/* Top Full-Width: Heading and Paragraph - White on blue, centered */}
         <div className={styles.topContent}>
           <h2 className={styles.contactHeading}>Let’s Build Smarter, Together.</h2>
           <p className={styles.contactLead}>
-            Whether you&#39;re looking to host an unforgettable event, scale your business,
-            simplify your technology, or expand your network, FSX is here for you.
+            Whether you’re looking to host an unforgettable event, scale your business, simplify your technology, or expand your network, FSX is here for you.
           </p>
         </div>
 
-        {/* Grid: Left - Contact Info Icons, Right - Get In Touch Form Card */}
         <div className={styles.contactGrid}>
-          {/* Left Column: Contact Information with Icons */}
           <div className={styles.leftColumn}>
             <h3 className={styles.infoTitle}>Contact Information</h3>
-            <p className={styles.infoLead}>
-              We’d love to hear from you. Please fill out the contact form and we’ll reply soon
-            </p>
+            <p className={styles.infoLead}>We’d love to hear from you. please fill out the contact form and we’ll reply soon</p>
             <div className={styles.contactInfo}>
               <div className={styles.infoItem}>
-                <div className={styles.infoIconCircle}>
-                  <Mail size={20} color="blue" />
-                </div>
+                <div className={styles.infoIconCircle}><img src="/email.png" alt="Email Icon" /></div>
                 <div className={styles.infoText}>
-                  <h6 className={styles.infoLabel}>Email</h6>
-                  <span className={styles.infoValue}>Contact us by email, and we’ll respond shortly</span>
-                  <span className={styles.infoSubValue}>hello@fransunisoft.com</span>
+                  <span className={styles.infoLabel}>Email</span>
+                  <span className={styles.infoValue}>hello@fransunisoft.com</span>
                 </div>
               </div>
               <div className={styles.infoItem}>
-                <div className={styles.infoIconCircle}>
-                  <Phone size={20} color="blue" />
-                </div>
+                <div className={styles.infoIconCircle}><img src="/Vector (1).png" alt="Phone Icon" /></div>
                 <div className={styles.infoText}>
-                  <h6 className={styles.infoLabel}>Phone</h6>
-                  <span className={styles.infoValue}>Call us on weekdays from 9AM - 5PM</span>
-                  <span className={styles.infoSubValue}>08130706942</span>
+                  <span className={styles.infoLabel}>Phone</span>
+                  <span className={styles.infoValue}>+2348130706942</span>
                 </div>
               </div>
               <div className={styles.infoItem}>
-                <div className={styles.infoIconCircle}>
-                  <MapPin size={20} color="blue" />
-                </div>
+                <div className={styles.infoIconCircle}><img src="/Vector (2).png" alt="Location Icon" /></div>
                 <div className={styles.infoText}>
-                  <h6 className={styles.infoLabel}>Location</h6>
-                  <span className={styles.infoValue}>Where we are located</span>
-                  <span className={styles.infoSubValue}>Lagos, Nigeria</span>
+                  <span className={styles.infoLabel}>Address</span>
+                  <span className={styles.infoValue}>Lagos, Nigeria</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Get In Touch White Card with Intro and Form */}
-          <aside className={styles.rightColumn}>
+          <div className={styles.rightColumn}>
             <h3 className={styles.cardTitle}>Get In Touch</h3>
             <p className={styles.cardIntro}>
-              Contact Fransunisoft (FSX) today for event management, consulting,
-              technology solutions, training, and networking opportunities in Nigeria.
+              Contact Fransunisoft (FSX) today for event management, consulting, technology solutions, training, and networking opportunities in Nigeria
             </p>
 
-            <form className={styles.contactForm} onSubmit={handleSubmit}>
-              <input className={styles.input} placeholder="First Name" type="text" />
-              <input className={styles.input} placeholder="Last Name" type="text" />
-              <input className={styles.input} placeholder="Email Address" type="email" />
-              <div className={styles.phoneRow}>
-                <div className={styles.flagSelectWrapper}>
-                  <Image
-                    src={flagSrc}
-                    alt="Country Flag"
-                    className={styles.flag}
-                    width={24}
-                    height={16}
-                    unoptimized
-                  />
-                  <select 
-                    ref={countrySelectRef}
-                    className={styles.countryArrow}
-                    value={countryCode} 
-                    onChange={handleCountryChange}
-                  >
-                    <option value="+234">NGN</option>
-                    <option value="+1">USA</option>
-                  </select>
+            <form className={styles.contactForm} onSubmit={handleSubmit} encType="multipart/form-data">
+              <div className={styles.formRow}><input type="text" name="firstName" className={styles.input} placeholder="First Name" required /></div>
+              <div className={styles.formRow}><input type="text" name="lastName" className={styles.input} placeholder="Last Name" required /></div>
+              <div className={styles.formRow}><input type="email" name="email" className={styles.input} placeholder="Email" required /></div>
+
+              {/* Phone Row */}
+              <div className={styles.formRow}>
+                <div className={styles.phoneRow}>
+                  <div ref={countrySelectorWrapperRef} className={`${styles.countrySelectorWrapper} ${isOpen ? styles.open : ''}`} onClick={() => setIsOpen(!isOpen)}>
+                    <img src={selectedCountry.flag} alt={selectedCountry.name} className={styles.flag} />
+                    <span className={styles.selectArrow}>▼</span>
+                    <span className={styles.selectedCode}>{selectedCountry.code}</span>
+                    {isOpen && (
+                      <div className={styles.countryDropdown}>
+                        {countries.map((country) => (
+                          <div key={country.code} className={styles.countryOption} onClick={(e) => { e.stopPropagation(); handleCountrySelect(country); }}>
+                            <img src={country.flag} alt={country.name} className={styles.dropdownFlag} /> {country.name} ({country.code})
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  <input type="tel" name="phoneNumber" className={styles.phoneInput} placeholder="8123456789" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+                  <input type="hidden" name="phone" value={`${selectedCountry.code}${phone}`} />
                 </div>
-                <input 
-                  className={styles.phoneInput} 
-                  placeholder={`${countryCode} 1234567890`} 
-                  type="tel" 
-                  value={phoneNumber}
-                  onChange={handlePhoneChange}
-                />
-              </div>
-              <select className={`${styles.input} ${styles.select}`}>
-                <option>Service Type</option>
-                <option>Event Management</option>
-                <option>IT Consulting</option>
-                <option>Security</option>
-                <option>Training</option>
-                <option>Networking</option>
-              </select>
-              <input className={styles.input} placeholder="Company" type="text" />
-
-              {/* textarea with attach UI */}
-              <div className={styles.textareaWrapper}>
-                <textarea
-                  className={styles.textarea}
-                  placeholder="How can we be of help?"
-                  rows={6}
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                />
-                {!selectedFile && (
-                  <label
-                    htmlFor="fileUpload"
-                    className={styles.attachLabel}
-                    tabIndex={0}
-                    onKeyDown={(e) => { if (e.key === 'Enter') fileInputRef.current?.click(); }}
-                  >
-                    <Paperclip size={16} />
-                    <span><strong>Attach a file</strong></span>
-                  </label>  
-                )}
-                <input
-                  id="fileUpload"
-                  ref={fileInputRef}
-                  type="file"
-                  className={styles.fileInputHidden}
-                  onChange={handleFileChange}
-                />
               </div>
 
-              {selectedFile && (
+              <div className={styles.formRow}><input type="text" name="company" className={styles.input} placeholder="Company" required /></div>
+              <div className={styles.formRow}>
+                <select name="serviceType" className={styles.select} required>
+                  <option value="">Select Service Type</option>
+                  <option value="Consulting">Consulting</option>
+                  <option value="Support">Support</option>
+                  <option value="Development">Development</option>
+                </select>
+              </div>
+
+              <div className={styles.formRow}>
+                <div className={styles.textareaWrapper}>
+                  <textarea name="message" className={styles.textarea} placeholder="Your Message" required></textarea>
+                  <label className={styles.attachLabel}>
+                    <Paperclip className={styles.attachIcon} />
+                    Attach a File
+                    <input type="file" name="file" className={styles.fileInputHidden} onChange={handleFileChange} />
+                  </label>
+                </div>
+              </div>
+
+              {attachedFile && (
                 <div className={styles.attachedFile}>
-                  <div className={styles.filePreviewIcon}>
-                    <Paperclip size={16} />
-                  </div>
                   <div className={styles.filePreviewMeta}>
-                    <div className={styles.filePreviewName} title={selectedFile.name}>
-                      {selectedFile.name}
-                    </div>
-                    <div className={styles.filePreviewSize}>{formatBytes(selectedFile.size)}</div>
-                    {uploadError && <div className={styles.fileError}>{uploadError}</div>}
+                    <span className={styles.filePreviewName}>{attachedFile.name}</span>
+                    <span className={styles.filePreviewSize}>{(attachedFile.size / 1024).toFixed(2)} KB</span>
                   </div>
-
                   <div className={styles.fileActions}>
-                    <button
-                      type="button"
-                      className={styles.removeButton}
-                      onClick={removeFile}
-                      aria-label="Remove attached file"
-                    >
-                      <X size={14} />
-                    </button>
-
-                    <button
-                      type="submit"
-                      className={styles.sendButton}
-                      disabled={uploading}
-                      aria-disabled={uploading}
-                    >
-                      {uploading ? 'Sending…' : <><Send size={14} /> Send</>}
-                    </button>
+                    <button type="button" className={styles.removeButton} onClick={handleRemoveFile}>✕</button>
                   </div>
                 </div>
               )}
 
-              {!selectedFile && (
-                <button className={styles.submitButton} type="submit">Contact Us</button>
-              )}
+              <button type="submit" className={styles.submitButton} disabled={loading}>{loading ? 'Sending...' : 'Send Message'}</button>
+              {successMessage && <p style={{ color: '#16a34a', marginTop: '8px', textAlign: 'center' }}>{successMessage}</p>}
+              {errorMessage && <p style={{ color: '#b91c1c', marginTop: '8px', textAlign: 'center' }}>{errorMessage}</p>}
             </form>
-          </aside>
+          </div>
         </div>
       </div>
     </section>
   );
 }
-
-export default Page;
