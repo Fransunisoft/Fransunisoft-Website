@@ -74,8 +74,8 @@ export default function FsxConnect() {
               <Image
                 src="/networkIcon.svg"
                 alt="Network Icon"
-                width={40}
-                height={40}
+                width={60}
+                height={60}
                 className={styles.cardIcon}
               />
               <h5 className={styles.cardTitle}>Professional Networks</h5>
@@ -89,8 +89,8 @@ export default function FsxConnect() {
               <Image
                 src="/investor-relations-icon.svg"
                 alt="Investor Relations Icon"
-                width={40}
-                height={40}
+                width={60}
+                height={60}
                 className={styles.cardIcon}
               />
               <h5 className={styles.cardTitle}>Investor Relations</h5>
@@ -104,8 +104,8 @@ export default function FsxConnect() {
               <Image
                 src="/mentor-matching-icon.svg"
                 alt="Mentor Matching Icon"
-                width={40}
-                height={40}
+                width={60}
+                height={60}
                 className={styles.cardIcon}
               />
               <h5 className={styles.cardTitle}>Mentorship Matching</h5>
@@ -119,8 +119,8 @@ export default function FsxConnect() {
               <Image
                 src="/networkIcon.svg"
                 alt="Startup Ecosystem Icon"
-                width={40}
-                height={40}
+                width={60}
+                height={60}
                 className={styles.cardIcon}
               />
               <h5 className={styles.cardTitle}>Startup Ecosystem</h5>
@@ -134,8 +134,8 @@ export default function FsxConnect() {
               <Image
                 src="/partnership-oppurtunity-icon.svg"
                 alt="Partnership Opportunity Icon"
-                width={40}
-                height={40}
+                width={60}
+                height={60}
                 className={styles.cardIcon}
               />
               <h5 className={styles.cardTitle}>Partnership Opportunities</h5>
@@ -148,8 +148,8 @@ export default function FsxConnect() {
               <Image
                 src="/networkIcon.svg"
                 alt="Executive network Icon"
-                width={40}
-                height={40}
+                width={60}
+                height={60}
                 className={styles.cardIcon}
               />
               <h5 className={styles.cardTitle}>Executive Network</h5>
@@ -190,7 +190,7 @@ export default function FsxConnect() {
                 </p>
               </div>
             </div>
-            <div className={styles.communityCardEntrepreneur}>
+            <div className={styles.communityCard}>
               <div className={styles.communityCardContent}>
                 <h5 className={styles.communityCardTitle}>
                   Entrepreneurs Network
@@ -246,8 +246,8 @@ export default function FsxConnect() {
           <div className={styles.whyJoinCardsContainer}>
             <div className={styles.whyJoinCard}>
               <Image
-                width={40}
-                height={40}
+                width={60}
+                height={60}
                 src="/accelerated-growth-icon.svg"
                 alt="Accelerated growth Icon"
               />
@@ -259,8 +259,8 @@ export default function FsxConnect() {
             </div>
             <div className={styles.whyJoinCard}>
               <Image
-                width={40}
-                height={40}
+                width={60}
+                height={60}
                 src="/diverse-community-icon.svg"
                 alt="Diverse Community Icon"
               />
@@ -273,8 +273,8 @@ export default function FsxConnect() {
 
             <div className={styles.whyJoinCard}>
               <Image
-                width={40}
-                height={40}
+                width={60}
+                height={60}
                 src="/innovation-hub-icon.svg"
                 alt="Innovation Hub Icon"
               />

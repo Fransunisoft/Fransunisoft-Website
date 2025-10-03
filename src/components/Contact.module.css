@@ -163,6 +163,12 @@
   color: #0D519A;
 }
 
+.infoIconCircle img {
+  width: 20px;
+  height: 20px;
+  color: #0D519A;
+}
+
 .infoText {
   flex: 1;
   display: flex;
@@ -248,7 +254,7 @@
   font-family: Roboto, sans-serif;
   font-size: 16px;
   color: #2C3E50;
-  background: #FFFFFF;
+  background: #FAFDFF;
   transition: border-color 0.3s;
   box-sizing: border-box;
 }
@@ -258,7 +264,7 @@
 .textarea:focus {
   outline: none;
   border-color: transparent;
-  box-shadow: 0 0 0 2px rgba(13, 81, 154, 0.2); /* Subtle ring, no bold border */
+  box-shadow: 0 0 0 3px rgba(13, 81, 154, 0.3); /* Sharper focus: thicker (3px) and more opaque ring */
 }
 
 .input::placeholder,
@@ -289,7 +295,7 @@
   font-size: 20px;
   line-height: 100%;
   letter-spacing: 0%;
-  text-align: center;
+  text-align: left;
   vertical-align: middle;
   color: #A0A5AA;
   opacity: 1;
@@ -339,10 +345,10 @@
 
 .phoneRow {
   display: flex;
-  align-items: center;
+  align-items: center; /* Reinforce vertical uniformity */
   border: none;
   border-radius: 10px; /* Overall row radius for full uniformity */
-  background: transparent;
+  background: #FAFDFF; /* Unified subtle bg like other inputs */
   height: 80px;
   overflow: visible;
   width: 100%;
@@ -350,47 +356,91 @@
   box-sizing: border-box;
   padding: 0;
   gap: 0; /* No space between wrapper and input for seamless border */
+  position: relative; /* For unified focus ring */
+  transition: box-shadow 0.3s; /* Smooth unified focus */
 }
 
-.flagSelectWrapper {
+.phoneRow:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13, 81, 154, 0.3); /* Apply focus ring to entire row */
+}
+
+.phoneRow:focus-within .countrySelectorWrapper,
+.phoneRow:focus-within input {
+  border-color: transparent !important; /* Force transparent borders on both parts for unified focus */
+}
+
+.countrySelectorWrapper {
+  position: relative;
   display: flex;
-  align-items: center;
-  gap: 0; /* No gap between flag and select */
-  padding: 20px 4px 20px 24px; /* Minimal right padding to hug select */
-  background: transparent;
-  border: none;
+  align-items: center; /* Match input's vertical centering */
+  gap: 4px; /* Tiny gap only for flag/code/arrow internals—keeps overall tight */
+  cursor: pointer;
+  padding: 20px 12px 20px 24px; /* Standardized: match input's 20/24, but right=12px to hug code without squeeze */
+  background: #FAFDFF; /* Match input bg for uniformity; was transparent */
+  border: 1px solid #A0A5AA; /* Add matching border; was none */
+  border-top-left-radius: 10px; /* Left-half radius to join input seamlessly */
+  border-bottom-left-radius: 10px;
   height: 100%;
   flex-shrink: 0;
+  outline: none;
+  width: auto;
+  min-width: 80px; /* Prevent collapse on short codes */
+  box-sizing: border-box; /* Consistent sizing */
+  transition: border-color 0.3s; /* Individual transition, but overridden by row */
+}
+
+.countrySelectorWrapper.open .selectArrow {
+  transform: rotate(180deg);
+}
+
+.countrySelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 2;
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  background: transparent;
+  font-size: 1px;
+}
+
+.countrySelectorWrapper:hover .selectArrow,
+.countrySelectorWrapper:focus-within .selectArrow {
+  color: #0D519A;
+}
+
+.selectArrow {
+  margin: 0 0 0 4px; /* Adjusted for better hug after gap tweak */
+  font-size: 12px;
+  font-weight: bold;
+  color: #A0A5AA;
+  transition: color 0.2s, transform 0.2s;
+  flex-shrink: 0;
+  pointer-events: none; /* Prevent arrow from blocking clicks */
+}
+
+.selectedCode {
+  font-family: Bahnschrift, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #A0A5AA;
+  line-height: 1; /* Matches placeholder line-height for baseline uniformity */
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 .flag {
   width: 32px;
   height: 20px;
   flex-shrink: 0;
-  margin-right: 4px; /* Small space between flag and code */
+  margin-right: 4px; /* Small space between flag and code—unchanged */
   pointer-events: none; /* Let clicks pass through visual elements */
   border-radius: 4px;
-}
-
-.phoneRow .select {
-  width: auto;
-  min-width: 50px;
-  border: none;
-  background: transparent;
-  background-position: right 0 center; /* Arrow hugs the code text */
-  background-size: 12px;
-  padding: 0 8px 0 0; /* Minimal padding */
-  margin: 0;
-  font-size: 20px;
-  font-family: Bahnschrift, sans-serif;
-  font-weight: 400;
-  color: #d6dce1;
-  line-height: 1;
-  height: auto;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  cursor: pointer;
-  appearance: none;
 }
 
 .phoneRow input {
@@ -398,15 +448,16 @@
   height: 100%;
   border: 1px solid #A0A5AA; /* Add matching border for uniformity; was none */
   border-left: none; /* Remove left border on input to avoid double-line join */
-  border-radius: 0 10px 10px 0; /* Right-half radius to complete the row */
-  padding: 20px 24px; /* Full padding like other inputs; was 20px 24px 20px 0 */
+  border-top-right-radius: 10px; /* Right-half radius to complete the row */
+  border-bottom-right-radius: 10px;
+  padding: 20px 24px; /* Full padding like other inputs—unchanged, now matches selector vertically */
   font-family: Roboto, sans-serif;
   font-size: 16px;
   color: #2C3E50; /* Darker text to match other inputs; was #7e8790 (too light) */
   background: #FAFDFF; /* Subtle off-white bg for less stark feel; transparent blended but now uniform */
   margin: 0;
   box-sizing: border-box; /* Ensure consistent sizing */
-  transition: border-color 0.3s, box-shadow 0.3s; /* Add transition for smooth focus */
+  transition: border-color 0.3s; /* Individual transition, but overridden by row */
 }
 
 .phoneRow input::placeholder {
@@ -415,12 +466,19 @@
   font-size: 20px;
   color: #A0A5AA;
   opacity: 1;
+  line-height: 1; /* Matches code's line-height for perfect baseline */
 }
 
-.phoneRow input:focus {
-  outline: none;
-  border-color: transparent;
-  box-shadow: 0 0 0 3px rgba(13, 81, 154, 0.3); /* Sharper focus: thicker (3px) and more opaque ring; was missing */
+/* Autofill styles to match background and prevent disjoint yellow */
+.phoneRow input:-webkit-autofill,
+.phoneRow input:-webkit-autofill:hover,
+.phoneRow input:-webkit-autofill:focus,
+.phoneRow input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #FAFDFF inset !important;
+  box-shadow: 0 0 0 1000px #FAFDFF inset !important;
+  -webkit-text-fill-color: #2C3E50 !important;
+  background-color: #FAFDFF !important;
+  transition: background-color 5000s ease-in-out 0s !important; /* Smooth fade if needed */
 }
 
 .phoneInput {
@@ -620,75 +678,6 @@
   cursor: default;
 }
 
-.countrySelectorWrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0;
-  cursor: pointer;
-  padding: 20px 8px 20px 24px;
-  background: #FAFDFF; /* Match input bg for uniformity; was transparent */
-  border: 1px solid #A0A5AA; /* Add matching border; was none */
-  border-radius: 10px 0 0 10px; /* Left-half radius to join input seamlessly */
-  height: 100%;
-  flex-shrink: 0;
-  outline: none;
-  width: auto;
-  min-width: 80px;
-  box-sizing: border-box; /* Consistent sizing */
-  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth focus like inputs */
-}
-
-.countrySelectorWrapper.open .selectArrow {
-  transform: rotate(180deg);
-}
-
-.countrySelectorWrapper:focus-within {
-  outline: none;
-  border-color: transparent;
-  box-shadow: 0 0 0 3px rgba(13, 81, 154, 0.3); /* Sharper focus ring on click/tap */
-}
-
-.countrySelect {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  z-index: 2;
-  cursor: pointer;
-  appearance: none;
-  border: none;
-  background: transparent;
-  font-size: 1px;
-}
-
-.countrySelectorWrapper:hover .selectArrow,
-.countrySelectorWrapper:focus-within .selectArrow {
-  color: #0D519A;
-}
-
-.selectArrow {
-  margin: 0 4px;
-  font-size: 12px;
-  font-weight: bold;
-  color: #A0A5AA;
-  transition: color 0.2s, transform 0.2s;
-  flex-shrink: 0;
-  pointer-events: none; /* Prevent arrow from blocking clicks */
-}
-
-.selectedCode {
-  font-family: Bahnschrift, sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  color: #A0A5AA;
-  line-height: 1;
-  white-space: nowrap;
-  pointer-events: none;
-}
-
 /* Custom Dropdown Styles */
 .countryDropdown {
   position: absolute;
@@ -884,7 +873,8 @@
     padding: 12px 14px;
   }
 
-  .infoIconCircle svg {
+  .infoIconCircle svg,
+  .infoIconCircle img {
     width: 18px;
     height: 18px;
   }
@@ -958,14 +948,28 @@
     flex-direction: column; /* Stack flag/select over input for narrow screens */
     padding: 12px;
     overflow: visible;
+    border-radius: 12px; /* Unified radius on mobile */
   }
 
-  .flagSelectWrapper {
+  .phoneRow:focus-within {
+    box-shadow: 0 0 0 3px rgba(13, 81, 154, 0.3);
+  }
+
+  .phoneRow:focus-within .countrySelectorWrapper,
+  .phoneRow:focus-within input {
+    border-color: transparent !important;
+  }
+
+  .countrySelectorWrapper {
     width: 100%;
     justify-content: center;
     padding: 8px 0;
     margin-bottom: 8px;
     border-bottom: 1px solid #E5E7EB; /* Visual separator */
+    border-radius: 12px 12px 0 0;
+    min-width: auto;
+    border: 1px solid #A0A5AA;
+    border-bottom: none;
   }
 
   .flag {
@@ -980,6 +984,9 @@
     padding: 0 0 0 12px;
     text-align: center; /* Center for better mobile feel */
     height: 40px;
+    border-radius: 0 0 12px 12px;
+    border: 1px solid #A0A5AA;
+    border-top: none;
   }
 
   .phoneRow input::placeholder {
@@ -1111,4 +1118,4 @@
       width: 100vw;
     }
   }
-}
+} 
