@@ -46,8 +46,8 @@ export async function POST(request) {
       port: 587,
       secure: false,
       auth: {
-        user: process.env.EMAIL_USER, 
-        pass: process.env.EMAIL_PASS,
+        user: "mrchidubem8@gmail.com", 
+        pass: "uyosmsrgampbbqla", // Replace with your actual Gmail app password
       },
     });
 
@@ -82,8 +82,8 @@ export async function POST(request) {
 
     // ✅ Send email
     const info = await transporter.sendMail({
-      from: `"FSX Tech Contact" <${process.env.EMAIL_USER}>`,
-      to: process.env.RECIPIENT_EMAIL, // secure recipient
+      from: `"FSX Tech Contact" <mrchidubem8@gmail.com>`,
+      to: "mrchidubem9@gmail.com", // Hardcoded recipient
       subject: `Contact Form Submission - ${firstName} ${lastName}`,
       html: htmlContent,
     });
