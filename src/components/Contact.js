@@ -47,7 +47,7 @@ export default function Contact() {
       .catch((err) => console.error('Failed to fetch countries:', err));
   }, []);
 
-  // Handle click outside country dropdown
+  // Handle click outside country dropdow
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (countrySelectorWrapperRef.current && !countrySelectorWrapperRef.current.contains(event.target)) {
