@@ -12,6 +12,7 @@ html {
   background-color: white;
 }
 .fsxSection {
+    margin-top: 100px;
   display: flex !important;
   justify-content: center !important;
   flex-direction: column !important;
@@ -23,12 +24,7 @@ html {
 }
 
 .heroSection {
-  background: linear-gradient(
-    to right,
-    /* direction of the gradient */ #0d519a,
-    /* solid blue */ #0d519ab2,
-    /* blue with transparency */ #20a89fb2 /* teal with transparency */
-  );
+   background: linear-gradient(to bottom right, #0d519a 10%, #0d519a 55%, #ffffff 150%);
   color: #ffffff;
   padding: 0rem 5rem;
   display: flex;
@@ -37,12 +33,12 @@ html {
 }
 .heroTitle {
   font-family: var(--font-bahns);
-  font-size: 2.1rem;
-  font-weight: 700;
+font-size: 2.5rem;
+    font-weight: 700;
 }
 .heroDescription {
-  font-size: 0.7rem;
-  font-weight: 500;
+ font-size: 0.88rem;
+    font-weight: 500;
   margin: 1rem 0;
   width: 100%;
   max-width: 450px;
@@ -52,19 +48,18 @@ html {
   display: flex;
   gap: 1rem;
 }
-.exploreBtn,
-.joinBtn {
-  padding: 0.45rem 0.7rem;
+
+.exploreBtn, .joinBtn{
+  color: white;
+  padding: 0.75rem 0rem;
+  border: none;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+  max-width: 11rem;
   font-family: var(--font-roboto);
   font-weight: 500;
-  font-size: 0.9rem;
-  border-radius: 0.6rem;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  font-size: 0.64rem;
-  font-weight: 500;
-  color: #ffffff;
 }
 .exploreBtn {
   background-color: #ff6b35;
@@ -96,12 +91,13 @@ html {
   text-align: center;
 }
 .communityMem h3 {
-  font-size: 1.4rem;
+  font-size: 2.2rem;
   color: #0d519a;
+  line-height: 48px;
 }
 
 .communityMem p {
-  font-size: 0.7rem;
+  font-size: 1.1rem;
   font-weight: 600;
   margin-top: 0.5rem;
 }
@@ -113,15 +109,16 @@ html {
 }
 
 .connectionTitle {
-  font-size: 1.7rem;
+  font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 0.6rem;
+  line-height: 48px;
 }
 .connectionDescription {
-  font-size: 0.7rem;
+  font-size: 1.1rem;
   font-weight: 400;
   width: 100%;
-  max-width: 33.3rem;
+  /* max-width: 33.3rem; */
   margin: 0 auto;
   color: #7c8084;
 }
@@ -138,14 +135,16 @@ html {
 }
 .cardTitle {
   color: #0d519a;
-  font-size: 1.2rem;
+  font-size: 1.55rem;
   font-weight: 600;
+  line-height: 33.6px;
 }
 .cardDescription {
   color: #2c3e50;
-  font-size: 0.5rem;
+  font-size: 0.88rem;
   width: 100%;
-  max-width: 11.11rem;
+  padding: 0.5rem;
+  /* max-width: 13.11rem; */
   margin: 1rem auto;
 }
 
@@ -155,12 +154,13 @@ html {
   text-align: center;
 }
 .joinCommunityTitle {
-  font-size: 1.7rem;
+  font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 0.6rem;
+  line-height: 48px;
 }
 .joinCommunityDescription {
-  font-size: 0.7rem;
+  font-size: 0.88rem;
   font-weight: 400;
   width: 100%;
   max-width: 600px;
@@ -177,11 +177,11 @@ html {
   justify-content: center; */
   /* column-gap: 8rem; */
 }
-.communityCardEntrepreneur{
+/* .communityCardEntrepreneur{
   display: flex;
   align-items: center;
   gap: 1rem;
-}
+} */
 
 .communityCardContent{
   text-align: start;
@@ -193,14 +193,14 @@ html {
   max-width: 22.2rem;
 }
 .communityCardTitle{
-  font-size: 1.3rem;
+  font-size: 1.777rem;
   font-family: var(--font-bahns);
   font-weight: 600;
   color: #0D519A;
 }
 .communityCardDescription{
   color: #2C3E50;
-  font-size: 0.6rem;
+  font-size: 0.88rem;
   width: 100%;
   max-width: 16.66rem;
   margin-top: 0.5rem;
@@ -214,7 +214,7 @@ html {
   padding: 0.45rem 0.7rem;
   font-family: var(--font-bahns);
   font-weight: 600;
-  font-size: 0.68rem;
+  font-size: 1.1rem;
   border-radius: 0.6rem;
   outline: none;
   border: none;
@@ -235,12 +235,13 @@ html {
 }
 
 .whyJoinTitle {
-  font-size: 1.7rem;
+  font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 0.6rem;
+  line-height: 48px;
 }
 .whyJoinDescription {
-  font-size: 0.7rem;
+  font-size: 1.111rem;
   font-weight: 400;
   width: 100%;
   max-width: 33.33rem;
@@ -262,16 +263,17 @@ html {
 }
 .whyJoinCardTitle {
   color: #0d519a;
-  font-size: 1.2rem;
+  font-size: 1.333rem;
   font-weight: 600;
 }
 .whyJoinCardDescription {
   color: #2c3e50;
-  font-size: 0.5rem;
+  font-size: 0.88rem;
   width: 100%;
-  max-width: 11.11rem;
+  /* max-width: 11.11rem; */
   margin: 0.5rem auto;
   margin-bottom: 2rem;
+  padding: 0.8rem;
 }
 
 .ctaSection{
@@ -329,8 +331,22 @@ html {
     margin-left: 0rem;
   }
 }
+
+@media screen and (max-width: 1020px) {
+  .cardParticipation,  .connectionSection, .joinCommunitySection, .whyJoinSection{
+    margin-left: 1.5rem ;
+    margin-right: 1.5rem ;
+  }
+  .heroSection, .ctaSection{
+       padding-left: 1.5rem ;
+    padding-right: 1.5rem ;
+  }
+
+}
 @media screen and (max-width: 982px) {
- 
+ .fsxSection{
+  margin-top: 30px;
+ }
 
 .communityCardImage{
   height: 260px;
@@ -404,11 +420,11 @@ html {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  .communityCardEntrepreneur .communityCardContent{
+  .communityCard .communityCardContent{
     order: -1;
     margin-left: 1.7rem;
   }
-  .communityCardEntrepreneur .communityCardImage{
+  .communityCard .communityCardImage{
     order: -2;
   }
   .ctaSection{
