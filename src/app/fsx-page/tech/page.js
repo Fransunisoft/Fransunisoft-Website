@@ -140,7 +140,7 @@ const App = (props) => {
       desc: "High-performance computing devices for modern business needs."
     },
     {
-      src: "/frame-232.png",
+      src: "/cctv.png",
       alt: "CCTV Security Systems",
       title: "CCTV Security Systems",
       desc: "Comprehensive security camera solutions for business protection."
@@ -152,7 +152,7 @@ const App = (props) => {
       desc: "Routers, switches, and networking hardware for reliable connectivity."
     },
     {
-      src: "/printers.jpg",
+      src: "/printermain.png",
       alt: "Printers",
       title: "Printers",
       desc: "Professional printing solutions for busy office environments."
