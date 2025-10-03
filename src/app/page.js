@@ -43,8 +43,8 @@ export default function HomePage() {
         <div className={styles.overlay}>
           <h1 className={styles.typewriter}>
             <span className={styles.typingText}>
-              Building Smarter, Scaling <span className={styles.mobileBreak}><br /></span>Faster
-              <span className={styles.desktopBreak}><br /></span> in Nigeria
+              Building Smarter, Scaling<span className={styles.mobileBreak}></span> Faster
+              <span className={styles.desktopBreak}></span> <br /> Engineering Experiences, <br />and Empowering Growth
             </span>
           </h1>
 
@@ -170,7 +170,7 @@ export default function HomePage() {
             <p className={styles.cardDescription}>
               Business consulting, digital transformation, and community programs that bridge strategy with real tech execution and impact.
             </p>
-            <Link href="/fsx-consulting" className={styles.learnMoreBtn}>Learn More</Link>
+            <Link href="/fsx-page/consulting" className={styles.learnMoreBtn}>Learn More</Link>
           </div>
 
           <div className={styles.card}>
@@ -179,16 +179,17 @@ export default function HomePage() {
             <p className={styles.cardDescription}>
               Platforms, automation, and innovation programs for building scalable solutions from scratch.
             </p>
-            <Link href="/fsx-labs" className={styles.learnMoreBtn}>Learn More</Link>
+            <Link href="/fsx-page/construction" className={styles.learnMoreBtn}>Learn More</Link>
           </div>
 
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>FSX Tech</h3>
             <p className={styles.cardTagline}>“Smart Tech. Simplified.”</p>
             <p className={styles.cardDescription}>
-              Comprehensive, affordable, and scalable technology solutions.
+              Computer accessories, gadgets, and electronics procurement providing reliable, affordable enterprise technology solutions.
+
             </p>
-            <Link href="/fsx-tech" className={styles.learnMoreBtn}>Learn More</Link>
+            <Link href="/fsx-page/tech" className={styles.learnMoreBtn}>Learn More</Link>
           </div>
 
           <div className={styles.card}>
@@ -197,7 +198,7 @@ export default function HomePage() {
             <p className={styles.cardDescription}>
               Brand activations, corporate events, and community programs with global-standard execution.
             </p>
-            <Link href="/fsx-events" className={styles.learnMoreBtn}>Learn More</Link>
+            <Link href="/fsx-page/event" className={styles.learnMoreBtn}>Learn More</Link>
           </div>
 
           <div className={styles.card}>
@@ -206,7 +207,7 @@ export default function HomePage() {
             <p className={styles.cardDescription}>
               Connecting communities and brands through digital platforms and strategic partnerships.
             </p>
-            <Link href="/fsx-connect" className={styles.learnMoreBtn}>Learn More</Link>
+            <Link href="/fsx-page/connect" className={styles.learnMoreBtn}>Learn More</Link>
           </div>
 
           <div className={styles.card}>
@@ -215,7 +216,7 @@ export default function HomePage() {
             <p className={styles.cardDescription}>
               Training and learning programs designed to empower individuals and teams with future-ready skills.
             </p>
-            <Link href="/fsx-academy" className={styles.learnMoreBtn}>Learn More</Link>
+            <Link href="//fsx-page/academy" className={styles.learnMoreBtn}>Learn More</Link>
           </div>
         </div>
       </section>

@@ -1,25 +1,6 @@
 /* FSXTech.module.css */
 
 /* =============================================================================
-   GLOBAL RESET AND BASE STYLES
-   ============================================================================= */
-
-/* Reset all elements to ensure consistent box-sizing and remove default margins/padding. */
-:global(*) {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Set base font family, line height, and color for the entire page. Ensure no top margin on body. */
-:global(body) {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    margin-top: 0 !important;
-}
-
-/* =============================================================================
    LAYOUT UTILITIES
    ============================================================================= */
 
@@ -155,7 +136,7 @@
 /* Hero supporting text: Subtle color, multi-line paragraph below headline. */
 .heroText p {
     width: 549px;
-    height: 63px;
+    height: auto; 
     transform: rotate(0deg);
     opacity: 1;
     font-family: Roboto, sans-serif;
@@ -365,7 +346,7 @@
 .servicesGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 10px;
+    gap: 36px; /* 24px all around for consistent, airy spacing */
     row-gap: 20px;
     max-width: 1200px;
     margin: 1.3rem auto 0 auto;
@@ -553,6 +534,14 @@
     margin: 0 4px;
 }
 
+.swiperCustom .productCard {
+  padding-bottom: 32px !important; /* Forces bottom space despite Swiper reset */
+}
+
+.swiperCustom .swiper-slide .productCard {
+  padding: 32px 32px 32px 32px !important; /* Full padding control: 48px bottom for breathing room */
+}
+
 .swiper-pagination-bullet-active {
     background: #2563eb;
     opacity: 1;
@@ -562,8 +551,10 @@
 /* Product card: White rounded card with shadow and flex layout. */
 .productCard {
     width: 384px;
-    height: 405px;
-    gap: 10px;
+  
+    min-height: 405px; /* Keeps desktop size, but allows growth for padding/content */
+    height: auto;
+    gap: 36px;
     transform: rotate(0deg);
     opacity: 1;
     border-radius: 25px;
@@ -787,7 +778,7 @@
 }
 
 /* Global override for variant8Button to ensure transparency. */
-:global(.variant8Button) {
+.variant8Button {
     background: transparent !important;
     border: 1px solid #E1E7EF !important;
 }
@@ -833,4 +824,299 @@
     display: inline-flex;
     align-items: center;
     gap: 25px;
+}
+
+/* =============================================================================
+   RESPONSIVE DESIGN - MOBILE FIRST APPROACH
+   ============================================================================= */
+
+/* Mobile styles (up to 768px) - Stack layouts, reduce font sizes, adjust paddings */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Hero Mobile */
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .hero .container {
+    padding: 20px 16px;
+    max-width: 100%;
+  }
+
+  .heroContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .heroText h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    margin: 1rem 0;
+    width: auto;
+  }
+
+  .heroText p {
+    font-size: 16px;
+    line-height: 1.5;
+    width: 100%;
+    margin: 1rem 0 2rem;
+    height: auto !important;
+    overflow: visible !important;
+    white-space: normal !important;
+  }
+
+  .heroImage {
+    justify-self: center;
+    order: unset; /* Remove image-first order to match Figma text-first flow */
+    margin-top: 1rem;
+  }
+
+  .heroImage img {
+    max-width: 100%;
+    width: 280px;
+    height: auto;
+  }
+
+  .heroActions {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .accentButtonHero,
+  .variant8Button {
+    width: auto;
+    max-width: 250px;
+    justify-content: center;
+  }
+
+  /* About Mobile */
+  .about {
+    padding: 40px 0;
+  }
+
+  .aboutContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about h2 {
+    font-size: 28px;
+    text-align: center;
+    width: auto;
+  }
+
+  .about h3 {
+    font-size: 20px;
+    text-align: center;
+    width: auto;
+  }
+
+  .aboutText p:first-of-type,
+  .aboutText p:nth-of-type(2) {
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .featuresList li {
+    font-size: 16px;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .featuresList svg {
+    min-width: 20px;
+  }
+
+  .aboutImage img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  /* Services Mobile */
+  .services {
+    padding: 40px 0;
+  }
+
+  .services h2 {
+    font-size: 28px;
+    width: auto;
+  }
+
+  .services .servicesLead {
+    font-size: 16px;
+    padding: 0;
+    width: 100%;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem auto 0;
+  }
+
+  .serviceCard {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    padding: 24px;
+    margin: 0 auto;
+  }
+
+  .serviceIcon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .serviceCard h3 {
+    font-size: 1.2rem;
+  }
+
+  .serviceCard p {
+    width: 100%;
+    height: auto;
+    line-height: 1.4;
+  }
+
+  /* Products Mobile */
+  .products {
+    padding: 40px 0;
+  }
+
+  .products h2 {
+    font-size: 28px;
+    width: auto;
+  }
+
+  .productsLead {
+    font-size: 16px;
+    width: 100%;
+    line-height: 1.4;
+  }
+
+  .swiperContainer {
+    padding: 0;
+  }
+
+  .swiperButtonPrev {
+    left: 0;
+  }
+
+  .swiperButtonNext {
+    right: 0;
+  }
+
+  .swiperButtonPrev,
+  .swiperButtonNext {
+    width: 40px;
+    height: 40px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+  }
+
+  .productCard {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    padding: 24px;
+    margin: 0 auto;
+  }
+
+  .productCard .productImage {
+    height: 180px;
+  }
+
+  .productTitle {
+    font-size: 24px;
+    line-height: 1.2;
+    white-space: normal;
+  }
+
+  .productDesc {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .productsFooter {
+    gap: 0.5rem;
+  }
+
+  .productsFooter p {
+    font-size: 14px;
+    white-space: normal;
+    width: 100%;
+    text-align: center;
+  }
+
+  .accentButton {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  /* General Mobile Adjustments */
+  .featuresList li > * {
+    white-space: normal;
+  }
+}
+
+/* Tablet styles (769px to 1023px) - Intermediate adjustments */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .heroContent {
+    grid-template-columns: 1fr 400px;
+  }
+
+  .hero .container {
+  padding: 40px 40px; /* Reduce side padding to free up ~160px more width */
+}
+.heroText p {
+  width: 100% !important; /* Override fixed width fully */
+  max-width: none; /* Prevent any cap */
+}
+
+  .heroText h1 {
+    font-size: 40px;
+  }
+
+  .heroImage img {
+    max-width: 400px;
+  }
+
+  .aboutContent {
+    gap: 3rem;
+  }
+
+  .about h2 {
+    font-size: 30px;
+  }
+
+  .servicesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .productCard {
+    width: 350px;
+  }
+
+  /* Fix for hero paragraph cutoff on medium screens */
+  .heroText p {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    font-size: 16px;
+    line-height: 1.4;
+    white-space: normal;
+  }
 }

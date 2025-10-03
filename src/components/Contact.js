@@ -1,119 +1,215 @@
 'use client';
-
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './Contact.module.css';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import 'react-phone-input-2/lib/style.css';
-import PhoneInput from 'react-phone-input-2';
+import { Paperclip } from 'lucide-react';
+
+const getInitialCountries = () => [
+  { name: 'Nigeria', code: '+234', flag: 'https://flagcdn.com/ng.svg', cca2: 'NG' },
+  { name: 'United States', code: '+1', flag: 'https://flagcdn.com/us.svg', cca2: 'US' },
+  { name: 'United Kingdom', code: '+44', flag: 'https://flagcdn.com/gb.svg', cca2: 'GB' },
+  { name: 'India', code: '+91', flag: 'https://flagcdn.com/in.svg', cca2: 'IN' },
+];
 
 export default function Contact() {
+  const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [attachedFile, setAttachedFile] = useState(null);
+
+  // Phone state
+  const [countries, setCountries] = useState(getInitialCountries());
+  const [selectedCountry, setSelectedCountry] = useState(getInitialCountries()[0]);
+  const [phone, setPhone] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+  const countrySelectorWrapperRef = useRef(null);
+
+  // Fetch countries dynamically
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
+    fetch('https://restcountries.com/v3.1/all?fields=name,cca2,idd')
+      .then((res) => res.json())
+      .then((data) => {
+        const formatted = data
+          .filter((country) => country.idd && country.idd.root)
+          .map((country) => ({
+            name: country.name.common,
+            code: country.idd.root + (country.idd.suffixes ? country.idd.suffixes[0] || '' : ''),
+            flag: `https://flagcdn.com/${country.cca2.toLowerCase()}.svg`,
+            cca2: country.cca2,
+          }))
+          .sort((a, b) => a.name.localeCompare(b.name));
+
+        setCountries(formatted);
+
+        // Set Nigeria as default if available
+        const nigeria = formatted.find((c) => c.name === 'Nigeria');
+        if (nigeria) setSelectedCountry(nigeria);
+      })
+      .catch((err) => console.error('Failed to fetch countries:', err));
   }, []);
 
-  const [phone, setPhone] = useState('');
+  // Handle click outside country dropdow
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (countrySelectorWrapperRef.current && !countrySelectorWrapperRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    if (isOpen) document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isOpen]);
+
+  const handleCountrySelect = (country) => {
+    setSelectedCountry(country);
+    setIsOpen(false);
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setAttachedFile(file);
+  };
+
+  const handleRemoveFile = () => setAttachedFile(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccessMessage('');
+    setErrorMessage('');
+
+    try {
+      const form = e.target;
+      const formData = new FormData(form);
+      if (attachedFile) formData.set('file', attachedFile);
+
+      const res = await fetch('/api/contact', { method: 'POST', body: formData });
+      const data = await res.json();
+
+      if (!res.ok) setErrorMessage(data.error || 'Failed to send email');
+      else {
+        setSuccessMessage('✅ Message sent successfully!');
+        form.reset();
+        setAttachedFile(null);
+        setPhone('');
+      }
+    } catch (err) {
+      setErrorMessage('An unexpected error occurred');
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <section className={styles.contactSection} data-aos="fade-up">
-      <div className={styles.intro}>
-        <h2 className={styles.mainHeading}>Let’s Build Smarter, Together.</h2>
-        <p className={styles.introText}>
-          Whether you are planning an unforgettable event, scaling your business, simplifying your tech, or expanding your network—FSX is here to help.
-        </p>
-      </div>
-
-      <div className={styles.contactGrid}>
-        {/* Left Column */}
-        <div className={styles.contactInfoBox}>
-          <h3 className={styles.heading}>Contact Information</h3>
-          <p className={styles.hparagraph}>
-            We’d love to hear from you! Please fill out the contact form and we’ll reply soon.
+    <section className={styles.contactSection}>
+      <div className={styles.container}>
+        <div className={styles.topContent}>
+          <h2 className={styles.contactHeading}>Let’s Build Smarter, Together.</h2>
+          <p className={styles.contactLead}>
+            Whether you’re looking to host an unforgettable event, scale your business, simplify your technology, or expand your network, FSX is here for you.
           </p>
-
-          <div className={styles.infoItem}>
-            <div className={styles.labelRow}>
-              <Image src="/contact email.png" alt="Email icon" width={56} height={56} />
-              <p className={styles.paragraph}><strong>Email</strong></p>
-            </div>
-            <p className={styles.subText}>Contact us by email, and we’ll respond shortly</p>
-            <p className={styles.detail}>hello@fransunisoft.com</p>
-          </div>
-
-          <div className={styles.infoItem}>
-            <div className={styles.labelRow}>
-              <Image src="/Phone icon.png" alt="Phone icon" width={56} height={56} />
-              <p className={styles.paragraph}><strong>Phone</strong></p>
-            </div>
-            <p className={styles.subText}>Call us on (Weekdays 9AM - 5PM)</p>
-            <p className={styles.detail}>0800 234 567 89</p>
-          </div>
-
-          <div className={styles.infoItem}>
-            <div className={styles.labelRow}>
-              <Image src="/contact location.png" alt="Location icon" width={56} height={56} />
-              <p className={styles.paragraph}><strong>Location</strong></p>
-            </div>
-            <p className={styles.subText}>Where we are located</p>
-            <p className={styles.detail}>Lagos, Nigeria</p>
-          </div>
         </div>
 
-        {/* Right Column */}
-        <div className={styles.contactActionBox}>
-          <form className={styles.form}>
-            <h3 className={styles.heading}>Get In Touch</h3>
-            <p className={styles.paragraph}>
-              Contact Fransunisoft (FSX) today for event management, consulting, technology solutions, training, and networking opportunities in Nigeria.
+        <div className={styles.contactGrid}>
+          <div className={styles.leftColumn}>
+            <h3 className={styles.infoTitle}>Contact Information</h3>
+            <p className={styles.infoLead}>We’d love to hear from you. please fill out the contact form and we’ll reply soon</p>
+            <div className={styles.contactInfo}>
+              <div className={styles.infoItem}>
+                <div className={styles.infoIconCircle}><img src="/email.png" alt="Email Icon" /></div>
+                <div className={styles.infoText}>
+                  <span className={styles.infoLabel}>Email</span>
+                  <span className={styles.infoValue}>hello@fransunisoft.com</span>
+                </div>
+              </div>
+              <div className={styles.infoItem}>
+                <div className={styles.infoIconCircle}><img src="/Vector (1).png" alt="Phone Icon" /></div>
+                <div className={styles.infoText}>
+                  <span className={styles.infoLabel}>Phone</span>
+                  <span className={styles.infoValue}>+2348130706942</span>
+                </div>
+              </div>
+              <div className={styles.infoItem}>
+                <div className={styles.infoIconCircle}><img src="/Vector (2).png" alt="Location Icon" /></div>
+                <div className={styles.infoText}>
+                  <span className={styles.infoLabel}>Address</span>
+                  <span className={styles.infoValue}>Lagos, Nigeria</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.rightColumn}>
+            <h3 className={styles.cardTitle}>Get In Touch</h3>
+            <p className={styles.cardIntro}>
+              Contact Fransunisoft (FSX) today for event management, consulting, technology solutions, training, and networking opportunities in Nigeria
             </p>
 
-            <div className={styles.row}>
-              <input type="text" name="firstName" placeholder="First Name" required />
-              <input type="text" name="lastName" placeholder="Last Name" required />
-            </div>
+            <form className={styles.contactForm} onSubmit={handleSubmit} encType="multipart/form-data">
+              <div className={styles.formRow}><input type="text" name="firstName" className={styles.input} placeholder="First Name" required /></div>
+              <div className={styles.formRow}><input type="text" name="lastName" className={styles.input} placeholder="Last Name" required /></div>
+              <div className={styles.formRow}><input type="email" name="email" className={styles.input} placeholder="Email" required /></div>
 
-            <div className={styles.row}>
-              <input type="email" name="email" placeholder="Email Address" required />
-             <PhoneInput
-  country={'ng'}
-  value={phone}
-  onChange={setPhone}
-  inputProps={{
-    name: 'phone',
-    required: true,
-    autoFocus: false
-  }}
-  enableSearch
-  placeholder="Phone Number"
-  containerClass={styles.phoneInput}
-  inputClass={styles.phoneField}
-  buttonClass={styles.phoneButton}
-  separateDialCode={true}
-/>
+              {/* Phone Row */}
+              <div className={styles.formRow}>
+                <div className={styles.phoneRow}>
+                  <div ref={countrySelectorWrapperRef} className={`${styles.countrySelectorWrapper} ${isOpen ? styles.open : ''}`} onClick={() => setIsOpen(!isOpen)}>
+                    <img src={selectedCountry.flag} alt={selectedCountry.name} className={styles.flag} />
+                    <span className={styles.selectArrow}>▼</span>
+                    <span className={styles.selectedCode}>{selectedCountry.code}</span>
+                    {isOpen && (
+                      <div className={styles.countryDropdown}>
+                        {countries.map((country) => (
+                          <div key={country.code} className={styles.countryOption} onClick={(e) => { e.stopPropagation(); handleCountrySelect(country); }}>
+                            <img src={country.flag} alt={country.name} className={styles.dropdownFlag} /> {country.name} ({country.code})
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
 
-            </div>
+                  <input type="tel" name="phoneNumber" className={styles.phoneInput} placeholder="8123456789" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+                  <input type="hidden" name="phone" value={`${selectedCountry.code}${phone}`} />
+                </div>
+              </div>
 
-       <select name="serviceType" required className="brandSelect">
-  <option value="">Select FSX Brand</option>
-  <option value="FSX Consulting">FSX Consulting</option>
-  <option value="FSX Labs">FSX Labs</option>
-  <option value="FSX Tech">FSX Tech</option>
-  <option value="FSX Events">FSX Events</option>
-  <option value="FSX Connect">FSX Connect</option>
-  <option value="FSX Academy">FSX Academy</option>
-</select>
+              <div className={styles.formRow}><input type="text" name="company" className={styles.input} placeholder="Company" required /></div>
+              <div className={styles.formRow}>
+                <select name="serviceType" className={styles.select} required>
+                  <option value="">Select Service Type</option>
+                  <option value="Consulting">Consulting</option>
+                  <option value="Support">Support</option>
+                  <option value="Development">Development</option>
+                </select>
+              </div>
 
+              <div className={styles.formRow}>
+                <div className={styles.textareaWrapper}>
+                  <textarea name="message" className={styles.textarea} placeholder="Your Message" required></textarea>
+                  <label className={styles.attachLabel}>
+                    <Paperclip className={styles.attachIcon} />
+                    Attach a File
+                    <input type="file" name="file" className={styles.fileInputHidden} onChange={handleFileChange} />
+                  </label>
+                </div>
+              </div>
 
-            <input type="text" name="company" placeholder="Company" />
-            <textarea name="message" placeholder="How can we be of help?" rows={5} required />
-            <input type="file" name="file" accept=".pdf,.doc,.docx,.jpg,.png" />
+              {attachedFile && (
+                <div className={styles.attachedFile}>
+                  <div className={styles.filePreviewMeta}>
+                    <span className={styles.filePreviewName}>{attachedFile.name}</span>
+                    <span className={styles.filePreviewSize}>{(attachedFile.size / 1024).toFixed(2)} KB</span>
+                  </div>
+                  <div className={styles.fileActions}>
+                    <button type="button" className={styles.removeButton} onClick={handleRemoveFile}>✕</button>
+                  </div>
+                </div>
+              )}
 
-            <button type="submit" className={styles.contactBtn}>Contact Us</button>
-          </form>
+              <button type="submit" className={styles.submitButton} disabled={loading}>{loading ? 'Sending...' : 'Send Message'}</button>
+              {successMessage && <p style={{ color: '#16a34a', marginTop: '8px', textAlign: 'center' }}>{successMessage}</p>}
+              {errorMessage && <p style={{ color: '#b91c1c', marginTop: '8px', textAlign: 'center' }}>{errorMessage}</p>}
+            </form>
+          </div>
         </div>
       </div>
     </section>

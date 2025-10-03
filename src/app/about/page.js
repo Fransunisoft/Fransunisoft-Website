@@ -50,7 +50,7 @@ export default function AboutPage() {
             className={styles.heroImage}
           />
           <div className={styles.overlay}>
-            <h1>About Fransunisoft (FSX)</h1>
+            <h1>About Fransunisoft</h1>
             <p>Innovation and Growth in Nigeria</p>
           </div>
         </div>
@@ -62,28 +62,28 @@ export default function AboutPage() {
           <div className={styles.block}>
             <h2>Our Story</h2>
             <p>
-              FSX is a technology company that builds business and financial tools for African businesses. Our mission is to empower businesses with the tools they need to grow and thrive in the global digital economy.
+              Fransunisoft was founded with a simple belief; that technology should be a bridge, not a barrier, to growth. In Nigeria and across Africa, businesses and individuals often struggle with scalable, affordable, and reliable digital solutions. We started our journey to close this gap by building smarter systems, empowering entrepreneurs, and helping organizations embrace innovation. From humble beginnings, our story has always been about one thing: creating solutions that matter and driving digital transformation across Africa.
             </p>
           </div>
 
           <div className={styles.block}>
             <h2>Our Vision</h2>
             <p>
-              To become the leading provider of business and financial tools for African businesses, enabling them to compete globally.
+              To be Africa’s leading force in digital innovation, empowering businesses and individuals to work smarter, scale faster, and compete globally through technology-driven solutions.
             </p>
           </div>
 
           <div className={styles.block}>
             <h2>Our Mission</h2>
             <p>
-              To empower African businesses with innovative, easy-to-use, and affordable business and financial tools.
+              At Fransunisoft, our mission is to deliver reliable, user-focused, and scalable digital solutions that help our clients unlock opportunities, improve efficiency, and achieve sustainable growth. Through innovation, collaboration, and a deep understanding of the African business landscape, we make technology work for everyone.
             </p>
           </div>
         </div>
 
         <div className={styles.imageColumn}>
           <Image
-            src="/F_Vision.png"
+            src="/fransvision.png"
             alt="FSX Story, Vision, Mission"
             width={800}
             height={1000}

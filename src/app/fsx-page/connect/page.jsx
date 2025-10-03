@@ -1,15 +1,12 @@
 import Image from "next/image";
 import styles from "./connect.module.css";
-import { Roboto  } from "next/font/google";
-
+import { Roboto } from "next/font/google";
 
 const roboto = Roboto({
   variable: "--font-roboto",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
-
-
 
 export const metadata = {
   title: "Fsx Connect",
@@ -18,15 +15,17 @@ export const metadata = {
 
 export default function FsxConnect() {
   return (
-    <div className={`${roboto.variable} ${styles.fsxSection}`}>
+    <div
+      className={`${roboto.variable} ${styles.fsxSection} ${styles.fsxConnectPage}`}
+    >
       <section className={styles.fsxConnectContainer}>
         <section className={styles.heroSection}>
           <div className={styles.heroTextContainer}>
             <h2 className={styles.heroTitle}>FSX Connect</h2>
             <p className={styles.heroDescription}>
               Building meaningful networks for growth and collaboration. Connect
-              with entrepreneurs, investors, mentors, and innovators across Africa
-              and beyond.
+              with entrepreneurs, investors, mentors, and innovators across
+              Africa and beyond.
             </p>
             <section className={styles.heroBtnContainer}>
               <button className={styles.exploreBtn}>Explore Network</button>
@@ -67,8 +66,8 @@ export default function FsxConnect() {
         <section className={styles.connectionSection}>
           <h4 className={styles.connectionTitle}>Our Connection Services</h4>
           <p className={styles.connectionDescription}>
-            We facilitate meaningful connections through specialized networks and
-            programs designed to foster collaboration and growth.
+            We facilitate meaningful connections through specialized networks
+            and programs designed to foster collaboration and growth.
           </p>
           <div className={styles.connectionCardsContainer}>
             <div className={styles.connectionCard}>
@@ -82,8 +81,8 @@ export default function FsxConnect() {
               <h5 className={styles.cardTitle}>Professional Networks</h5>
               <p className={styles.cardDescription}>
                 Connect with like-minded professionals, entrepreneurs, and
-                innovators in your industry and beyond through curated networking
-                events and forums.
+                innovators in your industry and beyond through curated
+                networking events and forums.
               </p>
             </div>
             <div className={styles.connectionCard}>
@@ -127,8 +126,8 @@ export default function FsxConnect() {
               <h5 className={styles.cardTitle}>Startup Ecosystem</h5>
               <p className={styles.cardDescription}>
                 Access a vibrant ecosystem of startups, incubators, and
-                accelerators to fuel innovation and entrepreneurial growth across
-                Africa.
+                accelerators to fuel innovation and entrepreneurial growth
+                across Africa.
               </p>
             </div>
             <div className={styles.connectionCard}>
@@ -155,19 +154,19 @@ export default function FsxConnect() {
               />
               <h5 className={styles.cardTitle}>Executive Network</h5>
               <p className={styles.cardDescription}>
-                Connect with C-suite executives and senior leaders for high-level
-                strategic discussions and collaboration opportunities.
+                Connect with C-suite executives and senior leaders for
+                high-level strategic discussions and collaboration
+                opportunities.
               </p>
             </div>
           </div>
         </section>
 
-
         <section className={styles.joinCommunitySection}>
           <h4 className={styles.joinCommunityTitle}>Our Network Communities</h4>
           <p className={styles.joinCommunityDescription}>
-            Join specialized communities tailored to different professional needs
-            and interests.
+            Join specialized communities tailored to different professional
+            needs and interests.
           </p>
           <div className={styles.communityCardsContainer}>
             <div className={styles.communityCard}>
@@ -182,21 +181,27 @@ export default function FsxConnect() {
                 />
               </div>
               <div className={styles.communityCardContent}>
-                <h5 className={styles.communityCardTitle}>Tech Innovators Circle</h5>
+                <h5 className={styles.communityCardTitle}>
+                  Tech Innovators Circle
+                </h5>
                 <p className={styles.communityCardDescription}>
-                  A circle where tech enthusiast, founders, co-founders share insights, challenges, opportunities and mentorships.
+                  A circle where tech enthusiast, founders, co-founders share
+                  insights, challenges, opportunities and mentorships.
                 </p>
               </div>
             </div>
-             <div className={styles.communityCardEntrepreneur}>
-             
+            <div className={styles.communityCardEntrepreneur}>
               <div className={styles.communityCardContent}>
-                <h5 className={styles.communityCardTitle}>Entrepreneurs Network</h5>
+                <h5 className={styles.communityCardTitle}>
+                  Entrepreneurs Network
+                </h5>
                 <p className={styles.communityCardDescription}>
-                  A network where fellow entrepreneurs and investors extends insights, resources, partnerships and opportunities to traction and growth stage businesses.
+                  A network where fellow entrepreneurs and investors extends
+                  insights, resources, partnerships and opportunities to
+                  traction and growth stage businesses.
                 </p>
               </div>
-               <div className={styles.communityCardImage}>
+              <div className={styles.communityCardImage}>
                 <Image
                   src="/enterpreneur-icon.svg"
                   alt="entrepreneur Icon"
@@ -207,7 +212,7 @@ export default function FsxConnect() {
                 />
               </div>
             </div>
-             <div className={styles.communityCard}>
+            <div className={styles.communityCard}>
               <div className={styles.communityCardImage}>
                 <Image
                   src="/creative-mind-icon.svg"
@@ -219,9 +224,12 @@ export default function FsxConnect() {
                 />
               </div>
               <div className={styles.communityCardContent}>
-                <h5 className={styles.communityCardTitle}>Creative Minds Alliance</h5>
+                <h5 className={styles.communityCardTitle}>
+                  Creative Minds Alliance
+                </h5>
                 <p className={styles.communityCardDescription}>
-                  An alliance where designers, artists, and creative professionals collaborates.
+                  An alliance where designers, artists, and creative
+                  professionals collaborates.
                 </p>
               </div>
             </div>
@@ -232,7 +240,8 @@ export default function FsxConnect() {
         <section className={styles.whyJoinSection}>
           <h4 className={styles.whyJoinTitle}>Why Join FSX Connect?</h4>
           <p className={styles.whyJoinDescription}>
-            Discover the unique advantages of being part of our growing community of professionals and innovators.
+            Discover the unique advantages of being part of our growing
+            community of professionals and innovators.
           </p>
           <div className={styles.whyJoinCardsContainer}>
             <div className={styles.whyJoinCard}>
@@ -242,9 +251,10 @@ export default function FsxConnect() {
                 src="/accelerated-growth-icon.svg"
                 alt="Accelerated growth Icon"
               />
-               <h5 className={styles.whyJoinCardTitle}>Accelerated Growth</h5>
+              <h5 className={styles.whyJoinCardTitle}>Accelerated Growth</h5>
               <p className={styles.whyJoinCardDescription}>
-                Access resources, mentorship, and connections that propel your career or business forward.
+                Access resources, mentorship, and connections that propel your
+                career or business forward.
               </p>
             </div>
             <div className={styles.whyJoinCard}>
@@ -254,22 +264,24 @@ export default function FsxConnect() {
                 src="/diverse-community-icon.svg"
                 alt="Diverse Community Icon"
               />
-               <h5 className={styles.whyJoinCardTitle}>Diverse Community</h5>
+              <h5 className={styles.whyJoinCardTitle}>Diverse Community</h5>
               <p className={styles.whyJoinCardDescription}>
-                Connect with professionals from various industries, backgrounds, and expertise levels.
+                Connect with professionals from various industries, backgrounds,
+                and expertise levels.
               </p>
             </div>
-      
-              <div className={styles.whyJoinCard}>
+
+            <div className={styles.whyJoinCard}>
               <Image
                 width={40}
                 height={40}
                 src="/innovation-hub-icon.svg"
                 alt="Innovation Hub Icon"
               />
-               <h5 className={styles.whyJoinCardTitle}>Innovation Hub</h5>
+              <h5 className={styles.whyJoinCardTitle}>Innovation Hub</h5>
               <p className={styles.whyJoinCardDescription}>
-                Be part of a dynamic ecosystem where new ideas are born and collaborations flourish.
+                Be part of a dynamic ecosystem where new ideas are born and
+                collaborations flourish.
               </p>
             </div>
           </div>
@@ -277,11 +289,15 @@ export default function FsxConnect() {
         <section className={styles.ctaSection}>
           <div className={styles.ctaContainer}>
             <p className={styles.ctaDescription}>
-              Are you passionate about giving back to the community to enhance nation building, youth development, SDG support and innovation strategy?</p>
+              Are you passionate about giving back to the community to enhance
+              nation building, youth development, SDG support and innovation
+              strategy?
+            </p>
             <button className={styles.ctaButton}>Join Us Today</button>
           </div>
           <Image
-            src="/ellipse-globe-icon.svg"
+            // src="/ellipse-globe-icon.svg"
+            src="/globes-icon.svg"
             alt="Call to Action Image"
             className={styles.ctaImage}
             width={550}
@@ -289,9 +305,7 @@ export default function FsxConnect() {
             objectFit="cover"
           />
         </section>
-      
       </section>
     </div>
   );
 }
-

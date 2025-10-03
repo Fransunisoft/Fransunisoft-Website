@@ -9,16 +9,17 @@
 } */
 html {
   font-size: 18px;
+  background-color: white;
 }
 .fsxSection {
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  min-height: 100vh;
-  font-family: var(--font-roboto);
+  display: flex !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  flex-wrap: wrap  !important;
+  min-height: 100vh !important;
+  font-family: var(--font-roboto) !important;
   color: #2c3e50;
+
 }
 
 .heroSection {
@@ -120,7 +121,7 @@ html {
   font-size: 0.7rem;
   font-weight: 400;
   width: 100%;
-  max-width: 600px;
+  max-width: 33.3rem;
   margin: 0 auto;
   color: #7c8084;
 }
@@ -144,7 +145,7 @@ html {
   color: #2c3e50;
   font-size: 0.5rem;
   width: 100%;
-  max-width: 200px;
+  max-width: 11.11rem;
   margin: 1rem auto;
 }
 
@@ -185,11 +186,11 @@ html {
 .communityCardContent{
   text-align: start;
   width: 100%;
-  max-width: 400px;
+  max-width: 22.22rem;
 }
 .communityCardImage{
   width: 100%;
-  max-width: 400px;
+  max-width: 22.2rem;
 }
 .communityCardTitle{
   font-size: 1.3rem;
@@ -201,7 +202,7 @@ html {
   color: #2C3E50;
   font-size: 0.6rem;
   width: 100%;
-  max-width: 300px;
+  max-width: 16.66rem;
   margin-top: 0.5rem;
 }
 
@@ -242,7 +243,7 @@ html {
   font-size: 0.7rem;
   font-weight: 400;
   width: 100%;
-  max-width: 600px;
+  max-width: 33.33rem;
   margin: 0 auto;
   color: #7c8084;
   margin: 1rem auto;
@@ -268,7 +269,7 @@ html {
   color: #2c3e50;
   font-size: 0.5rem;
   width: 100%;
-  max-width: 200px;
+  max-width: 11.11rem;
   margin: 0.5rem auto;
   margin-bottom: 2rem;
 }
@@ -306,6 +307,7 @@ html {
    background-color:  #B54C26;
 }
 
+
 @media screen and (max-width: 1053px) {
   .ctaSection .ctaImage{
     width: 500px;
@@ -329,12 +331,7 @@ html {
 }
 @media screen and (max-width: 982px) {
  
- /* .communityCardEntrepreneur{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 2rem;
-} */
+
 .communityCardImage{
   height: 260px;
 }
@@ -414,11 +411,247 @@ html {
   .communityCardEntrepreneur .communityCardImage{
     order: -2;
   }
+  .ctaSection{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
 
   .communityImg{
-    /* width: 400px;
-    height: 300px; */
     object-fit: contain;
     margin: 0 auto;
   }
+  
+@media screen and (max-width: 760px) {
+   .fsxSection {
+  background-color: white;
+  display: flex !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  flex-wrap: wrap !important;
+  min-height: 100vh !important;
+  font-family: var(--font-roboto);
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  color: #2c3e50;
+}
+.ctaSection{
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+}
+
+@media screen and (max-width: 752px) {
+    .heroSection{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding-top: 1rem;
+      text-align: center;
+    }
+    .heroBtnContainer{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1rem;
+      
+    }
+    .heroBtnContainer button{
+      width: 100%;
+      max-width: 150px;
+    }
+    .heroImage{
+      width: 400px;
+      height: 400px;
+      margin: 0 auto;
+      margin-top: 1rem;
+      object-fit: contain;
+    }
+}
+
+@media screen and (max-width: 734px) {
+  .fsxSection{
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .cardParticipation{
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  .connectionCardsContainer {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-bahns);
+}
+.whyJoinCardsContainer{
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+}
+
+@media screen and (max-width: 728px) {
+  .heroSection, .cardParticipation, .connectionSection, .joinCommunitySection, .whyJoinSection, .ctaSection{
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+    .joinCommunityDescription, .cardDescription, .connectionDescription, .whyJoinDescription,.whyJoinCardDescription{
+    width: 100%;
+    max-width: 25rem;
+    font-size: 1rem;
+  }
+  .communityCardDescription,.whyJoinCardDescription{
+    font-size: 1rem;
+  }
+  .whyJoinTitle, .joinCommunityTitle, .connectionTitle{
+    font-size: 1.4rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+}
+
+@media screen and (max-width: 640px) {
+  .joinCommunityDescription, .cardDescription, .connectionDescription, .whyJoinDescription,.whyJoinCardDescription{
+    width: 100%;
+    max-width: 25rem;
+    font-size: 1rem;
+  
+  }
+}
+@media screen and (max-width: 597px) {
+   .heroImage{
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 1rem;
+    object-fit: contain;
+  }
+}
+
+@media screen and (max-width: 572px) {
+   .heroImage{
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 1rem;
+    object-fit: contain;
+  }
+  .joinCommunityButton{
+    width: 100%;
+    max-width: 15rem;
+  }
+  .ctaSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.ctaImage {
+  order: 0; /* sits in the middle */
+}
+
+.ctaDescription {
+  order: -1;
+}
+
+.ctaButton {
+  order: 1; 
+}
+}
+@media screen and (max-width: 455px){
+    .heroImage{
+      width: 100%;
+      max-width: 550px;
+      height: 250px;
+      margin: 0 auto;
+      margin-top: 1rem;
+      object-fit: contain;
+    }
+}
+@media screen and (max-width: 430px) {
+   .heroImage{
+    width: 100%;
+    max-width: 600px;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 1rem;
+    object-fit: contain;
+  }
+  .joinCommunityDescription, .cardDescription, .connectionDescription, .whyJoinDescription {
+    width: 100%;
+    /* max-width: 25rem; */
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  .communityCardDescription,.whyJoinCardDescription{
+    font-size: 1rem;
+  }
+  .whyJoinTitle, .joinCommunityTitle, .connectionTitle{
+    font-size: 1.4rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 415px) {
+  .heroSection{
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem 2rem;
+  }
+  .heroTextContainer{
+    width: 100%;
+  }
+ 
+}
+@media screen and (max-width: 400px) {
+  .joinCommunityDescription, .cardDescription, .connectionDescription, .whyJoinDescription{
+    width: 100%;
+    /* max-width: 19rem; */
+    font-size: 1rem;
+    padding: 0rem;
+  }
+}
+@media screen and (max-width: 387px) {
+  .communityCardImage{
+    width: 100%;
+
+  }
+  .communityImg{
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 376px) {
+   .joinCommunityDescription, .cardDescription, .connectionDescription, .whyJoinDescription{
+    width: 100%;
+    font-size: 1rem;
+    padding: 0rem;
+  }
+  .joinCommunityTitle, .whyJoinTitle, .connectionTitle{
+    font-size: 1.4rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .ctaSection .ctaImage{
+    width: 300px;
+    height: 300px;
+  }
+}
+@media screen and (max-width: 345px) {
+    .joinCommunityDescription, .cardDescription, .connectionDescription, .whyJoinDescription{
+    width: 100%;
+    font-size: 1rem;
+    padding: 0rem;
+  }
+}
 }
