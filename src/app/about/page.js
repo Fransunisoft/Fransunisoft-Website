@@ -50,7 +50,7 @@ export default function AboutPage() {
             className={styles.heroImage}
           />
           <div className={styles.overlay}>
-            <h1>About Fransunisoft (FSX)</h1>
+            <h1>About Fransunisoft</h1>
             <p>Innovation and Growth in Nigeria</p>
           </div>
         </div>
@@ -83,7 +83,7 @@ export default function AboutPage() {
 
         <div className={styles.imageColumn}>
           <Image
-            src="/F_Vision.png"
+            src="/fransvision.png"
             alt="FSX Story, Vision, Mission"
             width={800}
             height={1000}
