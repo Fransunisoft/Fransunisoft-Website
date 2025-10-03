@@ -517,7 +517,7 @@
 /* Small Mobile */
 @media (max-width: 480px) {
   .hero {
-    margin-top: 0px;
+    margin-top: -10px;
     padding: 2rem 1rem;
   }
 
@@ -538,6 +538,7 @@
   .btnSecondary {
     width: fit-content;
     text-align: center;
+    padding: 1rem;
   }
 
   .services {
@@ -566,15 +567,18 @@
 
 
   .mission {
-    margin: 0rem 1rem;
+    margin: 2rem 1rem;
   }
 
   .coreMission {
     margin: -5.5rem;
   }
+  .coreMissionImg {
+    margin: 0rem 1rem;
+  }
 
   .coreMissionContainer {
-    margin-top: -4rem ;
+    margin-top: -4rem;
     margin-bottom: 6rem;
   }
   
@@ -583,6 +587,8 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
     place-self: center;
+    width: auto;
+    margin: 0px;
   }
   
   .stats div {
