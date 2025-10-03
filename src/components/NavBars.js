@@ -130,13 +130,16 @@ export default function Navbar() {
               ["academy", "FSX Academy"],
             ].map(([path, label]) => (
               <li key={path}>
-                <Link
-                  href={`/fsx-page/${path}`}
-                  onClick={closeMobileMenu}
-                  className={pathname === `/fsx-page/${path}` ? styles.activeLink : ''}
-                >
-                  {label}
-                </Link>
+                <Link href={`/fsx-page/${path}`} onClick={(e) => {
+  if (path === 'not-found') {
+    e.preventDefault();
+    // Handle the "Not Found" link click event
+  } else {
+    closeMobileMenu();
+  }
+}} className={pathname === `/fsx-page/${path}` ? styles.activeLink : ''}>
+  {label}
+</Link>
               </li>
             ))}
           </ul>
