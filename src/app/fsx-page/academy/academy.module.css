@@ -494,6 +494,10 @@ display: flex;
     color: #FAFDFF;
     margin-bottom: 2rem;
 }
+.joinLink{
+    text-decoration: none;
+    width: 100%;
+}
 
 @media screen and (max-width: 1280px) {
   .whatGetContainer{
