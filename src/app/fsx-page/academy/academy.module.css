@@ -193,6 +193,7 @@ display: flex;
     font-family: var(--font-bahns);
     font-size: 1.78rem;
     font-weight: 600;
+    line-height: 38.4px;
     
 }
 
@@ -319,6 +320,8 @@ display: flex;
     font-family: var(--font-bahns);
     font-size: 2.22rem;
     font-weight: 700;
+    line-height: 33.6px;
+    text-align: center;
     
 }
 
@@ -490,4 +493,166 @@ display: flex;
     font-weight: 400;
     color: #FAFDFF;
     margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 1280px) {
+  .whatGetContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+    
+}
+
+@media screen and (max-width: 1250px) {
+    
+.connectCardsContainer{
+  
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-content: space-between;
+   
+}
+    
+}
+
+@media screen and (max-width: 1124px) {
+.communityCard{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
+    gap: 4rem;
+}
+    
+}
+
+@media screen and (max-width: 1066px) {
+     /* .fsxSection{
+        margin-top: 30px;
+    } */
+.heroImageContainer{
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    height: 300px;
+    background-color: #90AFD1;
+    padding-left: 1rem;
+    /* padding: 2rem 1rem; */
+    border-radius: 1rem;
+}
+.heroImage{
+    width: 350px;
+    margin-top: -30px;
+}
+    
+}
+
+@media screen and (max-width: 1020px) {
+     .fsxSection{
+        margin-top: 30px;
+    }
+.heroSection, .whatWeDoSection, .valuePropSection, .whoBenefitSection, .whatYouGetSection, .trainningSection, .progressSection, .connectSection{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 976px) {
+    .fsxSection{
+        margin-top: 20px;
+    }
+    
+}
+
+@media screen and (max-width: 898px) {
+    .fsxSection{
+        margin-top: 20px;
+    }
+
+    .communityImg{
+        width: 350px;
+    }
+    
+}
+@media screen and (max-width: 784px) {
+    .heroSection, .whatWeDoSection, .valuePropSection{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-left: 1rem;
+    }
+    .heroSection, .valuePropSection{
+        text-align: center;
+    }
+    .valuePropCardsContainer, .whatGetContainer, .trainingCardsContainer, .progressCardsContainer, .connectCardsContainer{
+        grid-template-columns: 1fr;
+    }
+     .communityCard{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 1rem;
+     }
+     .communityCardTitle{
+    font-size: 1.77rem;
+    color: #0D519A;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-bahns);
+}
+     .communityCardContent{
+        order: 1;
+     }
+        .communityCardImage{
+            order: 2;
+            height: 250px;
+            margin-bottom: 1rem;
+        }
+        .communityImg{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .whoBenefitTitle, .whatYouGetTitle{
+            line-height: 33.6px;
+            text-align: center;
+        }
+}
+
+@media screen and (max-width: 462px) {
+.whatWeDoImage{
+    width: 300px;
+    object-fit: contain;
+}
+}
+
+@media screen and (max-width: 414px) {
+.heroImageContainer{
+    width: 250px;
+    height: 150px;
+}
+.heroImage{
+    width: 200px;
+    height: auto;
+    margin-top: 13px;
+    margin-left: -10px;
+     object-fit: contain;
+}
+.heroBtnContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.valuePropCard{
+    height: auto;
+    padding: 20px;
+}
+}
+
+@media screen and (max-width: 344px) {
+    .whatWeDoImage{
+    width: 200px;
+    object-fit: contain;
+    }
 }
