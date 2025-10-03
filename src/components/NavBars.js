@@ -101,7 +101,7 @@ export default function Navbar() {
 
         <li className={styles.navItem}>
           <a
-            href="https://www.linkedin.com/company/fransunisoft/"
+            href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7377090374336589825"
             target="_blank"
             rel="noopener noreferrer"
             onClick={closeMobileMenu}

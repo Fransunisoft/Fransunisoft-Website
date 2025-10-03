@@ -117,7 +117,7 @@ export default function Footer() {
             <h4>Quick Links</h4>
             <Link href="/about">About Us</Link>
             <a
-              href="https://www.linkedin.com/company/fransunisoft/"
+              href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7377090374336589825"
               target="_blank"
               rel="noopener noreferrer"
             >
