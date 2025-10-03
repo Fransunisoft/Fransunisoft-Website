@@ -1,0 +1,493 @@
+:root {
+  --font-bahns: "Bahnschrift", sans-serif;
+
+}
+
+html {
+  font-size: 18px;
+  background-color: white;
+  line-height: 24px;
+}
+.fsxSection {
+  display: flex !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  flex-wrap: wrap  !important;
+  min-height: 100vh !important;
+  font-family: var(--font-roboto) !important;
+  color: #2c3e50;
+  margin-top: 100px;
+}
+
+.heroSection{
+display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 7rem;
+  background: linear-gradient(to bottom right, #0d519a 10%, #0d519a 55%, #ffffff 150%);
+  color: white;
+  gap: 2rem;
+}
+.heroTextContainer{
+    width: 100%;
+    max-width: 520px;
+}
+
+.heroTitle{
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: var(--font-bahns);
+    
+}
+
+.heroDescription{
+    font-size: 0.88rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    /* font-family: var(--font-bahns); */
+}
+.heroBtnContainer{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+    flex: wrap;
+}
+.exploreBtn, .joinBtn{
+  color: white;
+  padding: 0.75rem 0rem;
+  border: none;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+  max-width: 11rem;
+  font-family: var(--font-roboto);
+  font-weight: 500;
+}
+.exploreBtn{
+     background: #FF6B35;
+     
+}
+.exploreBtn:hover {
+  background-color: #B54C26;
+}
+.joinBtn{
+     background: transparent;
+     border: 1px solid white;
+}
+.joinBtn:hover {
+  background-color: #0056b3;
+}
+.heroImageContainer{
+    width: 100%;
+    max-width: 560px;
+    margin: auto;
+    height: 397px;
+    background-color: #90AFD1;
+    padding-left: 1rem;
+    /* padding: 2rem 1rem; */
+    border-radius: 1rem;
+}
+
+.whatWeDoSection{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5rem 7rem;
+    gap: 2rem;
+    /* flex-wrap: wrap; */
+}
+.whatWeDoTextContainer{
+    width: 100%;
+    max-width: 500px;
+}
+.whatWeDoTitle{
+    font-size: 1.77rem;
+    font-weight: 600;
+    color: #2C3E50;
+    font-family: var(--font-bahns);  
+}
+.whatWeDoDescription{
+    font-size: 0.88rem;
+    font-weight: 400;
+    margin-bottom: 1.2rem;
+    color: #2C3E50;
+    margin-top: 1rem;
+}
+.whatWeDoSubTitle{
+    color: #0D519A;
+    font-weight: 600;
+    font-style: 1.33rem;
+    font-family: var(--font-bahns);
+}
+
+.whatWeDoSubDescription{
+    font-size: 0.88rem;
+    font-weight: 400;
+    margin-bottom: 0.3rem;
+    color: #2C3E50;
+    margin-top: 0.1rem;
+}
+
+.valuePropSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0rem 7rem;
+    gap: 1.3rem;
+}
+
+.valuePropBtn{
+    background: transparent;
+    color: #3D74AE;
+    padding: 0 20px;
+    border: 1px solid #3D74AE;
+    font-weight: bold;
+    font-size: 0.88rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    outline: none;
+    font-family: var(--font-roboto);
+    font-weight: 500;
+}
+
+.valuePropTitle{
+    font-size: 1.55rem;
+    font-weight: 600;
+    color: #2C3E50;
+    font-family: var(--font-bahns);  
+}
+.valuePropDescription{
+    font-size: 0.88rem;
+    font-weight: 400;
+    margin-bottom: 1.2rem;
+    color: #7C8084;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.valuePropCardsContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.valuePropCard{
+    box-shadow: 0 8px 16px #00000014;
+    border-radius: 0.5rem;
+    padding: 32px;
+    height: 13.889rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.valuePropCardTitle{
+    margin: 1rem 0;
+    font-family: var(--font-bahns);
+    font-size: 1.78rem;
+    font-weight: 600;
+    
+}
+
+.valuePropCardDescription{
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: #7C8084;
+}
+
+.whoBenefitSection{
+    margin-top: 4rem;
+    padding: 0rem 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+.whoBenefitTitle{
+    font-family: var(--font-bahns);
+    font-size: 2.22rem;
+    font-weight: 700;
+    
+}
+
+.whoBenefitDescription{
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: #7C8084;
+}
+
+.communityCardsContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.communityCard{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
+    gap: 8rem;
+}
+.communityCardTitle{
+    font-size: 1.77rem;
+    color: #0D519A;
+    font-weight: 600;
+    margin-bottom: 1.3rem;
+    font-family: var(--font-bahns);
+}
+
+.communityCardDescription{
+    color: #2C3E50;
+    font-weight: 400;
+    font-size: 0.88rem;
+    
+}
+
+
+.whatYouGetSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 7rem;
+    flex-direction: column;
+}
+.whatYouGetTitle{
+    font-family: var(--font-bahns);
+    font-size: 2.22rem;
+    font-weight: 700;
+    
+}
+
+.whatYouGetDescription{
+    font-size: 0.88rem;
+    font-weight: 400;
+    color:#7F8C8D;
+    font-family: var(--font-bahns);
+    margin: 1rem 0;
+}
+
+.whatGetContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatGetCard{
+    box-shadow: 0 8px 16px #00000014;
+    border-radius: 0.5rem;
+    border: 0.5px solid #A0A5AA;
+    padding: 32px;
+    height: 13.889rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: #ECF0F5;
+}
+
+.whatGetCardTitle{
+    font-family: var(--font-bahns);
+    font-weight: 600;
+    font-size: 1.777rem;
+    margin-top: 1.5rem;
+    color: #2C3E50;
+    line-height: 38.4px;
+}
+
+.trainningSection{
+    background-color: #E7EEF5;
+    margin-top: 3rem;
+    padding: 2.5rem 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.trainningTitle{
+    font-family: var(--font-bahns);
+    font-size: 2.22rem;
+    font-weight: 700;
+    
+}
+
+.trainningDescription{
+    font-size: 0.88rem;
+    font-weight: 400;
+    color:#7F8C8D;
+    text-align: center;
+  
+}
+
+.trainingCardsContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+.trainingCard{
+    height: 366px;
+    background-color: #FFFFFF;
+    padding: 1.5rem;
+    border-radius: 1.2rem;
+}
+.trainingCardTitle{
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #20A89F;
+    font-family: var(--font-bahns);
+    line-height: 38.4px;
+}
+.trainingListItem, .trainingCardDescription{
+    font-size: 0.88rem;
+    font-weight: 400;
+    color:#5F6165;
+  
+}
+
+ .trainingList{
+    padding: 0.2rem 0;
+}
+
+ .trainingListItem{
+    padding: 0.2rem 0;
+    list-style-position: inside;
+    color: #5F6165;
+}
+
+.progressSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 7rem;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+.progressTitle{
+    font-family: var(--font-bahns);
+    font-size: 2.22rem;
+    font-weight: 700;
+    color: #2C3E50;
+}
+.progressDescription{
+    font-size: 0.88rem;
+    font-weight: 400;
+    color:#7F8C8D;
+    text-align: center;
+}
+
+.progressCardsContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.progressCard{
+    box-shadow: 0 8px 16px #00000014;
+    border-radius: 0.5rem;
+    padding: 32px;
+    height: 13.9rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.progressCardTitle{
+    margin: 1rem 0;
+    font-family: var(--font-bahns);
+    font-size: 1.78rem;
+    font-weight: 600;
+    line-height: 38.4px;
+    
+}
+.progressCardDescription{
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: #7C8084;
+}
+
+.connectSection{
+    /* background-color: #E7EEF5; */
+    padding: 2.5rem 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.connectTitle{
+    font-family: var(--font-bahns);
+    font-size: 2.22rem;
+    font-weight: 700;
+}
+.connectDescription{
+    font-size: 0.88rem;
+    font-weight: 400;
+    color:#7F8C8D;
+    text-align: center;
+  
+}
+
+.connectCardsContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.connectCard{
+    box-shadow: 0 8px 16px #00000014;
+    border-radius: 0.5rem;
+    padding: 25px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: #4DB9B2;
+    color: white;
+}
+.connectBtn{
+    background-color: transparent;
+    border: 1px solid #FAFDFF;
+    outline: none;
+    border-radius: 8px;
+    padding: 0px 20px;
+    font-family: var(--font-roboto);
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+}
+
+.connectCardTitle{
+    margin: 1rem 0;
+    font-family: var(--font-bahns);
+    font-size: 1.78rem;
+    font-weight: 700;
+}
+
+.connectCardDescription{
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: #FAFDFF;
+    margin-bottom: 2rem;
+}
