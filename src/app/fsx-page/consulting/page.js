@@ -1,8 +1,13 @@
 'use client'
+
+import { useEffect } from "react"
 import React from "react";
 import styles from "./consulting.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import AOS from "aos";
+
+
 
 const scrollToContact = (e) => {
     e.preventDefault();
@@ -14,10 +19,20 @@ const scrollToContact = (e) => {
   };
 
 const Consulting = () => {
+  useEffect(() => {
+      setTimeout(() => {
+        AOS.init({
+          duration: 1000,
+          once: true,
+        });
+      }, 100);
+    }, []);
+
+
   return (
     <div className={styles.consulting}>
       {/* Hero Section */}
-      <section className={styles.hero}>
+      <section className={styles.hero} data-aos="fade-up">
         <div className={styles.heroText}>
           <h1>FSX Consulting</h1>
           <p>
@@ -41,7 +56,7 @@ const Consulting = () => {
               className={styles.responsiveImage}
             />
             <p className={styles.subNote}>
-              We have 6K+ Customers across Africa
+              We have 1K+ Customers across Africa
             </p>
           </div>
         </div>
@@ -57,7 +72,7 @@ const Consulting = () => {
       </section>
 
       {/* Services */}
-      <section className={styles.services}>
+      <section className={styles.services} data-aos="fade-up">
         <div className={styles.sectionHead}>
           <h2>Our Consulting Services</h2>
           <p>
@@ -111,7 +126,7 @@ const Consulting = () => {
       </section>
 
       {/* Approach */}
-      <section className={styles.approach}>
+      <section className={styles.approach} data-aos="fade-up">
         <div className={styles.sectionHead}>
           <h2>Our Proven Approach</h2>
           <p>
@@ -158,7 +173,7 @@ const Consulting = () => {
       </section>
 
       {/* Mission */}
-      <section className={styles.mission}>
+      <section className={styles.mission} data-aos="fade-up">
         <h2 className={styles.sectionHead}>Our Mission</h2>
         <div className={styles.coreMission}>
           <Image
@@ -184,7 +199,7 @@ const Consulting = () => {
             <div className={styles.coreMissionText}>
               <h3>
                 The Core Mission Behind
-                <span>all our work</span>
+                <span > all our work</span>
               </h3>
               <p>
                 Equips startups and enterprises with smart strategies to build
@@ -204,7 +219,7 @@ const Consulting = () => {
             <span className={styles.statp}>A decade of trusted consulting experience.</span>
           </div>
           <div>
-            <h3>100+</h3>
+            <h3>30+</h3>
             <h6>Projects Delivered</h6>
             <span className={styles.statp}>Real-world solution that achieved measurable results</span>
           </div>
@@ -214,7 +229,7 @@ const Consulting = () => {
             <span className={styles.statp}>Our clients comes back, which says everything</span>
           </div>
           <div>
-            <h3>200+</h3>
+            <h3>5+</h3>
             <h6>Businesses Impacted</h6>
             <span className={styles.statp}>
               A lot of business has benefited from our solutions spanrovided.
@@ -224,7 +239,7 @@ const Consulting = () => {
       </section>
 
       {/* Why Us */}
-      <section className={styles.whyUs}>
+      <section className={styles.whyUs} data-aos="fade-up">
         <div className={styles.sectionHead}>
           <h2>Why Our Expertise Matters</h2>
           <p>

@@ -3,7 +3,7 @@
   position: relative;
   color: #F1F5F9;
   padding: 3rem 6rem 2rem;
-  font-family: 'Inter', sans-serif;
+  font-family: 'roboto', sans-serif;
   overflow: visible;
   
 }
@@ -270,7 +270,7 @@
 /* 📱 Mobile Phones */
 @media (max-width: 480px) {
   .footer {
-    padding: 0rem 1rem;
+    padding: 2rem 1rem;
   }
 
   .topSection {
