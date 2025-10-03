@@ -179,7 +179,7 @@ export default function HomePage() {
             <p className={styles.cardDescription}>
               Platforms, automation, and innovation programs for building scalable solutions from scratch.
             </p>
-            <Link href="/fsx-page/labs" className={styles.learnMoreBtn}>Learn More</Link>
+            <Link href="/fsx-page/construction" className={styles.learnMoreBtn}>Learn More</Link>
           </div>
 
           <div className={styles.card}>
@@ -207,7 +207,7 @@ export default function HomePage() {
             <p className={styles.cardDescription}>
               Connecting communities and brands through digital platforms and strategic partnerships.
             </p>
-            <Link href="/fsx-page/event" className={styles.learnMoreBtn}>Learn More</Link>
+            <Link href="/fsx-page/connect" className={styles.learnMoreBtn}>Learn More</Link>
           </div>
 
           <div className={styles.card}>
