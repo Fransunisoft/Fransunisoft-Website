@@ -215,7 +215,7 @@ const App = (props) => {
                   className={styles.variant8Button} 
                   whileHover={{ scale: 1.02 }}
                 >
-                  <span className={styles.variant8Text}>Back To Brand Family</span>
+                  <span className={styles.variant8Text}>Explore Services</span>
                 </motion.a>
               </motion.div>
             </motion.div>

@@ -834,30 +834,36 @@
 
 /* Hero-specific accent button: Orange variant for calls-to-action. */
 .accentButtonHero {
-    width: 155px;
+     width: 175px;
     height: 48px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    transform: rotate(0deg);
+    opacity: 1;
     gap: 10px;
-    padding: 10px 20px;
     border-radius: 15px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    box-shadow: 
+        0px 2px 4px 0px #00000014,
+        0px 0px 6px 0px #00000005;
     background: #FF6B35;
     color: #ffffff;
     border: none;
     cursor: pointer;
     box-sizing: border-box;
-    opacity: 1;
-    transform: rotate(0deg);
-    box-shadow:
-        0px 2px 4px 0px rgba(0,0,0,0.08),
-        0px 0px 6px 0px rgba(0,0,0,0.02);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-family: Roboto, sans-serif;
     font-size: 14px;
     font-weight: 600;
     line-height: 1;
     transition: transform .12s ease, box-shadow .12s ease;
     -webkit-tap-highlight-color: transparent;
+    outline: none;
+
+
 }
 
 /* Variant button: Outlined transparent button for secondary actions. */
@@ -1002,24 +1008,47 @@
   }
 
   .heroText h1 {
+    width: 129px;
+    height: 39px;
+    transform: rotate(0deg);
+    opacity: 1;
+    font-family: Bahnschrift, sans-serif;
+    font-weight: 700;
+    font-style: normal; /* Bold is handled by font-weight: 700 */
     font-size: 32px;
-    line-height: 1.2;
-    margin: 0.5rem 0 1rem 0; /* Tightened margins for mobile density */
-    width: auto;
-    max-width: 100%;
+    line-height: 38.4px;
+    letter-spacing: 0%;
     text-align: center;
+    vertical-align: middle;
+    color: #FFFFFF;
+    margin: 0.5rem 0 1rem 0;
+    padding: 0;
+    display: block;
+    leading-trim: none; /* If supported; otherwise ignore */
   }
+  
 
   .heroText p {
-    font-size: 16px;
-    line-height: 1.5;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 0 1.5rem 0; /* Reduced bottom for better button proximity */
-    height: auto !important;
-    overflow: visible !important;
-    white-space: normal !important;
+    width: 391px;
+    height: 84px;
+    transform: rotate(0deg);
+    opacity: 1;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0%;
     text-align: center;
+    vertical-align: middle;
+    color: #ECF0F5;
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+    display: block;
+    overflow: hidden;
+    leading-trim: none;
+    box-sizing: border-box;
+    max-width: 100%;
   }
 
   .heroActions {
@@ -1036,6 +1065,69 @@
     width: 100%;
     max-width: 250px;
     justify-content: center;
+    width: 100%;
+
+  }
+
+   .variant8Button {
+    width: 144px;
+    height: 48px;
+    transform: rotate(0deg);
+    opacity: 1;
+    gap: 10px;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    border: 1px solid #E1E7EF;
+    box-shadow: 
+        0px 2px 4px 0px #00000014,
+        0px 0px 6px 0px #00000005;
+    background: transparent;
+    color: #FFFFFF;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .12s ease, box-shadow .12s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+    .accentButtonHero {
+    width: 175px;
+    height: 48px;
+    transform: rotate(0deg);
+    opacity: 1;
+    gap: 10px;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    box-shadow: 
+        0px 2px 4px 0px #00000014,
+        0px 0px 6px 0px #00000005;
+    background: #FF6B35;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    transition: transform .12s ease, box-shadow .12s ease;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
   }
 
   .heroImage {
@@ -1152,17 +1244,50 @@
     padding: 40px 0;
   }
 
-  .products h2 {
+   .products h2 {
+    width: 232px;
+    height: 34px;
+    transform: rotate(0deg);
+    opacity: 1;
+    font-family: Bahnschrift, sans-serif;
+    font-weight: 700;
+    font-style: normal;
     font-size: 28px;
-    width: auto;
+    line-height: 33.6px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #2C3E50;
+    background: transparent;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+    leading-trim: none;
+    box-sizing: border-box;
+    max-width: 100%;
   }
 
-  .productsLead {
+ .productsLead {
+    width: 292px;
+    height: 57px;
+    transform: rotate(0deg);
+    opacity: 1;
+    font-family: Bahnschrift, sans-serif;
+    font-weight: 600;
+    font-style: normal;
     font-size: 16px;
-    width: 100%;
-    line-height: 1.4;
+    line-height: 1;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #7F8C8D;
+    background: transparent;
+    margin: 1rem auto;
+    padding: 0;
+    display: block;
+    leading-trim: none;
+    box-sizing: border-box;
+    max-width: 100%;
   }
-
+  
   .swiperContainer {
     padding: 0;
     display: flex;
@@ -1289,11 +1414,39 @@
     text-align: left;
   }
 
-  .accentButton {
-    width: 100%;
-    max-width: none;
+    .accentButton {
+    width: 206px;
+    height: 48px;
+    transform: rotate(0deg);
+    opacity: 1;
+    gap: 10px;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    background: #0D519A;
+    box-shadow: 
+        0px 2px 4px 0px #00000014,
+        0px 0px 6px 0px #00000005;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: center;
+    transition: transform .12s ease, box-shadow .12s ease;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    white-space: nowrap;
   }
-
   /* General Mobile Adjustments */
   .featuresList li > * {
     white-space: normal;
