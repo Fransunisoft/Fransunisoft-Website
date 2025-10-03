@@ -77,7 +77,7 @@
     width: 0;
   }
   to {
-    width: 100%;
+    width: 70%;
   }
 }
 
@@ -100,10 +100,11 @@
 
 @media (max-width: 480px) {
   .typewriter {
-    font-size: 1.55rem;
+    place-items: center;
+    font-size: 1.25rem;
     max-width: auto;
     margin: 0 auto;
-    margin-right: 3rem;
+    margin-right: 4rem;
   }
 
   /* On mobile: hide desktop break, show mobile break */
@@ -118,7 +119,7 @@
 
 @media (max-width: 375px) {
   .typewriter {
-    font-size: 1.2rem;
+    font-size: 1.rem;
     max-width: auto;
     margin: 0rem 0.5rem;
     margin-right: 3rem;
@@ -511,7 +512,7 @@ border-color: #E1E7EF;
   .fsxStats {
     flex-direction: column;
     gap: 2px;
-    padding: 0 10px; /* tighter horizontal padding */
+    padding: 10 10px; /* tighter horizontal padding */
     margin: 0 auto 10px auto; /* center horizontally */
     max-width: 55%; /* shrink container width */
     border-radius: 12px;

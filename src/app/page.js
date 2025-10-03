@@ -170,7 +170,7 @@ export default function HomePage() {
             <p className={styles.cardDescription}>
               Business consulting, digital transformation, and community programs that bridge strategy with real tech execution and impact.
             </p>
-            <Link href="/fsx-consulting" className={styles.learnMoreBtn}>Learn More</Link>
+            <Link href="/fsx-page/consulting" className={styles.learnMoreBtn}>Learn More</Link>
           </div>
 
           <div className={styles.card}>
@@ -179,7 +179,7 @@ export default function HomePage() {
             <p className={styles.cardDescription}>
               Platforms, automation, and innovation programs for building scalable solutions from scratch.
             </p>
-            <Link href="/fsx-labs" className={styles.learnMoreBtn}>Learn More</Link>
+            <Link href="/fsx-page/labs" className={styles.learnMoreBtn}>Learn More</Link>
           </div>
 
           <div className={styles.card}>
@@ -189,7 +189,7 @@ export default function HomePage() {
               Computer accessories, gadgets, and electronics procurement providing reliable, affordable enterprise technology solutions.
 
             </p>
-            <Link href="/fsx-tech" className={styles.learnMoreBtn}>Learn More</Link>
+            <Link href="/fsx-page/tech" className={styles.learnMoreBtn}>Learn More</Link>
           </div>
 
           <div className={styles.card}>
@@ -198,7 +198,7 @@ export default function HomePage() {
             <p className={styles.cardDescription}>
               Brand activations, corporate events, and community programs with global-standard execution.
             </p>
-            <Link href="/fsx-events" className={styles.learnMoreBtn}>Learn More</Link>
+            <Link href="/fsx-page/event" className={styles.learnMoreBtn}>Learn More</Link>
           </div>
 
           <div className={styles.card}>
@@ -207,7 +207,7 @@ export default function HomePage() {
             <p className={styles.cardDescription}>
               Connecting communities and brands through digital platforms and strategic partnerships.
             </p>
-            <Link href="/fsx-connect" className={styles.learnMoreBtn}>Learn More</Link>
+            <Link href="/fsx-page/event" className={styles.learnMoreBtn}>Learn More</Link>
           </div>
 
           <div className={styles.card}>
@@ -216,7 +216,7 @@ export default function HomePage() {
             <p className={styles.cardDescription}>
               Training and learning programs designed to empower individuals and teams with future-ready skills.
             </p>
-            <Link href="/fsx-academy" className={styles.learnMoreBtn}>Learn More</Link>
+            <Link href="//fsx-page/academy" className={styles.learnMoreBtn}>Learn More</Link>
           </div>
         </div>
       </section>
