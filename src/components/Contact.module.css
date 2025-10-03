@@ -827,7 +827,7 @@
     max-width: none;
     padding: 32px 24px;
     border-radius: 20px; /* Softer on smaller screens */
-    align-items: center;
+    align-items: flex-start; /* FIXED: Left-align for uniform starting line across all rows (matches Figma) */
     width: 100%;
   }
 
@@ -898,12 +898,13 @@
   .contactForm {
     gap: 0.75rem; /* Tighter spacing */
     width: 100%;
-    padding: 0 5px; /* Subtle padding for edge cases */
+    padding: 0; /* FIXED: Removed 5px padding to ensure uniform starting alignment across all rows */
   }
 
   .formRow {
     grid-template-columns: 1fr; /* Already stacked */
     gap: 0.75rem;
+    margin: 0; /* FIXED: Explicit no margin for clean stacking */
   }
 
   .input,
@@ -916,6 +917,7 @@
     padding: 16px 20px; /* Adjusted for mobile */
     font-size: 16px; /* Prevents zoom on iOS */
     border-radius: 12px;
+    margin: 0; /* FIXED: No extra margin to match other rows' starting line */
   }
 
   .textarea {
@@ -944,15 +946,22 @@
   }
 
   .phoneRow {
-    height: 50px;
-    flex-direction: column; /* Stack flag/select over input for narrow screens */
-    padding: 12px;
-    overflow: visible;
-    border-radius: 12px; /* Unified radius on mobile */
+    height: 50px; /* FIXED: Keep thumb height, but now horizontal row */
+    flex-direction: row; /* FIXED: Horizontal on mobile for same-line input */
+    padding: 0; /* Remove outer padding to avoid height inflation—let inners handle spacing */
+    overflow: hidden; /* Clip any micro-overflow for crisp edges */
+    border-radius: 12px; /* Unchanged */
+    border: 1px solid #A0A5AA; /* Add unified outer border to row for seamless look (matches other inputs) */
+    background: #FAFDFF; /* Unchanged: Subtle bg */
+    gap: 0; /* No gap—tight join */
+    box-sizing: border-box;
+    margin: 0; /* FIXED: Explicit no margin to align starting line with other rows */
+    align-items: center; /* FIXED: Vertical center for all parts */
   }
 
   .phoneRow:focus-within {
-    box-shadow: 0 0 0 3px rgba(13, 81, 154, 0.3);
+    border-color: transparent; /* Unified focus: Swap row border for shadow */
+    box-shadow: 0 0 0 3px rgba(13, 81, 154, 0.3); /* Unchanged: Sharper ring */
   }
 
   .phoneRow:focus-within .countrySelectorWrapper,
@@ -961,37 +970,52 @@
   }
 
   .countrySelectorWrapper {
-    width: 100%;
-    justify-content: center;
-    padding: 8px 0;
-    margin-bottom: 8px;
-    border-bottom: 1px solid #E5E7EB; /* Visual separator */
-    border-radius: 12px 12px 0 0;
-    min-width: auto;
-    border: 1px solid #A0A5AA;
-    border-bottom: none;
+    height: 100%; /* FIXED: Full height for seamless join */
+    padding: 12px 8px; /* FIXED: Tighter vertical (12px) and right (8px) for compact mobile fit */
+    min-width: 60px; /* FIXED: Smaller min-width to save space on mobile */
+    border-right: 1px solid #A0A5AA; /* FIXED: Use right border as separator instead of bottom */
+    border-radius: 12px 0 0 12px; /* FIXED: Left radius only */
+    flex: 0 0 auto; /* FIXED: Fixed size, no grow/shrink */
+    position: relative;
+    justify-content: flex-start; /* FIXED: Left-align flag/code, then arrow pushed right */
+    gap: 2px; /* FIXED: Tighter internal gap */
+  }
+
+  .selectArrow {
+    margin-left: auto; /* FIXED: Push arrow to end after code */
+    position: static; /* FIXED: Remove absolute for proper flex order: flag -> code -> arrow */
+    right: auto; /* FIXED: Reset absolute props */
+    top: auto;
+    transform: none; /* FIXED: No translate needed */
+  }
+
+  .selectedCode {
+    font-size: 14px; /* FIXED: Smaller for mobile compact row */
   }
 
   .flag {
-    width: 28px;
-    height: 18px;
-    margin-right: 4px;
-    border-radius: 4px;
+    width: 24px; /* FIXED: Smaller flag for mobile */
+    height: 16px;
+    margin-right: 0; /* FIXED: No margin—tight with code */
+    border-radius: 2px;
   }
 
   .phoneRow input {
-    width: 100%;
-    padding: 0 0 0 12px;
-    text-align: center; /* Center for better mobile feel */
-    height: 40px;
-    border-radius: 0 0 12px 12px;
-    border: 1px solid #A0A5AA;
-    border-top: none;
+    flex: 1;
+    height: 100%;
+    padding: 12px 16px; /* FIXED: Tighter padding for mobile horizontal fit */
+    border-radius: 0 12px 12px 0; /* FIXED: Right radius only */
+    border-left: none;
+    margin: 0;
+    box-sizing: border-box;
+    line-height: 1.2; /* FIXED: Slight loosen for readability */
+    white-space: nowrap;
+    align-self: stretch; /* FIXED: Full height stretch */
   }
 
   .phoneRow input::placeholder {
     font-size: 16px;
-    text-align: center;
+    line-height: 1.2;
   }
 
   .attachLabel {
@@ -1109,6 +1133,24 @@
       padding: 14px 16px;
     }
 
+    .phoneRow input {
+      padding: 14px 12px; /* FIXED: Even tighter for extra small */
+    }
+
+    .countrySelectorWrapper {
+      padding: 10px 6px;
+      min-width: 55px;
+    }
+
+    .flag {
+      width: 20px;
+      height: 14px;
+    }
+
+    .selectedCode {
+      font-size: 13px;
+    }
+
     .submitButton {
       height: 48px;
       font-size: 15px;
@@ -1118,4 +1160,4 @@
       width: 100vw;
     }
   }
-} 
+}
