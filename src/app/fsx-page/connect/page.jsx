@@ -106,7 +106,7 @@ export default function FsxConnect() {
             We facilitate meaningful connections through specialized networks
             and programs designed to foster collaboration and growth.
           </p>
-          <div className={styles.connectionCardsContainer}>
+          <div className={styles.connectionCardsContainer} id="connection">
             <div className={styles.connectionCard}>
               <Image
                 src="/networkIcon.svg"
