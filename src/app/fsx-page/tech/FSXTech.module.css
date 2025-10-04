@@ -112,13 +112,19 @@
     opacity: 1;
     font-family: Bahnschrift, sans-serif;
     font-weight: 700;
+    font-style: normal;
     font-size: 48px;
     line-height: 57.6px;
     letter-spacing: 0%;
+    vertical-align: middle;
+    background: transparent;
     color: #FFFFFF;
     margin: 2.5rem 0 1rem 0;
     padding: 0;
     display: block;
+    leading-trim: none;
+    box-sizing: border-box;
+    white-space: nowrap;
 }
 
 /* Hero image: Right-aligned with rounded corners and object-fit for responsiveness. */
@@ -380,16 +386,30 @@
 
 /* Service icon: Circular brand-colored background for icons. */
 .serviceIcon {
-    background: #0D519A;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 0.5rem;
-    color: #FFFFFF;
+    width: 60px !important;
+    height: 60px !important;
+    transform: rotate(0deg) !important;
+    opacity: 1 !important;
+    border-radius: 20px !important; /* Soft rounded square— exact Figma */
+    background: #0D519A !important; /* Blue bg */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto 0.5rem !important;
+    color: #FFFFFF !important; /* White icon */
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+    position: relative !important; /* Ensures border draws on div, not child */
 }
+
+/* Ensure icon SVG inherits (no image override) */
+.serviceIcon svg {
+    width: 40px !important;
+    height: 40px !important;
+    color: #FFFFFF !important;
+    fill: currentColor !important; /* Forces white if needed */
+}
+
 
 /* Service card heading: Medium size, dark text. */
 .serviceCard h3 {
@@ -1001,30 +1021,35 @@
     align-items: center;
   }
 
-  .heroText {
+   .heroText {
     width: 100%;
     max-width: 100%;
     text-align: center;
   }
 
+ /* Hero h1: FSX Tech - Fix alignment & width for natural centering */
   .heroText h1 {
-    width: 129px;
+    width: auto; /* Changed: Let text size naturally instead of fixed 129px */
+    max-width: 100%;
     height: 39px;
     transform: rotate(0deg);
     opacity: 1;
     font-family: Bahnschrift, sans-serif;
     font-weight: 700;
-    font-style: normal; /* Bold is handled by font-weight: 700 */
+    font-style: normal;
     font-size: 32px;
     line-height: 38.4px;
     letter-spacing: 0%;
     text-align: center;
     vertical-align: middle;
-    color: #FFFFFF;
+    background: transparent; /* Changed: Likely not meant as box bg; use color for text */
+    color: #FFFFFF; /* Hero contrast on gradient */
     margin: 0.5rem 0 1rem 0;
     padding: 0;
     display: block;
-    leading-trim: none; /* If supported; otherwise ignore */
+    white-space: nowrap; /* Added: Prevent any wrap */
+    leading-trim: none;
+    box-sizing: border-box;
   }
   
 
@@ -1196,7 +1221,9 @@
 
   /* Services Mobile */
   .services {
-    padding: 40px 0;
+    padding: 40px 0 20px 0;
+    padding-bottom: 20px !important; /* Tightens services end */
+
   }
 
   .services h2 {
@@ -1213,21 +1240,48 @@
   .servicesGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    margin: 2rem auto 0;
+    margin: 2rem auto 0 auto;
+    margin-bottom: 0 !important; /* No extra after cards */
+
   }
 
-  .serviceCard {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-    padding: 24px;
-    margin: 0 auto;
+   .serviceCard {
+    width: 383px;
+    height: 256px;
+    transform: rotate(0deg);
+    opacity: 1;
+    gap: 24px;
+    border-radius: 20px;
+    border: 0.5px solid #A0A5AA;
+    padding: 32px;
+    background: #ECF0F5;
+    box-shadow: 
+        0px 8px 16px 0px #00000014,
+        0px 0px 4px 0px #0000000A;
+    text-align: center;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
-  .serviceIcon {
+.serviceIcon {
     width: 60px;
     height: 60px;
-  }
+    transform: rotate(0deg);
+    opacity: 1;
+    border-radius: 20px; /* Changed: Perfect circle (equiv to 30px radius for 60px size) */
+    background: #0D519A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.5rem;
+    color: #FFFFFF;
+    flex-shrink: 0; /* Added: Prevents squish on narrow layouts */
+    box-sizing: border-box;
+}
 
   .serviceCard h3 {
     font-size: 1.2rem;
@@ -1240,13 +1294,16 @@
   }
 
   /* Products Mobile */
-  .products {
-    padding: 40px 0;
+ .products {
+    padding: 20px 0 40px 0; /* Top 20px (down from 40px); bottom 40px for footer */
+    padding-top: 20px !important; /* Tightens products start */
+    margin-bottom: 0;
   }
-
-   .products h2 {
+  
+ /* Products h2: Force zero top margin for border test (prevents any phantom) */
+  .products h2 {
     width: 232px;
-    height: 34px;
+    height: auto;
     transform: rotate(0deg);
     opacity: 1;
     font-family: Bahnschrift, sans-serif;
@@ -1258,12 +1315,15 @@
     text-align: center;
     color: #2C3E50;
     background: transparent;
-    margin: 0 auto;
+    margin: 0 auto 1rem auto !important; /* Top: 0 forced; bottom for lead text space */
     padding: 0;
     display: block;
+    white-space: nowrap;
     leading-trim: none;
     box-sizing: border-box;
     max-width: 100%;
+    margin-top: 0 !important; /* Zero for h2 itself */
+
   }
 
  .productsLead {
@@ -1288,10 +1348,10 @@
     max-width: 100%;
   }
   
+  /* Swiper tweaks for better mobile centering (reduce peek/space for full center swipe) */
   .swiperContainer {
     padding: 0;
-    display: flex;
-    justify-content: center;
+    overflow: hidden; /* Added: Hide overflow for clean swipe */
   }
 
   .swiperButtonPrev {
@@ -1313,15 +1373,37 @@
     height: 10px;
   }
 
-  .productCard {
-    width: 100%;
-    max-width: 320px;
-    height: auto;
-    padding: 24px;
-    margin: 0 auto;
+  .swiperCustom {
+    padding-bottom: 20px;
+  }
+
+/* Ensure slide width matches card for precise centering */
+  .swiper-slide {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Added: Centers content in slide */
     align-items: center;
+  }
+
+   .productCard {
+    width: 382px;
+    height: 405px;
+    transform: rotate(0deg);
+    opacity: 1;
+    gap: 10px;
+    border-radius: 25px;
+    padding: 32px;
+    background: #FFFFFF;
+    box-shadow: 
+        0px 8px 16px 0px #00000014,
+        0px 0px 4px 0px #0000000A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    overflow: hidden;
+    max-width: 100%; /* Added: Prevents overflow beyond viewport for better swipe centering */
+    margin: 0 auto; /* Added: Centers card in slide if needed */
   }
 
   .productCard .productImage {
@@ -1460,6 +1542,14 @@
     padding: 40px 0;
   }
 }
+
+ /* General: Ensure all relevant elements respect box-sizing (paddings/margins inside width) */
+  .services,
+  .products,
+  .servicesGrid,
+  .products h2 {
+    box-sizing: border-box;
+  }
 
 /* Tablet styles (769px to 1023px) - Intermediate adjustments */
 @media (min-width: 769px) and (max-width: 1023px) {
