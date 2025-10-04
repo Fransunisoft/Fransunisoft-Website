@@ -306,6 +306,8 @@
     padding: 80px 0; /* Standardized bottom to match top for consistency */
     background: #FAFDFF;
     margin-bottom: 0;
+    padding-bottom: 40px !important; /* Down from 80px; top stays 80px for section start */
+
 }
 
 /* Services heading: Centered H2 with neutral color. */
@@ -359,6 +361,8 @@
     row-gap: 20px;
     max-width: 1200px;
     margin: 1.3rem auto 0 auto;
+    margin-bottom: 0 !important;
+
 }
 
 /* Service card: Rounded, shadowed box with hover lift effect. */
@@ -442,21 +446,23 @@
 
 /* Products section: Variable background with padding for carousel. */
 .products {
-    padding: 80px 0; /* Standardized to 80px for consistency */
+   padding-top: 40px !important; /* Down from 80px; bottom stays 80px for footer */
     background: var(--section-bg, #FAFDFF);
     margin-bottom: 0;
     margin-top: 0;
     overflow: visible;
+  
 }
 
 /* Products heading: Centered H2 with neutral color. */
 .products h2 {
     width: 265px;
-    height: 39px;
+    height: auto; /* Changed: Flex to fit one line—no clip on wrap */
     transform: rotate(0deg);
     opacity: 1;
     font-family: Bahnschrift, sans-serif;
     font-weight: 600;
+    font-style: normal;
     font-size: 32px;
     line-height: 38.4px;
     letter-spacing: 0%;
@@ -465,6 +471,11 @@
     margin: 0 auto 0;
     padding: 0;
     display: block;
+    white-space: nowrap; /* Added: Force one line—fixes border split like mobile */
+    leading-trim: none;
+    box-sizing: border-box;
+    max-width: 100%; /* Added: Safety if container shrinks */
+ 
 }
 
 /* Products lead text: Centered introductory line. */
@@ -841,6 +852,8 @@
     -webkit-tap-highlight-color: transparent;
     outline: none;
     white-space: nowrap; /* Forces single-line display—no wrapping */
+    margin-bottom: 28px !important; /* Added: 20px space below button (increases gap to next section/end) */
+
 }
 
 /* If you want to target just the text content (e.g., via a span wrapper in React), add this: */
@@ -1605,6 +1618,6 @@
   .services,
   .products,
   .contact {
-    padding: 60px 0;
+  padding: 60px 0;
   }
 }

@@ -960,34 +960,50 @@
     padding: 0; /* Remove outer padding to avoid height inflation—let inners handle spacing */
     overflow: hidden; /* Clip any micro-overflow for crisp edges */
     border-radius: 12px; /* Unchanged */
-    border: 1px solid #A0A5AA; /* Add unified outer border to row for seamless look (matches other inputs) */
+    border: 1px solid #A0A5AA; /* Outer border: single source of truth */
     background: #FAFDFF; /* Unchanged: Subtle bg */
     gap: 0; /* No gap—tight join */
     box-sizing: border-box;
     margin: 0; /* FIXED: Explicit no margin to align starting line with other rows */
     align-items: center; /* FIXED: Vertical center for all parts */
+    position: relative; /* For unified focus ring */
+    transition: box-shadow 0.3s; /* Smooth unified focus */
   }
 
   .phoneRow:focus-within {
+    outline: none;
     border-color: transparent; /* Unified focus: Swap row border for shadow */
     box-shadow: 0 0 0 3px rgba(13, 81, 154, 0.3); /* Unchanged: Sharper ring */
   }
 
   .phoneRow:focus-within .countrySelectorWrapper,
   .phoneRow:focus-within input {
-    border-color: transparent !important;
+    border-color: transparent !important; /* No inner borders to interfere */
   }
 
   .countrySelectorWrapper {
     height: 100%; /* FIXED: Full height for seamless join */
     padding: 12px 8px; /* FIXED: Tighter vertical (12px) and right (8px) for compact mobile fit */
     min-width: 60px; /* FIXED: Smaller min-width to save space on mobile */
-    border-right: 1px solid #A0A5AA; /* FIXED: Use right border as separator instead of bottom */
-    border-radius: 12px 0 0 12px; /* FIXED: Left radius only */
+    border: none !important; /* FIXED: Kill all inner borders—row handles outer */
+    border-right: 1px solid #A0A5AA; /* FIXED: Single straight divider line, full height */
+    border-radius: 0; /* FIXED: No radius—row's outer curve covers it */
     flex: 0 0 auto; /* FIXED: Fixed size, no grow/shrink */
     position: relative;
     justify-content: flex-start; /* FIXED: Left-align flag/code, then arrow pushed right */
     gap: 2px; /* FIXED: Tighter internal gap */
+    background: transparent; /* FIXED: No bg—blends with row */
+    box-sizing: border-box; /* FIXED: Locks the divider to full height */
+  }
+
+  /* Lock internals to full vertical stretch—no wobble */
+  .countrySelectorWrapper .flag,
+  .countrySelectorWrapper .selectedCode,
+  .countrySelectorWrapper .selectArrow {
+    height: 100%;
+    display: flex;
+    align-items: center; /* Ensures code/arrow baseline with flag */
+    box-sizing: border-box;
   }
 
   .selectArrow {
@@ -996,10 +1012,13 @@
     right: auto; /* FIXED: Reset absolute props */
     top: auto;
     transform: none; /* FIXED: No translate needed */
+    font-size: 12px; /* Unchanged */
+    color: #A0A5AA;
   }
 
   .selectedCode {
     font-size: 14px; /* FIXED: Smaller for mobile compact row */
+    line-height: 1; /* FIXED: Tight baseline to match flag height */
   }
 
   .flag {
@@ -1007,24 +1026,28 @@
     height: 16px;
     margin-right: 0; /* FIXED: No margin—tight with code */
     border-radius: 2px;
+    flex-shrink: 0;
   }
 
   .phoneRow input {
     flex: 1;
     height: 100%;
     padding: 12px 16px; /* FIXED: Tighter padding for mobile horizontal fit */
-    border-radius: 0 12px 12px 0; /* FIXED: Right radius only */
-    border-left: none;
+    border: none !important; /* FIXED: Kill all inner borders—row handles outer, no doubles */
+    border-radius: 0; /* FIXED: No radius—row's outer curve covers it */
+    border-left: none; /* Redundant now, but safe */
     margin: 0;
     box-sizing: border-box;
     line-height: 1.2; /* FIXED: Slight loosen for readability */
     white-space: nowrap;
     align-self: stretch; /* FIXED: Full height stretch */
+    background: transparent; /* FIXED: Blends with row—no disjoint bg */
   }
 
   .phoneRow input::placeholder {
     font-size: 16px;
     line-height: 1.2;
+    color: #A0A5AA;
   }
 
   .attachLabel {

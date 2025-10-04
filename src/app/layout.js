@@ -12,13 +12,13 @@ export const metadata = {
 
 // The favicon comes here , each page has thier own nested layout.js that controls its metadata , 
 
-export const metadata = {
-  icons: {
-    icon: '/event1.png', // the favicon img url comes here 
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-  },
-}; 
+// export const metadata = {
+//   icons: {
+//     icon: '/event1.png', // the favicon img url comes here 
+//     shortcut: '/favicon.ico',
+//     apple: '/apple-touch-icon.png',
+//   },
+// }; 
 
 
 export default function RootLayout({ children }) {

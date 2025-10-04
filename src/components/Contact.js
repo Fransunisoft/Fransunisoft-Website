@@ -179,6 +179,10 @@ export default function Contact() {
                   <option value="Consulting">Consulting</option>
                   <option value="Support">Support</option>
                   <option value="Development">Development</option>
+                  <option value="Development">Development</option>
+                  <option value="Development">Development</option>
+                  <option value="Development">Development</option>
+                  <option value="Development">Development</option>
                 </select>
               </div>
 
