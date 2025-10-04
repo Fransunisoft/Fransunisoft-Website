@@ -251,7 +251,7 @@ const Consulting = () => {
         <div className={styles.whyGrid}>
           <div className={styles.whyCard}>
             <Image
-              src="/consultingMissionIcon.png"
+              src="/cExperience.png"
               alt="consulting approach image"
               width={40}
               height={40}
@@ -260,26 +260,28 @@ const Consulting = () => {
             <h3>Experience</h3>
             <p>Decade of insight fuel smarter decisions and faster execution</p>
           </div>
+          
           <div className={styles.whyCard}>
             <Image
-              src="/consultingMissionIcon.png"
-              alt="consulting approach image"
-              width={40}
-              height={40}
-              className={styles.responsiveImage}
-            />
-            <h3>Client Approach</h3>
-            <p>Decade of insight fuel smarter decisions and faster execution</p>
-          </div>
-          <div className={styles.whyCard}>
-            <Image
-              src="/consultingMissionIcon.png"
+              src="/cData.png"
               alt="consulting approach image"
               width={40}
               height={40}
               className={styles.responsiveImage}
             />
             <h3>Data Driven Insight</h3>
+            <p>Decade of insight fuel smarter decisions and faster execution</p>
+          </div>
+
+          <div className={styles.whyCard}>
+            <Image
+              src="/cClient.png"
+              alt="consulting approach image"
+              width={40}
+              height={40}
+              className={styles.responsiveImage}
+            />
+            <h3>Client Approach</h3>
             <p>Decade of insight fuel smarter decisions and faster execution</p>
           </div>
         </div>

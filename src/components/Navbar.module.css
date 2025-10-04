@@ -181,6 +181,8 @@
   background-color: #ffffff;
   color: #2C3E50;
   position: relative;
+   top: 0;            /* 🔹 sticks to top */
+  left: 0;
   z-index: 1000;
   user-select: none;
   flex-wrap: nowrap;
@@ -253,9 +255,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1rem 1rem;
+  margin: 1rem 0rem;
   background-color: #ffffff;
   color: #2C3E50;
+   top: 0;            /* 🔹 sticks to top */
+  left: 0;
   position: relative;
   z-index: 1000;
   user-select: none;

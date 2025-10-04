@@ -69,7 +69,7 @@
 .hero {
     background: linear-gradient(135deg, #0D519A 0%, #0D519A 70%, #20A89F 100%);
     color: #FFFFFF;
-    height: 516px;
+    min-height: 516px; /* Changed to min-height for flexibility without altering Figma intent */
     margin-top: 0;
     margin-bottom: 0;
     display: flex;
@@ -77,6 +77,9 @@
     justify-content: center;
     overflow: hidden;
     transform: rotate(0deg);
+    /* Mobile: Respect safe areas for notched devices */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
 /* Hero container: Wider max-width with generous padding for desktop. */
@@ -109,13 +112,19 @@
     opacity: 1;
     font-family: Bahnschrift, sans-serif;
     font-weight: 700;
+    font-style: normal;
     font-size: 48px;
     line-height: 57.6px;
     letter-spacing: 0%;
+    vertical-align: middle;
+    background: transparent;
     color: #FFFFFF;
     margin: 2.5rem 0 1rem 0;
     padding: 0;
     display: block;
+    leading-trim: none;
+    box-sizing: border-box;
+    white-space: nowrap;
 }
 
 /* Hero image: Right-aligned with rounded corners and object-fit for responsiveness. */
@@ -157,7 +166,7 @@
 
 /* About section: Light background with vertical padding for breathing room. */
 .about {
-    padding: 40px 0;
+    padding: 80px 0; /* Standardized to 80px for consistency */
     background: #f8fafc;
 }
 
@@ -294,7 +303,7 @@
 
 /* Services section: Pale blue background with asymmetric padding. */
 .services {
-    padding: 80px 0 40px 0;
+    padding: 80px 0; /* Standardized bottom to match top for consistency */
     background: #FAFDFF;
     margin-bottom: 0;
 }
@@ -377,16 +386,30 @@
 
 /* Service icon: Circular brand-colored background for icons. */
 .serviceIcon {
-    background: #0D519A;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 0.5rem;
-    color: #FFFFFF;
+    width: 60px !important;
+    height: 60px !important;
+    transform: rotate(0deg) !important;
+    opacity: 1 !important;
+    border-radius: 20px !important; /* Soft rounded square— exact Figma */
+    background: #0D519A !important; /* Blue bg */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto 0.5rem !important;
+    color: #FFFFFF !important; /* White icon */
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+    position: relative !important; /* Ensures border draws on div, not child */
 }
+
+/* Ensure icon SVG inherits (no image override) */
+.serviceIcon svg {
+    width: 40px !important;
+    height: 40px !important;
+    color: #FFFFFF !important;
+    fill: currentColor !important; /* Forces white if needed */
+}
+
 
 /* Service card heading: Medium size, dark text. */
 .serviceCard h3 {
@@ -419,7 +442,7 @@
 
 /* Products section: Variable background with padding for carousel. */
 .products {
-    padding: 48px 0;
+    padding: 80px 0; /* Standardized to 80px for consistency */
     background: var(--section-bg, #FAFDFF);
     margin-bottom: 0;
     margin-top: 0;
@@ -674,6 +697,110 @@
     background: transparent; /* No background fill; text-only */
     white-space: nowrap; /* Forces single-line display—no wrapping */
 }
+
+/* =============================================================================
+   CONTACT SECTION
+   ============================================================================= */
+
+/* Contact section: Light background with padding. */
+.contact {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+/* Contact content: Two-column grid for form and info. */
+.contactContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+/* Contact form: Form container with centered elements. */
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contactForm h3 {
+    font-family: Bahnschrift, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #0D519A;
+    margin: 0 0 1rem 0;
+}
+
+/* Contact form fields: Stacked inputs with styling. */
+.contactFormFields {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contactFormFields input,
+.contactFormFields textarea {
+    padding: 12px;
+    border: 1px solid #E1E7EF;
+    border-radius: 8px;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+}
+
+.contactFormFields textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Contact info: Info container with centered text. */
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.contactInfo h3 {
+    font-family: Bahnschrift, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #0D519A;
+    margin: 0;
+}
+
+.contactInfo p {
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    color: #2C3E50;
+    margin: 0;
+}
+
+/* Info items: List of contact details. */
+.infoItems {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Info item: Flex row for icon and text. */
+.infoItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    color: #2C3E50;
+}
+
+.infoIcon {
+    color: #0D519A;
+    flex-shrink: 0;
+}
+
+.infoItem span {
+    flex: 1;
+}
+
 /* =============================================================================
    BUTTONS AND ACTIONS
    ============================================================================= */
@@ -727,30 +854,36 @@
 
 /* Hero-specific accent button: Orange variant for calls-to-action. */
 .accentButtonHero {
-    width: 155px;
+     width: 175px;
     height: 48px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    transform: rotate(0deg);
+    opacity: 1;
     gap: 10px;
-    padding: 10px 20px;
     border-radius: 15px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    box-shadow: 
+        0px 2px 4px 0px #00000014,
+        0px 0px 6px 0px #00000005;
     background: #FF6B35;
     color: #ffffff;
     border: none;
     cursor: pointer;
     box-sizing: border-box;
-    opacity: 1;
-    transform: rotate(0deg);
-    box-shadow:
-        0px 2px 4px 0px rgba(0,0,0,0.08),
-        0px 0px 6px 0px rgba(0,0,0,0.02);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-family: Roboto, sans-serif;
     font-size: 14px;
     font-weight: 600;
     line-height: 1;
     transition: transform .12s ease, box-shadow .12s ease;
     -webkit-tap-highlight-color: transparent;
+    outline: none;
+
+
 }
 
 /* Variant button: Outlined transparent button for secondary actions. */
@@ -827,6 +960,13 @@
 }
 
 /* =============================================================================
+   WEBSITE WRAPPER (New: To fix header overlap)
+   ============================================================================= */
+.website {
+    padding-top: 80px; /* Reserves space for fixed header height (~1rem padding top/bottom + content); adjust if header height changes */
+}
+
+/* =============================================================================
    RESPONSIVE DESIGN - MOBILE FIRST APPROACH
    ============================================================================= */
 
@@ -854,9 +994,8 @@
 
   /* Hero Mobile */
   .hero {
-    height: auto;
-    min-height: 100vh;
-    padding: 5px 0; /* Further reduced top/bottom padding from 10px to 5px for even less top margin */
+    min-height: calc(100vh - 80px); /* Adjusted for header offset */
+    padding: 16px 0; /* Tightened to 16px top/bottom for snappier feel */
     text-align: center;
     display: flex;
     align-items: center;
@@ -864,7 +1003,7 @@
   }
 
   .hero .container {
-    padding: 5px 16px; /* Further reduced top/bottom padding from 10px to 5px */
+    padding: 8px 16px 16px 16px; /* Further reduced top to 8px for ~80px total offset; bottom 16px for flow */
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -874,7 +1013,7 @@
 
   .heroContent {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem; /* Slightly reduced gap for tighter stack */
     text-align: center;
     width: 100%;
     display: flex;
@@ -882,38 +1021,65 @@
     align-items: center;
   }
 
-  .heroText {
+   .heroText {
     width: 100%;
     max-width: 100%;
     text-align: center;
   }
 
+ /* Hero h1: FSX Tech - Fix alignment & width for natural centering */
   .heroText h1 {
-    font-size: 32px;
-    line-height: 1.2;
-    margin: 1rem 0;
-    width: auto;
+    width: auto; /* Changed: Let text size naturally instead of fixed 129px */
     max-width: 100%;
+    height: 39px;
+    transform: rotate(0deg);
+    opacity: 1;
+    font-family: Bahnschrift, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 32px;
+    line-height: 38.4px;
+    letter-spacing: 0%;
     text-align: center;
-    
+    vertical-align: middle;
+    background: transparent; /* Changed: Likely not meant as box bg; use color for text */
+    color: #FFFFFF; /* Hero contrast on gradient */
+    margin: 0.5rem 0 1rem 0;
+    padding: 0;
+    display: block;
+    white-space: nowrap; /* Added: Prevent any wrap */
+    leading-trim: none;
+    box-sizing: border-box;
   }
+  
 
   .heroText p {
-    font-size:16px;
-    line-height: 1.5;
-    width: 100%;
-    max-width: 100%;
-    margin: 1rem 0 2rem;
-    height: auto !important;
-    overflow: visible !important;
-    white-space: normal !important;
+    width: 391px;
+    height: 84px;
+    transform: rotate(0deg);
+    opacity: 1;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0%;
     text-align: center;
+    vertical-align: middle;
+    color: #ECF0F5;
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+    display: block;
+    overflow: hidden;
+    leading-trim: none;
+    box-sizing: border-box;
+    max-width: 100%;
   }
 
   .heroActions {
     flex-direction: column;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem; /* Airy stack */
     width: 100%;
     display: flex;
     align-items: center;
@@ -924,22 +1090,87 @@
     width: 100%;
     max-width: 250px;
     justify-content: center;
+    width: 100%;
+
+  }
+
+   .variant8Button {
+    width: 144px;
+    height: 48px;
+    transform: rotate(0deg);
+    opacity: 1;
+    gap: 10px;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    border: 1px solid #E1E7EF;
+    box-shadow: 
+        0px 2px 4px 0px #00000014,
+        0px 0px 6px 0px #00000005;
+    background: transparent;
+    color: #FFFFFF;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .12s ease, box-shadow .12s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+    .accentButtonHero {
+    width: 175px;
+    height: 48px;
+    transform: rotate(0deg);
+    opacity: 1;
+    gap: 10px;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    box-shadow: 
+        0px 2px 4px 0px #00000014,
+        0px 0px 6px 0px #00000005;
+    background: #FF6B35;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    transition: transform .12s ease, box-shadow .12s ease;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
   }
 
   .heroImage {
     justify-self: center;
     order: unset;
-    margin-top: 1rem;
+    margin-top: 0.5rem; /* Reduced for closer flow */
     width: 100%;
     display: flex;
     justify-content: center;
   }
 
   .heroImage img {
+    width: 391px;
+    height: 317px;
     max-width: 100%;
-    width: 280px;
-    height: auto;
-    border-radius: 24px;
+    border-radius: 30px;
+    background: #FFFFFF;
+    object-fit: cover;
   }
 
   /* About Mobile */
@@ -954,13 +1185,13 @@
 
   .about h2 {
     font-size: 28px;
-    text-align: left; /* Left-aligned for "About FSX Tech" on mobile per Figma */
+    text-align: left;
     width: auto;
   }
 
   .about h3 {
     font-size: 20px;
-    text-align: left; /* Left-aligned for "Why Choose FSX Tech?" on mobile per Figma */
+    text-align: left;
     width: auto;
   }
 
@@ -975,6 +1206,7 @@
     font-size: 16px;
     justify-content: flex-start;
     gap: 12px;
+    flex-wrap: wrap; /* Added for narrow screens */
   }
 
   .featuresList svg {
@@ -989,7 +1221,9 @@
 
   /* Services Mobile */
   .services {
-    padding: 40px 0;
+    padding: 40px 0 20px 0;
+    padding-bottom: 20px !important; /* Tightens services end */
+
   }
 
   .services h2 {
@@ -1006,21 +1240,48 @@
   .servicesGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    margin: 2rem auto 0;
+    margin: 2rem auto 0 auto;
+    margin-bottom: 0 !important; /* No extra after cards */
+
   }
 
-  .serviceCard {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-    padding: 24px;
-    margin: 0 auto;
+   .serviceCard {
+    width: 383px;
+    height: 256px;
+    transform: rotate(0deg);
+    opacity: 1;
+    gap: 24px;
+    border-radius: 20px;
+    border: 0.5px solid #A0A5AA;
+    padding: 32px;
+    background: #ECF0F5;
+    box-shadow: 
+        0px 8px 16px 0px #00000014,
+        0px 0px 4px 0px #0000000A;
+    text-align: center;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
-  .serviceIcon {
+.serviceIcon {
     width: 60px;
     height: 60px;
-  }
+    transform: rotate(0deg);
+    opacity: 1;
+    border-radius: 20px; /* Changed: Perfect circle (equiv to 30px radius for 60px size) */
+    background: #0D519A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.5rem;
+    color: #FFFFFF;
+    flex-shrink: 0; /* Added: Prevents squish on narrow layouts */
+    box-sizing: border-box;
+}
 
   .serviceCard h3 {
     font-size: 1.2rem;
@@ -1033,33 +1294,72 @@
   }
 
   /* Products Mobile */
-  .products {
-    padding: 40px 0;
+ .products {
+    padding: 20px 0 40px 0; /* Top 20px (down from 40px); bottom 40px for footer */
+    padding-top: 20px !important; /* Tightens products start */
+    margin-bottom: 0;
   }
-
+  
+ /* Products h2: Force zero top margin for border test (prevents any phantom) */
   .products h2 {
+    width: 232px;
+    height: auto;
+    transform: rotate(0deg);
+    opacity: 1;
+    font-family: Bahnschrift, sans-serif;
+    font-weight: 700;
+    font-style: normal;
     font-size: 28px;
-    width: auto;
+    line-height: 33.6px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #2C3E50;
+    background: transparent;
+    margin: 0 auto 1rem auto !important; /* Top: 0 forced; bottom for lead text space */
+    padding: 0;
+    display: block;
+    white-space: nowrap;
+    leading-trim: none;
+    box-sizing: border-box;
+    max-width: 100%;
+    margin-top: 0 !important; /* Zero for h2 itself */
+
   }
 
-  .productsLead {
+ .productsLead {
+    width: 292px;
+    height: 57px;
+    transform: rotate(0deg);
+    opacity: 1;
+    font-family: Bahnschrift, sans-serif;
+    font-weight: 600;
+    font-style: normal;
     font-size: 16px;
-    width: 100%;
-    line-height: 1.4;
+    line-height: 1;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #7F8C8D;
+    background: transparent;
+    margin: 1rem auto;
+    padding: 0;
+    display: block;
+    leading-trim: none;
+    box-sizing: border-box;
+    max-width: 100%;
   }
-
+  
+  /* Swiper tweaks for better mobile centering (reduce peek/space for full center swipe) */
   .swiperContainer {
     padding: 0;
-    display: flex;
-    justify-content: center;
+    overflow: hidden; /* Added: Hide overflow for clean swipe */
   }
 
   .swiperButtonPrev {
-    left: 0;
+    left: 8px; /* Inset for thumb room */
   }
 
   .swiperButtonNext {
-    right: 0;
+    right: 8px; /* Inset for thumb room */
   }
 
   .swiperButtonPrev,
@@ -1073,22 +1373,44 @@
     height: 10px;
   }
 
-  .productCard {
-    width: 100%;
-    max-width: 320px;
-    height: auto;
-    padding: 24px;
-    margin: 0 auto;
+  .swiperCustom {
+    padding-bottom: 20px;
+  }
+
+/* Ensure slide width matches card for precise centering */
+  .swiper-slide {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Added: Centers content in slide */
     align-items: center;
+  }
+
+   .productCard {
+    width: 382px;
+    height: 405px;
+    transform: rotate(0deg);
+    opacity: 1;
+    gap: 10px;
+    border-radius: 25px;
+    padding: 32px;
+    background: #FFFFFF;
+    box-shadow: 
+        0px 8px 16px 0px #00000014,
+        0px 0px 4px 0px #0000000A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    overflow: hidden;
+    max-width: 100%; /* Added: Prevents overflow beyond viewport for better swipe centering */
+    margin: 0 auto; /* Added: Centers card in slide if needed */
   }
 
   .productCard .productImage {
     height: 180px;
     width: 100%;
     object-fit: cover;
-    object-position: center; /* Ensures image is centered within its container */
+    object-position: center;
     display: block;
     margin: 0 auto;
   }
@@ -1110,7 +1432,7 @@
 
   .productsFooter p {
     font-size: 14px;
-    white-space: normal;
+    white-space: normal; /* Allow wrap on mobile */
     width: 100%;
     text-align: center;
   }
@@ -1120,11 +1442,114 @@
     max-width: 250px;
   }
 
+  /* Contact Mobile */
+  .contact {
+    padding: 40px 0;
+  }
+
+  .contact h2 {
+    font-size: 28px;
+    text-align: center;
+    width: auto;
+  }
+
+  .contactContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: left;
+  }
+
+  .contactForm {
+    text-align: left;
+  }
+
+  .contactForm h3 {
+    text-align: left;
+    font-size: 20px;
+  }
+
+  .contactFormFields input,
+  .contactFormFields textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .contactInfo {
+    text-align: left;
+  }
+
+  .contactInfo h3 {
+    text-align: left;
+    font-size: 20px;
+  }
+
+  .contactInfo p {
+    text-align: left;
+  }
+
+  .infoItems {
+    text-align: left;
+  }
+
+  .infoItem {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+    .accentButton {
+    width: 206px;
+    height: 48px;
+    transform: rotate(0deg);
+    opacity: 1;
+    gap: 10px;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    background: #0D519A;
+    box-shadow: 
+        0px 2px 4px 0px #00000014,
+        0px 0px 6px 0px #00000005;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: center;
+    transition: transform .12s ease, box-shadow .12s ease;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    white-space: nowrap;
+  }
   /* General Mobile Adjustments */
   .featuresList li > * {
     white-space: normal;
   }
+
+  /* Mobile-specific section padding consistency */
+  .about,
+  .services,
+  .products,
+  .contact {
+    padding: 40px 0;
+  }
 }
+
+ /* General: Ensure all relevant elements respect box-sizing (paddings/margins inside width) */
+  .services,
+  .products,
+  .servicesGrid,
+  .products h2 {
+    box-sizing: border-box;
+  }
 
 /* Tablet styles (769px to 1023px) - Intermediate adjustments */
 @media (min-width: 769px) and (max-width: 1023px) {
@@ -1133,12 +1558,13 @@
   }
 
   .hero .container {
-  padding: 40px 40px; /* Reduce side padding to free up ~160px more width */
-}
-.heroText p {
-  width: 100% !important; /* Override fixed width fully */
-  max-width: none; /* Prevent any cap */
-}
+    padding: 40px 40px;
+  }
+
+  .heroText p {
+    width: 100% !important;
+    max-width: none;
+  }
 
   .heroText h1 {
     font-size: 40px;
@@ -1172,5 +1598,13 @@
     font-size: 16px;
     line-height: 1.4;
     white-space: normal;
+  }
+
+  /* Tablet section padding: Intermediate between mobile/desktop */
+  .about,
+  .services,
+  .products,
+  .contact {
+    padding: 60px 0;
   }
 }
