@@ -132,7 +132,7 @@ function ServiceCard({ card, delay }) {
                     </div>
                 </div>
 
-                {/* Section 2: Checkmark List - Uses flex-grow for spacing */}
+                {/* Section 2 */}
                 <div className={styles.cardSection2}>
                     {servicesList.map((service, index) => (
                         <div key={index} className={styles.serviceListItem}>
@@ -161,6 +161,14 @@ function ServiceCard({ card, delay }) {
     );
 }
 
+// Scroll to Contact section
+const scrollToContact = (e) => {
+  e.preventDefault();
+  const section = document.getElementById('contact');
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 
 // --- Main Page Component ---
 export default function EventHeroPage() {
@@ -181,7 +189,7 @@ export default function EventHeroPage() {
                 </div>
                 <div className={styles.buttonContainer}>
                     <Link href="/events/booking" className={styles.bookEventBtn}>Book Your Events</Link>
-                    <Link href="/fsx-page" className={styles.backBtn}>Back To Brand Family</Link>
+                    <Link href="#contact" onClick={scrollToContact} className={styles.backBtn}>Back To Brand Family</Link>
                 </div>
             </div>
             {/* Hero Image */}
