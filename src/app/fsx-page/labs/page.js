@@ -19,6 +19,15 @@ const scrollToContact = (e) => {
   }
 };
 
+  // Scroll to Brand Family section
+  const scrollToBrandFamily = (e) => {
+    e.preventDefault();
+    const section = document.getElementById('brand-family');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
 export default function Labs() {
   return (
     <>
@@ -43,8 +52,8 @@ export default function Labs() {
             </Link>
 
             <Link
-              href="#contact"
-              onClick={scrollToContact}
+              href="#brand-family"
+              onClick={scrollToBrandFamily}
               className={styles.startBtn}
             >
               <button className={styles.secondaryBtn}>
