@@ -379,9 +379,9 @@
   position: relative;
   display: flex;
   align-items: center; /* Match input's vertical centering */
-  gap: 4px; /* Tiny gap only for flag/code/arrow internals—keeps overall tight */
+  gap: 6px; /* Tiny gap only for flag/code/arrow internals—keeps overall tight */
   cursor: pointer;
-  padding: 20px 12px 20px 24px; /* Standardized: match input's 20/24, but right=12px to hug code without squeeze */
+  padding: 20px 16px 20px 24px; /* Standardized: match input's 20/24, but right=16px to hug code without squeeze */
   background: #FAFDFF; /* Match input bg for uniformity; was transparent */
   border: 1px solid #A0A5AA; /* Add matching border; was none */
   border-top-left-radius: 10px; /* Left-half radius to join input seamlessly */
@@ -393,6 +393,7 @@
   min-width: 80px; /* Prevent collapse on short codes */
   box-sizing: border-box; /* Consistent sizing */
   transition: border-color 0.3s; /* Individual transition, but overridden by row */
+  justify-content: flex-start; /* Already there, but reinforces no squish */
 }
 
 .countrySelectorWrapper.open .selectArrow {
@@ -434,18 +435,24 @@
   font-size: 20px;
   font-weight: 400;
   color: #A0A5AA;
-  line-height: 1; /* Matches placeholder line-height for baseline uniformity */
+  line-height: 1.2; /* Up from 1—syncs with input's natural rhythm for baseline match */
   white-space: nowrap;
   pointer-events: none;
+  align-self: center; /* New: Explicitly center within its flex line */
+  padding: 0 4px; /* New: Micro-padding for code breathing, prevents edge-touch */
 }
 
 .flag {
-  width: 32px;
-  height: 20px;
+  width: 32px !important; /* Force it—prevents any inherited shrink */
+  height: 20px !important;
   flex-shrink: 0;
   margin-right: 4px; /* Small space between flag and code—unchanged */
   pointer-events: none; /* Let clicks pass through visual elements */
   border-radius: 4px;
+  min-width: 32px; /* New: Absolute floor to stop flex from nibbling */
+  flex: 0 0 32px; /* No grow/shrink, fixed basis */
+  object-fit: cover; /* New: Ensures SVG scales crisp without distortion if CDN varies */
+  border: none; /* Just in case any implicit border sneaks in */
 }
 
 .phoneRow input {
@@ -463,6 +470,9 @@
   margin: 0;
   box-sizing: border-box; /* Ensure consistent sizing */
   transition: border-color 0.3s; /* Individual transition, but overridden by row */
+  line-height: 1.2; /* Explicit: Matches code now, no default wobble */
+  display: flex;
+  align-items: center; /* New: Centers text vertically inside the input */
 }
 
 .phoneRow input::placeholder {
@@ -471,7 +481,9 @@
   font-size: 20px;
   color: #A0A5AA;
   opacity: 1;
-  line-height: 1; /* Matches code's line-height for perfect baseline */
+  line-height: 1.2; /* Sync placeholder too—prevents dip when empty */
+  display: flex;
+  align-items: center;
 }
 
 /* Autofill styles to match background and prevent disjoint yellow */
@@ -828,6 +840,7 @@
 
   .leftColumn {
     order: 2; /* Form first on mobile for better UX */
+    align-items: center; /* NEW: Lock full horizontal centering for service cards (Figma mobile alignment) */
   }
 
   .rightColumn {
@@ -861,6 +874,7 @@
   .contactInfo {
     gap: 1.25rem;
     align-items: center; /* Center icons on mobile */
+    align-items: center; /* NEW: Reinforce centering for the card stack (no prop alteration, just explicit for Figma precision) */
   }
 
   .infoItem {
@@ -965,7 +979,7 @@
     gap: 0; /* No gap—tight join */
     box-sizing: border-box;
     margin: 0; /* FIXED: Explicit no margin to align starting line with other rows */
-    align-items: center; /* FIXED: Vertical center for all parts */
+    align-items: center !important; /* Override any inheritance */
     position: relative; /* For unified focus ring */
     transition: box-shadow 0.3s; /* Smooth unified focus */
   }
@@ -983,15 +997,15 @@
 
   .countrySelectorWrapper {
     height: 100%; /* FIXED: Full height for seamless join */
-    padding: 12px 8px; /* FIXED: Tighter vertical (12px) and right (8px) for compact mobile fit */
-    min-width: 60px; /* FIXED: Smaller min-width to save space on mobile */
+    padding: 16px 10px 16px 20px; /* FIXED: Looser vertical (16px from 12px) and right (10px from 8px) for mobile—flag needs air */
+    min-width: 70px; /* Slight bump from 60px to accommodate flag without cramping code */
     border: none !important; /* FIXED: Kill all inner borders—row handles outer */
     border-right: 1px solid #A0A5AA; /* FIXED: Single straight divider line, full height */
     border-radius: 0; /* FIXED: No radius—row's outer curve covers it */
     flex: 0 0 auto; /* FIXED: Fixed size, no grow/shrink */
     position: relative;
     justify-content: flex-start; /* FIXED: Left-align flag/code, then arrow pushed right */
-    gap: 2px; /* FIXED: Tighter internal gap */
+    gap: 4px; /* FIXED: Tighter internal gap */
     background: transparent; /* FIXED: No bg—blends with row */
     box-sizing: border-box; /* FIXED: Locks the divider to full height */
   }
@@ -1017,22 +1031,25 @@
   }
 
   .selectedCode {
-    font-size: 14px; /* FIXED: Smaller for mobile compact row */
-    line-height: 1; /* FIXED: Tight baseline to match flag height */
+    font-size: 16px; /* Up from 14px—better visibility without crowding */
+    line-height: 1.2;
+    padding: 0 2px; /* Tighter on mobile */
   }
 
   .flag {
-    width: 24px; /* FIXED: Smaller flag for mobile */
-    height: 16px;
+    width: 28px !important; /* Scaled down but visible (from 24px) */
+    height: 18px !important;
     margin-right: 0; /* FIXED: No margin—tight with code */
     border-radius: 2px;
+    min-width: 28px;
+    flex: 0 0 28px;
     flex-shrink: 0;
   }
 
   .phoneRow input {
     flex: 1;
     height: 100%;
-    padding: 12px 16px; /* FIXED: Tighter padding for mobile horizontal fit */
+    padding: 16px 20px; /* Even top/bottom for dead-center text (from 12px vert) */
     border: none !important; /* FIXED: Kill all inner borders—row handles outer, no doubles */
     border-radius: 0; /* FIXED: No radius—row's outer curve covers it */
     border-left: none; /* Redundant now, but safe */
@@ -1042,12 +1059,22 @@
     white-space: nowrap;
     align-self: stretch; /* FIXED: Full height stretch */
     background: transparent; /* FIXED: Blends with row—no disjoint bg */
+    display: flex;
+    align-items: center;
+    outline: none; /* NEW: Kill any default browser outline/border on the input itself (mobile-specific) */
+  }
+
+  .phoneRow input:focus { /* NEW: Extra layer for focus—ensures no outline or border flashes on tap */
+    outline: none !important;
+    border: none !important;
   }
 
   .phoneRow input::placeholder {
     font-size: 16px;
     line-height: 1.2;
     color: #A0A5AA;
+    display: flex;
+    align-items: center;
   }
 
   .attachLabel {
