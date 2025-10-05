@@ -1,7 +1,16 @@
-'use client';
+/* 'use client'; */
 
 import styles from './about.module.css';
 import Image from 'next/image';
+
+
+export const metadata = {
+  title: "About Us Fransunisoft",
+  description:
+    "Learn more about Fransunisoft, our misiion and vision. ",
+  icons: { icon: "/favicon.png" },
+};
+
 
 const values = [
   {
@@ -83,7 +92,7 @@ export default function AboutPage() {
 
         <div className={styles.imageColumn}>
           <Image
-            src="/fransvision.png"
+            src="/mission_vision.png"
             alt="FSX Story, Vision, Mission"
             width={800}
             height={1000}
