@@ -276,7 +276,7 @@ const App = (props) => {
                     transition={{ delay: index * 0.1 }}
                   >
                     <CheckCircle size={16} />
-                    {feature}
+                    <span>{feature}</span> {/* Added span for precise nowrap control in CSS */}
                   </motion.li>
                 ))}
               </motion.ul>
@@ -387,8 +387,8 @@ const App = (props) => {
               ref={swiperRef}
               modules={[Pagination, Autoplay]}
               spaceBetween={24}
-              slidesPerView={1.1}
-              centeredSlides={false}
+              slidesPerView={1} // Set to 1 for full single-card view on mobile
+              centeredSlides={true} // Enable centering—snaps active card to exact middle
               loop={true}
               autoplay={{
                 delay: 2000,
@@ -404,10 +404,12 @@ const App = (props) => {
                 640: {
                   slidesPerView: 2,
                   spaceBetween: 24,
+                  centeredSlides: false,
                 },
                 1024: {
                   slidesPerView: 3,
                   spaceBetween: 24,
+                  centeredSlides: false,
                 },
               }}
               className={styles.swiperCustom}
