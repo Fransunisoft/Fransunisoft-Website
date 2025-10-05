@@ -12,6 +12,7 @@ import { motion, AnimatePresence } from 'framer-motion'; // Import for smooth an
 import 'swiper/css';
 import 'swiper/css/pagination';
 import styles from "./FSXTech.module.css";
+import Link from 'next/link';  // Add at top
 
 /**
  * Main App component for the FSX Tech website.
@@ -25,7 +26,7 @@ const App = (props) => {
   const swiperRef = useRef(null);
 
   // =============================================================================
-  // ANIMATION VARIANTS
+  // ANIMATION VARIANTS (Enhanced for smoother reveals)
   // =============================================================================
   // Define reusable Framer Motion variants for staggered animations across sections
 
@@ -68,6 +69,18 @@ const App = (props) => {
       opacity: 1,
       x: 0,
       transition: { duration: 0.5, ease: "easeInOut" },
+    },
+  };
+
+  // Enhanced section reveal: Adds subtle scale and rotation for pro scroll-in motion
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 60, scale: 0.95, rotateX: -5 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      rotateX: 0,
+      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }, // Custom ease for fluid, bouncy arrival
     },
   };
 
@@ -206,21 +219,25 @@ const App = (props) => {
                 and smarter.
               </motion.p>
               <motion.div className={styles.heroActions} variants={itemVariants}>
-                <motion.a 
-                  href="/contact" // Linked to a contact page; adjust if needed
-                  className={styles.accentButtonHero}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span className={styles.getStartedText}>Get Started</span>
-                </motion.a>
-                <motion.a 
-                  href="/" // Back to brand family overview
-                  className={styles.variant8Button} 
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <span className={styles.variant8Text}>Explore Services</span>
-                </motion.a>
+               <Link href="#contact">
+  <motion.a  // Keep motion for animations, added whileTap for click feedback
+    className={styles.accentButtonHero}
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    <span className={styles.getStartedText}>Get Started</span>
+  </motion.a>
+</Link>
+
+                <Link href="#services"> {/* Changed to Link for consistency */}
+                  <motion.a 
+                    className={styles.variant8Button} 
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <span className={styles.variant8Text}>Explore Services</span>
+                  </motion.a>
+                </Link>
               </motion.div>
             </motion.div>
 
@@ -236,15 +253,15 @@ const App = (props) => {
       </motion.section>
 
       {/* =============================================================================
-         ABOUT SECTION
+         ABOUT SECTION (Enhanced with sectionVariants for scroll reveal)
          ============================================================================= */}
       {/* Two-column layout with text, features list, and image; staggered animations */}
       <motion.section 
         className={styles.about}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
-        variants={containerVariants}
+        viewport={{ once: true, amount: 0.2 }} // Slightly earlier trigger for smoother flow
+        variants={sectionVariants} // Use enhanced variant for beautiful motion
       >
         <div className={styles.container}>
           <motion.div className={styles.aboutContent} variants={containerVariants}>
@@ -293,15 +310,16 @@ const App = (props) => {
       </motion.section>
 
       {/* =============================================================================
-         SERVICES SECTION
+         SERVICES SECTION (Enhanced with sectionVariants)
          ============================================================================= */}
       {/* Grid of service cards with icons, titles, and descriptions; hover interactions */}
       <motion.section 
         className={styles.services}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={containerVariants}
+        whileInView="visible" 
+        id="services"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants} // Use enhanced variant
       >
         <div className={styles.container}>
           <motion.h2 
@@ -357,15 +375,15 @@ const App = (props) => {
       </motion.section>
 
       {/* =============================================================================
-         PRODUCTS SECTION WITH SWIPER CAROUSEL
+         PRODUCTS SECTION WITH SWIPER CAROUSEL (Enhanced with sectionVariants)
          ============================================================================= */}
       {/* Carousel of product cards with autoplay, pagination, and navigation arrows */}
       <motion.section 
         className={styles.products}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
-        variants={containerVariants}
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants} // Use enhanced variant
       >
         <div className={styles.container}>
           <motion.h2 variants={itemVariants}>Featured Products</motion.h2>
@@ -419,8 +437,8 @@ const App = (props) => {
                   <motion.div 
                     className={styles.productCard}
                     variants={cardVariants}
-                    whileHover={{ y: -10, rotateX: 5 }} // 3D tilt on hover
-                    transition={{ type: "spring", stiffness: 400 }}
+                    whileHover={{ scale: 1.03, y: -3 }} // Updated: Subtle pro scale + micro-lift, no tilt
+                    transition={{ type: "spring", stiffness: 400, damping: 20 }} // Smooth spring for cool feel
                   >
                     <ImageWithFallback
                       src={card.src}
@@ -464,7 +482,7 @@ const App = (props) => {
               Need custom configurations or bulk orders?
             </motion.p>
             <motion.a 
-              href="/contact" // Linked to a contact page for quotes; adjust if needed
+              href="#contact" // Linked to a contact page for quotes; adjust if needed
               className={styles.accentButton}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
@@ -474,6 +492,9 @@ const App = (props) => {
           </motion.div>
         </div>
       </motion.section>
+
+      {/* Minimal anchor for #contact scroll target - invisible, no content added */}
+      <div id="contact"></div>
     </motion.div>
   );
 };
