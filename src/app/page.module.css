@@ -31,34 +31,26 @@
 /* Typewriter Heading */
 .typewriter {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
+  line-height: 1.1;
   color: #F1F5F9;
   overflow: hidden;
   white-space: nowrap;
-  border-right: 2px solid #F1F5F9;
+  border-right: 1px solid #F1F5F9;
   width: fit-content;
   margin: 0 auto 2rem;
   animation: typing 4s steps(40, end), blinkCaret 0.75s step-end infinite;
 }
 
+
 .typingText {
-  margin-top: 50px;
+  margin-top: 30px;
   display: inline-block;
   max-width: auto;
 }
 
 
-.typewriter {
-  font-size: 3.5rem;
-  font-weight: bold;
-  line-height: 1.2;
-  text-align: center;
-}
-
-.typingText {
-  display: inline-block;
-}
 
 /* Desktop line break - visible by default */
 .desktopBreak {
@@ -512,8 +504,8 @@ border-color: #E1E7EF;
   .fsxStats {
     flex-direction: column;
     gap: 2px;
-    padding: 10 10px; /* tighter horizontal padding */
-    margin: 0 auto 10px auto; /* center horizontally */
+    padding: 1.5rem; /* tighter horizontal padding */
+    margin: 0 auto; 
     max-width: 55%; /* shrink container width */
     border-radius: 12px;
    
@@ -524,6 +516,7 @@ border-color: #E1E7EF;
     width: 90%; 
     text-align: center;
     margin-bottom: 4px;
+    margin: 0 auto;
   }
 
   .fsxStats .countBlock {
