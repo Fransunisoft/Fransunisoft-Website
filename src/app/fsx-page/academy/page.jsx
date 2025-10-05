@@ -4,6 +4,7 @@ import styles from "./academy.module.css";
 import { Roboto } from "next/font/google";
 import Link from "next/link";
 import AOS from "aos";
+import 'aos/dist/aos.css';
 import { useEffect } from "react"
 
 const roboto = Roboto({
@@ -37,7 +38,7 @@ export default function FsxAcademy() {
       setTimeout(() => {
         AOS.init({
           duration: 1000,
-          once: true,
+          once: false,
         });
       }, 100);
     }, []);
@@ -47,7 +48,7 @@ export default function FsxAcademy() {
       className={`${roboto.variable} ${styles.fsxSection} ${styles.fsxAcademyPage}`}
     >
       <section className={styles.fsxAcademyContainer}>
-        <section className={styles.heroSection}>
+        <section className={styles.heroSection} data-aos="fade-up" data-aos-once="true">
           <div className={styles.heroTextContainer}>
             <h2 className={styles.heroTitle}>FSX Academy</h2>
             <p className={styles.heroDescription}>
@@ -75,7 +76,7 @@ export default function FsxAcademy() {
           </div>
         </section>
 
-        <section className={styles.whatWeDoSection}>
+        <section className={styles.whatWeDoSection} data-aos="fade-up">
           <div className={styles.whatWeDoTextContainer}>
             <h2 className={styles.whatWeDoTitle}>What We Do</h2>
             <p className={styles.whatWeDoDescription}>
@@ -106,7 +107,7 @@ export default function FsxAcademy() {
           </div>
         </section>
 
-        <section className={styles.valuePropSection}>
+        <section className={styles.valuePropSection} data-aos="fade-up">
           <button className={styles.valuePropBtn}>Our Value Proposition</button>
           <h2 className={styles.valuePropTitle}>Why Learn with FSX Academy?</h2>
           <p className={styles.valuePropDescription}>
@@ -162,7 +163,7 @@ export default function FsxAcademy() {
           </div>
         </section>
 
-        <section className={styles.whoBenefitSection}>
+        <section className={styles.whoBenefitSection} data-aos="fade-up">
           <h2 className={styles.whoBenefitTitle}>Who Benefits From the Academy</h2>
           <p className={styles.whoBenefitDescription}>
            We designed this academy for founders, builders, innovators and individuals.
@@ -228,7 +229,7 @@ export default function FsxAcademy() {
           </div>
         </section>
 
-        <section className={styles.whatYouGetSection} id="academy">
+        <section className={styles.whatYouGetSection} id="academy" data-aos="fade-up">
           <h2 className={styles.whatYouGetTitle}>
             What You Get With FSX Academy{" "}
           </h2>
@@ -321,7 +322,7 @@ export default function FsxAcademy() {
           </div>
         </section>
 
-        <section className={styles.trainningSection}>
+        <section className={styles.trainningSection} data-aos="fade-up">
           <h2 className={styles.trainningTitle}>Trainings we Offer</h2>
           <p className={styles.trainningDescription}>
             We provide hands-on training programs designed to equip individuals
@@ -468,7 +469,7 @@ export default function FsxAcademy() {
           </div>
         </section>
 
-        <section className={styles.progressSection}>
+        <section className={styles.progressSection} data-aos="fade-up">
           <h2 className={styles.progressTitle}>Our Process</h2>
           <p className={styles.progressDescription}>
             Our process ensures every learning journey is practical, engaging,
@@ -580,7 +581,7 @@ export default function FsxAcademy() {
           </div>
         </section>
 
-        <section className={styles.connectSection}>
+        <section className={styles.connectSection} data-aos="fade-up">
           <h2 className={styles.connectTitle}>Connect With Us In 3 Steps</h2>
           <p className={styles.connectDescription}>
             Take the next step in your journey of innovation and leadership.

@@ -4,6 +4,8 @@ import styles from "./connect.module.css";
 import { Roboto } from "next/font/google";
 // import Link from "next/link";
 import AOS from "aos";
+import 'aos/dist/aos.css';
+import CountUp from 'react-countup';
 import { useEffect } from "react"
 
 const roboto = Roboto({
@@ -17,18 +19,7 @@ const roboto = Roboto({
 //   description: "Connect with entrepreneurs, investors, mentors, and innovators across Africa and beyond.",
 // };
 
-const scrollToContact = (e) => {
-    e.preventDefault();
-    const contactSection = document.getElementById("contact");
-    const joinCommunitySection = document.getElementById("joinCommunity");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-    if (joinCommunitySection) {
-      joinCommunitySection.scrollIntoView({ behavior: "smooth" });
-    }
-    // closeMobileMenu();
-  };
+
 
 const scrollToSection = (e, sectionId) => {
   e.preventDefault();
@@ -46,7 +37,7 @@ export default function FsxConnect() {
         setTimeout(() => {
           AOS.init({
             duration: 1000,
-            once: true,
+            once: false,
           });
         }, 100);
       }, []);
@@ -56,7 +47,7 @@ export default function FsxConnect() {
       className={`${roboto.variable} ${styles.fsxSection} ${styles.fsxConnectPage}`}
     >
       <section className={styles.fsxConnectContainer}>
-        <section className={styles.heroSection}>
+        <section className={styles.heroSection} data-aos="fade-up">
           <div className={styles.heroTextContainer}>
             <h2 className={styles.heroTitle}>FSX Connect</h2>
             <p className={styles.heroDescription}>
@@ -82,31 +73,31 @@ export default function FsxConnect() {
           </div>
         </section>
 
-        <section className={styles.cardParticipation}>
+        <section className={styles.cardParticipation} data-aos="fade-up">
           <div className={styles.communityMem}>
-            <h3 className={styles.communityMemCount}>5000+</h3>
+            <h3 className={styles.communityMemCount}> <CountUp end={5000} duration={2} separator="" enableScrollSpy />+</h3>
             <p className={styles.communityMemTitle}>Community Members</p>
           </div>
           <div className={styles.communityMem}>
-            <h3 className={styles.successfulCount}>100+</h3>
+            <h3 className={styles.successfulCount}><CountUp end={100} duration={2} separator="" enableScrollSpy />+</h3>
             <p className={styles.successfulTitle}>Successful Partnerships</p>
           </div>
           <div className={styles.communityMem}>
-            <h3 className={styles.industryExpertsCount}>200+</h3>
+            <h3 className={styles.industryExpertsCount}><CountUp end={200} duration={2} separator="" enableScrollSpy />+</h3>
             <p className={styles.industryExpertsTitle}>Industry Experts</p>
           </div>
           <div className={styles.communityMem}>
-            <h3 className={styles.countriesCount}>5+</h3>
+            <h3 className={styles.countriesCount}><CountUp end={5} duration={2} separator="" enableScrollSpy />+</h3>
             <p className={styles.countriesTitle}>Countries Represented</p>
           </div>
         </section>
-        <section className={styles.connectionSection}>
+        <section className={styles.connectionSection} data-aos="fade-up">
           <h4 className={styles.connectionTitle}>Our Connection Services</h4>
           <p className={styles.connectionDescription}>
             We facilitate meaningful connections through specialized networks
             and programs designed to foster collaboration and growth.
           </p>
-          <div className={styles.connectionCardsContainer} id="connection">
+          <div className={styles.connectionCardsContainer} id="connection" >
             <div className={styles.connectionCard}>
               <Image
                 src="/networkIcon.svg"
@@ -199,7 +190,7 @@ export default function FsxConnect() {
           </div>
         </section>
 
-        <section className={styles.joinCommunitySection} id="joinCommunity">
+        <section className={styles.joinCommunitySection} id="joinCommunity" data-aos="fade-up">
           <h4 className={styles.joinCommunityTitle}>Our Network Communities</h4>
           <p className={styles.joinCommunityDescription}>
             Join specialized communities tailored to different professional
@@ -274,7 +265,7 @@ export default function FsxConnect() {
           <button className={styles.joinCommunityButton} onClick={(e) => scrollToSection(e, "contact")}>Join community</button>
         </section>
 
-        <section className={styles.whyJoinSection}>
+        <section className={styles.whyJoinSection} data-aos="fade-up">
           <h4 className={styles.whyJoinTitle}>Why Join FSX Connect?</h4>
           <p className={styles.whyJoinDescription}>
             Discover the unique advantages of being part of our growing
@@ -323,7 +314,7 @@ export default function FsxConnect() {
             </div>
           </div>
         </section>
-        <section className={styles.ctaSection}>
+        <section className={styles.ctaSection} data-aos="fade-up">
           <div className={styles.ctaContainer}>
             <p className={styles.ctaDescription}>
               Are you passionate about giving back to the community to enhance

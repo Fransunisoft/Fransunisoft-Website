@@ -176,9 +176,12 @@ export default function Contact() {
               <div className={styles.formRow}>
                 <select name="serviceType" className={styles.select} required>
                   <option value="">Select Service Type</option>
-                  <option value="Consulting">Consulting</option>
-                  <option value="Support">Support</option>
-                  <option value="Development">Development</option>
+                  <option value="Consulting">FSX Consulting</option>
+                  <option value="Support">FSX Support</option>
+                  <option value="Development">FSX Tech</option>
+                  <option value="Event">FSX Events</option>
+                  <option value="Connect">FSX Connect</option>
+                  <option value="Development">FSX Academy</option>
                 </select>
               </div>
 
