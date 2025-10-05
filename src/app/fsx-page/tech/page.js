@@ -2,18 +2,9 @@
 
 import React, { useRef, useState } from "react";
 import {
-  Shield,
-  Monitor,
-  Network,
-  Settings,
-  Headphones,
-  Smartphone,
   CheckCircle,
   ChevronLeft,
   ChevronRight,
-  Mail,
-  Phone,
-  MapPin,
 } from "lucide-react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
@@ -131,6 +122,16 @@ const App = (props) => {
   // DATA ARRAYS
   // =============================================================================
 
+  // Services data array for the services grid (extracted from inline for easier icon swap)
+  const servicesData = [
+    { iconSrc: "/Core value section Icon (2).png", title: "Security solution", desc: "Advanced CCTV systems, access control, and security monitoring to protect your business assets." },
+    { iconSrc: "/monitor (1).png", title: "IT Equipment Supply", desc: "High end laptops, printer and scanners, smart offices automation, smart speakers, and conferences cameras" },
+    { iconSrc: "/Network (2).png", title: "Network Infrastructure", desc: "Professional networking equipment including routers, switches, and wireless solutions for reliable connectivity." },
+    { iconSrc: "/Settings (1).png", title: "IT Consulting", desc: "Strategic technology planning and digital transformation consulting to optimize your business operations." },
+    { iconSrc: "/certification-icon.svg", title: "Technical Support", desc: "24/7 support and maintenance services to ensure your systems run smoothly." },
+    { iconSrc: "/innovation-hub-icon.svg", title: "Digital Solutions", desc: "Custom software solutions and digital tools to streamline your business processes and boost productivity." },
+  ];
+
   // Product cards data for the Swiper carousel
   const productCards = [
     {
@@ -205,16 +206,21 @@ const App = (props) => {
                 and smarter.
               </motion.p>
               <motion.div className={styles.heroActions} variants={itemVariants}>
-                <motion.button 
+                <motion.a 
+                  href="/contact" // Linked to a contact page; adjust if needed
                   className={styles.accentButtonHero}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <span className={styles.getStartedText}>Get Started</span>
-                </motion.button>
-                <motion.button className={styles.variant8Button} whileHover={{ scale: 1.02 }}>
-                  <span className={styles.variant8Text}>Back To Brand Family</span>
-                </motion.button>
+                </motion.a>
+                <motion.a 
+                  href="/" // Back to brand family overview
+                  className={styles.variant8Button} 
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <span className={styles.variant8Text}>Explore Services</span>
+                </motion.a>
               </motion.div>
             </motion.div>
 
@@ -277,7 +283,7 @@ const App = (props) => {
             </motion.div>
             <motion.div className={styles.aboutImage} variants={itemVariants}>
               <ImageWithFallback 
-                src="/Workstation.png" 
+                src="/workstation.png" 
                 fallback="/placeholder.png"
                 alt="3D Workstation" 
               />
@@ -310,14 +316,7 @@ const App = (props) => {
           </motion.p>
 
           <motion.div className={styles.servicesGrid} variants={containerVariants}>
-            {[
-              { icon: Shield, title: "Security solution", desc: "Advanced CCTV systems, access control, and security monitoring to protect your business assets." },
-              { icon: Monitor, title: "IT Equipment Supply", desc: "High end laptops, printer and scanners, smart offices automation, smart speakers, and conferences cameras" },
-              { icon: Network, title: "Network Infrastructure", desc: "Professional networking equipment including routers, switches, and wireless solutions for reliable connectivity." },
-              { icon: Settings, title: "IT Consulting", desc: "Strategic technology planning and digital transformation consulting to optimize your business operations." },
-              { icon: Headphones, title: "Technical Support", desc: "24/7 support and maintenance services to ensure your systems run smoothly." },
-              { icon: Smartphone, title: "Digital Solutions", desc: "Custom software solutions and digital tools to streamline your business processes and boost productivity." },
-            ].map((service, index) => (
+            {servicesData.map((service, index) => (
               <motion.div 
                 key={index}
                 className={styles.serviceCard}
@@ -331,7 +330,11 @@ const App = (props) => {
                   animate={{ scale: 1, rotate: 0 }}
                   transition={{ delay: 0.2, type: "spring" }}
                 >
-                  <service.icon size={40} />
+                  <img 
+                    src={service.iconSrc}
+                    alt={service.title}
+                    style={{ width: 40, height: 40, objectFit: 'contain' }}
+                  />
                 </motion.div>
                 <motion.h3 
                   initial={{ opacity: 0 }}
@@ -458,13 +461,14 @@ const App = (props) => {
             >
               Need custom configurations or bulk orders?
             </motion.p>
-            <motion.button 
+            <motion.a 
+              href="/contact" // Linked to a contact page for quotes; adjust if needed
               className={styles.accentButton}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
               Request Custom Quote
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
       </motion.section>
