@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #0D519A, #0D519A);
+  background: linear-gradient(to bottom right, #0d519a 10%, #0d519a 55%, #ffffff 150%); /* color gradient from fsx consulting */
   color: white;
   margin-top: 100px;
   overflow: hidden;
@@ -14,7 +14,7 @@
 }
 
 /* Desktop layout (side by side, also applied to 1020px+) */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1200px) { /* should take care of bigger screens */
   .hero {
     margin-top: 0px; /* this would break on big screens */
     flex-direction: row; /* ✅ row only on desktop */
@@ -26,7 +26,7 @@
 }
 
 /* ✅ Keep 480px stacked */
-@media (min-width: 480px) and (max-width: 767px) {
+@media (min-width: 420px) and (max-width: 767px) {
   .hero {
     margin-top: 0px;
     flex-direction: column; /* ✅ keep stacked on tablets <768px */
@@ -122,7 +122,7 @@
   width: auto;
   height: auto;
   max-width: 100%;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
