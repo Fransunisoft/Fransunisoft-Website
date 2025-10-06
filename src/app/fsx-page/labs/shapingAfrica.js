@@ -7,17 +7,17 @@ const data = [
   {
     title: 'Innovation Hub',
     text: "Imagine a space where bold ideas come alive; that's exactly what our innovation labs in Nigeria are built for.",
-    img: '/images/innovation-hub.jpg',
+    img: '/lab2.1.png',
   },
   {
     title: 'Research and Development Africa',
     text: "We’re pushing the boundaries of research and development across Africa, turning today’s challenges into tomorrow’s opportunities.",
-    img: '/event1.png',
+    img: '/lab2.2.png',
   },
   {
     title: 'Prototype Testing',
     text: "Before your product hits the market, our hands-on prototype testing ensures it’s refined, reliable, and ready to impress.",
-    img: '/images/prototype-testing.jpg',
+    img: '/lab2.3.png',
   },
 ];
 
