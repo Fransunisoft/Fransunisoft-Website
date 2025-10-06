@@ -39,7 +39,7 @@
   white-space: nowrap;
   border-right: 1px solid #F1F5F9;
   width: fit-content;
-  margin: 0 auto 2rem;
+  margin: 2rem;
   animation: typing 4s steps(40, end), blinkCaret 0.75s step-end infinite;
 }
 
@@ -86,17 +86,19 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .typewriter {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .typewriter {
     place-items: center;
-    font-size: 1.15rem;
-    max-width: auto;
-    margin: 0 auto;
+    font-size: 1rem;
+    max-width: 600;
+   justify-items: centre;
     margin-right: 2rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
   }
 
   /* On mobile: hide desktop break, show mobile break */
@@ -111,10 +113,12 @@
 
 @media (max-width: 375px) {
   .typewriter {
-    font-size: 1.rem;
+    font-size: 1rem;
     max-width: auto;
-    margin: 0rem 0.5rem;
-    margin-right: 3rem;
+ 
+    margin-right: 2rem;
+    margin-left: 2rem;
+    margin-top: 3rem;
   }
 }
 
@@ -217,6 +221,16 @@ border-color: #E1E7EF;
     margin-top: 0;
     min-height: 60vh;
   }
+
+   .discoverBtn,
+  .startBtn {
+    width: 450%;
+    max-width: 250px;
+    padding: 0.75rem;
+    border-radius: 15px;
+    margin: 0.4rem;
+  }
+
 }
 
 
@@ -402,6 +416,7 @@ border-color: #E1E7EF;
 @media (max-width: 768px) {
   .fsxRow {
     flex-direction: column;
+    max-width: 600;
   }
 
   .fsxHeading {
@@ -418,7 +433,7 @@ border-color: #E1E7EF;
   .fsxHeading p {
     font-size: 0.85rem;
     margin-bottom: 10px;
-    max-width: 300;
+    max-width: 500;
     justify-content: center;
     margin-inline-start: 2.5rem;
   }
@@ -593,7 +608,7 @@ border-color: #E1E7EF;
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   text-align: left;
-  height: 300px;
+  height: 350px;
   width: 90%;
   margin-top: 2rem;
 }
@@ -627,7 +642,7 @@ border-color: #E1E7EF;
   font-weight: bold;
   display: inline-block;
   transition: background 0.3s ease;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .learnMoreBtn:hover {
@@ -672,6 +687,10 @@ border-color: #E1E7EF;
 
   .cardDescription {
     margin: 0 auto;
+  }
+
+  .learnMoreBtn{
+    margin-top: 1rem;
   }
 }
 
@@ -775,6 +794,7 @@ border-color: #E1E7EF;
   font-size: 2.2rem;
   color: #2C3E50;
   font-weight: bold;
+  line-height: 1.6;
 
 }
 /* Auto-Scrolling Logo Strip */
@@ -814,7 +834,7 @@ border-color: #E1E7EF;
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .partnersHeading {
-    font-size: 1.8rem;
+    font-size: 1.rem;
   }
 
   .partnersSubText {
@@ -854,7 +874,7 @@ border-color: #E1E7EF;
 
   .logoItem {
     flex: 0 0 auto;
-    min-width: 150px;
+    min-width: 80px;
     height: 80px;
     padding: 0.5rem;
   }
