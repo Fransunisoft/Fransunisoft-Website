@@ -174,7 +174,7 @@ const Consulting = () => {
 
       {/* Mission */}
       <section className={styles.mission} data-aos="fade-up">
-        <h2 className={styles.sectionHead}>Our Mission</h2>
+        <h2 className={styles.missionSectionHead}>Our Mission</h2>
         <div className={styles.coreMission}>
           <Image
             src="/missionConsulting.png"
