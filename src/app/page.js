@@ -179,7 +179,7 @@ export default function HomePage() {
             <p className={styles.cardDescription}>
               Platforms, automation, and innovation programs for building scalable solutions from scratch.
             </p>
-            <Link href="/fsx-page/construction" className={styles.learnMoreBtn}>Learn More</Link>
+            <Link href="/fsx-page/labs" className={styles.learnMoreBtn}>Learn More</Link>
           </div>
 
           <div className={styles.card}>
@@ -198,7 +198,7 @@ export default function HomePage() {
             <p className={styles.cardDescription}>
               Brand activations, corporate events, and community programs with global-standard execution.
             </p>
-            <Link href="/fsx-page/event" className={styles.learnMoreBtn}>Learn More</Link>
+            <Link href="/fsx-page/events" className={styles.learnMoreBtn}>Learn More</Link>
           </div>
 
           <div className={styles.card}>
@@ -216,7 +216,7 @@ export default function HomePage() {
             <p className={styles.cardDescription}>
               Training and learning programs designed to empower individuals and teams with future-ready skills.
             </p>
-            <Link href="//fsx-page/academy" className={styles.learnMoreBtn}>Learn More</Link>
+            <Link href="/fsx-page/academy" className={styles.learnMoreBtn}>Learn More</Link>
           </div>
         </div>
       </section>
