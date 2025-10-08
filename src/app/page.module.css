@@ -141,7 +141,7 @@
 /* ≤767px */
 @media (max-width: 767px) {
   .typewriter {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin: 2rem auto;
      
   }
@@ -168,9 +168,9 @@
 /* ≤480px */
 @media (max-width: 480px) {
   .typewriter {
-    font-size: 1.2rem;
+    font-size: 0.85rem;
     margin: 2rem auto;
-    max-width: 100%;
+    max-width: 80%;
     margin-top: 100px;
   }
   .description {
@@ -185,8 +185,9 @@
 /* ≤375px */
 @media (max-width: 375px) {
   .typewriter {
-    font-size: 1rem;
+    font-size: 0.85rem;
     margin: 3rem 2rem 0 2rem;
+     margin-right: 1rem;
       margin-top: 50px;
   }
   .description {
@@ -199,6 +200,7 @@
   .typewriter {
     font-size: 0.85rem;
     margin: 2rem auto;
+       margin-right: 1rem;
       margin-top: 100px;
   }
   .description {
