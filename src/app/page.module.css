@@ -172,6 +172,7 @@
     margin: 2rem auto;
     max-width: 80%;
     margin-top: 100px;
+      margin-right: 2rem;
   }
   .description {
     font-size: 0.85rem;
@@ -187,7 +188,7 @@
   .typewriter {
     font-size: 0.85rem;
     margin: 3rem 2rem 0 2rem;
-     margin-right: 1rem;
+     margin-right: 2rem;
       margin-top: 50px;
   }
   .description {
@@ -200,7 +201,7 @@
   .typewriter {
     font-size: 0.85rem;
     margin: 2rem auto;
-       margin-right: 1rem;
+        margin-right: 2rem;
       margin-top: 100px;
   }
   .description {
