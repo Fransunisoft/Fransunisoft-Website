@@ -49,7 +49,7 @@ export default function AboutPage() {
   return (
     <main className={styles.aboutMain}>
       {/* Hero Section */}
-      <section className={styles.hero}>
+      <div className={styles.hero}>
         <div className={styles.imageWrapper}>
           <Image
             src="/About_hands.png"
@@ -63,7 +63,7 @@ export default function AboutPage() {
             <p>Innovation and Growth in Nigeria</p>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Story, Vision, Mission Section */}
       <section className={styles.svmSection}>

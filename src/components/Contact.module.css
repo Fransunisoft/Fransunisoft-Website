@@ -1,19 +1,31 @@
-/* Container - Centers everything */
+/* Full-width background wrapper */
+.contactBackground {
+  width: 100vw;
+  background-color:  #0D519A;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* Section layout */
+.contactSection {
+  padding: 80px 0;
+  width: 100%;
+  color: white;
+  min-height: 800px;
+  margin-top: 1rem;
+}
+
+/* Centered content */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  box-sizing: border-box; /* FIXED: Universal for consistency */
+  box-sizing: border-box;
 }
 
-.contactSection {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #0D519A 0%, #0D519A 70%, #20A89F 100%);
-  width: 100%;
-  color: white;
-  min-height: 800px;
-  margin-top: 1rem; /* FIXED: Prevent hero overlap on desktop */
-}
 
 /* Top Full-Width Content: Heading and Paragraph */
 .topContent {
