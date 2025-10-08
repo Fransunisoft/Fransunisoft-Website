@@ -100,13 +100,15 @@ export default function Contact() {
   };
 
   return (
-    <section className={styles.contactSection}>
-      <div className={styles.container}>
-        <div className={styles.topContent}>
-          <h2 className={styles.contactHeading}>Let’s Build Smarter, Together.</h2>
-          <p className={styles.contactLead}>
-            Whether you’re looking to host an unforgettable event, scale your business, simplify your technology, or expand your network, FSX is here for you.
-          </p>
+<div className={styles.contactBackground}>
+  <div className={styles.contactSection}>
+    <div className={styles.container}>
+
+      <div className={styles.topContent}>
+        <h2 className={styles.contactHeading}>Let’s Build Smarter, Together.</h2>
+        <p className={styles.contactLead}>
+          Whether you’re looking to host an unforgettable event, scale your business, simplify your technology, or expand your network, FSX is here for you.
+        </p>
         </div>
 
         <div className={styles.contactGrid}>
@@ -215,6 +217,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
-    </section>
+     </div>
+      </div>
   );
 }

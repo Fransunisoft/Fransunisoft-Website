@@ -1,25 +1,23 @@
- 
-/* src/app/page.module.css */
-.hero {
-  margin-top: 100px;
+/* HERO SECTION STYLING  */
+
+.heroBackground {
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(to right, #0D519A, #0D519A, #20A89F );
+  background: linear-gradient(to right, #0D519A, #0D519A, #20A89F);
+  overflow: hidden;
+}
+
+.heroMain {
+  margin-top: 100px;
+  position: relative;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 2.5rem 7rem;
   color: #F1F5F9;
   text-align: center;
 }
-
-
-/* AOS.init({
-  offset: 200,
-  delay: 100,
-  easing: 'ease-in-out',
-}); */
-
 
 .overlay {
   max-width: 800px;
@@ -27,22 +25,19 @@
   padding: 1rem;
 }
 
-
-/* Typewriter Heading */
 .typewriter {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
-  line-height: 1.2;
+  line-height: 1.5;
   color: #F1F5F9;
   overflow: hidden;
   white-space: nowrap;
   border-right: 1px solid #F1F5F9;
   width: fit-content;
-  margin: 2rem;
+  margin: 2rem auto;
   animation: typing 4s steps(40, end), blinkCaret 0.75s step-end infinite;
 }
-
 
 .typingText {
   margin-top: 30px;
@@ -50,20 +45,22 @@
   max-width: auto;
 }
 
-
-
-/* Desktop line break - visible by default */
 .desktopBreak {
   display: inline;
 }
 
-/* Mobile line break - hidden by default */
 .mobileBreak {
   display: none;
 }
 
+.description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
 
-/* Typing animation */
+/* === ANIMATIONS === */
+
 @keyframes typing {
   from {
     width: 0;
@@ -73,7 +70,6 @@
   }
 }
 
-/* Blinking cursor */
 @keyframes blinkCaret {
   from, to {
     border-color: transparent;
@@ -82,46 +78,6 @@
     border-color: #F1F5F9;
   }
 }
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .typewriter {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .typewriter {
-    place-items: center;
-    font-size: 1rem;
-    max-width: 600;
-   justify-items: centre;
-    margin-right: 2rem;
-    margin-left: 2rem;
-    margin-top: 2rem;
-  }
-
-  /* On mobile: hide desktop break, show mobile break */
-  .desktopBreak {
-    display: none;
-  }
-
-  .mobileBreak {
-    display: inline;
-  }
-}
-
-@media (max-width: 375px) {
-  .typewriter {
-    font-size: 1rem;
-    max-width: auto;
- 
-    margin-right: 2rem;
-    margin-left: 2rem;
-    margin-top: 3rem;
-  }
-}
-
 
 @keyframes blink {
   0%, 50% {
@@ -132,109 +88,123 @@
   }
 }
 
+/* === RESPONSIVE STYLES === */
 
-.description {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-}
-
-.buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.discoverBtn,
-.startBtn {
-  padding: 0.75rem 1.5rem;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  color: #F1F5F9;
-  transition: background 0.3s ease;
-}
-
-.discoverBtn {
-  background-color: #FF6B35;
-}
-
-.discoverBtn:hover {
-  background-color: #B54C26;
-}
-
-
-.startBtn {
-/*   background-color: #0D519A; */
-border-color: #E1E7EF;
-  border: 2px solid #E1E7EF;
-  color: #E1E7EF;
-}
-
-.startBtn:hover {
-/*   background-color: #0D519A; */
-border-color: #E1E7EF;
-  border: 2px solid #E1E7EF;
-  color: #A0A5AA;
-}
-
-
-/* 🌐 Responsive Styles */
-@media (max-width: 768px) {
-  .title {
-    font-size: 5rem;
+/* ≥1200px */
+@media (min-width: 1200px) {
+  .typewriter {
+    font-size: 3rem;
+   
   }
-
   .description {
-    font-size: 0.85rem;
-    margin-top: 2rem;
-  }
-
-  .buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .discoverBtn,
-  .startBtn {
-    width: 650%;
-    max-width: 250px;
-    padding: 0.75rem;
-    border-radius: 15px;
-    margin: 0.4rem;
+    font-size: 1.2rem;
   }
 }
 
-@media (max-width: 480px) {
-  .title {
-    font-size: 5rem;
-    margin-top: 10px;
+/* ≥1024px */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .typewriter {
+    font-size: 2.5rem;
   }
 
+  .heroMain {
+    padding: 1.5rem;
+    margin-top: 80px;
+
+  }
   .description {
-    font-size: 0.85rem;
+    font-size: 1.1rem;
   }
+}
 
-  .hero {
+/* ≥768px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .typewriter {
+    font-size: 2rem;
+  }
+  .description {
+    font-size: 1.1rem;
+    
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+  .heroMain {
+    padding: 1.5rem;
+    margin-top: 70px;
+    margin-bottom: 2rem;
+    min-height: 65vh;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+/* ≤767px */
+@media (max-width: 767px) {
+  .typewriter {
+    font-size: 1.5rem;
+    margin: 2rem auto;
+     
+  }
+  .description {
+    font-size: 0.95rem;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .heroMain {
     padding: 1rem;
-    margin-top: 0;
+    min-height: 70vh;
+    margin-top: 60px;
+    margin-bottom: 2rem;
+    padding-top: 20px;
+  }
+  .desktopBreak {
+    display: none;
+  }
+  .mobileBreak {
+    display: inline;
+  }
+}
+
+/* ≤480px */
+@media (max-width: 480px) {
+  .typewriter {
+    font-size: 1.2rem;
+    margin: 2rem auto;
+    max-width: 100%;
+    margin-top: 100px;
+  }
+  .description {
+    font-size: 0.85rem;
+  }
+  .heroMain {
+    padding: 1rem;
     min-height: 60vh;
   }
-
-   .discoverBtn,
-  .startBtn {
-    width: 450%;
-    max-width: 250px;
-    padding: 0.75rem;
-    border-radius: 15px;
-    margin: 0.4rem;
-  }
-
 }
 
+/* ≤375px */
+@media (max-width: 375px) {
+  .typewriter {
+    font-size: 1rem;
+    margin: 3rem 2rem 0 2rem;
+      margin-top: 50px;
+  }
+  .description {
+    font-size: 0.8rem;
+  }
+}
 
-
+/* ≤320px */
+@media (max-width: 320px) {
+  .typewriter {
+    font-size: 0.85rem;
+    margin: 2rem auto;
+      margin-top: 100px;
+  }
+  .description {
+    font-size: 0.75rem;
+  }
+}
 
 
 
@@ -767,6 +737,12 @@ border-color: #E1E7EF;
   background-color: #E7EEF5;
   text-align: center;
   overflow: hidden;
+   width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 .partnersIntro {

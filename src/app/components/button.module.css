@@ -1,0 +1,206 @@
+/* === BUTTON GROUP CONTAINERS === */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.primaryButtons,
+.secondaryButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+  justify-content: center;
+}
+
+/* === BASE BUTTON STYLE === */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* === BUTTON VARIANTS === */
+.discover {
+  background-color: #FF6B35;
+  color: #F1F5F9;
+}
+.discover:hover {
+  background-color: #B54C26;
+}
+
+.start {
+  border: 2px solid #E1E7EF;
+  color: #E1E7EF;
+}
+.start:hover {
+  color: #A0A5AA;
+}
+
+.fsxBranch {
+  background-color: #FF6B35;
+  color: #F1F5F9;
+}
+.fsxBranch:hover {
+  background-color: #B54C26;
+}
+
+.Explore {
+  border: 2px solid #E1E7EF;
+  color: #E1E7EF;
+}
+.Explore:hover {
+  color: #A0A5AA;
+}
+
+/* === RESPONSIVE LAYOUT === */
+
+/* ≥1200px (Large desktops) */
+@media (min-width: 1200px) {
+  .buttons {
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+
+  .primaryButtons {
+    justify-content: center;
+  }
+
+  .secondaryButtons {
+    justify-content: flex-start;
+  }
+
+  .fsxBranch,
+  .Explore {
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* ≥1024px (Standard desktops) */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .buttons {
+    justify-content: flex-start;
+  }
+
+  .primaryButtons {
+    justify-content: center;
+  }
+
+  .secondaryButtons {
+    justify-content: flex-start;
+  }
+
+  .fsxBranch,
+  .Explore {
+    font-size: 0.9rem;
+    padding: 0.65rem 1.1rem;
+  }
+}
+
+/* ≥768px (Tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .buttons {
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .primaryButtons {
+    justify-content: center;
+  }
+
+  .secondaryButtons {
+    justify-content: flex-start;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+    padding: 0.65rem 1.2rem;
+  }
+
+  .fsxBranch,
+  .Explore {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* ≤767px (Small tablets and phones) */
+@media (max-width: 767px) {
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .primaryButtons,
+  .secondaryButtons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .btn {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+/* ≤640px (Large phones) */
+@media (max-width: 640px) {
+  .btn {
+    font-size: 1.2rem;
+    padding: 1.1rem 1.1rem;
+  }
+
+  .fsxBranch,
+  .Explore {
+    width: auto;
+    font-size: 1.2rem;
+    padding: 1rem 1rem;
+  }
+}
+
+/* ≤480px (Medium phones) */
+@media (max-width: 480px) {
+  .btn {
+    width: auto;
+  }
+
+  .fsxBranch,
+  .Explore {
+    width: auto;
+    font-size: 0.95rem;
+    padding: 1rem 1rem;
+  }
+}
+
+/* ≤430px (Small phones) */
+@media (max-width: 430px) {
+  .btn {
+    font-size: 1rem;
+    padding: 1rem 1rem;
+  }
+}
+
+/* ≤375px (Very small phones) */
+@media (max-width: 375px) {
+  .btn {
+    font-size: 1rem;
+    padding: 0.85rem 0.85rem;
+  }
+}
+
+/* ≤320px (Fallback for ultra-small screens) */
+@media (max-width: 320px) {
+  .btn {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
