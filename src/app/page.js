@@ -7,6 +7,7 @@ import CountUp from 'react-countup';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import ButtonGroup from './components/ButtonGroup';
 
 export default function HomePage() {
   useEffect(() => {
@@ -39,37 +40,37 @@ export default function HomePage() {
   return (
     <main>
       {/* === HERO === */}
-      <section className={styles.hero} data-aos="fade-up">
-        <div className={styles.overlay}>
-          <h1 className={styles.typewriter}>
-            <span className={styles.typingText}>
-              Building Smarter, Scaling<span className={styles.mobileBreak}></span> Faster
-              <span className={styles.desktopBreak}></span> <br /> Engineering Experiences, <br />and Empowering Growth
-            </span>
-          </h1>
+      <div className={styles.heroBackground}>
+        <section className={styles.heroMain} data-aos="fade-up">
+          <div className={styles.overlay}>
+            <h1 className={styles.typewriter}>
+              <span className={styles.typingText}>
+                Building Smarter, Scaling<span className={styles.mobileBreak}></span> Faster
+                <span className={styles.desktopBreak}></span> <br /> Engineering Experiences, <br />and Empowering Growth
+              </span>
+            </h1>
 
-          <p className={styles.description}>
-            Fransunisoft (FSX) is a Nigeria-based ecosystem designed to fuel innovation, 
-            empower brands, and connect communities. With six dynamic branches — FSX Events, FSX Consulting,
-            FSX Tech, FSX Academy, FSX Labs, and FSX Connect. We provide solutions that help businesses and 
-            individuals thrive in today’s fast-changing world.
-          </p>
+            <p className={styles.description}>
+              Fransunisoft (FSX) is a Nigeria-based ecosystem designed to fuel innovation, 
+              empower brands, and connect communities. With six dynamic branches — FSX Events, FSX Consulting,
+              FSX Tech, FSX Academy, FSX Labs, and FSX Connect. We provide solutions that help businesses and 
+              individuals thrive in today’s fast-changing world.
+            </p>
 
-          <div className={styles.buttons}>
-            <a href="#brand-family" 
-            onClick={scrollToBrandFamily} 
-            className={styles.discoverBtn}>
-              Discover FSX Brand Family
-            </a>
-
-            <a href="#contact" 
-            onClick={scrollToContact} 
-            className={styles.startBtn}>
-              Start Your Journey Today
-            </a>
+            <ButtonGroup
+              filterKeys={['discover', 'start']}
+              onClickHandlers={{
+                discover: scrollToBrandFamily,
+                start: scrollToContact,
+              }}
+            />
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
+ 
+
+
+      
 
       {/* === WHAT MAKES US DIFFERENT === */}
       <section data-aos="fade-up">
