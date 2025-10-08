@@ -171,7 +171,16 @@
 @media (max-width: 480px) {
   .btn {
     width: auto;
+    font-size: 0.85rem;
   }
+
+  .discover{
+    padding: 1rem 1rem;
+    font-size: 0.85rem;
+  }
+
+
+
 
   .fsxBranch,
   .Explore {
@@ -187,6 +196,13 @@
     font-size: 0.85rem;
     padding: 1rem 1rem;
   }
+
+    .discover{
+    padding: 1rem 1rem;
+    font-size: 0.85rem;
+  }
+
+
 }
 
 /* ≤375px (Very small phones) */
@@ -195,6 +211,13 @@
     font-size: 0.85rem;
     padding: 0.85rem 0.85rem;
   }
+
+    .discover{
+    padding: 1rem 1rem;
+    font-size: 0.85rem;
+  }
+
+
 }
 
 /* ≤320px (Fallback for ultra-small screens) */
