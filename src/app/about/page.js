@@ -60,7 +60,7 @@ export default function AboutPage() {
           />
           <div className={styles.overlay}>
             <h1>About Fransunisoft</h1>
-            <p>Innovation and Growth in Nigeria</p>
+            <p>Innovation and Growth</p>
           </div>
         </div>
       </div>
