@@ -19,7 +19,7 @@ const buttons = [
   { key: 'ExploreAcademy', text: 'Explore Academy', href: '#fsx-academy', style: 'Explore', group: 'secondary' },
 
   { key: 'fsx-connect1', text: 'Join Community', href: '#fsx-connect', style: 'fsxBranch', group: 'secondary' },
-  { key: 'ExploreConnect', text: 'Explor eConnect', href: '#fsx-connect', style: 'Explore', group: 'secondary' },
+  { key: 'ExploreConnect', text: 'Explore eConnect', href: '#fsx-connect', style: 'Explore', group: 'secondary' },
 
   { key: 'fsx-consulting1', text: 'Book Consultation', href: '#consulting', style: 'fsxBranch', group: 'secondary' },
   { key: 'ExploreConsulting', text: 'Explore Consulting', href: '#consulting', style: 'Explore', group: 'secondary' },
