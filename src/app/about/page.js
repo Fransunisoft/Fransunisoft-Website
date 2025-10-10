@@ -8,7 +8,7 @@ export const metadata = {
   title: "About Us Fransunisoft",
   description:
     "Learn more about Fransunisoft, our misiion and vision. ",
-  icons: { icon: "/favicon.png" },
+
 };
 
 
