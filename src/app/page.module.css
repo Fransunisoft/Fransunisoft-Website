@@ -3,7 +3,7 @@
 .heroBackground {
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(to right, #0D519A, #0D519A, #20A89F);
+  background: linear-gradient(to right, #0D519A 35%, #0D519A 10%, #20A89F 125%);
   overflow: hidden;
 }
 

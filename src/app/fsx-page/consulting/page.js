@@ -6,6 +6,7 @@ import styles from "./consulting.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import AOS from "aos";
+import ButtonGroup from "@/app/components/ButtonGroup";
 
 
 
@@ -17,6 +18,15 @@ const scrollToContact = (e) => {
     }
     closeMobileMenu();
   };
+
+  const scrollToConsultingService = (e) => {
+    e.preventDefault();
+    const section = document.getElementById('consulting-service');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
 
 const Consulting = () => {
   useEffect(() => {
@@ -32,7 +42,7 @@ const Consulting = () => {
   return (
     <div className={styles.consulting}>
       {/* Hero Section */}
-      <section className={styles.hero} data-aos="fade-up">
+      <div className={styles.hero} data-aos="fade-up">
         <div className={styles.heroText}>
           <h1>FSX Consulting</h1>
           <p>
@@ -41,11 +51,14 @@ const Consulting = () => {
             enterprises, helping them overcome challenges and unlock growth
             opportunities in Nigeria and across Africa.
           </p>
-          <div className={styles.heroBtns}>
-            <Link href="#contact" onClick={scrollToContact}><button className={styles.btnPrimary}>Book Consultation</button></Link>
-            <button className={styles.btnSecondary}>
-              Back to Brand Family
-            </button>
+          <div className={styles.heroBtns} >
+            <ButtonGroup
+              filterKeys={['fsxConsulting1', 'ExploreConsulting']}
+              onClickHandlers={{
+               fsxConsulting1: scrollToContact,
+               ExploreConsulting: scrollToConsultingService,
+              }}
+            />
           </div>
           <div className={styles.customers}>
             <Image
@@ -69,22 +82,22 @@ const Consulting = () => {
             className={styles.responsiveImage}
           />
         </div>
-      </section>
+      </div>
 
       {/* Services */}
-      <section className={styles.services} data-aos="fade-up">
-        <div className={styles.sectionHead}>
+      <section id="consulting-service" data-aos="fade-up" className={styles.services}>
+        <div className="sectionHead">
           <h2>Our Consulting Services</h2>
-          <p>
+          <h6>
             We bridge the gap between business strategy and technology
             execution, delivering comprehensive solutions that drive sustainable
             growth for Nigerian businesses.
-          </p>
+          </h6>
         </div>
 
         <div className={styles.servicesGrid}>
           <div className={styles.card}>
-            <h3>Business Consulting</h3>
+            <h4>Business Consulting</h4>
             <p>
               Strategic guidance to optimize operations, improve efficiency, and
               drive growth.
@@ -97,7 +110,7 @@ const Consulting = () => {
             </ul>
           </div>
           <div className={styles.card}>
-            <h3>Digital Transformation</h3>
+            <h4>Digital Transformation</h4>
             <p>
               Modernize your business with cutting-edge technology solutions and
               digital strategies.
@@ -110,7 +123,7 @@ const Consulting = () => {
             </ul>
           </div>
           <div className={styles.card}>
-            <h3>Community Programs</h3>
+            <h4>Community Programs</h4>
             <p>
               Build engaged communities around your brand and foster meaningful
               connections.
@@ -127,13 +140,13 @@ const Consulting = () => {
 
       {/* Approach */}
       <section className={styles.approach} data-aos="fade-up">
-        <div className={styles.sectionHead}>
+        <div className="sectionHead">
           <h2>Our Proven Approach</h2>
-          <p>
+          <h6>
             We follow a systematic methodology that bridges strategic thinking
             with practical execution, ensuring every project delivers measurable
             results and sustainable growth.
-          </p>
+          </h6>
         </div>
 
         <div className={styles.approachStages}>
@@ -165,7 +178,7 @@ const Consulting = () => {
               src="/approachConsulting.png"
               alt="consulting approach image"
               width={500}
-              height={400}
+              height={500}
               className={styles.responsiveImage}
             />
           </div>
@@ -191,7 +204,7 @@ const Consulting = () => {
                 alt="consulting coremission icon"
                 width={16}
                 height={16}
-                className={styles.responsiveImage}
+                className={styles.coreMissionPic}
               />
               <p>About us</p>
             </div>
@@ -199,7 +212,7 @@ const Consulting = () => {
             <div className={styles.coreMissionText}>
               <h3>
                 The Core Mission Behind
-                <span > all our work</span>
+                <span> all our work</span>
               </h3>
               <p>
                 Equips startups and enterprises with smart strategies to build
@@ -207,7 +220,7 @@ const Consulting = () => {
               </p>
             </div>
             <Link href="/about">
-              <button className={styles.LearnMoreBtn}>Learn More</button>
+              <button2 className="button2">Learn More</button2>
             </Link>
           </div>
         </div>
@@ -216,17 +229,23 @@ const Consulting = () => {
           <div>
             <h3>12+</h3>
             <h6>Years in Business</h6>
-            <span className={styles.statp}>A decade of trusted consulting experience.</span>
+            <span className={styles.statp}>
+              A decade of trusted consulting experience.
+            </span>
           </div>
           <div>
             <h3>30+</h3>
             <h6>Projects Delivered</h6>
-            <span className={styles.statp}>Real-world solution that achieved measurable results</span>
+            <span className={styles.statp}>
+              Real-world solution that achieved measurable results
+            </span>
           </div>
           <div>
             <h3>95%</h3>
             <h6>Client Retention Rate</h6>
-            <span className={styles.statp}>Our clients comes back, which says everything</span>
+            <span className={styles.statp}>
+              Our clients comes back, which says everything
+            </span>
           </div>
           <div>
             <h3>5+</h3>
@@ -240,12 +259,12 @@ const Consulting = () => {
 
       {/* Why Us */}
       <section className={styles.whyUs} data-aos="fade-up">
-        <div className={styles.sectionHead}>
+        <div className="sectionHead">
           <h2>Why Our Expertise Matters</h2>
-          <p>
+          <h6>
             Empowering businesses with expert insights to thrive, adapt, and
             grow.
-          </p>
+          </h6>
         </div>
 
         <div className={styles.whyGrid}>
@@ -260,7 +279,7 @@ const Consulting = () => {
             <h3>Experience</h3>
             <p>Decade of insight fuel smarter decisions and faster execution</p>
           </div>
-          
+
           <div className={styles.whyCard}>
             <Image
               src="/cData.png"
