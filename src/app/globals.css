@@ -507,9 +507,9 @@ section {
 FSX Branch Pages buttons EXAMPLE USAGE
 
   <ButtonGroup
-              filterKeys={['Get Started', 'Explore More']}
+              filterKeys={['Get Started', 'Explore Tech']}
               onClickHandlers={{
-            fsx-tech1: scrollToBrandFamily,
+            fsx-tech1: scrollToTechFamily,
                ExploreTech: scrollToContact,
               }}
             />
