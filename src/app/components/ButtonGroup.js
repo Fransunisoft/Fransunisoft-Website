@@ -6,20 +6,20 @@ const buttons = [
   { key: 'discover', text: 'Discover FSX Brand Family', href: '#brand-family', style: 'discover', group: 'primary' },
   { key: 'start', text: 'Start Your Journey Today', href: '#contact', style: 'start', group: 'primary' },
 
-  { key: 'fsxevents', text: 'Book Your Events', href: '#contact', style: 'fsxBranch', group: 'secondary' },
-  { key: 'ExploreEvents', text: 'Explore Events', href: '#fsx-events', style: 'Explore', group: 'secondary' },
+  { key: 'fsxevents', text: 'Book Your Events', href: '#contact', style: 'discover', group: 'primary' },
+  { key: 'ExploreEvents', text: 'Explore Services', href: '#fsx-events', style: 'start', group: 'primary' },
 
-  { key: 'fsxlabs1', text: 'Tell Us Your Idea', href: '#contact', style: 'fsxLabs', group: 'secondary' },
-  { key: 'ExploreLabs', text: 'Explore Labs', href: '#what-we-do', style: 'Explore', group: 'secondary' },
+  { key: 'fsxlabs1', text: 'Tell Us Your Idea', href: '#contact', style: 'discover', group: 'primary' },
+  { key: 'ExploreLabs', text: 'Explore What We Do', href: '#what-we-do', style: 'start', group: 'primary' },
 
-  { key: 'fsxtech1', text: 'Get Started', href: '#contact', style: 'fsxBranch', group: 'secondary' },
-  { key: 'ExploreTech', text: 'Explore Tech', href: '#fsx-tech', style: 'Explore', group: 'secondary' },
+  { key: 'fsxtech1', text: 'Get Started', href: '#contact', style: 'discover', group: 'primary' },
+  { key: 'ExploreTech', text: 'Explore Services', href: '#fsx-tech', style: 'start', group: 'primary' },
 
-  { key: 'fsxacademy1', text: 'Join Us', href: '#contact', style: 'fsxBranch', group: 'secondary' },
-  { key: 'ExploreAcademy', text: 'Explore Academy', href: '#fsx-academy', style: 'Explore', group: 'secondary' },
+  { key: 'fsxacademy1', text: 'Join Us', href: '#contact', style: 'discover', group: 'primary' },
+  { key: 'ExploreAcademy', text: 'Explore Academy', href: '#fsx-academy', style: 'start', group: 'primary' },
 
-  { key: 'fsxconnect1', text: 'Join Community', href: '#contact', style: 'fsxBranch', group: 'secondary' },
-  { key: 'ExploreConnect', text: 'Explore eConnect', href: '#fsx-connect', style: 'Explore', group: 'secondary' },
+  { key: 'fsxconnect1', text: 'Join Community', href: '#contact', style: 'discover', group: 'primary' },
+  { key: 'ExploreConnect', text: 'Explore Network', href: '#fsx-connect', style: 'start', group: 'primary' },
 
   { key: 'fsxConsulting1', text: 'Book Consultation', href: '#contact', style: 'discover', group: 'primary' },
   { key: 'ExploreConsulting', text: 'Explore Services', href: '#consulting-service', style: 'start', group: 'primary' },

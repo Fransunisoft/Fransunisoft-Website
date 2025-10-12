@@ -42,8 +42,8 @@ const Consulting = () => {
   return (
     <div className={styles.consulting}>
       {/* Hero Section */}
-      <div className={styles.hero} data-aos="fade-up">
-        <div className={styles.heroText}>
+      <div className="hero" data-aos="fade-up">
+        <div className="heroText">
           <h1>FSX Consulting</h1>
           <p>
             Businesses don’t just need advice they need strategies that work.
@@ -85,7 +85,7 @@ const Consulting = () => {
       </div>
 
       {/* Services */}
-      <section id="consulting-service" data-aos="fade-up" className={styles.services}>
+      <section id="consulting-service" data-aos="fade-up" >
         <div className="sectionHead">
           <h2>Our Consulting Services</h2>
           <h6>
@@ -95,9 +95,9 @@ const Consulting = () => {
           </h6>
         </div>
 
-        <div className={styles.servicesGrid}>
-          <div className={styles.card}>
-            <h4>Business Consulting</h4>
+        <div className="grid">
+          <div className="card1">
+            <h4 className={styles.card1head}>Business Consulting</h4>
             <p>
               Strategic guidance to optimize operations, improve efficiency, and
               drive growth.
@@ -109,8 +109,8 @@ const Consulting = () => {
               <li>Competitive Intelligence</li>
             </ul>
           </div>
-          <div className={styles.card}>
-            <h4>Digital Transformation</h4>
+          <div className="card1">
+            <h4 className={styles.card1head}>Digital Transformation</h4>
             <p>
               Modernize your business with cutting-edge technology solutions and
               digital strategies.
@@ -122,8 +122,8 @@ const Consulting = () => {
               <li>Automation</li>
             </ul>
           </div>
-          <div className={styles.card}>
-            <h4>Community Programs</h4>
+          <div className="card1">
+            <h4 className={styles.card1head}>Community Programs</h4>
             <p>
               Build engaged communities around your brand and foster meaningful
               connections.
@@ -139,7 +139,7 @@ const Consulting = () => {
       </section>
 
       {/* Approach */}
-      <section className={styles.approach} data-aos="fade-up">
+      <section data-aos="fade-up">
         <div className="sectionHead">
           <h2>Our Proven Approach</h2>
           <h6>
@@ -151,22 +151,22 @@ const Consulting = () => {
 
         <div className={styles.approachStages}>
           <div className={styles.approachStagesCardContainer}>
-            <div className={styles.approachStagesCard}>
+            <div className="card2">
               <p className={styles.approachStagesCount}>1</p>
               <h4>Strategic Analysis</h4>
               <p>Deep dive into your business goals and challenges</p>
             </div>
-            <div className={styles.approachStagesCard}>
+            <div className="card2">
               <p className={styles.approachStagesCount}>2</p>
               <h4>Solution Design</h4>
               <p>Deep dive into your business goals and challenges</p>
             </div>
-            <div className={styles.approachStagesCard}>
+            <div className="card2">
               <p className={styles.approachStagesCount}>3</p>
               <h4>Implementation</h4>
               <p>Deep dive into your business goals and challenges</p>
             </div>
-            <div className={styles.approachStagesCard}>
+            <div className="card2">
               <p className={styles.approachStagesCount}>4</p>
               <h4>Optimization</h4>
               <p>Deep dive into your business goals and challenges</p>
@@ -186,7 +186,7 @@ const Consulting = () => {
       </section>
 
       {/* Mission */}
-      <section className={styles.mission} data-aos="fade-up">
+      <section data-aos="fade-up">
         <h2 className={styles.missionSectionHead}>Our Mission</h2>
         <div className={styles.coreMission}>
           <Image
@@ -258,7 +258,7 @@ const Consulting = () => {
       </section>
 
       {/* Why Us */}
-      <section className={styles.whyUs} data-aos="fade-up">
+      <section  data-aos="fade-up">
         <div className="sectionHead">
           <h2>Why Our Expertise Matters</h2>
           <h6>
@@ -268,7 +268,7 @@ const Consulting = () => {
         </div>
 
         <div className={styles.whyGrid}>
-          <div className={styles.whyCard}>
+          <div className="card3">
             <Image
               src="/cExperience.png"
               alt="consulting approach image"
@@ -280,7 +280,7 @@ const Consulting = () => {
             <p>Decade of insight fuel smarter decisions and faster execution</p>
           </div>
 
-          <div className={styles.whyCard}>
+          <div className="card3">
             <Image
               src="/cData.png"
               alt="consulting approach image"
@@ -292,7 +292,7 @@ const Consulting = () => {
             <p>Decade of insight fuel smarter decisions and faster execution</p>
           </div>
 
-          <div className={styles.whyCard}>
+          <div className="card3">
             <Image
               src="/cClient.png"
               alt="consulting approach image"
