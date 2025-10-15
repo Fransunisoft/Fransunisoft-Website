@@ -53,6 +53,11 @@ a {
 h1{
   font-size: 48px;
 }
+
+h1, .typewriter{
+ font-size: 48px;
+}
+
 h2{
   font-size: 40px;
 }
