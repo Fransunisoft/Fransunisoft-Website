@@ -9,7 +9,7 @@
   padding: 2.5rem 7rem;
   background: linear-gradient(to bottom right, #0d519a 10%, #0d519a 55%, #ffffff 150%);
   color: white;
-  gap: 50px;
+  gap: 50px; 
 }
 
 .heroText {
