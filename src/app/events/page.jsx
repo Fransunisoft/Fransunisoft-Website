@@ -30,7 +30,7 @@ const ALL_CARDS = [
   },
   {
     id: 2,
-    title: "Coporate Mixers",
+    title: "Corporate Mixers",
     description:
       "Foster connections and build relationships in a relaxed yet professional setting designed for networking and team building.",
     linkText: "View Conference Solutions",
