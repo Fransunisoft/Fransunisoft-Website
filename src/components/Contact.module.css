@@ -1,4 +1,6 @@
-/* Full-width background wrapper */
+/* ==========================================================================
+   Contact Section - Full-width Blue Background Wrapper
+   ========================================================================== */
 .contactBackground {
   width: 100vw;
   background-color: #0D519A;
@@ -9,29 +11,16 @@
   margin-right: -50vw;
 }
 
-/* Section layout - Relies on global padding/margin for direct inheritance */
-/* .contactSection {
-  width: 100%;
-  color: white;
-  min-height: 800px;
-} */
-
-/* Centered content - No padding to avoid layering on global margin */
-/* .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0;
-  box-sizing: border-box;
-} */
-
-/* Top Full-Width Content: Heading and Paragraph */
+/* ==========================================================================
+   Top Content - Heading & Lead Text
+   ========================================================================== */
 .topContent {
   width: 100%;
   text-align: center;
   margin-bottom: 4rem;
   margin-top: 0;
-  max-width: none; /* Ensures full row, no capping */
-  padding: 0; /* FIXED: No side padding for true centering */
+  max-width: none;
+  padding: 0;
 }
 
 .contactHeading {
@@ -42,45 +31,48 @@
   margin: 0 auto;
   letter-spacing: -0.01em;
   text-align: center;
-  white-space: normal; /* Allows wrapping on narrow screens */
+  white-space: normal;
   width: 100%;
-  max-width: clamp(320px, 95vw, 706px); /* FIXED: Wider for full-row center, responsive */
-  font-size: clamp(20px, 4.5vw, 32px); /* FIXED: Bold 1-line mobile, scales desktop */
-  text-wrap: balance; /* FIXED: Even wrapping if needed */
-  display: block; /* FIXED: Ensures auto margins center */
+  max-width: clamp(320px, 95vw, 706px);
+  font-size: clamp(20px, 4.5vw, 32px);
+  text-wrap: balance;
+  display: block;
 }
 
 .contactLead {
   font-family: Roboto, sans-serif;
   font-weight: 400;
   margin: 1.2rem auto 0;
-  max-width: clamp(320px, 95vw, 706px); /* FIXED: Matches heading—wider, centered */
-  letter-spacing: -0.01em; /* FIXED: Subtle tighten for ~3 lines on mobile */
+  max-width: clamp(320px, 95vw, 706px);
+  letter-spacing: -0.01em;
   text-align: center;
   color: #a8aaa0;
   width: 100%;
-  line-height: 1.35; /* FIXED: Tighter for balanced 3 rows */
-  font-size: clamp(11px, 2.2vw, 18px); /* FIXED: Compact mobile for 3 lines, grows desktop */
-  text-wrap: balance; /* FIXED: Even line distribution */
-  display: -webkit-box; /* FIXED: For line-clamp multi-line ellipsis */
-  -webkit-line-clamp: 3; /* FIXED: Strict 3-line max */
+  line-height: 1.35;
+  font-size: clamp(11px, 2.2vw, 18px);
+  text-wrap: balance;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  max-height: 3.75em; /* FIXED: Enforces 3 lines with fade */
-  display: block; /* FIXED: Auto center */
+  max-height: 3.75em;
 }
 
-/* Grid: Two Columns Below Top */
+/* ==========================================================================
+   Grid Layout
+   ========================================================================== */
 .contactGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: start;
   width: 100%;
-  justify-content: center; /* FIXED: Extra centering symmetry */
+  justify-content: center;
 }
 
-/* Left Column: Contact Information Icons - On blue bg */
+/* ==========================================================================
+   Left Column - Contact Information (Email, Phone, Location)
+   ========================================================================== */
 .leftColumn {
   display: flex;
   flex-direction: column;
@@ -104,7 +96,7 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  margin: 0 0 2rem 0; /* Ensures 2rem gap below on ALL screens */
+  margin: 0 0 2rem 0;
   text-align: left;
   max-width: none;
   letter-spacing: 0%;
@@ -143,8 +135,8 @@
   box-sizing: border-box;
 }
 
-.infoIconCircle svg,
-.infoIconCircle img {
+.infoIconCircle img,
+.infoIconCircle svg {
   width: 24px;
   height: 24px;
   color: #0D519A;
@@ -156,7 +148,6 @@
   flex-direction: column;
 }
 
-/* Styles for info items (heading, subtext, value) */
 .emailHeading {
   font-family: Roboto, sans-serif;
   font-size: 20px;
@@ -173,7 +164,7 @@
   font-size: 14px;
   font-weight: 400;
   color: #A0A5AA;
-  margin: 0 0 0.25rem 0; /* Reduced from 0.5rem to tighten gap to value */
+  margin: 0 0 0.25rem 0;
   line-height: 1.4;
   letter-spacing: 0%;
   display: block;
@@ -192,7 +183,9 @@
   word-break: break-all;
 }
 
-/* Right Column: Get In Touch White Card */
+/* ==========================================================================
+   Right Column - Form Card
+   ========================================================================== */
 .rightColumn {
   background: #FAFDFF;
   border-radius: 30px;
@@ -240,7 +233,6 @@
   box-sizing: border-box;
 }
 
-/* Form - Inside right card */
 .contactForm {
   display: flex;
   flex-direction: column;
@@ -324,6 +316,7 @@
   background: white;
 }
 
+/* Phone Row with Country Selector */
 .phoneRow {
   display: flex;
   align-items: center;
@@ -343,11 +336,6 @@
 .phoneRow:focus-within {
   outline: none;
   box-shadow: 0 0 0 3px rgba(13, 81, 154, 0.3);
-}
-
-.phoneRow:focus-within .countrySelectorWrapper,
-.phoneRow:focus-within input {
-  border-color: transparent !important;
 }
 
 .countrySelectorWrapper {
@@ -373,11 +361,6 @@
 
 .countrySelectorWrapper.open .selectArrow {
   transform: rotate(180deg);
-}
-
-.countrySelectorWrapper:hover .selectArrow,
-.countrySelectorWrapper:focus-within .selectArrow {
-  color: #0D519A;
 }
 
 .selectArrow {
@@ -446,25 +429,11 @@
   align-items: center;
 }
 
-/* Autofill styles to match background and prevent disjoint yellow */
-.phoneRow input:-webkit-autofill,
-.phoneRow input:-webkit-autofill:hover,
-.phoneRow input:-webkit-autofill:focus,
-.phoneRow input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 1000px #FAFDFF inset !important;
-  box-shadow: 0 0 0 1000px #FAFDFF inset !important;
-  -webkit-text-fill-color: #2C3E50 !important;
-  background-color: #FAFDFF !important;
-  transition: background-color 5000s ease-in-out 0s !important;
-}
-
-.phoneInput {
-  flex: 1;
-  margin-left: 0;
-  padding-left: 16px;
-  border: none;
-  background: transparent;
-  height: 100%;
+/* Textarea with Attach Button */
+.textareaWrapper {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .textarea {
@@ -474,23 +443,6 @@
   padding-top: calc((170px - 20px) / 2);
   padding-bottom: 20px;
   line-height: 1.2;
-  box-sizing: border-box;
-}
-
-.textarea::placeholder {
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 20px;
-  text-align: left;
-  color: #A0A5AA;
-  opacity: 1;
-}
-
-/* wrapper to position attach control inside textarea area */
-.textareaWrapper {
-  position: relative;
-  width: 100%;
   box-sizing: border-box;
 }
 
@@ -520,7 +472,7 @@
   display: none;
 }
 
-/* attached file preview */
+/* Attached File Preview */
 .attachedFile {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -556,14 +508,6 @@
   color: #6B7280;
 }
 
-/* actions: remove */
-.fileActions {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  margin: 0;
-}
-
 .removeButton {
   background: transparent;
   border: 1px solid #E5E7EB;
@@ -577,7 +521,7 @@
   color: #6B7280;
 }
 
-/* primary Contact Us button — exact Figma properties */
+/* Submit Button */
 .submitButton {
   display: inline-flex;
   align-items: center;
@@ -590,7 +534,6 @@
   background: #0D519A;
   color: #FFFFFF;
   border: none;
-  opacity: 1;
   font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -603,9 +546,7 @@
 }
 
 .submitButton:hover {
-  /* transform: translateY(-2px); */
   background-color: #3D74AE;
-  /* box-shadow: 0 10px 24px rgba(13,81,154,0.18); */
 }
 
 .submitButton:active {
@@ -613,7 +554,7 @@
   box-shadow: 0 6px 18px rgba(13,81,154,0.14);
 }
 
-/* Custom Dropdown Styles */
+/* Country Dropdown */
 .countryDropdown {
   position: absolute;
   top: 100%;
@@ -659,67 +600,9 @@
   border-radius: 4px;
 }
 
-/* Apply uniform background and sharper focus to all inputs/select/textarea */
-.input,
-.select,
-.textarea,
-.phoneRow input {
-  background: #FAFDFF;
-}
-
-.input:focus,
-.select:focus,
-.textarea:focus,
-.phoneRow input:focus {
-  outline: none;
-  border-color: transparent;
-  box-shadow: 0 0 0 3px rgba(13, 81, 154, 0.3);
-}
-
-/* Enhanced Responsive - Focus on Mobile & Tablet */
-
-/* Tablet: 769px - 1024px (e.g., iPad portrait) */
-@media (max-width: 1024px) and (min-width: 769px) {
-  .contactGrid {
-    gap: 3rem;
-  }
-
-  .infoTitle,
-  .infoLead {
-    width: 100%;
-    max-width: 350px;
-  }
-
-  .infoLead {
-    margin-bottom: 2rem; /* Matches desktop—maintains gap */
-  }
-
-  .rightColumn {
-    padding: 40px;
-    max-width: calc(570px + 48px);
-  }
-
-  .submitButton {
-    width: 100%;
-    max-width: 570px;
-  }
-
-  .countryDropdown {
-    width: 260px;
-  }
-
-  /* Mobile-like padding for tablet if needed */
-  .container {
-    padding: 0 10px;
-  }
-
-  .contactHeading,
-  .contactLead {
-    max-width: clamp(400px, 85vw, 600px); /* Fluid middle ground—same for both */
-  }
-}
-
-/* Mobile: Up to 768px (phones & small tablets) */
+/* ==========================================================================
+   Mobile Responsive (max-width: 768px) - With Fixed Icons
+   ========================================================================== */
 @media (max-width: 768px) {
   .contactSection {
     margin-top: 0;
@@ -727,91 +610,91 @@
 
   .topContent {
     text-align: center;
-    margin-bottom: 2.5rem; /* FIXED: Balanced vertical flow */
-    padding: 0; /* FIXED: No padding—relies on element margins for center */
+    margin-bottom: 2.5rem;
+    padding: 0;
   }
 
   .contactHeading {
-    margin: 0 auto 0; /* FIXED: Auto center */
-    padding: 0; /* FIXED: No padding—full width */
+    margin: 0 auto 0;
+    padding: 0;
   }
 
   .contactLead {
-    margin: 0.75rem auto 0; /* FIXED: Auto center */
-    padding: 0; /* FIXED: No padding—full width */
+    margin: 0.75rem auto 0;
+    padding: 0;
   }
 
   .contactGrid {
     grid-template-columns: 1fr;
-    gap: 5rem; /* UPDATED: Increased from 4.375rem (70px) to 5rem (80px) for more space between stacked left/right columns */
-    padding: 0 8px; /* UPDATED: Reduced from 16px to 8px on both sides for tighter edges (as discussed—prevents flush but adds immersion) */
-    justify-content: center; /* FIXED: Ensures column centering */
+    gap: 5rem;
+    padding: 0 8px;
+    justify-content: center;
   }
 
   .leftColumn {
     order: 2;
     align-items: flex-start;
-    padding-left: 0; /* FIXED: No offset */
+    padding-left: 0;
     padding-bottom: 0.5rem;
   }
 
   .rightColumn {
     order: 1;
     max-width: none;
-    padding: 32px; /* FIXED: Uniform all sides for balanced left/right—no touching edge */
+    padding: 32px;
     border-radius: 20px;
     align-items: flex-start;
     width: 100%;
   }
 
-  .infoTitle,
-  .infoLead {
-    text-align: left;
-    width: 100%;
-    max-width: none;
-    margin: 0 auto;
+  /* FIXED ICON CIRCLES - Consistent with desktop */
+  .infoIconCircle {
+    width: 64px !important;
+    height: 64px !important;
+    min-width: 64px !important;
+    min-height: 64px !important;
+    border-radius: 50% !important;
+    padding: 18px 20px !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
-  .infoTitle {
-    font-size: 24px;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-
-  .infoLead {
-    font-size: 14px;
-    line-height: 1.4;
-    margin-bottom: 2rem;
-  }
-
-  .contactInfo {
-    gap: 36px; /* UPDATED: Increased from 24px to 36px for generous spacing between info items (Email, Phone, Location) */
-    align-items: flex-start;
+  .infoIconCircle img,
+  .infoIconCircle svg {
+    width: 28px !important;
+    height: 28px !important;
+    object-fit: contain !important;
   }
 
   .infoItem {
     flex-direction: row;
     align-items: flex-start;
     text-align: left;
-    gap: 28px;
+    gap: 24px;
   }
 
-  .infoText {
-    text-align: left;
+  .infoTitle {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: none;
   }
 
-  .infoIconCircle {
-    width: 64px; 
-    height: 64px; 
-    border-radius: 32px; /* Adjusted for perfect roundness on larger size */
-    padding: 18px 20px; /* Adjusted for better centering on larger size */
+  .infoLead {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: none;
   }
 
-  .infoIconCircle svg,
-  .infoIconCircle img {
-    /* UPDATED: Slightly larger icons inside the bigger circle */
-    width: 24px; /* Increased from 20px to fill the larger circle proportionally */
-    height: 24px; /* Increased from 20px to fill the larger circle proportionally */
+  .contactInfo {
+    gap: 36px;
+    align-items: flex-start;
   }
 
   .emailSubtext {
@@ -857,8 +740,8 @@
   .textarea {
     width: 100%;
     max-width: none;
-    height: 56px; /* FIXED: Universal balanced height */
-    padding: 16px 16px 16px 20px; /* FIXED: Slightly more left padding for balance, uniform right/top/bottom */
+    height: 56px;
+    padding: 16px 16px 16px 20px;
     font-size: 16px;
     border-radius: 12px;
     border: 1px solid #A0A5AA;
@@ -879,8 +762,8 @@
   }
 
   .textarea {
-    height: 128px; /* FIXED: Proportional to others */
-    padding: 16px 100px 16px 20px; /* FIXED: Extra right for attach, balanced left */
+    height: 128px;
+    padding: 16px 100px 16px 20px;
     align-items: flex-start;
   }
 
@@ -918,14 +801,9 @@
     transition: box-shadow 0.3s;
   }
 
-  .phoneRow:focus-within .countrySelectorWrapper,
-  .phoneRow:focus-within input {
-    border-color: transparent !important;
-  }
-
   .countrySelectorWrapper {
     height: 100%;
-    padding: 16px; 
+    padding: 16px;
     min-width: 100px;
     border: none !important;
     border-right: 1px solid #A0A5AA;
@@ -940,21 +818,9 @@
     align-items: center;
   }
 
-  .countrySelectorWrapper .flag,
-  .countrySelectorWrapper .selectedCode,
-  .countrySelectorWrapper .selectArrow {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-  }
-
   .selectArrow {
     margin-left: auto;
     position: static;
-    right: auto;
-    top: auto;
-    transform: none;
     font-size: 12px;
     color: #A0A5AA;
   }
@@ -978,7 +844,7 @@
   .phoneRow input {
     flex: 1;
     height: 100%;
-    padding: 0 16px; 
+    padding: 0 16px;
     border: none !important;
     border-radius: 0 12px 12px 0;
     margin: 0;
@@ -990,19 +856,6 @@
     display: flex;
     align-items: center;
     outline: none;
-  }
-
-  .phoneRow input:focus {
-    outline: none !important;
-    border: none !important;
-  }
-
-  .phoneRow input::placeholder {
-    font-size: 16px;
-    line-height: 1.2;
-    color: #A0A5AA;
-    display: flex;
-    align-items: center;
   }
 
   .attachLabel {
@@ -1056,132 +909,36 @@
     height: 13px;
     border-radius: 4px;
   }
-
-  /* Landscape phone tweaks */
-  @media (max-height: 500px) and (orientation: landscape) {
-    .topContent {
-      margin-bottom: 1.5rem;
-    }
-
-    .contactHeading {
-      font-size: clamp(18px, 4vw, 24px);
-    }
-
-    .contactLead {
-      font-size: clamp(11px, 2vw, 14px);
-      display: none; /* Keep hidden for space if needed */
-    }
-
-    .rightColumn {
-      padding: 24px;
-    }
-
-    .textarea {
-      height: 96px;
-    }
-
-    .cardIntro {
-      display: none;
-    }
-
-    .countryDropdown {
-      max-height: 40vh;
-    }
-  }
-
-  /* Extra small phones */
-  @media (max-width: 360px) {
-    .topContent {
-      padding: 0;
-    }
-
-    .contactHeading,
-    .contactLead {
-      padding: 0;
-      max-width: 100vw; 
-    }
-
-    .contactGrid {
-      padding: 0 8px; 
-    }
-
-    .rightColumn {
-      padding: 28px;
-    }
-
-    .input,
-    .select,
-    .phoneRow,
-    .textarea {
-      padding: 14px 14px 14px 18px; /* FIXED: Scaled uniform with slight left balance for XS */
-    }
-
-    .textarea {
-      padding: 14px 96px 14px 18px;
-    }
-
-    .phoneRow input {
-      padding: 0 14px;
-    }
-
-    .countrySelectorWrapper {
-      padding: 14px;
-      min-width: 90px;
-    }
-
-    .flag {
-      width: 24px !important;
-      height: 16px !important;
-    }
-
-    .selectedCode {
-      font-size: 14px;
-    }
-
-    .submitButton {
-      height: 52px;
-      font-size: 15px;
-    }
-
-    .countryDropdown {
-      width: 100vw;
-    }
-
-    .leftColumn {
-      padding-left: 0;
-    }
-
-    /* UPDATED: Icon circle scales  */
-    .infoIconCircle {
-      width: 60px; /* Slightly smaller
-      height: 60px;
-      border-radius: 30px;
-      padding: 16px 18px;
-    }
-
-    .infoIconCircle svg,
-    .infoIconCircle img {
-      width: 22px; /* Scaled proportionally for XS */
-      height: 22px;
-    }
-  }
 }
 
+/* Extra small phones */
+@media (max-width: 360px) {
+  .input,
+  .select,
+  .phoneRow,
+  .textarea {
+    padding: 14px 14px 14px 18px;
+  }
 
-/*  DROPDOWN ARROW */
-.select {
-  appearance: none;
-  -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%236B7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 20px center;
-  background-size: 12px;
-  padding-right: 50px;
-}
+  .textarea {
+    padding: 14px 96px 14px 18px;
+  }
 
-/* Optional:  */
-.select:focus {
-  outline: none;
-  border-color: #0D519A;
-  box-shadow: 0 0 0 0 3px rgba(13, 81, 154, 0.2);
+  .flag {
+    width: 24px !important;
+    height: 16px !important;
+  }
+
+  .infoIconCircle {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    padding: 16px 18px;
+  }
+
+  .infoIconCircle img,
+  .infoIconCircle svg {
+    width: 22px;
+    height: 22px;
+  }
 }
