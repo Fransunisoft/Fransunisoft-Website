@@ -1,10 +1,82 @@
 .hero {
-  margin-top: 80px;
+  margin-top: 100px;
   position: relative;
+   min-height: 100vh;
   width: 100%;
   height: 500px;
   overflow: hidden;
 }
+
+/* --- Base Styles (Desktop First) --- */
+
+.container {
+  display: flex;           
+  flex-direction: column;  
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 0 1rem;      
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #F1F5F9;
+  font-weight: 700;
+}
+
+.sections {
+  display: flex;
+  flex-direction: row;    
+  align-items: center; 
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  color: #F1F5F9;
+}
+
+.item {
+  font-weight: 500;
+  white-space: nowrap;    
+}
+
+.dot2 {
+  color: #F1F5F9;
+  font-size: 1.5rem;
+}
+
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.8rem;    
+    margin-bottom: 1.5rem;
+  }
+
+  .sections {
+  
+    flex-wrap: wrap;       
+    gap: 0.5rem;          
+    font-size: 1rem;      
+    max-width: 100%;       
+  }
+
+  .dot2 {
+    font-size: 1rem;       
+  }
+
+  .sections {
+    flex-direction: column;
+  }
+  .dot2 {
+    display: none; 
+  }
+  
+}
+
+
+
+
 
 .imageWrapper {
   position: relative;
@@ -43,6 +115,7 @@
   font-size:16px;
   font-weight: 500;
   letter-spacing: 1px;
+max-width: 900;
 }
 
 /* 💻 Tablet */
@@ -64,7 +137,7 @@
 /* 📱 Mobile */
 @media (max-width: 480px) {
   .hero {
-    margin-top: 0px;
+    margin-top: 80px;
     height: 400px;
   }
 
@@ -87,10 +160,11 @@
 }
 
 .textColumn {
-  flex: 1 1 35%;
+  flex: 1 1 38%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+   list-style-position: inside;
 
 }
 
@@ -324,7 +398,7 @@
 
 .ceoSection {
 padding: 20px 2rem;
-  margin: 0 auto;
+  margin: 2 auto;
   color: #2C3E50;
   text-align: center;
   align-items: center;
@@ -340,7 +414,7 @@ padding: 20px 2rem;
 .content {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 3rem;
   align-items: flex-start;
   padding: 4rem;
   width: 100%;
@@ -371,12 +445,21 @@ padding: 20px 2rem;
 
 
 .bio {
-  flex: 1 1 45%;
+  flex: 1 1 40%;
   font-size: 0.95rem;
 }
 
 .bio p {
   margin-bottom: 1.2rem;
+  margin-left: 2.5rem;
+  line-height: 1.75rem;
+  list-style-position: inside;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+   margin-top: 1.2rem;
   margin-left: 2.5rem;
   line-height: 1.75rem;
 }
@@ -520,24 +603,30 @@ padding: 20px 2rem;
   }
 
   .ceoImage {
-    width: 100%;
-    height: 50%;
-    max-width: 600px;
+ 
+  
+     max-width: 100%;
     border-radius: 10px;
+    padding-left: 2 auto;
+ 
   }
 
   .bio {
     order: 2;
     font-size: 0.9rem;
     width: 100%;
-    padding: 1rem;
+    padding: 0.85rem;
   }
 
   .bio p {
     margin: 0 auto;
     font-size: 0.85rem;
     line-height: 1.7;
-    max-width: 90%;
+    max-width: 100%;
     text-align: left;
+  }
+
+  .socialIcons{
+    align-items: center;
   }
 }
