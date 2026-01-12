@@ -20,7 +20,7 @@
 }
 
 .overlay {
-  max-width: 800px;
+  max-width: 1000px;
   width: 100%;
   padding: 1rem;
 }
@@ -40,7 +40,7 @@
 .typingText {
   margin-top: 30px;
   display: inline-block;
-  max-width: auto;
+  
 }
 
 .desktopBreak {
@@ -56,6 +56,46 @@
   line-height: 1.6;
   margin-bottom: 2rem;
 }
+
+
+.container {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+    margin-bottom: 2rem;
+ 
+  
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #F1F5F9;
+}
+
+.sections {
+  display: flex;
+align-items: center; 
+justify-content: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  color: #F1F5F9;
+}
+
+.item {
+  font-weight: 500;
+
+}
+
+.dot {
+  color: #FF6B35;
+  font-size: 1.5rem;
+}
+
+
+
+
+
 
 /* === ANIMATIONS === */
 
@@ -106,7 +146,7 @@
 
   }
   .description {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -174,6 +214,16 @@ font-size: 40px;
     padding: 0rem;
     min-height: 60vh;
   }
+
+
+  .sections {
+  display: block;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  color: #F1F5F9;
+}
+
 }
 
 
@@ -289,6 +339,43 @@ font-size: 40px;
   border-radius: 50%;
   margin-bottom: 1.5rem;
 }
+
+
+.fsxListb {
+  list-style: none;
+  padding-left: 0;
+  max-width: 500px;
+}
+
+.fsxListb li {
+  position: relative;
+  padding-left: 50px;
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.6rem;
+  color: #2C3E50;
+}
+
+.fsxListb li::before {
+  content: '';
+  position: absolute;
+  margin-top: auto;
+  left: 0;
+  top: 0;
+  width: 28px;
+  height: 28px;
+  background-image: url('/tick2.png');
+ 
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+
+
+
+
+
 
 .fsxImage {
   flex: 1.5;
@@ -476,6 +563,11 @@ font-size: 40px;
     max-width: 100%;
     margin-bottom: 1rem;
   }
+
+  .fsxListb {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
 }
 
 /* 768px and below */
@@ -523,6 +615,18 @@ font-size: 40px;
     font-size: 1rem;
     margin-bottom: 1rem;
     width: 600px;
+  }
+
+  .fsxListb {
+    max-width: 360px;
+    line-height: 1rem;
+  }
+
+  .fsxListb li,
+  .fsxListb p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    width: 300px;
   }
 }
 
@@ -648,6 +752,23 @@ font-size: 40px;
     height: 30px;
   }
 
+ .fsxListb li {
+    font-size: 14px;
+   width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    line-height: 1.6;
+  }
+
+  .fsxListb li::before {
+    width: 30px;
+    height: 30px;
+  }
+
+
+
   .fsxImage {
     order: 3;
     width: 100%;
@@ -757,6 +878,19 @@ font-size: 40px;
     height: 30px;
   }
 
+    .fsxListb li {
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.5;
+   
+  }
+
+  .fsxListb li::before {
+    width: 25px;
+    height: 25px;
+    margin-top: 5px;
+  }
+
   .fsxImage {
     order: 3;
     width: 100%;
@@ -826,6 +960,18 @@ font-size: 40px;
   }
 
   .fsxList li::before {
+    width: 25px;
+    height: 25px;
+  }
+
+
+    .fsxListb li {
+    font-size: 14px;
+    width: auto;
+      
+  }
+
+  .fsxListb li::before {
     width: 25px;
     height: 25px;
   }
@@ -981,6 +1127,145 @@ font-size: 40px;
 
 
 
+/* Model Works Section */
+
+.wrapperw {
+  padding: 4rem 2rem;
+  text-align: center;
+
+}
+
+.gridw {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+
+
+.cardTitlew { 
+  font-size: 1.25rem; 
+  margin-bottom: 0.5rem; 
+  position:center; 
+  display: inline-block; 
+  color: #252525;
+   padding: 1.5rem;
+  max-width: auto;
+ 
+  
+}
+
+  .cardTitlew::after { 
+    content: ""; 
+    display: block; 
+    width: 100%; 
+    height: 2px; 
+  
+    background-color: #20A89F; 
+    margin: 0.25rem auto 0 auto; 
+  }
+
+.imagew {
+  
+  object-fit: cover;
+}
+
+
+
+/* Model Works Section */
+.wrapperw {
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 1200px; 
+  margin: 0 auto;
+  color: #2C3E50;
+}
+
+.gridw {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.cardTitlew { 
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  color: #2C3E50;
+}
+
+.cardTitlew::after { 
+  content: ""; 
+  display: block; 
+  width: 100%; 
+  height: 2px; 
+  background-color: #20A89F; 
+  margin: 0.25rem auto 0 auto; 
+
+}
+
+.imagew {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  
+}
+
+
+/* Small screens (phones) */
+@media (max-width: 480px) {
+  .wrapperw {
+    padding: 2rem 1rem;
+    gap: 1rem;
+  }
+
+  .modelList{
+    padding: 1rem;
+  }
+
+  .cardTitlew {
+    font-size: 1.2rem;
+    text-align: center; 
+    justify-content: center;
+    margin-left:6rem;
+ 
+  }
+
+  .gridw { grid-template-columns: 1fr; 
+ 
+}
+
+.imagew { max-width: 95%; 
+   height: auto; 
+
+}
+}
+
+
+/* Medium screens (tablets) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .cardTitlew {
+    font-size: 1.3rem;
+  }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1200px) {
+  .wrapperw {
+    padding: 6rem 3rem;
+  }
+
+  .cardTitlew {
+    font-size: 1.6rem;
+  }
+}
+
+
+
+
+
 /* 🌐 Responsive Styles */
 @media (max-width: 1024px) {
 
@@ -991,6 +1276,10 @@ font-size: 40px;
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+
+
+
 
 @media (max-width: 768px) {
   .hero{
@@ -1023,6 +1312,12 @@ font-size: 40px;
   }
 
 }
+
+  
+
+
+
+
 
 @media (max-width: 430px) {
 
@@ -1078,7 +1373,10 @@ font-size: 40px;
     margin-bottom: 0.5rem;
     text-align: left;
   }
+
 }
+
+
 
 
 
@@ -1124,6 +1422,9 @@ font-size: 40px;
   line-height: 1.6;
 
 }
+
+
+
 /* Auto-Scrolling Logo Strip */
 .logoScroller {
   width: 100%;

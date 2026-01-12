@@ -5,8 +5,8 @@ import { usePathname } from 'next/navigation';
 import styles from './button.module.css';
 
 const buttons = [
-  { key: 'discover', text: 'Discover FSX Brand Family', href: '#brand-family', style: 'discover', group: 'primary' },
-  { key: 'start', text: 'Start Your Journey Today', href: '#contact', style: 'start', group: 'primary' },
+  { key: 'discover', text: 'Build With Us', href: '#brand-family', style: 'discover', group: 'primary' },
+  { key: 'start', text: 'Explore the FSX Ecosystem', href: '#contact', style: 'start', group: 'primary' },
 
   { key: 'fsxevents', text: 'Book Your Events', href: '#contact', style: 'discovers', group: 'primary' },
   { key: 'ExploreEvents', text: 'Explore Services', href: '#fsx-events', style: 'starts', group: 'primary'},

@@ -10,32 +10,32 @@ import { useEffect } from "react";
 const values = [
   {
     title: 'Innovation',
-    description: 'We embrace creativity and technology to design bold solutions.',
+    description: 'We design bold solutions to real problems',
     icon: '/Core value section Icon.png',
   },
   {
-    title: 'Excellence',
-    description: 'We deliver with quality, professionalism, and attention to detail.',
+    title: 'Excellence Excellence',
+    description: 'We value results over hype',
     icon: '/Core value section Icon (1).png',
   },
   {
     title: 'Integrity',
-    description: 'We act with honesty and transparency in everything we do.',
+    description: 'We build with honesty, fairness, and transparency',
     icon: '/Core value section Icon (2).png',
   },
   {
-    title: 'Growth',
-    description: 'We empower people, businesses, and communities to scale and thrive.',
+    title: 'Ownership',
+    description: 'We believe builders should share in the value they create',
     icon: '/Core value section Icon (3).png',
   },
   {
     title: 'Community',
-    description: 'We invest in people and networks that create lasting change.',
+    description: 'We grow through collaboration and mentorship',
     icon: '/Core value section Icon (4).png',
   },
   {
-    title: 'Collaboration',
-    description: 'We believe in partnerships and collective impact.',
+    title: 'Growth',
+    description: 'We empower people, businesses, and communities to scale and thrive',
     icon: '/Core value section Icon (5).png',
   },
 ];
@@ -63,35 +63,60 @@ export default function AboutPage() {
           />
           <div className={styles.overlay}>
              <div className='sectionHead'>
-            <h1>About Fransunisoft</h1>
-            <p>Innovation and Growth</p>
+            <h1>About Fransunisoft (FSX)</h1>
+
+                  <div className={styles.container}>
+               
+                  <div className={styles.sections}>
+                    <p className={styles.item}>Building startups </p>
+                    <p className={styles.dot}>●</p>
+                    <p className={styles.item}>Developing talent</p>
+                    <span className={styles.dot}>●</span>
+                    <p className={styles.item}>Co-owing Africa's future</p>
+                  </div>
+                </div>
+            <p  >Fransunisoft is a Venture & Talent Studio firm focused on building 
+              investable startups by pairing high potential African talent with real problems structured
+              execution and shared ownership</p>
             </div>
           </div>
         </div>
       </div>
 
      {/* Story, Vision, Mission Section */}
-<section data-aos="fade-up">
+<section data-aos="fade-up">   
   <div className={styles.svmSection}> 
     <div className={styles.textColumn}>
-      <div className="sectionHeadm">
+      <div className="sectionHeadm">            
         <h2>Our Story</h2>
         <p>
-          Fransunisoft was founded with a simple belief; that technology should be a bridge, not a barrier, to growth. In Nigeria and across Africa, businesses and individuals often struggle with scalable, affordable, and reliable digital solutions. We started our journey to close this gap by building smarter systems, empowering entrepreneurs, and helping organizations embrace innovation. From humble beginnings, our story has always been about one thing: creating solutions that matter and driving digital transformation across Africa.
+          Fransunisoft was founded on a simple but powerful belief: Africa doesn’t just need more technology, it needs more builders, founders, and execution-first teams.
+Across Nigeria and Africa, brilliant talents struggle to gain real startup experience, while founders struggle to build MVPs without burning capital or assembling reliable teams.
+We built Fransunisoft to solve both problems at once. <br/>  <br/> 
+
+By combining talent development, venture building, and MVP execution, we created a system where:
+<br/> •  Talents learn by building real startups
+<br/> • Founders get execution without prohibitive costs
+<br/> • Products are built with ownership, not just invoices
+<br/> From humble beginnings, Fransunisoft has grown into a venture studio powering startups, talents, and innovation across Africa.
+
         </p>
       </div>
 
       <div className="sectionHeadm">
         <h2>Our Vision</h2>
         <p>
-          To be Africa’s leading force in digital innovation, empowering businesses and individuals to work smarter, scale faster, and compete globally through technology-driven solutions.
+          To become Africa’s leading venture and talent studio, building globally
+           competitive startups and empowering the
+           next generation of African founders and builders.
         </p>
       </div>
 
       <div className="sectionHeadm">
         <h2>Our Mission</h2>
         <p>
-          At Fransunisoft, our mission is to deliver reliable, user-focused, and scalable digital solutions that help our clients unlock opportunities, improve efficiency, and achieve sustainable growth. Through innovation, collaboration, and a deep understanding of the African business landscape, we make technology work for everyone.
+          To build startups by developing high-potential talent, engineering MVPs, and
+           co-owning scalable solutions that solve real African problems.
         </p>
       </div>
     </div>
@@ -100,7 +125,7 @@ export default function AboutPage() {
       <Image
         src="/mission_vision.png"
         alt="FSX Story, Vision, Mission"
-        width={800}
+        width={600}
         height={480}
         className={styles.responsiveImage}
       />
@@ -133,9 +158,9 @@ export default function AboutPage() {
 
 
       {/* CEO Section */}
-      <section className=''  data-aos="fade-up">
+      <section className=''  data-aos="fade-up ">
            <div className={styles.ceoSection}>
-        <h2 >Meet Our CEO</h2>
+        <h2 >Meet Our Founder & CEO</h2>
         </div>
         <div className={styles.content}>
      <div className={styles.imageWrapper}>
@@ -151,9 +176,7 @@ export default function AboutPage() {
 
           <div className={styles.bio}>
             <p>
-              <strong>Oluwaseyi Francis Ayodele</strong> is a software engineer, community manager, and innovation advocate passionate about building scalable solutions and empowering Africa’s next generation of tech leaders. 
-              With over a decade of experience across software development, fintech solutions, IT consulting, and community growth, he has led impactful projects that bridge technology and people.
-            </p> <br/>
+              <strong>Oluwaseyi Francis Ayodele</strong> iis a software engineer, community builder, and venture studio founder passionate about creating real opportunities for African talent. </p> <br/>
            
             <p>
               
@@ -161,12 +184,35 @@ Seyi has trained and mentored thousands of young talents, facilitated programs t
 His leadership spans community-driven initiatives, corporate collaborations, and digital transformation strategies that enable organizations to scale smarter and faster.
             </p> <br/>
             <p>
-              He is the founder of Fransunisoft, the parent company behind the FSX brand family, which focuses on technology, consulting, events, training, and community building. 
-              Through this ecosystem, he is driving innovation and creating sustainable impact in Africa’s tech and business landscape
-            </p> <br/>
+              With over a decade of experience across software development, fintech, consulting, and ecosystem building, he has:
+<br/> *Mentored thousands of young talents
+<br/> *Led programs engaging over 150,000 youths
+<br/> *Supported startups from idea to launch  </p> <br/>
             <p>
-             Beyond his work in business and technology, Seyi actively speaks at conferences, mentors aspiring founders, and champions opportunities for young Africans in the global digital economy.
+            As Founder & CEO of Fransunisoft, he leads the FSX ecosystem in building startups, developing talent, and creating sustainable impact across Africa.
             </p>
+
+
+
+             {/* Social Icons */}
+          <div className={styles.socialIcons}>
+
+            <a href="https://twitter.com/fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <Image src="/X-Twitter.png" alt="Twitter" width={40} height={40} />
+            </a>
+            <a href="https://www.linkedin.com/company/fransunisoft/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <Image src="/Linkedin.png" alt="LinkedIn" width={40} height={40} />
+            </a>
+            <a href="https://www.instagram.com/fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <Image src="/Instagram.png" alt="Instagram" width={40} height={40} />
+            </a>
+            <a href="https://www.youtube.com/@fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <Image src="/Youtube.png" alt="YouTube" width={40} height={40} />
+            </a>
+            <a href="https://www.tiktok.com/@fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+              <Image src="/tiktok.png" alt="TikTok" width={40} height={40} />
+            </a>
+          </div>
           </div>
         </div>
       </section>
