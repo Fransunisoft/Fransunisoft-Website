@@ -19,7 +19,7 @@ const ALL_CARDS = [
     title: "Product Launch",
     description:
       "Create buzz and excitement around your new product with a memorable launch experience that captures media attention and drives sales.",
-    linkText: "Discover Product Services",
+    linkText: "Plan Your Product Launch",
     imageSrc: "/sec2.1.png",
     services: [
       { text: "Strategic reveal moments" },
@@ -33,7 +33,7 @@ const ALL_CARDS = [
     title: "Corporate Mixers",
     description:
       "Foster connections and build relationships in a relaxed yet professional setting designed for networking and team building.",
-    linkText: "View Conference Solutions",
+    linkText: "Organize Your Mixer",
     imageSrc: "/sec2.2.png",
     services: [
       { text: "Strategic networking activities" },
@@ -61,7 +61,7 @@ const ALL_CARDS = [
     title: "Award Ceremonies",
     description:
       "Celebrate achievements and honor excellence with a sophisticated ceremony that leaves lasting memories for honorees and attendees",
-    linkText: "Book Team Retreats",
+    linkText: "Plan Your Ceremony",
     imageSrc: "/sec2.4.jpg",
     services: [
       { text: "Red carpet reception" },
@@ -75,7 +75,7 @@ const ALL_CARDS = [
     title: "Team Building Events",
     description:
       "Strengthen collaboration and morale with engaging activities designed to improve communication and foster team unity.",
-    linkText: "Digital Event Solutions",
+    linkText: "Build Your Team",
     imageSrc: "/sec2.5.jpg",
     services: [
       { text: "Customized team challenges" },

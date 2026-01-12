@@ -92,13 +92,15 @@ export default function AboutPage() {
         <p>
           Fransunisoft was founded on a simple but powerful belief: Africa doesn’t just need more technology, it needs more builders, founders, and execution-first teams.
 Across Nigeria and Africa, brilliant talents struggle to gain real startup experience, while founders struggle to build MVPs without burning capital or assembling reliable teams.
-We built Fransunisoft to solve both problems at once. <br/>  <br/> 
+We built Fransunisoft to solve both problems at once. <br/><br/>
 
 By combining talent development, venture building, and MVP execution, we created a system where:
-<br/> •  Talents learn by building real startups
-<br/> • Founders get execution without prohibitive costs
-<br/> • Products are built with ownership, not just invoices
-<br/> From humble beginnings, Fransunisoft has grown into a venture studio powering startups, talents, and innovation across Africa.
+<br></br>
+<ul >
+<li>Talents learn by building real startups</li>
+<li>Founders get execution without prohibitive costs</li>
+<li>Products are built with ownership, not just invoices</li>
+</ul> <br/>From humble beginnings, Fransunisoft has grown into a venture studio powering startups, talents, and innovation across Africa.
 
         </p>
       </div>
@@ -185,9 +187,13 @@ His leadership spans community-driven initiatives, corporate collaborations, and
             </p> <br/>
             <p>
               With over a decade of experience across software development, fintech, consulting, and ecosystem building, he has:
-<br/> *Mentored thousands of young talents
-<br/> *Led programs engaging over 150,000 youths
-<br/> *Supported startups from idea to launch  </p> <br/>
+<ul > 
+ <li> Mentored thousands of young talents</li>
+<li>Led programs engaging over 150,000 youths</li>
+<li>Supported startups from idea to launch </li>
+</ul> 
+</p> 
+<br/>
             <p>
             As Founder & CEO of Fransunisoft, he leads the FSX ecosystem in building startups, developing talent, and creating sustainable impact across Africa.
             </p>
@@ -200,7 +206,7 @@ His leadership spans community-driven initiatives, corporate collaborations, and
             <a href="https://twitter.com/fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
               <Image src="/X-Twitter.png" alt="Twitter" width={40} height={40} />
             </a>
-            <a href="https://www.linkedin.com/company/fransunisoft/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/oluwaseyiayodele/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <Image src="/Linkedin.png" alt="LinkedIn" width={40} height={40} />
             </a>
             <a href="https://www.instagram.com/fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -214,7 +220,7 @@ His leadership spans community-driven initiatives, corporate collaborations, and
             </a>
           </div>
           </div>
-        </div>
+        </div>   
       </section>
     </main>
   );
