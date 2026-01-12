@@ -55,7 +55,7 @@ export default function Footer() {
           </h2>
 
           <p className={styles.tagline}>
-            Engineering innovation and impact across Africa and beyond through the FSX ecosystem
+            Fransunisoft — a venture & talent studio building Africa’s next generation of startups.
           </p>
 
           {/* Social Icons */}

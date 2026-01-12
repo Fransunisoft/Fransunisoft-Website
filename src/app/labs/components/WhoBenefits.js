@@ -1,29 +1,30 @@
 "use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
 import styles from "../styles/WhoBenefits.module.css";
 
 // Data array for the benefit cards
 const benefitCards = [
   {
-    title: "Enterprises",
-    description:
-      "We create custom platforms designed for enterprise-level growth",
+    title: "Founders & Early-Stage Startups",
+    description: 
+      "Have an idea but no technical team? We help you go from idea → MVP → traction.",
     image: "/lab3.1.png",
   },
   {
-    title: "Startups",
+    title: "Funded Startups & SMEs",
     description:
       "We help bring your ideas to live and walk the journey with you",
     image: "/lab3.2.png",
   },
   {
-    title: "Businesses",
-    description: "Tailored solutions for prak performance and growth",
-    image: "/lab3.3.png",
+    title: "Enterprises & Institution",
+    description:
+      "We help organizations innovate, prototype and modernize through custom digital products",
+    image: "/lab3.2.png",
   },
+
 ];
+
 
 const WhoBenefits = () => {
   return (
@@ -44,9 +45,7 @@ const WhoBenefits = () => {
               <div
                 className="card2"
                 key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.5 }}
+                
                 viewport={{ once: true }}
               >
                 <div className={styles.imageWrapper}>

@@ -106,9 +106,9 @@ export default function Contact() {
           <div className={styles.container}>
 
             <div className={styles.topContent}>
-              <h2 className={styles.contactHeading}>Let’s Build Smarter, Together.</h2>
+              <h2 className={styles.contactHeading}>Ready to Build Something That Matters?</h2>
               <p className={styles.contactLead}>
-                Whether you’re looking to host an unforgettable event, scale your business, simplify your technology, or expand your network, FSX is here for you.
+                Whether you’re a founder, talent, or mentor Fransunisoft is where ideas turn into companies.
               </p>
             </div>
 
@@ -150,7 +150,8 @@ export default function Contact() {
               <div className={styles.rightColumn}>
                 <h3 className={styles.cardTitle}>Get In Touch</h3>
                 <p className={styles.cardIntro}>
-                  Contact Fransunisoft (FSX) today for event management, consulting, technology solutions, training, and networking opportunities in Nigeria
+                  Fransunisoft — building startups, developing talent, and co-owning Africa’s future.
+
                 </p>
 
                 <form className={styles.contactForm} onSubmit={handleSubmit} encType="multipart/form-data">
