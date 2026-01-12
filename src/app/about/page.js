@@ -95,14 +95,14 @@ Across Nigeria and Africa, brilliant talents struggle to gain real startup exper
 We built Fransunisoft to solve both problems at once. <br/><br/>
 
 By combining talent development, venture building, and MVP execution, we created a system where:
-<br></br>
+ </p>
 <ul >
 <li>Talents learn by building real startups</li>
 <li>Founders get execution without prohibitive costs</li>
 <li>Products are built with ownership, not just invoices</li>
 </ul> <br/>From humble beginnings, Fransunisoft has grown into a venture studio powering startups, talents, and innovation across Africa.
 
-        </p>
+       
       </div>
 
       <div className="sectionHeadm">
@@ -178,21 +178,21 @@ By combining talent development, venture building, and MVP execution, we created
 
           <div className={styles.bio}>
             <p>
-              <strong>Oluwaseyi Francis Ayodele</strong> iis a software engineer, community builder, and venture studio founder passionate about creating real opportunities for African talent. </p> <br/>
+              <strong>Oluwaseyi Francis Ayodele</strong> is a software engineer, community builder, and venture studio founder passionate about creating real opportunities for African talent. </p> <br/>
            
-            <p>
+{/*             <p>
               
 Seyi has trained and mentored thousands of young talents, facilitated programs that have engaged over 150,000 youths across Nigeria and Africa, and supported startups from idea to launch. 
 His leadership spans community-driven initiatives, corporate collaborations, and digital transformation strategies that enable organizations to scale smarter and faster.
-            </p> <br/>
+            </p> <br/> */}
             <p>
-              With over a decade of experience across software development, fintech, consulting, and ecosystem building, he has:
+              With over a decade of experience across software development, fintech, consulting, and ecosystem building, he has:</p> 
 <ul > 
  <li> Mentored thousands of young talents</li>
 <li>Led programs engaging over 150,000 youths</li>
 <li>Supported startups from idea to launch </li>
 </ul> 
-</p> 
+
 <br/>
             <p>
             As Founder & CEO of Fransunisoft, he leads the FSX ecosystem in building startups, developing talent, and creating sustainable impact across Africa.
