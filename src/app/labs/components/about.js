@@ -30,18 +30,35 @@ const AboutSection = () => {
         <div className={styles.aboutText} data-animate="fade-in-left">
           <h3>About FSX Lab</h3>
           <p>
-            FSX Labs is Nigeria’s center for research and innovation. We provide
-            entrepreneurs, startups, and organizations with the tools and environment
-            to turn new ideas into practical, scalable solutions. From projects
-            testing to research-driven development, where tomorrow’s breakthroughs begin.
+            
+FSX Labs is not just a lab, it’s a startup factory.
+We work with founders, startups, and organizations to:
+ <br></br>
+
+<ul className="{styles.aboutLi}">
+  <li>Validate real problems</li>
+  <li>Build functional MVPs</li>
+  <li>Test products with real users</li>
+  <li>Prepare startups for growth, funding, or market entry</li>
+</ul><br></br>
+
+Unlike traditional dev agencies, FSX Labs focuses on long-term value creation, often through build-for-equity and co-creation models.
+This is where ideas stop being slides and start becoming companies.
           </p>
 
           <h5>What Makes Us Standout</h5>
           <p>
-            FSX Labs is known as a research/innovation space where bold ideas are
-            analyzed, experimented, tested, and developed into scalable, market-ready,
-            and impactful global projects within the shortest timeline. FSX Labs puts
-            the question and solutions into context.
+            Built for Speed, Ownership & Scale
+FSX Labs is designed for founders who want more than code.
+We:
+<ul className="{styles.aboutLi}">
+  <li>Analyze ideas in real market context</li>
+  <li>Build MVPs with startup-ready talent</li>
+  <li>Test early to reduce risk and waste</li>
+  <li>Focus on scalability from day one</li>
+</ul><br></br>
+We don’t just ask “Can this be built?”
+We ask “Should this be built and how does it win?”
           </p>
         </div>
 
