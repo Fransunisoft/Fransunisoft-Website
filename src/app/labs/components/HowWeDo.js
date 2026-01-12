@@ -6,32 +6,32 @@ import styles from "../styles/HowWeDo.module.css";
 const services = [
   {
     title: "Discovery & Research",
-    description: "Understand you and your product users' challenges.",
+    description: "We validate the problem, users, and opportunity.",
     icon: "/hw11.png",
   },
   {
     title: "Ideation & Design",
-    description: "Map user journeys, create prototypes.",
+    description: "User journeys, wireframes, and MVP definition.",
     icon: "/hw1.png",
   },
   {
-    title: "Development",
-    description: "Build with cutting-edge tools & frameworks.",
+    title: " MVP Development",
+    description: "Fast, clean builds using modern frameworks",
     icon: "/hw2.png",
   },
   {
     title: "Testing & Iteration",
-    description: "Refine solutions through feedback & prototype testing.",
+    description: "Prototype testing, feedback loops, and refinement.",
     icon: "/hw4.png",
   },
   {
     title: "Launch & Scale",
-    description: "Deploy and grow your digital product.",
+    description: "Deploy, onboard users, and prepare for growth or funding.",
     icon: "/hw5.png",
   },
   {
     title: "Ongoing Support",
-    description: "Give ongoing support for future updates.",
+    description: "Product improvement, scaling, and post-MVP execution",
     icon: "/hw6.png",
   },
 ];
@@ -40,11 +40,9 @@ export default function HowWeDo() {
   return (
     <section>
       <div className="sectionHead">
-        <h2>How We Do It</h2>
+        <h2>From Idea to Market — Our Build Process</h2>
         <h6>
-          We believe innovation starts with people — their needs, challenges,
-          and goals. That’s why our UX-driven process ensures every solution is
-          practical, scalable, and impactful.
+          We follow a venture-first, UX-driven process designed for startups.
         </h6>
       </div>
       <div>

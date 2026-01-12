@@ -26,9 +26,11 @@
 
 }
 
-.customer {
+.customers {
   display: flex;
-  flex-direction: row;
+  gap:15px;
+  align-content: center;
+
 }
 
 .heroImg img {
@@ -37,6 +39,11 @@
   max-width: 100%;
 }
 
+
+.subNote{
+  width: 40%;
+  font-weight:500;
+}
 .missionSectionHead {
   place-self: center;
 

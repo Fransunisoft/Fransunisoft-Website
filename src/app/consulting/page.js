@@ -45,31 +45,34 @@ const Consulting = () => {
       <div className="hero" data-aos="fade-up">
         <div className="heroText">
           <h1>FSX Consulting</h1>
+          <h6>Strategy, Structure & Execution for Scalable Growth</h6>
           <p>
-            Businesses don’t just need advice they need strategies that work.
-            FSX Consulting provides expert guidance for startups and established
-            enterprises, helping them overcome challenges and unlock growth
-            opportunities in Nigeria and across Africa.
+            Businesses don&apos;t just need advice — they need execution that
+            work. FSX Consulting is the strategy and governance arm of
+            Fransunisoft (FSX). We help startups, founders, and enterprises move
+            from ideas to execution, and from execution to scale, with clarity,
+            discipline, and measurable outcomes.
           </p>
-          <div >
+          <div>
             <ButtonGroup
-              filterKeys={['fsxConsulting1', 'ExploreConsulting']}
+              filterKeys={["fsxConsulting1", "ExploreConsulting"]}
               onClickHandlers={{
-               fsxConsulting1: scrollToContact,
-               ExploreConsulting: scrollToConsultingService,
+                fsxConsulting1: scrollToContact,
+                ExploreConsulting: scrollToConsultingService,
               }}
             />
           </div>
           <div className={styles.customers}>
             <Image
-              src="/customerConsulting.png"
+              src="/socialproof.png"
               alt="customers image"
               width={153}
               height={48}
               className={styles.responsiveImage}
             />
             <p className={styles.subNote}>
-              We have 1K+ Customers across Africa
+              <span className="">1,000+ </span>founders, startups, and
+              organizations supported across Africa
             </p>
           </div>
         </div>
@@ -84,54 +87,51 @@ const Consulting = () => {
       </div>
 
       {/* Services */}
-      <section id="consulting-service" data-aos="fade-up" >
+      <section id="consulting-service" data-aos="fade-up">
         <div className="sectionHead">
-          <h2>Our Consulting Services</h2>
+          <h2>What We Do</h2>
           <h6>
-            We bridge the gap between business strategy and technology
-            execution, delivering comprehensive solutions that drive sustainable
-            growth for Nigerian businesses.
+            FSX Consulting bridges business strategy, technology delivery, and
+            talent execution.
           </h6>
         </div>
 
         <div className="grid">
           <div className="card1">
-            <h4 className={styles.card1head}>Business Consulting</h4>
+            <h4 className={styles.card1head}>Business & Venture Strategy</h4>
             <p>
-              Strategic guidance to optimize operations, improve efficiency, and
-              drive growth.
+              We help you define what to build, why it matters, and how it
+              scales.
             </p>
             <ul>
-              <li>Strategy & Development</li>
-              <li>Market Analysis & Positioning</li>
+              <li>Market Analysis & Problem Validation</li>
+              <li>Business Models & Revenue Strategy</li>
               <li>Growth Planning & Roadmaps</li>
-              <li>Competitive Intelligence</li>
+              <li>Startup & Venture Structuring</li>
             </ul>
           </div>
           <div className="card1">
-            <h4 className={styles.card1head}>Digital Transformation</h4>
-            <p>
-              Modernize your business with cutting-edge technology solutions and
-              digital strategies.
-            </p>
+            <h4 className={styles.card1head}>
+              Digital Transformation & Technology Strategy
+            </h4>
+            <p>We don’t sell tools, we design systems that work.</p>
             <ul>
-              <li>Technology Strategy</li>
-              <li>System Integration</li>
-              <li>Enterprise Solutions</li>
-              <li>Automation</li>
+              <li>Technology Roadmaps</li>
+              <li>System Architecture Planning</li>
+              <li>Automation & Process Optimization</li>
+              <li>Enterprise & Startup Tech Advisory</li>
             </ul>
           </div>
           <div className="card1">
-            <h4 className={styles.card1head}>Community Programs</h4>
-            <p>
-              Build engaged communities around your brand and foster meaningful
-              connections.
-            </p>
+            <h4 className={styles.card1head}>
+              Venture Governance & Delivery Oversight
+            </h4>
+            <p>This is where FSX Consulting is different.</p>
             <ul>
-              <li>Community Strategy</li>
-              <li>Engagement Planning</li>
-              <li>Content & Programming</li>
-              <li>Growth & Retention Tactics</li>
+              <li>Project scoping & milestone definition</li>
+              <li>MVP governance </li>
+              <li>Weekly reporting & delivery reviews</li>
+              <li>Risk management & execution accountability</li>
             </ul>
           </div>
         </div>
@@ -140,12 +140,8 @@ const Consulting = () => {
       {/* Approach */}
       <section data-aos="fade-up">
         <div className="sectionHead">
-          <h2>Our Proven Approach</h2>
-          <h6>
-            We follow a systematic methodology that bridges strategic thinking
-            with practical execution, ensuring every project delivers measurable
-            results and sustainable growth.
-          </h6>
+          <h2>Our Consulting Approach</h2>
+          <h6>We don’t guess. We structure.</h6>
         </div>
 
         <div className={styles.approachStages}>
@@ -153,22 +149,22 @@ const Consulting = () => {
             <div className="card2">
               <p className={styles.approachStagesCount}>1</p>
               <h4>Strategic Analysis</h4>
-              <p>Deep dive into your business goals and challenges</p>
+              <p>Understand the problem, the market, and the opportunity. </p>
             </div>
             <div className="card2">
               <p className={styles.approachStagesCount}>2</p>
               <h4>Solution Design</h4>
-              <p>Deep dive into your business goals and challenges</p>
+              <p>Define the strategy, execution model, and success metrics.</p>
             </div>
             <div className="card2">
               <p className={styles.approachStagesCount}>3</p>
-              <h4>Implementation</h4>
-              <p>Deep dive into your business goals and challenges</p>
+              <h4>Execution</h4>
+              <p>Coordinate talent, technology, and delivery teams.</p>
             </div>
             <div className="card2">
               <p className={styles.approachStagesCount}>4</p>
               <h4>Optimization</h4>
-              <p>Deep dive into your business goals and challenges</p>
+              <p>Track outcomes, refine execution, and prepare for growth.</p>
             </div>
           </div>
 
@@ -178,7 +174,6 @@ const Consulting = () => {
               alt="consulting approach image"
               width={500}
               height={500}
-          
             />
           </div>
         </div>
@@ -186,7 +181,10 @@ const Consulting = () => {
 
       {/* Mission */}
       <section data-aos="fade-up">
-        <h2 className={styles.missionSectionHead}>Our Mission</h2>
+        <div className="sectionHead">
+          <h2>Our Mission</h2>
+          <h6>Structure Ideas. Enable Execution. Scale Impact.</h6>
+        </div>
         <div className={styles.coreMission}>
           <Image
             src="/missionConsulting.png"
@@ -210,12 +208,13 @@ const Consulting = () => {
 
             <div className={styles.coreMissionText}>
               <h3>
-                The Core Mission Behind
-                <span> all our work</span>
+                The Mission Behind  
+                  <span> Consulting</span>
               </h3>
               <p>
-                Equips startups and enterprises with smart strategies to build
-                smarter and scale faster
+                FSX Consulting exists to equip startups and enterprises with
+                smart strategies and execution frameworks that help them build
+                smarter, scale faster, and grow sustainably.
               </p>
             </div>
             <Link href="/about">
@@ -229,7 +228,7 @@ const Consulting = () => {
             <h3>12+</h3>
             <h6>Years in Business</h6>
             <span className={styles.statp}>
-              A decade of trusted consulting experience.
+              Experience driving technology and business execution
             </span>
           </div>
           <div>
@@ -241,28 +240,27 @@ const Consulting = () => {
           </div>
           <div>
             <h3>95%</h3>
-            <h6>Client Retention Rate</h6>
+            <h6>Client Retention</h6>
             <span className={styles.statp}>
-              Our clients comes back, which says everything
+              Because execution matters
             </span>
           </div>
           <div>
-            <h3>5+</h3>
+            <h3>50+</h3>
             <h6>Businesses Impacted</h6>
             <span className={styles.statp}>
-              A lot of business has benefited from our solutions spanrovided.
+              Multiple Businesses Impacted Across Nigeria and Africa
             </span>
           </div>
         </div>
       </section>
 
       {/* Why Us */}
-      <section  data-aos="fade-up">
+      <section data-aos="fade-up">
         <div className="sectionHead">
-          <h2>Why Our Expertise Matters</h2>
+          <h2>Why FSX Consulting Works</h2>
           <h6>
-            Empowering businesses with expert insights to thrive, adapt, and
-            grow.
+            Empowering businesses with expert insights to thrive, adapt, and grow.
           </h6>
         </div>
 
@@ -276,7 +274,7 @@ const Consulting = () => {
               className={styles.responsiveImage}
             />
             <h3>Experience</h3>
-            <p>Decade of insight fuel smarter decisions and faster execution</p>
+            <p>Decade-long insight that fuels smarter decisions.</p>
           </div>
 
           <div className="card3">
@@ -287,8 +285,8 @@ const Consulting = () => {
               height={60}
               className={styles.responsiveImage}
             />
-            <h3>Data Driven Insight</h3>
-            <p>Decade of insight fuel smarter decisions and faster execution</p>
+            <h3>Data Driven Thinking</h3>
+            <p>Strategy backed by research, metrics, and validation.</p>
           </div>
 
           <div className="card3">
@@ -300,7 +298,7 @@ const Consulting = () => {
               className={styles.responsiveImage}
             />
             <h3>Client Approach</h3>
-            <p>Decade of insight fuel smarter decisions and faster execution</p>
+            <p>We think like builders, not slide-makers.</p>
           </div>
         </div>
       </section>

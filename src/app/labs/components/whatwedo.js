@@ -5,33 +5,33 @@ import styles from "../styles/WhatWeDo.module.css";
 const services = [
   {
     title: "Software Development",
-    description: "Scalable apps and platforms built to solve real problems.",
+    description: "Scalable web and mobile products built for real users and growth.",
     icon: "/whatwe2.1.png",
   },
   {
-    title: "AI Tools",
-    description: "Smart solutions that turn data into actionable insights.",
+    title: "AI & Intelligent Tools",
+    description: "Data-driven solutions that automate decisions and unlock insights.",
     icon: "/whatwe2.2.png",
   },
   {
-    title: "Automation",
-    description: "Streamlining processes to save time and costs.",
+    title: "Automation Systems",
+    description: "Process automation to save time, reduce cost, and increase efficiency.",
     icon: "/whatwe2.3.png",
   },
   {
-    title: "Innovative Platform",
-    description: "Creating digital ecosystems for the future.",
+    title: " Ecosystem Products",
+    description: "Marketplaces, SaaS platforms, and digital ecosystems designed to scale.",
     icon: "/whatwe11.png",
   },
   {
-    title: "Design Thinking",
+    title: "Design Thinking & UX",
     description: "Human-Centered approach from ideation to prototype.",
     icon: "/whatwe22.png",
   },
   {
     title: "DevSecOps",
     description:
-      "Development and security operations during our deployment process.",
+      "Secure, reliable deployment with performance and safety built in.",
     icon: "/whatwe2.6.png",
   },
 ];
@@ -41,10 +41,9 @@ export default function WhatWeDo() {
     <section>
       <div id="whatwedo" className={styles.container}>
         <div className="sectionHead">
-          <h2> What We Do </h2>
+          <h2>What We Do at FSX Labs</h2>
           <h6>
-            FSX Labs provides businesses and institutions with the tools they
-            need to innovate, automate, and grow.
+            Startup & Product Building
           </h6>
         </div>
 
