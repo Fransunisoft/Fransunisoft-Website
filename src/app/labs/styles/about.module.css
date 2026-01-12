@@ -21,7 +21,10 @@
   font-size: 16px;
   flex: 1;
   width: 100%;
+  list-style-position: inside;
 }
+
+
 
 
 .aboutText h3 {
@@ -44,6 +47,7 @@
 .aboutImage {
   flex: 1;
   min-width: 300px;
+  place-self: center;
 }
 
 

@@ -35,10 +35,9 @@ export default function Labs() {
       <div className="hero" data-aos="fade-up">
         <div className="heroText">
           <h1>FSX Lab</h1>
+          <h6>Where Ideas Become Startups</h6>
           <p>
-            Every great idea needs a space to grow. FSX Labs is where research,
-            creativity, and technology meet. We help you transform ideas into
-            prototypes, strategies, and innovations for the future.
+            FSX Labs is the venture-building arm of Fransunisoft (FSX). We turn early ideas into working MVPs, investable products, and scalable startups by combining talent, technology, and execution.
           </p>
 
           <div>

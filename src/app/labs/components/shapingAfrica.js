@@ -5,18 +5,18 @@ import { motion } from "framer-motion";
 
 const data = [
   {
-    title: "Innovation Hub",
-    text: "Imagine a space where bold ideas come alive; that's exactly what our innovation labs in Nigeria are built for.",
+    title: "Innovation Hub - Nigeria, Africa",
+    text: "FSX Labs operates as an innovation hub where African ideas are built for global relevance.",
     img: "/lab2.1.png",
   },
   {
     title: "Research and Development Africa",
-    text: "We’re pushing the boundaries of research and development across Africa, turning today’s challenges into tomorrow’s opportunities.",
+    text: "We explore emerging technologies and apply them to real African problems.",
     img: "/lab2.2.png",
   },
   {
     title: "Prototype Testing",
-    text: "Before your product hits the market, our hands-on prototype testing ensures it’s refined, reliable, and ready to impress.",
+    text: "Before launch, we test hard — so your product performs in the real world.",
     img: "/lab2.3.png",
   },
 ];
@@ -38,11 +38,10 @@ const ShapingAfrica = () => {
           variants={fadeUp}
         >
           <div className="sectionHead">
-            <h2>Shaping the Future of Technology in Africa</h2>
+            <h2>Innovation With Purpose</h2>
             <h6>
-              Together, we’ll engineer the tools that shape Africa. From concept
-              to prototype to market-ready product, FSX Labs is your partner in
-              innovation.
+              From concept to prototype to market-ready product, FSX Labs is your partner in
+innovation. Together, we’ll engineer the tools that shape Africa.
             </h6>
           </div>
         </motion.div>
