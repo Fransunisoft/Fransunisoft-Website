@@ -12,9 +12,9 @@ const values = [
     title: 'Innovation',
     description: 'We design bold solutions to real problems',
     icon: '/Core value section Icon.png',
-  },
+  }, 
   {
-    title: 'Excellence Excellence',
+    title: 'Execution Excellence',
     description: 'We value results over hype',
     icon: '/Core value section Icon (1).png',
   },
