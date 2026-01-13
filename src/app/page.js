@@ -199,7 +199,7 @@ export default function HomePage() {
           <h2 className={styles.ecosystemBanner}>Our Ecosystem Services</h2>
         </div>
         <div className="sectionHead">
-          <h2>The FSX Brand Family</h2>
+          <h2>How Fransunisoft Works</h2>
 
           <h6>
             Fransunisoft is more than one company <br />
