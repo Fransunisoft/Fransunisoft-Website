@@ -75,7 +75,7 @@ export default function AboutPage() {
                     <p className={styles.item}>Co-owing Africa's future</p>
                   </div>
                 </div>
-            <p  >Fransunisoft is a Venture & Talent Studio firm focused on building 
+            <p  >Fransunisoft is a Venture & Talent Studio focused on building 
               investable startups by pairing high potential African talent with real problems structured
               execution and shared ownership</p>
             </div>

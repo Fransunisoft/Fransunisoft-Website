@@ -356,7 +356,7 @@ font-size: 40px;
 
 .fsxListb li {
   position: relative;
-  padding-left: 50px;
+  padding-left: 40px;
   margin-top: 10px;
   font-size: 16px;
   line-height: 1.6rem;
@@ -1217,8 +1217,14 @@ font-size: 40px;
   width: 100%;
   height: auto;
   object-fit: cover;
+
   
 }
+
+.modelList{
+  margin-top: 0;
+    padding: 1.5rem;
+  }
 
 
 /* Small screens (phones) */
