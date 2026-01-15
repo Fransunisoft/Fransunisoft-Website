@@ -44,12 +44,12 @@ export default function HomePage() {
         <div className={styles.heroMain} data-aos="fade-up">
           <div className={styles.overlay}>
             <h1 className={styles.typewriter}>
-              Building Africa's Next Generation of Startups
+              Building Africa&aposs Next Generation of Startups
             </h1>
 
             <p className={styles.description}>
             Fransunisoft builds startups by pairing high-potential African talent with real problems,
-             structured execution, and shared ownership. We don't just build MVPs. We build founders, teams, 
+             structured execution, and shared ownership. We don&apost just build MVPs. We build founders, teams, 
              and investable companies.
             </p>
 
@@ -124,9 +124,12 @@ export default function HomePage() {
           </div>
 
           <div className={styles.fsxImage}>
-            <img
+            <Image
               src="/F_What.png"
               alt="FSX Advantage"
+              width={700}
+              height={700}
+              
               
             />
           </div>
@@ -138,7 +141,7 @@ export default function HomePage() {
           <div className={styles.stat}>
             <h2 className={styles.countBlock}>
               <CountUp
-                end={20}
+                end={6}
                 duration={2}
                 separator=","
                 enableScrollSpy
@@ -152,7 +155,7 @@ export default function HomePage() {
           <div className={styles.stat}>
             < h2 className={styles.countBlock}>
               <CountUp
-                end={100}
+                end={300}
                 duration={2.5}
                 separator=","
                 enableScrollSpy
@@ -165,7 +168,7 @@ export default function HomePage() {
 
          <div className={styles.stat}>
   <h2 className={styles.countBlock}>
-    N20M
+    N15M
   </h2>
   <h6 className={styles.label}>Capital Raised</h6>
 </div>
@@ -173,7 +176,7 @@ export default function HomePage() {
 <div className={styles.stat}>
   <h2 className={styles.countBlock}>
     <CountUp
-      end={5}
+      end={3}
       duration={2}
       separator=","
       enableScrollSpy
@@ -199,7 +202,7 @@ export default function HomePage() {
           <h2 className={styles.ecosystemBanner}>Our Ecosystem Services</h2>
         </div>
         <div className="sectionHead">
-          <h2>The FSX Brand Family</h2>
+          <h2>How Fransunisoft Works</h2>
 
           <h6>
             Fransunisoft is more than one company <br />
