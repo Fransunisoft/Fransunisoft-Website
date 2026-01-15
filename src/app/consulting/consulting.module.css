@@ -28,6 +28,7 @@
 
 .customers {
   display: flex;
+  flex-direction: row;
   gap:15px;
   align-content: center;
 
@@ -423,6 +424,20 @@
     margin: 0rem auto;
   }
 
+  .customers {
+  display: flex;
+  flex-direction: row;
+  gap:15px;
+  justify-content: center;
+  text-align: left;
+
+}
+
+.subNote{
+  width: 50%;
+  font-weight:500;
+}
+
   .servicesGrid {
     grid-template-columns: 2fr;
   }
@@ -509,6 +524,20 @@
     margin-bottom: 1.5rem;
     margin-top: 5rem;
   }
+
+    .customers {
+  display: flex;
+  flex-direction: column;
+  gap:15px;
+ place-items: center;
+ text-align: center;
+
+}
+
+.subNote{
+  width: 80%;
+  font-weight:500;
+}
 
 
 .missionSectionHead {

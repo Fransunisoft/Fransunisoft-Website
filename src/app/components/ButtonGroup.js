@@ -29,7 +29,7 @@ const buttons = [
 
   // { key: 'fsxConsulting1', text: 'Book Consultation', href: '#contact', style: 'fsxBranch', group: 'primary' },
   { key: 'fsxConsulting1', text: 'Book Consultation', href: '#contact', style: 'discovers', group: 'primary' },
-  { key: 'ExploreConsulting', text: 'Explore Services', href: '#consulting-service', style: 'starts', group: 'primary' },
+  { key: 'ExploreConsulting', text: 'Explore What We Do', href: '#consulting-service', style: 'starts', group: 'primary' },
 ];
 
 export default function ButtonGroup({ filterKeys = [], onClickHandlers = {} }) {
