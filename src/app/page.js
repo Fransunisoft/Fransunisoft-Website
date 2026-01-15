@@ -44,12 +44,12 @@ export default function HomePage() {
         <div className={styles.heroMain} data-aos="fade-up">
           <div className={styles.overlay}>
             <h1 className={styles.typewriter}>
-              Building Africa's Next Generation of Startups
+              Building Africa&aposs Next Generation of Startups
             </h1>
 
             <p className={styles.description}>
             Fransunisoft builds startups by pairing high-potential African talent with real problems,
-             structured execution, and shared ownership. We don't just build MVPs. We build founders, teams, 
+             structured execution, and shared ownership. We don&apost just build MVPs. We build founders, teams, 
              and investable companies.
             </p>
 
@@ -124,9 +124,12 @@ export default function HomePage() {
           </div>
 
           <div className={styles.fsxImage}>
-            <img
+            <Image
               src="/F_What.png"
               alt="FSX Advantage"
+              width={700}
+              height={700}
+              
               
             />
           </div>
