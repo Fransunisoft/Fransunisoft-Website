@@ -141,7 +141,7 @@ export default function HomePage() {
           <div className={styles.stat}>
             <h2 className={styles.countBlock}>
               <CountUp
-                end={20}
+                end={6}
                 duration={2}
                 separator=","
                 enableScrollSpy
@@ -155,7 +155,7 @@ export default function HomePage() {
           <div className={styles.stat}>
             < h2 className={styles.countBlock}>
               <CountUp
-                end={100}
+                end={300}
                 duration={2.5}
                 separator=","
                 enableScrollSpy
@@ -168,7 +168,7 @@ export default function HomePage() {
 
          <div className={styles.stat}>
   <h2 className={styles.countBlock}>
-    N20M
+    N15M
   </h2>
   <h6 className={styles.label}>Capital Raised</h6>
 </div>
@@ -176,7 +176,7 @@ export default function HomePage() {
 <div className={styles.stat}>
   <h2 className={styles.countBlock}>
     <CountUp
-      end={5}
+      end={3}
       duration={2}
       separator=","
       enableScrollSpy

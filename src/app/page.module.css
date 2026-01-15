@@ -624,9 +624,12 @@ font-size: 40px;
     width: 600px;
   }
 
-  .fsxListb {
-    max-width: 360px;
-    line-height: 1rem;
+      .fsxListb li {
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: left;
+   
   }
 
   .fsxListb li,
@@ -634,6 +637,7 @@ font-size: 40px;
     font-size: 1rem;
     margin-bottom: 1rem;
     width: 300px;
+    text-align: left;
   }
 }
 
@@ -679,6 +683,15 @@ font-size: 40px;
     width: 30px;
     height: 30px;
   }
+
+      .fsxListb li {
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: left;
+   
+  }
+
 
   .fsxButton {
     font-size: 0.85rem;
