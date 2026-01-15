@@ -20,7 +20,7 @@ const benefitCards = [
     title: "Enterprises & Institution",
     description:
       "We help organizations innovate, prototype and modernize through custom digital products",
-    image: "/lab3.2.png",
+    image: "/lab3.3.png",
   },
 
 ];
