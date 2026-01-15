@@ -203,21 +203,21 @@ His leadership spans community-driven initiatives, corporate collaborations, and
              {/* Social Icons */}
           <div className={styles.socialIcons}>
 
-            <a href="https://twitter.com/fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <a href="https://x.com/seyifayodele" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
               <Image src="/X-Twitter.png" alt="Twitter" width={40} height={40} />
             </a>
             <a href="https://www.linkedin.com/in/oluwaseyiayodele/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <Image src="/Linkedin.png" alt="LinkedIn" width={40} height={40} />
             </a>
-            <a href="https://www.instagram.com/fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href="https://www.instagram.com/seyifayodele/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <Image src="/Instagram.png" alt="Instagram" width={40} height={40} />
             </a>
-            <a href="https://www.youtube.com/@fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+           {/*  <a href="https://www.youtube.com/@fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
               <Image src="/Youtube.png" alt="YouTube" width={40} height={40} />
-            </a>
-            <a href="https://www.tiktok.com/@fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            </a> */}
+            {/* <a href="https://www.tiktok.com/@fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
               <Image src="/tiktok.png" alt="TikTok" width={40} height={40} />
-            </a>
+            </a> */}
           </div>
           </div>
         </div>   
