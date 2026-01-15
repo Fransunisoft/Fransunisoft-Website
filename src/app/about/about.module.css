@@ -1,10 +1,82 @@
 .hero {
-  margin-top: 80px;
+  margin-top: 100px;
   position: relative;
+   min-height: 100vh;
   width: 100%;
   height: 500px;
   overflow: hidden;
 }
+
+/* --- Base Styles (Desktop First) --- */
+
+.container {
+  display: flex;           
+  flex-direction: column;  
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 0 1rem;      
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #F1F5F9;
+  font-weight: 700;
+}
+
+.sections {
+  display: flex;
+  flex-direction: row;    
+  align-items: center; 
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  color: #F1F5F9;
+}
+
+.item {
+  font-weight: 500;
+  white-space: nowrap;    
+}
+
+.dot2 {
+  color: #F1F5F9;
+  font-size: 1.5rem;
+}
+
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.8rem;    
+    margin-bottom: 1.5rem;
+  }
+
+  .sections {
+  
+    flex-wrap: wrap;       
+    gap: 0.5rem;          
+    font-size: 1rem;      
+    max-width: 100%;       
+  }
+
+  .dot2 {
+    font-size: 1rem;       
+  }
+
+  .sections {
+    flex-direction: column;
+  }
+  .dot2 {
+    display: none; 
+  }
+  
+}
+
+
+
+
 
 .imageWrapper {
   position: relative;
@@ -43,6 +115,7 @@
   font-size:16px;
   font-weight: 500;
   letter-spacing: 1px;
+max-width: 900;
 }
 
 /* 💻 Tablet */
@@ -64,7 +137,7 @@
 /* 📱 Mobile */
 @media (max-width: 480px) {
   .hero {
-    margin-top: 0px;
+    margin-top: 80px;
     height: 400px;
   }
 
@@ -87,10 +160,11 @@
 }
 
 .textColumn {
-  flex: 1 1 35%;
+  flex: 1 1 38%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+   list-style-position: inside;
 
 }
 
@@ -320,14 +394,14 @@
 
 
 
-/* Meet CEO */
 
+
+/* --- Desktop First (Your Original Base Styles) --- */
 .ceoSection {
-padding: 20px 2rem;
+  padding: 20px 2rem;
   margin: 0 auto;
   color: #2C3E50;
   text-align: center;
-  align-items: center;
 }
 
 .heading {
@@ -340,7 +414,7 @@ padding: 20px 2rem;
 .content {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 3rem;
   align-items: flex-start;
   padding: 4rem;
   width: 100%;
@@ -352,26 +426,24 @@ padding: 20px 2rem;
   box-sizing: border-box;
 }
 
-.imageWrapper { 
-  flex: 1 1 40%; 
-  display: flex; 
+.imageWrapper {
+  flex: 1 1 40%;
+  display: flex;
   justify-content: center;
-   align-items: center; 
- 
-  } 
-  
-  .ceoImage { 
-    width: 150%; 
-    max-width: 600px;
-     aspect-ratio: 1 / 1; 
-     object-fit: cover; 
-     border-radius: 8px; 
-     box-shadow: 0 4px 12px #2C3E50;
-     }
+  align-items: center;
+}
 
+.ceoImage {
+  width: 150%; 
+  max-width: 600px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px #2C3E50;
+}
 
 .bio {
-  flex: 1 1 45%;
+  flex: 1 1 40%;
   font-size: 0.95rem;
 }
 
@@ -379,165 +451,129 @@ padding: 20px 2rem;
   margin-bottom: 1.2rem;
   margin-left: 2.5rem;
   line-height: 1.75rem;
+  text-align: left;
 }
 
-
-
-
-@media (max-width: 1280px) {
-
-.heading {
-  text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  color: #2C3E50;
-}
-
-.content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  align-items: flex-start;
-  padding: 4rem;
-  width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
-  color: #ffffff;
-  background-color: #093A6D;
-  border-radius: 30px;
-  box-sizing: border-box;
-}
-
-.imageWrapper { 
-  flex: 1 1 40%; 
-  display: flex; 
-  justify-content: center;
-   align-items: center; 
- 
-  } 
-  
-  .ceoImage { 
-    width: 200%; 
-    max-width: 500px;
-     aspect-ratio: 1 / 1; 
-     object-fit: cover; 
-     border-radius: 8px; 
-     box-shadow: 0 4px 12px #2C3E50;
-     margin-left: 2rem;
-     }
-
-
-.bio {
-  flex: 1 1 40%;
-  font-size: 0.95rem;
-  line-height: 1rem;
-}
-
-.bio p {
+.bio ul {
   margin-bottom: 1.2rem;
-  margin-left: 4rem;
-  line-height: 1.5rem;
-}
+  margin-left: 3.5rem;
+  line-height: 1.75rem;
+  text-align: left;
+  margin-top: 0 auto;
 }
 
 
-/* 💻 Tablet */
-@media (max-width: 1024px) {
-  .ceoSection {
-    padding: 1rem;
-    padding: 20px 2rem;
-  margin: 0 auto;
-  color: #2C3E50;
-  text-align: center;
-  align-items: center;
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  margin-left: 4.5rem;
+}
+
+/* --- RESPONSIVE QUERIES --- */
+
+/* 💻 Large Laptops (1280px - 1240px) */
+@media (max-width: 1280px) {
+  .content {
+    max-width: 1100px;
+    gap: 2rem;
+    padding: 3rem;
+  }
+  
+  .heading {
+    font-size: 2.2rem;
   }
 
+  .ceoImage {
+    max-width: 450px;
+  }
+}
+
+/* 📱 Small Laptops / Tablets (1024px) */
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: flex; 
+    align-items: center;
+    padding: 2.5rem;
+    gap: 2rem;
+  }
+
+  .imageWrapper, .bio {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .bio p, .socialIcons {
+    margin-left: 0; 
+    text-align: left;
+  }
+
+  .ceoImage {
+    max-width: 400px;
+  }
+}
+
+/* 📟 Smaller Tablets / Large Phones (780px) */
+@media (max-width: 780px) {
   .heading {
     font-size: 2rem;
   }
 
   .content {
-    flex-direction: column;
     padding: 2rem;
-    max-width: 100%;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .imageWrapper {
-    order: 1;
-    padding: 1rem;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .ceoImage {
-    width: 100%;
-     height: 50%;
-    max-width: 400px;
-    border-radius: 10px;
-  }
-
-  .bio {
-    order: 2;
-    font-size: 0.95rem;
-    width: 100%;
-    padding: 1rem;
+    border-radius: 20px;
   }
 
   .bio p {
-    margin: 0 auto;
     font-size: 0.9rem;
-    line-height: 1.8;
-    max-width: 90%;
+    line-height: 1.6rem;
     text-align: left;
   }
 }
 
-/* 📱 Mobile */
+/* 📱 Mobile Phones (480px) */
 @media (max-width: 480px) {
   .ceoSection {
     padding: 1rem;
   }
 
   .heading {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
   }
 
   .content {
-    flex-direction: column;
-    padding: 1rem;
+    padding: 1.5rem;
+   
     max-width: 100%;
     margin: 0 auto;
-    text-align: center;
-  }
-
-  .imageWrapper {
-    order: 1;
-    padding: 1rem;
-    width: 100%;
-    justify-content: center;
   }
 
   .ceoImage {
-    width: 100%;
-    height: 50%;
-    max-width: 600px;
-    border-radius: 10px;
+   max-width: 100%;
+   height: auto;
+    
   }
 
-  .bio {
-    order: 2;
-    font-size: 0.9rem;
-    width: 100%;
-    padding: 1rem;
-  }
+  
 
   .bio p {
-    margin: 0 auto;
     font-size: 0.85rem;
-    line-height: 1.7;
-    max-width: 90%;
-    text-align: left;
+    text-align: left; 
+  }
+
+
+
+  .bio ul {
+  margin-bottom: 1.2rem;
+  margin-left: 1.5rem;
+  line-height: 1.75rem;
+  text-align: left;
+}
+
+
+  .socialIcons {
+    justify-content: center; 
+    margin-left: 0;
   }
 }

@@ -44,24 +44,31 @@ export default function HomePage() {
         <div className={styles.heroMain} data-aos="fade-up">
           <div className={styles.overlay}>
             <h1 className={styles.typewriter}>
-              Building Smarter, Scaling Faster, Engineering Experiences, and
-              Empowering Growth
+              Building Africa's Next Generation of Startups
             </h1>
 
             <p className={styles.description}>
-              Fransunisoft is a Nigeria-based ecosystem designed to fuel
-              innovation, empower brands, and connect communities. With six
-              dynamic branches and Experiences — FSX Events, FSX Consulting, FSX
-              Tech, FSX Academy, FSX Labs, and FSX Connect. We provide solutions
-              that help businesses and individuals thrive in today’s
-              fast-changing world.
+            Fransunisoft builds startups by pairing high-potential African talent with real problems,
+             structured execution, and shared ownership. We don't just build MVPs. We build founders, teams, 
+             and investable companies.
             </p>
+
+            <div className={styles.container}>
+   
+      <div className={styles.sections}>
+        <p className={styles.item}>Venture Studio </p>
+        <p className={styles.dot}>●</p>
+        <p className={styles.item}>Talent Accelerator</p>
+        <span className={styles.dot}>●</span>
+        <p className={styles.item}>Build-for-Equity Partner</p>
+      </div>
+    </div>
 
             <ButtonGroup
               filterKeys={["discover", "start"]}
               onClickHandlers={{
-                discover: scrollToBrandFamily,
-                start: scrollToContact,
+                discover: scrollToContact,
+                start: scrollToBrandFamily,
               }}
             />
           </div>
@@ -131,7 +138,7 @@ export default function HomePage() {
           <div className={styles.stat}>
             <h2 className={styles.countBlock}>
               <CountUp
-                end={50}
+                end={20}
                 duration={2}
                 separator=","
                 enableScrollSpy
@@ -139,13 +146,13 @@ export default function HomePage() {
               />
               +
             </h2>
-            <h6 className={styles.label}>Events Coordinated</h6>
+            <h6 className={styles.label}>Startups Built</h6>
           </div>
 
           <div className={styles.stat}>
             < h2 className={styles.countBlock}>
               <CountUp
-                end={100000}
+                end={100}
                 duration={2.5}
                 separator=","
                 enableScrollSpy
@@ -153,36 +160,30 @@ export default function HomePage() {
               />
               +
             </h2>
-            <h6 className={styles.label}>Youth Trained</h6>
+            <h6 className={styles.label}>Talents Trained</h6>
           </div>
 
-          <div className={styles.stat}>
-            <h2 className={styles.countBlock}>
-              <CountUp
-                end={3}
-                duration={1.5}
-                separator=","
-                enableScrollSpy
-                className={styles.plus}
-              />
-              +
-            </h2>
-            <h6 className={styles.label}>Community Managed</h6>
-          </div>
+         <div className={styles.stat}>
+  <h2 className={styles.countBlock}>
+    N20M
+  </h2>
+  <h6 className={styles.label}>Capital Raised</h6>
+</div>
 
-          <div className={styles.stat}>
-            <h2 className={styles.countBlock}>
-              <CountUp
-                end={10}
-                duration={2}
-                separator=","
-                enableScrollSpy
-                className={styles.plus}
-              />
-              +
-            </h2>
-            <h6 className={styles.label}>Start Up Launched</h6>
-          </div>
+<div className={styles.stat}>
+  <h2 className={styles.countBlock}>
+    <CountUp
+      end={5}
+      duration={2}
+      separator=","
+      enableScrollSpy
+      className={styles.plus}
+    />
+    +
+  </h2>
+  <h6 className={styles.label}>Active Mentors</h6>
+</div>
+
         </div>
       
       </section>
@@ -198,7 +199,7 @@ export default function HomePage() {
           <h2 className={styles.ecosystemBanner}>Our Ecosystem Services</h2>
         </div>
         <div className="sectionHead">
-          <h2>The FSX Brand Family</h2>
+          <h2>How Fransunisoft Works</h2>
 
           <h6>
             Fransunisoft is more than one company <br />
@@ -209,16 +210,24 @@ export default function HomePage() {
          </div>
 
         <div className="grid">
-          <div className= {styles.card}>
-            <h3 className={styles.cardTitle}>FSX Consulting</h3>
-            <p className={styles.cardTagline}>
-              <em></em> “Build Smarter. Scale Faster.”
+
+          <div className={styles.card}>
+            <h3 className={styles.cardTitle}>FSX Academy</h3>
+            <p className={styles.cardTagline}>For Talents - Learn. Build. Earn. Own.</p>
+            <p >
+             We work with developers, designers, product managers, 
+             and growth talents who want real startup experience.
             </p>
-            <p className={styles.cardDescription}>
-              Business consulting, digital transformation, and community
-              programs that bridge strategy with real tech execution and impact.
-            </p>
-            <Link href="/consulting" className="button2">
+              <ul className={styles.fsxListb}>
+              <li>
+             Hands-on work on real startups
+              </li>
+              <li>Mentorship from industry leaders</li>
+              <li>Pathways to jobs, founding roles, or equity</li>
+              <li>Exposure to investors and startup teams</li>
+             
+            </ul>
+            <Link href="/academy" className="button2">
               Learn More
             </Link>
           </div>
@@ -226,37 +235,44 @@ export default function HomePage() {
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>FSX Labs</h3>
             <p className={styles.cardTagline}>
-              “Empowering innovators today, not tomorrow.”
+             For Startups - From idea to investable MVP.
             </p>
-            <p className={styles.cardDescription}>
-              Platforms, automation, and innovation programs for building
-              scalable solutions from scratch.
+            <p >
+             We work with  Idea-Stage & Pre-Funding Startups, Funded Startups & SMEs
             </p>
+             <ul className={styles.fsxListb}>
+              <li>
+           MVP or product built fast, Access to vetted talent teams 
+              </li>
+              <li>Co-ownership and long-term partnership</li>
+              <li>Fast, disciplined product execution, Pre-trained, startup-ready taelnt</li>
+              <li>Optional equity partnership </li>
+             
+            </ul>
             <Link href="/labs" className="button2">
               Learn More
             </Link>
           </div>
 
-          <div className={styles.card}>
-            <h3 className={styles.cardTitle}>FSX Tech</h3>
-            <p className={styles.cardTagline}>“Smart Tech. Simplified.”</p>
-            <p className={styles.cardDescription}>
-              Computer accessories, gadgets, and electronics procurement
-              providing reliable, affordable enterprise technology solutions.
+          <div className= {styles.card}>
+            <h3 className={styles.cardTitle}>FSX Consulting</h3>
+            <p className={styles.cardTagline}>
+              <em></em> The Engine - Structure that makes everything work.
             </p>
-            <Link href="/tech" className="button2">
-              Learn More
-            </Link>
-          </div>
+            <p >
+              We provide the infrastructure that ensures execution and ownership alignment
+            </p>
 
-          <div className={styles.card}>
-            <h3 className={styles.cardTitle}>FSX Events</h3>
-            <p className={styles.cardTagline}>“Where brands come to life.”</p>
-            <p className={styles.cardDescription}>
-              Brand activations, corporate events, and community programs with
-              global-standard execution.
-            </p>
-            <Link href="/events" className="button2">
+             <ul className={styles.fsxListb}>
+              <li>
+           Talent recruitment & management
+              </li>
+              <li>MVP scoping & delivery governance</li>
+              <li>IP ownership during build phase</li>
+              <li>Equity structuring & advisory, Fundraising & post-MVP support </li>
+             
+            </ul>
+            <Link href="/consulting" className="button2">
               Learn More
             </Link>
           </div>
@@ -264,33 +280,133 @@ export default function HomePage() {
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>FSX Connect</h3>
             <p className={styles.cardTagline}>
-              “Connecting Ideas, Empowering Impact.”
+              Mentors & Community.
             </p>
-            <p className={styles.cardDescription}>
-              Connecting communities and brands through digital platforms and
-              strategic partnerships.
+            <p >
+              Mentors at Fransunisoft don’t just advise, they help build companies
             </p>
+             <ul className={styles.fsxListb}>
+              <li>
+Product, engineering & architecture reviews
+              </li>
+              <li>Founder mindset coaching</li>
+              <li>Investor readiness & GTM guidance</li>
+              <li>Exposure to investors and startup teams
+ </li>
+             
+            </ul>
             <Link href="/connect" className="button2">
-              Learn More
+             Explore FSXConnect
             </Link>
           </div>
 
           <div className={styles.card}>
-            <h3 className={styles.cardTitle}>FSX Academy</h3>
-            <p className={styles.cardTagline}>“From Learning to Leading.”</p>
-            <p className={styles.cardDescription}>
-              Training and learning programs designed to empower individuals and
-              teams with future-ready skills.
+            <h3 className={styles.cardTitle}>FSX Tech</h3>
+            <p className={styles.cardTagline}>Engineering Enablement.</p>
+            <p  >
+            Infrastructure that keeps startups running. This 
+            ensures every product built within FSX is stable, secure, and ready to scale, not just fast.
             </p>
-            <Link href="/academy" className="button2">
-              Learn More
+             <ul className={styles.fsxListb}>
+              <li>
+         Product, engineering & architecture reviews
+              </li>
+              <li>Founder mindset coaching</li>
+              <li>Investor readiness & GTM guidance </li>
+              
+            </ul>
+            <Link href="/tech" className="button2">
+             Explore FSX Tech
+            </Link>
+          </div>
+
+          <div className={styles.card}>
+            <h3 className={styles.cardTitle}>FSX Events</h3>
+            <p className={styles.cardTagline}>Exposure & Ecosystem Growth.</p>
+            <p >
+             Where products meet people, partners, and capital.
+              Ensures that startups don’t just get built, they get seen, tested, and connected.
+            </p>
+             <ul className={styles.fsxListb}>
+              <li>
+         Demo days & product showcases
+              </li>
+              <li>Founder, talent & ecosystem programs
+</li>
+              <li>Industry partnerships & community events
+</li>
+              <li>Visibility for FSX-built startups and products
+ </li>
+             
+            </ul>
+            <Link href="/events" className="button2">
+            Explore FSX Events
             </Link>
           </div>
         </div>
             
       </section>
 
-      {/* === PARTNERS === */}
+
+  {/* MODEL WORKS */} 
+<section > 
+  <div className="sectionHead">
+  <h2 >Why This Model Works</h2>
+  <h6 >Built for real execution, shared ownership, and long-term value creation</h6>
+   <div className={styles.gridw}> 
+    {/* Talents Section */} 
+   
+    <div className="wrapperw" > 
+    <h3 className={styles.cardTitlew}>For Talents</h3>
+      <Image src="/young-manager.png" 
+       alt="For Talents" 
+       width={400} 
+       height={280} 
+       className={styles.imagew} /> 
+        <ul className={styles.modelList}>
+         <li>Real products </li>
+       <li>Real equity</li>
+        <li>Real career outcomes</li>
+        </ul>
+        
+        </div> {/* Startups Section */} 
+        <div >
+                       <h3 className={styles.cardTitlew}>For Startups</h3>
+           <Image src="/corporate-team.png" 
+           alt="For Startup" 
+           width={400} 
+           height={280} 
+           className={styles.imagew} /> 
+        <ul className={styles.modelList}>
+         <li>MVPs without burning cash</li>
+             <li>Ready-made teams</li>
+             <li>Reduced hiring risk</li>
+        </ul>
+             </div> {/* Investors Section */} 
+             <div >
+                       <h3 className={styles.cardTitlew}>For Investors</h3>  
+              <Image src="/startup-team.png" 
+              alt="For Investor" 
+              width={400} 
+              height={280} 
+              className={styles.imagew} /> 
+            
+             <ul className={styles.modelList}>
+         <li>De-risked ventures</li> 
+               <li>Execution-first teams</li>
+                <li>A11eon problems, validated solutions</li>
+        </ul>
+               </div> 
+               </div> 
+               </div>
+               </section>
+
+
+
+
+    
+
+{/* === PARTNERS === */}
       <section className={styles.partnersSection} data-aos="fade-up">
         <div className={styles.partnersIntro}>
           <h2 className={styles.partnersHeading}>Our Partners</h2>
