@@ -44,7 +44,7 @@ export default function HomePage() {
         <div className={styles.heroMain} data-aos="fade-up">
           <div className={styles.overlay}>
             <h1 className={styles.typewriter}>
-              Building Africa&aposs Next Generation of Startups
+              Building Africa's Next Generation of Startups
             </h1>
 
             <p className={styles.description}>
@@ -168,7 +168,7 @@ export default function HomePage() {
 
          <div className={styles.stat}>
   <h2 className={styles.countBlock}>
-    N15M
+    ₦15M
   </h2>
   <h6 className={styles.label}>Capital Raised</h6>
 </div>
@@ -397,7 +397,7 @@ Product, engineering & architecture reviews
              <ul className={styles.modelList}>
          <li>De-risked ventures</li> 
                <li>Execution-first teams</li>
-                <li>A11eon problems, validated solutions</li>
+                <li>African problems, validated solutions</li>
         </ul>
                </div> 
                </div> 
