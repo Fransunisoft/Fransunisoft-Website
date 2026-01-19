@@ -49,7 +49,7 @@ export default function HomePage() {
 
             <p className={styles.description}>
             Fransunisoft builds startups by pairing high-potential African talent with real problems,
-             structured execution, and shared ownership. We don&apost just build MVPs. We build founders, teams, 
+             structured execution, and shared ownership. We dont just build MVPs. We build founders, teams, 
              and investable companies.
             </p>
 
@@ -231,7 +231,7 @@ export default function HomePage() {
              
             </ul>
             <Link href="/academy" className="button2">
-              Learn More
+            Explore FSX Academy
             </Link>
           </div>
 
@@ -253,7 +253,7 @@ export default function HomePage() {
              
             </ul>
             <Link href="/labs" className="button2">
-              Learn More
+           Explore FSX Labs
             </Link>
           </div>
 
@@ -276,7 +276,7 @@ export default function HomePage() {
              
             </ul>
             <Link href="/consulting" className="button2">
-              Learn More
+              Explore FSX Consulting
             </Link>
           </div>
 
@@ -299,7 +299,7 @@ Product, engineering & architecture reviews
              
             </ul>
             <Link href="/connect" className="button2">
-             Explore FSXConnect
+             Explore FSX Connect
             </Link>
           </div>
 
