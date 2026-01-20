@@ -23,6 +23,18 @@ export default function Contact() {
   const [isOpen, setIsOpen] = useState(false);
   const countrySelectorWrapperRef = useRef(null);
 
+  // Auto-hide success message after 8 seconds
+  useEffect(() => {
+    if (!successMessage) return;
+
+    const timer = setTimeout(() => {
+      setSuccessMessage('');
+    }, 8000); // ← 8 seconds – change to 5000 for 5 sec, 10000 for 10 sec, etc.
+
+    // Cleanup: clear timer if component unmounts or success changes
+    return () => clearTimeout(timer);
+  }, [successMessage]); // Only re-run when successMessage changes
+
   // Fetch countries dynamically
   useEffect(() => {
     fetch('https://restcountries.com/v3.1/all?fields=name,cca2,idd')
@@ -40,14 +52,13 @@ export default function Contact() {
 
         setCountries(formatted);
 
-        // Set Nigeria as default if available
         const nigeria = formatted.find((c) => c.name === 'Nigeria');
         if (nigeria) setSelectedCountry(nigeria);
       })
       .catch((err) => console.error('Failed to fetch countries:', err));
   }, []);
 
-  // Handle click outside country dropdown
+  // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (countrySelectorWrapperRef.current && !countrySelectorWrapperRef.current.contains(event.target)) {
@@ -73,7 +84,7 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setSuccessMessage('');
+    setSuccessMessage(''); // Clear any old success
     setErrorMessage('');
 
     try {
@@ -84,15 +95,16 @@ export default function Contact() {
       const res = await fetch('/api/contact', { method: 'POST', body: formData });
       const data = await res.json();
 
-      if (!res.ok) setErrorMessage(data.error || 'Failed to send email');
-      else {
+      if (!res.ok) {
+        setErrorMessage(data.error || 'Failed to send message');
+      } else {
         setSuccessMessage('✅ Message sent successfully!');
         form.reset();
         setAttachedFile(null);
         setPhone('');
       }
     } catch (err) {
-      setErrorMessage('An unexpected error occurred');
+      setErrorMessage('Something went wrong – please try again');
       console.error(err);
     } finally {
       setLoading(false);
@@ -117,7 +129,6 @@ export default function Contact() {
                 <h3 className={styles.infoTitle}>Contact Information</h3>
                 <p className={styles.infoLead}>We’d love to hear from you. please fill out the contact form and we’ll reply soon</p>
                 <div className={styles.contactInfo}>
-                  {/* Email Item */}
                   <div className={styles.infoItem}>
                     <div className={styles.infoIconCircle}><img src="/email.png" alt="Email Icon" /></div>
                     <div className={styles.infoText}>
@@ -126,7 +137,6 @@ export default function Contact() {
                       <p className={styles.emailValue}>hello@fransunisoft.com</p>
                     </div>
                   </div>
-                  {/* Phone Item */}
                   <div className={styles.infoItem}>
                     <div className={styles.infoIconCircle}><img src="/Vector (1).png" alt="Phone Icon" /></div>
                     <div className={styles.infoText}>
@@ -135,7 +145,6 @@ export default function Contact() {
                       <p className={styles.emailValue}>+2348130706942</p>
                     </div>
                   </div>
-                  {/* Location Item */}
                   <div className={styles.infoItem}>
                     <div className={styles.infoIconCircle}><img src="/Vector (2).png" alt="Location Icon" /></div>
                     <div className={styles.infoText}>
@@ -151,7 +160,6 @@ export default function Contact() {
                 <h3 className={styles.cardTitle}>Get In Touch</h3>
                 <p className={styles.cardIntro}>
                   Fransunisoft — building startups, developing talent, and co-owning Africa’s future.
-
                 </p>
 
                 <form className={styles.contactForm} onSubmit={handleSubmit} encType="multipart/form-data">
@@ -159,7 +167,6 @@ export default function Contact() {
                   <div className={styles.formRow}><input type="text" name="lastName" className={styles.input} placeholder="Last Name" required /></div>
                   <div className={styles.formRow}><input type="email" name="email" className={styles.input} placeholder="Email" required /></div>
 
-                  {/* Phone Row */}
                   <div className={styles.formRow}>
                     <div className={styles.phoneRow}>
                       <div ref={countrySelectorWrapperRef} className={`${styles.countrySelectorWrapper} ${isOpen ? styles.open : ''}`} onClick={() => setIsOpen(!isOpen)}>
@@ -218,9 +225,28 @@ export default function Contact() {
                     </div>
                   )}
 
-                  <button type="submit" className={styles.submitButton} disabled={loading}>{loading ? 'Sending...' : 'Contact Us'}</button>
-                  {successMessage && <p style={{ color: '#16a34a', marginTop: '8px', textAlign: 'center' }}>{successMessage}</p>}
-                  {errorMessage && <p style={{ color: '#b91c1c', marginTop: '8px', textAlign: 'center' }}>{errorMessage}</p>}
+                  <button type="submit" className={styles.submitButton} disabled={loading}>
+                    {loading ? 'Sending...' : 'Contact Us'}
+                  </button>
+
+                  {successMessage && (
+                    <p 
+                      style={{ 
+                        color: '#16a34a', 
+                        marginTop: '12px', 
+                        textAlign: 'center',
+                        transition: 'opacity 0.8s ease-out' // smooth fade (optional)
+                      }}
+                    >
+                      {successMessage}
+                    </p>
+                  )}
+
+                  {errorMessage && (
+                    <p style={{ color: '#b91c1c', marginTop: '12px', textAlign: 'center' }}>
+                      {errorMessage}
+                    </p>
+                  )}
                 </form>
               </div>
             </div>
