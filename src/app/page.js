@@ -98,7 +98,7 @@ export default function HomePage() {
               <span style={{ color: "#0D519A", fontWeight: "bold" }}>
                 {" "}
                 Fransunisoft{" "}
-              </span>
+                </span>
               integrates strategy, technology, learning, community, and
               industries under one ecosystem (FSX).
               <br />
