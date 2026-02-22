@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "../root-builders.module.css"
+import styles from "../root-builders.module.css";
 export default function WhoCanApply() {
   const whoCanText = [
     {
@@ -22,21 +22,20 @@ export default function WhoCanApply() {
 
   const whoCanDetailsText = [
     {
-      imgSrc: "",
+      imgSrc: "/age.png",
       title: "Age",
       subTitle: "18–35 years",
       text: "Exceptional students (16–17) with strong skills and maturity (with consent where required",
     },
     {
-      imgSrc: "",
+      imgSrc: "/mapping.png",
       title: "Location",
       subTitle: "Africa-Focused",
       text: "Root Builders focuses on Africa-centric problems, with Nigeria as a key starting point.Commitment",
     },
     {
-      imgSrc: "",
+      imgSrc: "/commitment.png",
       title: "Working Professionals",
-      //   subTitle: "",
       text: "Ready to dedicate 20+ hours per week for 3–6 months, building real products with real teams and delivering real results.",
     },
   ];
@@ -45,42 +44,46 @@ export default function WhoCanApply() {
   //     if(root) return root;
   // })
   return (
-    <div className={styles.whoCanApplyContainer}>
-      <h3 className={styles.whoCanTitle}>Who Can Apply?</h3>
+    <section className={styles.whoCanApplyContainer}>
+      <h2 className={styles.whoCanTitle}>Who Can Apply?</h2>
       <p className={styles.whoCanSubTitle}>
         Root Builders is open to diverse talents across Africa
       </p>
-      <section className={styles.whoCanBody}>
-        <section className={styles.personality}>
+      <div className={styles.whoCanBody}>
+        <div className={styles.personality}>
           <div className={styles.personalityBody}>
-            {whoCanText.map((text) => {
-              <>
-                <h3>{text.title}</h3>
-                <p>{text.subTitle}</p>
-              </>;
+            {whoCanText.map((text, index) => {
+              return (
+                <div key={index}>
+                  <h5>{text.title}</h5>
+                  <p>{text.subTitle}</p>
+                </div>
+              );
             })}
           </div>
-        </section>
+        </div>
 
-        <section>
-          {whoCanDetailsText.map((text) => {
-            <div>
-             <Image
-              src="/academy-what-we-do-icon.png"
-              alt="aaaaaa"
-              width={320}
-              height={199.13}
-              className={styles.whyRootImg}
-            />
-              <section>
-                <h4>{text.title}</h4>
-                {text.subTitle && <p>{text.subTitle}</p>}
-                <p>{text.text}</p>
-              </section>
-            </div>;
+        <div>
+          {whoCanDetailsText.map((text,index) => {
+            return (
+              <div className={styles.whoCanDetails} key={index}>
+                <Image
+                  src={text.imgSrc}
+                  alt="aaaaaa"
+                  width={50}
+                  height={50}
+                  className={styles.whyRootImg}
+                />
+                <div>
+                  <h6>{text.title}</h6>
+                  {text.subTitle && <p>{text.subTitle}</p>}
+                  <p>{text.text}</p>
+                </div>
+              </div>
+            );
           })}
-        </section>
-      </section>
-    </div>
+        </div>
+      </div>
+    </section>
   );
 }

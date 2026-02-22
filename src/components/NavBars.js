@@ -100,7 +100,8 @@ export default function Navbar() {
 
         <li className={styles.navItem}>
            <Link
-            href="/rootbuilders"
+            // href="/root-buiders"
+            href="../root-buiders"
             onClick={closeMobileMenu}
             className={pathname === '/about' ? styles.activeLink : ''}
           >
