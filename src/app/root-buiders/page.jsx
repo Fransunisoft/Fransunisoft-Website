@@ -1,7 +1,7 @@
 import Header from "./components/Header"  
 import ApplicationProcess from "./components/ApplicationProcess"
 import ChooseTrack from "./components/ChooseTrack"
-import Footer from "@/components/Footer"
+import Footer from "./components/Footer"
 import GotQuestions from "./components/GotQuestions"
 import Modal from "./components/Modal"
 import Participant from "./components/Participant"
@@ -22,7 +22,7 @@ export default  function RootBuilders() {
             <WhoCanApply />
             <ApplicationProcess />
             <ChooseTrack />
-            <Participant />
+            {/* <Participant /> */}
             <WorkOn />
             <GotQuestions />
             <RealSolutions />

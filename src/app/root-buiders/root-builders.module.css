@@ -234,3 +234,269 @@
 .whoCanDetails p {
     font-weight: 400;
 }
+
+
+/* Application Process */
+.applicationCon{
+    background-color: #FAFDFF;
+}
+
+.ApplicationContainer h2{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.ApplicationContainer button{
+    width: 100%;
+    cursor: pointer;
+    max-width: 60%;
+    /* margin-left: 2rem; */
+    padding: 12px 20px;
+    border: none;
+    background-color: #0D519A;
+    border-radius: 10px;
+    color: #F1F5F9;
+    font-size: 16px;
+    font-weight: 500;
+}
+.applicationbody {
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr;
+ align-items: center;
+ justify-content: space-evenly;
+ /* align-items: center;
+ justify-content: space-between;     */
+width: 100%;
+position: relative;
+}
+.applicationImg1{
+    position: absolute;
+    top: 0;
+    left: 280;
+}
+.applicationImg2{
+    position: absolute;
+    top: 0;
+    right: 450;
+}
+
+/* ChooseTrack */
+.ChooseTrackContainer{
+    text-align: center;
+}
+.chooseTrackBodyCon{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.chooseTrackContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    /* align-items: center; */
+    /* text-align: center; */
+}
+
+.chooseTrackContainer div{
+    border: 10px solid #20A89F;
+    border-radius: 10px;
+    padding: 0.5rem 0;
+}
+
+/* Participant */
+/* .workOnContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+.workOnContainer h2, .workOnContainer p{
+    text-align: center;
+}
+
+.workOnBodyContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    margin-top: 2rem;
+    
+}
+
+.workOnChallenges p, .workOnIdeas p{
+    text-align: left;
+}
+
+.workOnChallenges h5, .workOnContainer h5{
+    color: #FF6B35;
+    /* margin-bottom: 0.5rem; */
+}
+.workOnChallenges h3, .workOnContainer h3{
+    /* color: #FF6B35; */
+    margin-bottom: 1rem;
+}
+
+.workOnChallenges{
+    margin-bottom: 2rem;
+}
+.ideaBody{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 0.5rem;
+}
+.workOnChallengeCon{
+    margin-top: 1rem;
+}
+.ideaBody{
+    margin-bottom: 0.5rem;
+}
+
+/* GotQuestions */
+
+.whoGotQuestionsContainer{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-content: start;
+    align-items: start;
+    gap: 2rem;
+}
+
+.gotQuestionTitle, .gotQuestionSubTitle {
+    text-align: center;
+}
+.gotQuestionFaQ{
+    margin-top: 1rem;
+}
+
+.gotQuestionFaQList{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 1rem; */
+    cursor: pointer;
+    background-color: #E7EEF5;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 4 0 #0000000A;
+}
+
+.gotQuestionFaQListSubtitle{
+    padding-left: 1rem;
+    text-align: start;
+    margin-bottom: 1rem;
+    background-color: #E7EEF5;
+}
+
+/* RealSolutions */
+
+.realSolutionContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+.realSolutionImg{
+    border-radius: 10px;
+}
+.realSolutionBody{
+    background-color: #0D519A;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    color: 40;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 0 1rem;
+}
+
+.realSolutionSubTitle{
+    margin: 1.5rem 0;
+    font-weight: 400;
+}
+
+.realSolutionBody button{
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border: 2px solid white;
+    background-color: #0D519A;
+    border-radius: 10px;
+    color: #F1F5F9;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Footer */
+.footerContainer{
+    background-color: #E7EEF5;
+}
+.footerCon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.footerCon .parentOrgBtn{
+       background-color: transparent;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 3px solid #0D519A;
+    border-color: #0D519A;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    color: #0D519A;
+    box-shadow: 0px -2px 4px #00000026;
+    margin-bottom: 2rem;
+}
+
+.poweredContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+.footerCon p{
+    text-align: center;
+}
+.followSocialText{
+    margin-top: 1rem;
+}
+ 
+.exploreBtn{
+    /* width: 100%; */
+    cursor: pointer;
+    /* max-width: 15%; */
+    margin-left: 2rem;
+    padding: 10px 20px;
+    border: none;
+    background-color: #0D519A;
+    border-radius: 10px;
+    color: #F1F5F9;
+    font-size: 16px;
+    font-weight: 500;
+}
+.copy{
+    background-color: #0D519A;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    padding: 1.5rem 0;
+}
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.iconImg{
+    cursor: pointer;
+}

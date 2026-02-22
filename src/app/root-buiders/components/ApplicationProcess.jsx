@@ -4,17 +4,17 @@ export default function ApplicationProcess() {
   const applicationBtnText = [
     {
       title: "Apply Online",
-      color: "",
-      imgSrc: "",
+      color: "#90AFD1",
+      imgSrc: "/mem_arrows.png",
     },
     {
       title: "Application Review",
-      color: "",
-      imgSrc: "",
+      color: "#98D7D3",
+      imgSrc: "/mem_arrows.png",
     },
     {
       title: "Selection & Onboarding",
-      color: "",
+      color: "#FFBBA2",
       // imgSrc:
     },
   ];
@@ -23,21 +23,37 @@ export default function ApplicationProcess() {
   //     if(root) return root;
   // })
   return (
-    <div className={styles.ApplicationContainer}>
-      <div>
-        {applicationBtnText.map((text) => {
-          <>
-            <button>{text.title}</button>
-            {text.imgSrc && <Image
-              src="/academy-what-we-do-icon.png"
-              alt="aaaaaa"
-              width={320}
-              height={199.13}
-              className={styles.whyRootImg}
-            />}
-          </>;
-        })}
-      </div>
+    <div className={styles.applicationCon}>
+      <section className={styles.ApplicationContainer}>
+        <h2>Application Process</h2>
+        <div className={styles.applicationbody}>
+          {applicationBtnText.map((text,index) => {
+            return(
+            // <div key={index} className={styles.applicationList}>
+              <button >{text.title}</button>
+            // </div>
+          )
+      
+          })}
+          <div>
+               <Image
+                src="/mem_arrows.png"
+                alt="aaaaaa"
+                width={50}
+                height={50}
+                className={styles.applicationImg1}
+              />
+              <Image
+                src="/mem_arrows.png"
+                alt="aaaaaa"
+                width={50}
+                height={50}
+                className={styles.applicationImg2}
+              />
+          </div>
+      
+        </div>
+      </section>
     </div>
   );
 }

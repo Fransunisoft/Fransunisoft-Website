@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "../root-builders.module.css"
+import styles from "../root-builders.module.css";
 export default function GotQuestions() {
   const gotQuestions = [
     {
@@ -33,35 +33,44 @@ export default function GotQuestions() {
   ];
 
   return (
-    <div className={styles.whoGotQuestionsContainer}>
-    <Image
-              src="/academy-what-we-do-icon.png"
-              alt="aaaaaa"
-              width={320}
-              height={199.13}
-              className={styles.whyRootImg}
-            />
+    <section className={styles.whoGotQuestionsContainer}>
+      <Image
+        src="/gotQuestionImage.png"
+        alt="aaaaaa"
+        width={381}
+        height={600}
+        className={styles.whyRootImg}
+      />
 
-      <section>
+      <div>
         <h3 className={styles.gotQuestionTitle}>You’ve Got Questions?</h3>
         <p className={styles.gotQuestionSubTitle}>
           We’ve got you covered on any of your doubts
         </p>
-        <section>
-          {gotQuestions.map((text) => {
-            <div>
-              <p>{text.title}</p>
-            <Image
-              src="/academy-what-we-do-icon.png"
-              alt="aaaaaa"
-              width={320}
-              height={199.13}
-              className={styles.whyRootImg}
-            />
-            </div>;
+        <div className={styles.gotQuestionFaQ}>
+          {gotQuestions.map((text, index) => {
+            return (
+              <>
+              <div key={index} className={styles.gotQuestionFaQList}>
+                <p>{text.title}</p>
+                <Image
+                  src="/cross.png"
+                  alt="aaaaaa"
+                  width={16}
+                  height={16}
+                  className={styles.gotQuestionImg}
+                />
+              </div>
+              <div className={styles.gotQuestionFaQListSubtitle}>
+                   <p>{text.subTitle}</p>
+              </div>
+                 
+             
+                </>
+            );
           })}
-        </section>
-      </section>
-    </div>
+        </div>
+      </div>
+    </section>
   );
 }

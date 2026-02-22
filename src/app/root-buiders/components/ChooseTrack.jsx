@@ -3,60 +3,74 @@ import styles from "../root-builders.module.css"
 export default function ChooseTrack() {
   const chooseTrackText = [
     {
-      title: "  Product Management",
+      title: "Product",
+      subtitle: " Management"
     },
     {
-      title: "AI Engineering",
+      title: "AI ",
+       subtitle: " Engineering"
     },
     {
-      title: "Frontend Development",
+      title: "Frontend ",
+       subtitle: " Development"
+
     },
     {
-      title: "Cyber security",
+      title: "Cyber ",
+      subtitle: " security"
     },
+    
     {
       title: "Backend ",
+      subtitle: " Development"
     },
     {
-      title: "Backend Development",
+      title: "Data Analysis",
+       subtitle: "/visualization"
     },
     {
-      title: "Data Analysis/visualization",
+      title: "UI/UX ",
+      subtitle: "Design"
     },
     {
-      title: "UI/UX Design",
+      title: "Quality",
+      subtitle: "Assurance"
     },
     {
-      title: "Quality Assurance",
+      title: "DevOps",
+       subtitle: "/Cloud Computing"
     },
     {
-      title: "DevOps/Cloud Computing",
-    },
-    {
-      title: "Hardware/Robotics Engineer",
+      title: "Hardware",
+      subtitle: "/Robotics Engineer"
     },
   ];
 
   return (
-    <div className={styles.ChooseTrackContainer}>
-      <h3 className={styles.ChooseTrackTitle}>Choose Your Track</h3>
-      <p className={styles.ChooseTrackSubTitle}>
-       Root Builders admits talents across 10 different tech skills to build products and gain real-world experience.
-      </p>
-      <div>
-        <section className={styles.whyRootBodyContainer}>
-          {chooseTrackText.map((text) => (
-            <h3> {text.title}</h3>
-          ))}
-        </section>
-       <Image
-              src="/academy-what-we-do-icon.png"
-              alt="aaaaaa"
-              width={320}
-              height={199.13}
-              className={styles.whyRootImg}
-            />
-      </div>
+    <div className={styles.chooseTrackCon}>
+      <section className={styles.ChooseTrackContainer}>
+        <h2 className={styles.ChooseTrackTitle}>Choose Your Track</h2>
+        <p className={styles.ChooseTrackSubTitle}>
+         Root Builders admits talents across 10 different tech skills to build products and gain real-world experience.
+        </p>
+        <div className={styles.chooseTrackBodyCon}>
+          <div className={styles.chooseTrackContainer}>
+            {chooseTrackText.map((text) => (
+              <div>
+              <h6> {text.title}</h6>
+              <h6>{text.subtitle}</h6>
+              </div>
+            ))}
+          </div>
+         <Image
+                src="/triangle_pair.png"
+                alt="aaaaaa"
+                width={200}
+                height={200}
+                className={styles.chooseImg}
+              />
+        </div>
+      </section>
     </div>
   );
 }

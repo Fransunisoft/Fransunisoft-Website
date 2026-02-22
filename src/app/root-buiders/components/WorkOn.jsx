@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "../root-builders.module.css"
+import styles from "../root-builders.module.css";
 export default function WorkOn() {
   const fxBranchText = [
     {
@@ -26,75 +26,78 @@ export default function WorkOn() {
   ];
 
   return (
-    <div className={styles.workOnContainer}>
-      <h3 className={styles.workOnTitle}>What will participants work on?</h3>
+    <section className={styles.workOnContainer}>
+      <h2 className={styles.workOnTitle}>What will participants work on?</h2>
       <p className={styles.workOnSubTitle}>
         Work on meaningful projects that solve actual problems
       </p>
       <div className={styles.workOnBodyContainer}>
-        <section className={styles.workOnBodySection}>
+        <div className={styles.workOnBodySection}>
           <div className={styles.workOnChallenges}>
-            <h4>FSX Challenges</h4>
+            <h5>FSX Challenges</h5>
             <h3>Structured Practice Projects</h3>
             <p>
               Solve real problems through guided challenges designed to build
               your portfolio and sharpen your skills with practical and hands-on
               experience.
             </p>
-            <section>
-              {fxBranchText.map((text) => {
-                <>
-                  <div>
-           <Image
-              src="/academy-what-we-do-icon.png"
-              alt="aaaaaa"
-              width={320}
-              height={199.13}
-              className={styles.whyRootImg}
-            />
+            <div className={styles.workOnChallengeCon}>
+              {fxBranchText.map((text,index) => {
+                return(
+                     <div key={index}>
+                  <div className={styles.ideaBody}>
+                    <Image
+                      src="/vectors.png"
+                      alt="aaaaaa"
+                      width={20}
+                      height={20}
+                      className={styles.whyRootImg} 
+                    />
                     <p>{text.title}</p>
                   </div>
-                </>;
+                </div>
+                )
+             
               })}
-            </section>
+            </div>
           </div>
 
           <div className={styles.workOnIdeas}>
-            <h4>FSX Challenges</h4>
-            <h3>Structured Practice Projects</h3>
+            <h5>Your Ideas</h5>
+            <h3>Participant-Led Projects</h3>
             <p>
-              Solve real problems through guided challenges designed to build
-              your portfolio and sharpen your skills with practical and hands-on
-              experience.
+              Pitch your own product ideas and get mentorship to bring them to life. Build something meaningful that solves problems you care about.
             </p>
-            <section>
-              {fxBranchText.map((text) => {
-                <>
-                  <div>
-                 <Image
-              src="/academy-what-we-do-icon.png"
-              alt="aaaaaa"
-              width={320}
-              height={199.13}
-              className={styles.whyRootImg}
-            />
+            <div className={styles.workOnChallengeCon}>
+              {ideaText.map((text) => {
+                return(
+                   <>
+                  <div className={styles.ideaBody}>
+                    <Image
+                      src="/vectors.png"
+                      alt="aaaaaa"
+                      width={20}
+                      height={20}
+                      className={styles.whyRootImg}
+                    />
                     <p>{text.title}</p>
                   </div>
-                </>;
+                </>
+                )
+               
               })}
-            </section>
+            </div>
           </div>
-        </section>
+        </div>
 
-
-     <Image
-              src="/academy-what-we-do-icon.png"
-              alt="aaaaaa"
-              width={320}
-              height={199.13}
-              className={styles.whyRootImg}
-            />
+        <Image
+          src="/workOn_student-home.png"
+          alt="aaaaaa"
+          width={463}
+          height={694}
+          className={styles.whyRootImg}
+        />
       </div>
-    </div>
+    </section>
   );
 }
