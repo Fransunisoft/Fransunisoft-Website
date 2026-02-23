@@ -7,21 +7,23 @@ export default function Modal() {
         <button className={styles.fsxAcademyInitBtn}>
           Fransunisoft - FSX Academy Initiative
         </button>
-        <h1>
-          <span>Build</span> Real Products.
-        </h1>
-        <h1>Gain Real Experience. with Real team</h1>
-        <Image
-          src="/shade.png"
-          alt="aaaaaa"
-          width={400}
-          height={30}
-          className={styles.modalImg}
-        />
-        <h5 className="">
-          Root Builders is a hands-on program and summit where talents solve
-          real problems by building sustainable products with real teams.
-        </h5>
+        <div className={styles.modalBody}> 
+          <h1>
+            <span>Build</span> Real Products.
+          </h1>
+          <h1>Gain Real Experience. with Real team</h1>
+          <Image
+            src="/shade.png"
+            alt="aaaaaa"
+            width={400}
+            height={30}
+            className={styles.modalImg}
+          />
+          <h5 className="">
+            Root Builders is a hands-on program and summit where talents solve
+            real problems by building sustainable products with real teams.
+          </h5>
+        </div>
 
         <button className={styles.joinBtn}>Join Root builders</button>
         <div>

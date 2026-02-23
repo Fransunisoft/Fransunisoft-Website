@@ -24,35 +24,33 @@ export default function WhyRoot() {
     },
   ];
 
-  // const whyRootMap = whyRootBuilders.map(root => {
-  //     if(root) return root;
-  // })
   return (
-    <section className={styles.whyRootContainer}>
-      <h2 className={styles.whyRootTitle}>Why Root Builders?</h2>
-      <p className={styles.whyRootSubTitle}>
-        Root Builders turns talent into builders, and builders into
-        problem-solvers the ecosystem can trust.
-      </p>
-      <div className={styles.whyRootBody}>
-        <Image
-          src="/whyrootbuilders.png"
-          alt="aaaaaa"
-          width={510}
-          height={552}
-          className={styles.whyRootImg}
-        />
-
-        <div className={styles.whyRootBodyContainer}>
-          {whyRootBuilders.map((text, index) => {
-            return(
-            <div key={index}>
-              <h5> {text.title}</h5>
-              <p>{text.subTitle}</p>
-            </div>)   
-          })}
+    <div className={styles.whyRootCon} id="root-builders">
+      <section className={styles.whyRootContainer}>
+        <h2 className={styles.whyRootTitle}>Why Root Builders?</h2>
+        <p className={styles.whyRootSubTitle}>
+          Root Builders turns talent into builders, and builders into
+          problem-solvers the ecosystem can trust.
+        </p>
+        <div className={styles.whyRootBody}>
+          <Image
+            src="/whyrootbuilders.png"
+            alt="aaaaaa"
+            width={510}
+            height={552}
+            className={styles.whyRootImg}
+          />
+          <div className={styles.whyRootBodyContainer}>
+            {whyRootBuilders.map((text, index) => {
+              return(
+              <div key={index} className={styles.whyRootBodyCon}>
+                <h5> {text.title}</h5>
+                <p>{text.subTitle}</p>
+              </div>)
+            })}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

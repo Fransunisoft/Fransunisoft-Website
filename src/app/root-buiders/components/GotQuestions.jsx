@@ -1,5 +1,7 @@
+'use client'
 import Image from "next/image";
 import styles from "../root-builders.module.css";
+import { useState } from "react";
 export default function GotQuestions() {
   const gotQuestions = [
     {
@@ -32,14 +34,24 @@ export default function GotQuestions() {
     },
   ];
 
+  const [isActive, setIsActive] = useState([]);
+ const handleClick = (index) => {
+  setIsActive((prev) => {
+    if (prev.includes(index)) {
+      return prev.filter((item) => item !== index);
+    } else {
+      return [...prev, index];
+    }
+  });
+};
   return (
-    <section className={styles.whoGotQuestionsContainer}>
+    <section className={styles.whoGotQuestionsContainer} id="faq">
       <Image
         src="/gotQuestionImage.png"
         alt="aaaaaa"
         width={381}
         height={600}
-        className={styles.whyRootImg}
+        className={styles.whoGotImg}
       />
 
       <div>
@@ -51,8 +63,8 @@ export default function GotQuestions() {
           {gotQuestions.map((text, index) => {
             return (
               <>
-              <div key={index} className={styles.gotQuestionFaQList}>
-                <p>{text.title}</p>
+              <div key={index} className={styles.gotQuestionFaQList} onClick={() => handleClick(index)}>
+                <p className={styles.gotQuestionFaQListText}>{text.title}</p>
                 <Image
                   src="/cross.png"
                   alt="aaaaaa"
@@ -61,10 +73,15 @@ export default function GotQuestions() {
                   className={styles.gotQuestionImg}
                 />
               </div>
-              <div className={styles.gotQuestionFaQListSubtitle}>
+             {/* {isActive.include(index) && <div className={styles.gotQuestionFaQListSubtitle}>
                    <p>{text.subTitle}</p>
-              </div>
-                 
+              </div>}
+                  */}
+                  {isActive.includes(index) && (
+  <div className={styles.gotQuestionFaQListSubtitle}>
+    <p>{text.subTitle}</p>
+  </div>
+)}
              
                 </>
             );

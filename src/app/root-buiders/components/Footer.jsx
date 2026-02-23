@@ -26,65 +26,83 @@ export default function Footer() {
           and tech insights.
         </p>
         <section className={styles.icon}>
+          
           <div>
-            <Image
+              <a href="https://www.facebook.com/fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <Image
               src="/Facebook-f.png"
               alt="aaaaaa"
               width={40}
               height={40}
               className={styles.iconImg}
             />
-          </div>
-          <div>
-            <Image
+            </a>
+            </div>
+            <div>
+             <a href="https://twitter.com/fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                <Image
               src="/YouTube-X.png"
               alt="aaaaaa"
               width={40}
               height={40}
               className={styles.iconImg}
             />
+            </a>
+         
           </div>
           <div>
-            <Image
+            <a href="https://www.instagram.com/fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <Image
               src="/Instagram-f.png"
               alt="aaaaaa"
               width={40}
               height={40}
               className={styles.iconImg}
             />
+            </a>
+           
           </div>
           <div>
-            <Image
+            <a href="https://www.linkedin.com/company/fransunisoft/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+               <Image
               src="/LinkedInf.png"
               alt="aaaaaa"
               width={40}
               height={40}
               className={styles.iconImg}
             />
+            </a>
+           
           </div>
           <div>
-            <Image
+             <a href="https://www.youtube.com/@fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+               <Image
               src="/YouTube-1.png"
               alt="aaaaaa"
               width={40}
               height={40}
               className={styles.iconImg}
             />
+            </a>
+           
           </div>
           <div>
-            <Image
+             <a href="https://www.tiktok.com/@fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+               <Image
               src="/YouTube-tik.png"
               alt="aaaaaa"
               width={40}
                 height={40}
               className={styles.iconImg}
             />
+            </a>
+           
           </div>
         </section>
         <button className={styles.exploreBtn}>Explore Fransunisoft</button>
       </section>
       <div className={styles.copy}>
-        &copy; 2026 Root Builders by Fransunisoft. All Rights Reserved.
+        &copy;  {new Date().getFullYear()} Root Builders by Fransunisoft. All Rights Reserved.
       </div>
     </div>
   );
