@@ -1,5 +1,5 @@
 .hero {
-  margin-top: 100px;
+  margin-top: 80px;
   position: relative;
    min-height: 100vh;
   width: 100%;
@@ -58,31 +58,15 @@
     flex-wrap: wrap;       
     gap: 0.5rem;          
     font-size: 1rem;      
-    max-width: 100%;       
+    max-width: 100%;  
+     flex-direction: column;     
   }
 
   .dot2 {
-    font-size: 1rem;       
+    font-size: 1rem;
+     display: none;        
   }
 
-  .sections {
-    flex-direction: column;
-  }
-  .dot2 {
-    display: none; 
-  }
-  
-}
-
-
-
-
-
-.imageWrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
 
 .heroImage {
   object-fit: cover;
@@ -96,7 +80,7 @@
   z-index: 10;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.55);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -116,6 +100,8 @@
   font-weight: 500;
   letter-spacing: 1px;
 max-width: 900;
+}
+
 }
 
 /* 💻 Tablet */
@@ -173,7 +159,7 @@ max-width: 900;
 
 .imageColumn {
   flex: 1 1 45%;
-  display: flex;
+
    width: 100%;
   height: 480;
   display: flex;
@@ -276,12 +262,7 @@ max-width: 900;
   align-items: center;
 }
 
-.heading {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #20A89F;
-}
+
 
 .grid {
   display: grid;
@@ -331,9 +312,7 @@ max-width: 900;
     padding: 40px 3rem;
   }
 
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+ 
 
   .heading {
     font-size: 2rem;
@@ -342,6 +321,7 @@ max-width: 900;
 .grid {
     display: flex;
     flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     margin: 0 auto;
     padding: 0 16px;
@@ -370,7 +350,7 @@ max-width: 900;
   }
 
   .card {
-    padding: 1rem;
+  
      text-align: center;
       width: 100%;
     max-width: 383px;
@@ -411,6 +391,8 @@ max-width: 900;
   color: #2C3E50;
 }
 
+
+
 .content {
   display: flex;
   flex-wrap: wrap;
@@ -431,10 +413,15 @@ max-width: 900;
   display: flex;
   justify-content: center;
   align-items: center;
+   position: relative;
+  width: 100%;
+  height: 100%;
 }
+
 
 .ceoImage {
   width: 150%; 
+  height: 400px;
   max-width: 600px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
@@ -467,7 +454,7 @@ max-width: 900;
   display: flex;
   gap: 1rem;
   margin-top: 1.2rem;
-  margin-left: 4.5rem;
+  margin-left: 2.5rem;
 }
 
 /* --- RESPONSIVE QUERIES --- */
