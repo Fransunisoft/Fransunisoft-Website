@@ -931,5 +931,8 @@ width: 100%;
     .poweredContainer h2{
         font-size: 20px;
     }
+    .titleHeaders h2{
+        font-size: 20px;
+    }
   
 }
