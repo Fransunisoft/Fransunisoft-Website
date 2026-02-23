@@ -231,7 +231,7 @@ export default function HomePage() {
              
             </ul>
             <Link href="/academy" className="button2">
-            Explore FSX Academy
+              Learn More
             </Link>
           </div>
 
@@ -253,7 +253,7 @@ export default function HomePage() {
              
             </ul>
             <Link href="/labs" className="button2">
-           Explore FSX Labs
+              Learn More
             </Link>
           </div>
 
@@ -276,7 +276,7 @@ export default function HomePage() {
              
             </ul>
             <Link href="/consulting" className="button2">
-              Explore FSX Consulting
+              Learn More
             </Link>
           </div>
 
