@@ -6,31 +6,58 @@
     flex-direction: column;
     min-height: 100vh;
     font-family:Roboto, sans-serif;
+    background-color: white;
 }
 /* Header */
+.menuToggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #0D519A;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.navToggle{
+    margin-top: 6rem;
+    /* background-color: green; */
+    padding: 1rem;
+
+}
+
 .headerContainer{
-    display: flex;
-     padding: 1.5rem 7rem;
+    display: grid;
+    padding: 1.5rem 7rem;
+    grid-template-columns: 5fr 1fr;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    background-color: #FFFFFF;
+    position: fixed;
+    top:0;
+    z-index: 1111;
+      box-shadow: 0 0.5px 2px 2px oklab(0% 0 0 / 0.192);
 }
-.titleHeaders{
+.titleHeaders {
     cursor: pointer;
+    width: 50%;
 }
  .headerContainer .navBarContainer{
     width: 100%;
-    max-width: 50%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* gap: 10px; */
+}
+.navListContainer{
+    width: 100%;
+    max-width: 100%;
 }
 .headerContainer .navList{
-    width: 100%;
+    width: 45%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-left: auto;
 }
 .navList li{
     list-style: none;
@@ -38,7 +65,7 @@
     color: #2C3E50;
     cursor: pointer;
       position: relative;
-    /* transition: color 0.3s ease; */
+
 }
 
 .navList li::after {
@@ -47,7 +74,7 @@
     left: 0;
     bottom: 0;
     width: 0%;
-    height: 2px;
+    height: 3px;
     background-color: #0D519A;
     transition: width 0.3s ease;
 }
@@ -55,11 +82,12 @@
     width: 100%;
 }
 
+/* .navList li:hover span::after {
+  transform: scaleX(1);
+} */
 .joinRootBtn{
-    width: 100%;
     cursor: pointer;
-    max-width: 30%;
-    margin-left: 2rem;
+    margin-left: auto;
     padding: 10px 20px;
     border: none;
     background-color: #0D519A;
@@ -79,6 +107,8 @@
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
+   margin-top: 6.4rem;
+ 
 }
 .modalContainer{
      display: flex;
@@ -87,6 +117,8 @@
    text-align: center;
    flex-direction: column;
    position: relative;
+   margin-top: 80px;
+   /* margin-bottom: 45px; */
 }
 
 .fsxAcademyInitBtn{
@@ -96,26 +128,30 @@
     font-weight: 600;
     border-bottom: 3px solid #0D519A;
     border-color: #0D519A;
-    padding: 10px 20px;
+    padding: 15.5px 15.5px;
     border-radius: 15px;
-    cursor: pointer;
     color: #0D519A;
     box-shadow: 0px -2px 4px #00000026;
-    margin-bottom: 2rem;
 }
-
+.modalBody{
+    margin-top: 40px;
+}
 .modalContainer h1 span {
     font-size: 70px;
     font-weight: 700;
     color: #0D519A;
     /* line-height: 57.6px; */
 }
+.modalImg{
+    margin-top: 2px;
+}
 
 .modalContainer h5{
     color:  #333333;
     font-weight: 500;
     max-width: 50rem;
-    margin: 1.4rem 0;
+    margin-top: 21px;
+    margin-bottom: 40px;
 }
 
 .modalContainer .joinBtn{
@@ -149,44 +185,62 @@
 }
 
 /* Why Root */
+.whyRootCon{
+ background-color: #FAFDFF;
+ margin-top: 0px !important;
+}
 .whyRootContainer{
   text-align: center;
-  background-color: #FAFDFF;
+  margin-top: 0px !important;
 }
-.whyRootSubTitle p{
+.whyRootTitle{
+    margin-bottom: 20px;
+}
+.whyRootSubTitle {
+    font-size: 20px !important;
+    font-weight: 400;
     color: #7C8084;
 }
 .whyRootBody{
-    margin-top: 3rem;
+    margin-top: 32px;
     display: flex;
     align-items: center;
-    gap: 2.5rem;
+    gap: 71px;
     justify-content: space-between;
 }
 .whyRootBodyContainer{
     text-align: left;
-    /* margin-bottom: 2rem; */
+   
+}
+.whyRootBodyCon{
+     margin-bottom: 24px;
 }
 .whyRootBodyContainer h5{
     color: #0D519A;
     font-weight: 600;
+    margin-bottom: 6px;
 }
 
 .whyRootBodyContainer p{
     color: #2C3E50;
-    margin-bottom: 1rem;
 }
 
 
 /* Who can APply */
-.whoCanApplyContainer{
-    margin-top: 2rem;
+.whoCanApplyCon{
     background-color: #FAFDFF;
+    margin-top: 116px;
+}
+.whoCanApplyContainer{
     text-align: center;
+    margin-top: 0px !important;
 }
 
-.whoCanSubTitle p{
-    color: #7C8084;
+.whoCanSubTitle{
+     color: #7C8084;
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 20px;
 }
 
 .whoCanBody{
@@ -194,10 +248,9 @@
     display: grid;
     grid-template-columns: repeat(2,1fr);
     justify-items: space-between;
-    gap: 1.5rem;
+    gap: 20px;
     align-items: center;
-    margin-top: 2rem;
-    /* flex-wrap: wrap; */
+    margin-top: 32px;
 }
 .personality{
    /* width: 100%; */
@@ -217,19 +270,26 @@
         linear-gradient(216.35deg, #FF6B35, #0D519A) border-box;
 
     border: 2px solid transparent;
-    border-radius: 15px;
+     /* border-style: solid;
+  border-width: 0 4px; 
+
+  border-image: linear-gradient(to bottom, purple, pink) 1; */
+    border-radius:15px;
     padding: 20px;
     margin-bottom: 15px;
     box-shadow: 0px 4px 10px 4px rgba(0, 0, 0, 0.08);
 }
-
+.personalityConBody{
+    margin-bottom: 24px;
+    padding: 15px 0;
+}
 .whoCanDetails{
     display: flex;
     align-items: start;
     justify-content: center;
     text-align: left;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
+    gap: 16px;
+    margin-bottom: 24px;
 }
 .whoCanDetails p {
     font-weight: 400;
@@ -239,11 +299,13 @@
 /* Application Process */
 .applicationCon{
     background-color: #FAFDFF;
+    margin-top: 24px;
 }
 
 .ApplicationContainer h2{
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 20px;
+
 }
 
 .ApplicationContainer button{
@@ -255,7 +317,7 @@
     border: none;
     background-color: #0D519A;
     border-radius: 10px;
-    color: #F1F5F9;
+    /* color: #F1F5F9; */
     font-size: 16px;
     font-weight: 500;
 }
@@ -264,25 +326,20 @@
  grid-template-columns: 1fr 1fr 1fr;
  align-items: center;
  justify-content: space-evenly;
- /* align-items: center;
- justify-content: space-between;     */
 width: 100%;
 position: relative;
 }
-.applicationImg1{
-    position: absolute;
-    top: 0;
-    left: 280;
+.applicationList{
+    display: flex;
+    align-items: center;
+    gap: 63px;
 }
-.applicationImg2{
-    position: absolute;
-    top: 0;
-    right: 450;
-}
+
 
 /* ChooseTrack */
 .ChooseTrackContainer{
     text-align: center;
+    background-color: #FAFDFF;
 }
 .chooseTrackBodyCon{
     display: grid;
@@ -295,9 +352,8 @@ position: relative;
 .chooseTrackContainer{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    /* align-items: center; */
-    /* text-align: center; */
+    column-gap: 68px;
+    row-gap: 24px;
 }
 
 .chooseTrackContainer div{
@@ -305,17 +361,33 @@ position: relative;
     border-radius: 10px;
     padding: 0.5rem 0;
 }
+.ChooseTrackSubTitle{
+    font-size: 20px;
+    color: #7C8084;
+    margin-bottom: 32px;
+    margin-top: 20px;
+}
 
-/* Participant */
-/* .workOnContainer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
+.chooseImg{
+    margin-left: auto;
+}
+
+/* WorkOn */
+
+.workOnCon{
+    background-color: #FAFDFF;
+}
 .workOnContainer h2, .workOnContainer p{
     text-align: center;
 }
+.workOnSubTitle{
+    font-size: 20px;
+    color: #7C8084;
+    margin-bottom: 32px;
+    margin-top: 20px;
+}
 
+  
 .workOnBodyContainer{
     display: flex;
     align-items: center;
@@ -367,15 +439,24 @@ position: relative;
 .gotQuestionTitle, .gotQuestionSubTitle {
     text-align: center;
 }
+ .gotQuestionSubTitle{
+ font-size: 20px;
+    color: #7C8084;
+    margin-bottom: 32px;
+    margin-top: 20px;
+ }
+  
 .gotQuestionFaQ{
     margin-top: 1rem;
 }
-
+.gotQuestionFaQListText{
+    font-weight: 600;
+}
 .gotQuestionFaQList{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* margin-bottom: 1rem; */
+    margin-bottom: 20px;
     cursor: pointer;
     background-color: #E7EEF5;
     padding: 1rem;
@@ -385,8 +466,11 @@ position: relative;
 
 .gotQuestionFaQListSubtitle{
     padding-left: 1rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.5rem;
     text-align: start;
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
+    margin-top: -30px;
     background-color: #E7EEF5;
 }
 
@@ -395,7 +479,7 @@ position: relative;
 .realSolutionContainer{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 20px;
     /* align-items: center; */
     /* justify-content: center; */
 }
@@ -499,4 +583,356 @@ position: relative;
 }
 .iconImg{
     cursor: pointer;
+}
+
+@media screen and (max-width: 1400px) {
+   
+.modalContainer .joinBtn{
+    width: 100%;
+    max-width: 25%;
+   
+}
+}
+
+@media screen and (max-width: 1320px) {
+   
+.modalContainer .joinBtn{
+    width: 100%;
+    max-width: 25%;
+   
+}
+.headerContainer{
+    grid-template-columns: 4fr 1fr;
+ 
+}
+.applicationList button{
+    /* width: 100%;
+    max-width: 70%; */
+}
+.applicationList button:last-child{
+    margin-left: auto;
+    /* background-color: yellow; */
+}
+.applicationbody .applicationList:nth-child(2) button {
+  margin-left: auto;
+}
+}
+
+@media screen and (max-width: 1275px) {
+   
+
+.applicationList button:last-child{
+    margin-left: auto;
+    width: 100%;
+    max-width: 75%;
+}
+.titleHeaders {
+    cursor: pointer;
+    width: 70%;
+    /* background-color: green; */
+}
+.navListContainer{
+    width: 100%;
+    max-width: 100%;
+}
+.headerContainer .navList{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+}
+
+/* .applicationbody .applicationList:nth-child(2) button {
+  margin-left: auto;
+} */
+}
+
+@media screen and (max-width: 1127px) {
+    .ApplicationContainer,.ChooseTrackContainer,.whoGotQuestionsContainer,.modalDiv,.realSolutionContainer,.whoCanApplyContainer, .whyRootContainer,.workOnContainer{
+        margin-left:1rem;
+        margin-right: 1rem;
+    
+    }
+    /* .footerContainer{
+
+    } */
+    .headerContainer{
+          padding-left: 1rem;
+          padding-right: 1rem;
+    }
+
+.applicationList button:last-child{
+    margin-left: auto;
+    width: 100%;
+    max-width: 75%;
+}
+.titleHeaders{
+    cursor: pointer;
+    width: 70%;
+}
+
+}
+
+@media screen and (max-width: 1097px) {
+    .whyRootImg{
+        width: 400px;
+        height: 600px;
+    }
+    /* .realSolutionContainer{
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+    } */
+    .realSolutionImg{
+        width: 100%;
+        max-width: 100% !important;
+        height: 450px !important;
+    }
+}
+@media screen and (max-width: 920px) {
+     .menuToggle {
+    display: block;
+  }
+  
+}
+
+
+@media screen and (max-width: 920px) {
+    .applicationbody {
+ display: flex;
+ /* grid-template-columns: 1fr 1fr; */
+ align-items: center;
+ justify-content: space-around;
+ flex-wrap: wrap;
+ gap: 2rem;
+/* width: 100%; */
+position: relative;
+}
+
+
+.modalContainer .joinBtn{
+    width: 100%;
+    cursor: pointer;
+    max-width: 40%;
+}
+}
+
+@media screen and (max-width: 920px) {
+    .whyRootBody{
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+}
+.whyRootImg{
+    width: 100%;
+    height: 450px;
+}
+.whyRootBodyCon{
+     margin-bottom: 5px;
+}
+.whoCanApplyCon{
+    background-color: #FAFDFF;
+    margin-top: 20px;
+}
+.whoCanBody{
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    /* grid-template-columns: repeat(2,1fr); */
+    justify-items: center;
+    /* gap: 20px; */
+    align-items: center;
+    margin-top: 32px;
+}
+.whoCanDetails{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    text-align: left;
+    /* gap: 16px;
+    margin-bottom: 24px; */
+}
+.personality{
+    width: 100%;
+}
+
+.applicationbody {
+ display: grid;
+ grid-template-columns: 1fr;
+ align-items: center;
+ justify-content: center;
+ 
+width: 100%;
+/* position: relative; */
+}
+.applicationList button:last-child{
+    margin-left: 0;
+    background-color: yellow;
+}
+.applicationbody .applicationList:nth-child(2) button {
+  margin-left: 0;
+}
+.chooseTrackBodyCon{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.chooseImg{
+    order: 1;
+    margin: 0 auto;
+    transform: rotate(-90deg);
+}
+.chooseTrackContainer{
+    order: 2;
+    width: 100%;
+}
+.workOnBodyContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.workOnBodySection{
+    order: 2;
+}
+.workOnImg{
+    order: 1;
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+}
+.whoGotQuestionsContainer{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: start;
+    align-items: start;
+    gap: 2rem;
+}
+.whoGotImg{
+    width: 95%;
+    margin: 0 auto;
+}
+.realSolutionContainer{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+.realSolutionBody{
+    margin-top: 0px;
+    height: 500px;
+}
+}
+
+
+@media screen and (max-width: 920px) {
+    .applicationList button{
+        width: 100%;
+    }
+    .applicationList{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.applicationImg1{
+    transform: rotate(90deg);
+}
+    }
+
+@media screen and (max-width: 927px) {
+    .navListContainer{
+        display: none;
+    }
+    .chooseTrackContainer{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+.joinRootBtn{
+    display: none;
+}
+
+}
+@media screen and (max-width: 593px) {
+    .modalImg{
+        width: 100%;
+    }
+    .fransunisoftImg{
+         width: 150px
+    }
+
+}
+
+@media screen and (max-width: 593px) {
+    .modalImg{
+        width: 100%;
+    }
+    .fransunisoftImg{
+         width: 150px
+    }
+
+}
+
+@media screen and (max-width: 593px) {
+    .footerCon{
+        margin: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+.titleHeaders{
+    font-size: 25px;
+}
+   .modalImg{
+    height: auto;
+}
+.whyRootImg{
+    height: auto;
+}
+.modalContainer{
+    margin-top:0.5rem;
+}
+.modalContainer .joinBtn{
+    width: 100%;
+    max-width: 100%;
+}
+.workOnImg{
+    height: auto;
+}
+.whoGotImg{
+    height: auto;
+}
+.curvedArrowImg{
+    position: absolute;
+    top: 70;
+    left: 0;
+}
+
+.graphicDesignerImg{
+    position: absolute;
+    bottom: 90;
+    left: 0;
+}
+.codeImg{
+    position: absolute;
+    right: 0;
+    top: 140;
+}
+}
+
+@media screen and (max-width: 355px) {
+    .poweredContainer h2{
+        font-size: 20px;
+    }
+    .titleHeaders h2{
+        font-size: 20px;
+    }
+  
 }

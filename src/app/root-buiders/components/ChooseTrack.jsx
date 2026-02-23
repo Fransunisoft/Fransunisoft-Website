@@ -47,7 +47,7 @@ export default function ChooseTrack() {
   ];
 
   return (
-    <div className={styles.chooseTrackCon}>
+    <div className={styles.chooseTrackCon} id="track">
       <section className={styles.ChooseTrackContainer}>
         <h2 className={styles.ChooseTrackTitle}>Choose Your Track</h2>
         <p className={styles.ChooseTrackSubTitle}>

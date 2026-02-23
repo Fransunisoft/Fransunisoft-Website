@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "../root-builders.module.css"
+import { color } from "framer-motion";
 export default function ApplicationProcess() {
   const applicationBtnText = [
     {
@@ -29,13 +30,20 @@ export default function ApplicationProcess() {
         <div className={styles.applicationbody}>
           {applicationBtnText.map((text,index) => {
             return(
-            // <div key={index} className={styles.applicationList}>
-              <button >{text.title}</button>
-            // </div>
+            <div key={index} className={styles.applicationList}>
+              <button style={{backgroundColor: text.color, color: "black"}} >{text.title}</button>
+              {text.imgSrc && <Image
+                src={text.imgSrc}
+                alt="aaaaaa"
+                width={50}
+                height={50}
+                className={styles.applicationImg1}
+              />}
+             </div>
           )
       
           })}
-          <div>
+          {/* <div>
                <Image
                 src="/mem_arrows.png"
                 alt="aaaaaa"
@@ -50,7 +58,7 @@ export default function ApplicationProcess() {
                 height={50}
                 className={styles.applicationImg2}
               />
-          </div>
+          </div> */}
       
         </div>
       </section>
