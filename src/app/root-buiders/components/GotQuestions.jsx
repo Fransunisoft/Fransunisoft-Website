@@ -30,7 +30,7 @@ export default function GotQuestions() {
     },
     {
       title: "Can I continue working on my project with FSX after the program?",
-      subTitle: "Yes",
+      subTitle: "Yes you can keep working on your project with FSX after the Program",
     },
   ];
 
@@ -65,14 +65,23 @@ export default function GotQuestions() {
               <>
               <div key={index} className={styles.gotQuestionFaQList} onClick={() => handleClick(index)}>
                 <p className={styles.gotQuestionFaQListText}>{text.title}</p>
+               {isActive.includes(index) ? <Image
+                  src="/minuses.png"
+                  alt="aaaaaa"
+                  width={16}
+                  height={4}
+                  className={styles.gotQuestionImg}
+                />  : 
+                
                 <Image
                   src="/cross.png"
                   alt="aaaaaa"
                   width={16}
                   height={16}
                   className={styles.gotQuestionImg}
-                />
-              </div>
+                /> 
+                }
+              </div> 
              {/* {isActive.include(index) && <div className={styles.gotQuestionFaQListSubtitle}>
                    <p>{text.subTitle}</p>
               </div>}

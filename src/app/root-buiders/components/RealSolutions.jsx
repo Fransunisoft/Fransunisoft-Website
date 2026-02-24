@@ -9,7 +9,9 @@ export default function RealSolutions() {
           Join Root Builders and become part of Africa's next generation of
           problem-solvers.
         </p>
-        <button>Join Root Builders</button>
+        <button>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSc07jkQrxzrXlAMuykYnvouWHBQfSv3Y8I1knfbfU2pfpSkXA/viewform?usp=preview" target="_blank">Join Root Builders </a>
+          </button>
       </div>
       <Image
         src="/build_businessman-working.png"

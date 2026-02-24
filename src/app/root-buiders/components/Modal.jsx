@@ -25,7 +25,7 @@ export default function Modal() {
           </h5>
         </div>
 
-        <button className={styles.joinBtn}>Join Root builders</button>
+        <button className={styles.joinBtn}> <a href="https://docs.google.com/forms/d/e/1FAIpQLSc07jkQrxzrXlAMuykYnvouWHBQfSv3Y8I1knfbfU2pfpSkXA/viewform?usp=preview" target="_blank">Join Root Builders </a></button>
         <div>
           <Image
           src="/curved-arrow.png"

@@ -36,7 +36,7 @@
     position: fixed;
     top:0;
     z-index: 1111;
-      box-shadow: 0 0.5px 2px 2px oklab(0% 0 0 / 0.192);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
 }
 .titleHeaders {
     cursor: pointer;
@@ -229,7 +229,7 @@
 /* Who can APply */
 .whoCanApplyCon{
     background-color: #FAFDFF;
-    margin-top: 116px;
+    /* margin-top: 24px; */
 }
 .whoCanApplyContainer{
     text-align: center;
@@ -277,7 +277,8 @@
     border-radius:15px;
     padding: 20px;
     margin-bottom: 15px;
-    box-shadow: 0px 4px 10px 4px rgba(0, 0, 0, 0.08);
+     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0px 4px 10px 4px rgba(0, 0, 0, 0.08); */
 }
 .personalityConBody{
     margin-bottom: 24px;
@@ -319,7 +320,7 @@
     border-radius: 10px;
     /* color: #F1F5F9; */
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
 }
 .applicationbody {
  display: grid;
@@ -488,12 +489,15 @@ position: relative;
 }
 .realSolutionBody{
     background-color: #0D519A;
+      background-image: url(/realSolutionImages.png); 
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     border-radius: 10px;
-    color: 40;
     text-align: center;
     color: #FFFFFF;
     padding: 0 1rem;
@@ -826,6 +830,13 @@ width: 100%;
     margin-top: 0px;
     height: 500px;
 }
+.realSolutionImg{
+    display: none;
+}
+.chooseImg{
+    width: 97.09px;
+    height: 100px;
+}
 }
 
 
@@ -927,7 +938,7 @@ width: 100%;
 }
 }
 
-@media screen and (max-width: 355px) {
+@media screen and (max-width: 361px) {
     .poweredContainer h2{
         font-size: 20px;
     }
