@@ -145,7 +145,10 @@ export default function Footer() {
       </div>
 
       <div className={styles.bottomNote}>
-        © 2025 Fransunisoft. All rights reserved. | Engineering Innovation & Impact
+      {/* COPYRIGHT */}
+        <p className="text-xs text-center !text-white min-w-0 w-full break-words">
+          © {new Date().getFullYear()}  All rights reserved. | Engineering Innovation & Impact
+        </p>
       </div>
     </footer>
   );

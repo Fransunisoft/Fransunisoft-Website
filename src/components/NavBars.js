@@ -31,7 +31,7 @@ export default function Navbar() {
   };
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof globalThis.window !== 'undefined') {
       window.addEventListener('resize', handleResize);
       window.addEventListener('scroll', () => {
         setScrolled(window.scrollY > 20);
@@ -99,15 +99,16 @@ export default function Navbar() {
         </li>
 
         <li className={styles.navItem}>
-          <a
-            href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7377090374336589825"
-            target="_blank"
-            rel="noopener noreferrer"
+           <Link
+            // href="/root-buiders"
+            href="../rootbuilders"
             onClick={closeMobileMenu}
+            className={pathname === '/about' ? styles.activeLink : ''}
           >
-            Blog
-          </a>
+         Root Builders
+          </Link>
         </li>
+
 
         {/* FSX Brands Dropdown */}
         <li

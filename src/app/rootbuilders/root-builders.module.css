@@ -1,0 +1,949 @@
+.rootBuilderContainer{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family:Roboto, sans-serif;
+    background-color: white;
+}
+/* Header */
+.menuToggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #0D519A;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.navToggle{
+    margin-top: 6rem;
+    /* background-color: green; */
+    padding: 1rem;
+
+}
+
+.headerContainer{
+    display: grid;
+    padding: 1.5rem 7rem;
+    grid-template-columns: 5fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #FFFFFF;
+    position: fixed;
+    top:0;
+    z-index: 1111;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+.titleHeaders {
+    cursor: pointer;
+    width: 50%;
+}
+ .headerContainer .navBarContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navListContainer{
+    width: 100%;
+    max-width: 100%;
+}
+.headerContainer .navList{
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+}
+.navList li{
+    list-style: none;
+    font-weight: 500;
+    color: #2C3E50;
+    cursor: pointer;
+      position: relative;
+
+}
+
+.navList li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #0D519A;
+    transition: width 0.3s ease;
+}
+.navList li:hover::after {
+    width: 100%;
+}
+
+/* .navList li:hover span::after {
+  transform: scaleX(1);
+} */
+.joinRootBtn{
+    cursor: pointer;
+    margin-left: auto;
+    padding: 10px 20px;
+    border: none;
+    background-color: #0D519A;
+    border-radius: 10px;
+    color: #F1F5F9;
+    font-size: 16px;
+    font-weight: 500;
+}
+.headerContainer .titleHeaders{
+    color: #0D519A;
+    font-weight: 700;
+}
+
+/* Modal */
+.modalDiv{
+   background-image: url(/modalBackground.png); 
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   margin-top: 6.4rem;
+ 
+}
+.modalContainer{
+     display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   flex-direction: column;
+   position: relative;
+   margin-top: 80px;
+   /* margin-bottom: 45px; */
+}
+
+.fsxAcademyInitBtn{
+    background-color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 3px solid #0D519A;
+    border-color: #0D519A;
+    padding: 15.5px 15.5px;
+    border-radius: 15px;
+    color: #0D519A;
+    box-shadow: 0px -2px 4px #00000026;
+}
+.modalBody{
+    margin-top: 40px;
+}
+.modalContainer h1 span {
+    font-size: 70px;
+    font-weight: 700;
+    color: #0D519A;
+    /* line-height: 57.6px; */
+}
+.modalImg{
+    margin-top: 2px;
+}
+
+.modalContainer h5{
+    color:  #333333;
+    font-weight: 500;
+    max-width: 50rem;
+    margin-top: 21px;
+    margin-bottom: 40px;
+}
+
+.modalContainer .joinBtn{
+    width: 100%;
+    cursor: pointer;
+    max-width: 15%;
+    margin-left: 2rem;
+    padding: 10px 20px;
+    border: none;
+    background-color: #0D519A;
+    border-radius: 10px;
+    color: #F1F5F9;
+    font-size: 16px;
+    font-weight: 500;
+}
+.curvedArrowImg{
+    position: absolute;
+    top: 70;
+    left: 170;
+}
+
+.graphicDesignerImg{
+    position: absolute;
+    bottom: 130;
+    left: 60;
+}
+.codeImg{
+    position: absolute;
+    right: 130;
+    top: 70;
+}
+
+/* Why Root */
+.whyRootCon{
+ background-color: #FAFDFF;
+ margin-top: 0px !important;
+}
+.whyRootContainer{
+  text-align: center;
+  margin-top: 0px !important;
+}
+.whyRootTitle{
+    margin-bottom: 20px;
+}
+.whyRootSubTitle {
+    font-size: 20px !important;
+    font-weight: 400;
+    color: #7C8084;
+}
+.whyRootBody{
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    gap: 71px;
+    justify-content: space-between;
+}
+.whyRootBodyContainer{
+    text-align: left;
+   
+}
+.whyRootBodyCon{
+     margin-bottom: 24px;
+}
+.whyRootBodyContainer h5{
+    color: #0D519A;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.whyRootBodyContainer p{
+    color: #2C3E50;
+}
+
+
+/* Who can APply */
+.whoCanApplyCon{
+    background-color: #FAFDFF;
+    /* margin-top: 24px; */
+}
+.whoCanApplyContainer{
+    text-align: center;
+    margin-top: 0px !important;
+}
+
+.whoCanSubTitle{
+     color: #7C8084;
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.whoCanBody{
+    /* width: 100%; */
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-items: space-between;
+    gap: 20px;
+    align-items: center;
+    margin-top: 32px;
+}
+.personality{
+   /* width: 100%; */
+}
+
+.personalitySection{
+    /* width: 100%; */
+     background-color: #E7EEF5;
+    color: #333333;
+    padding: 1rem;
+
+}
+.personalityBody div {
+    text-align: left;
+     background:
+        linear-gradient(#E7EEF5, #E7EEF5) padding-box,
+        linear-gradient(216.35deg, #FF6B35, #0D519A) border-box;
+
+    border: 2px solid transparent;
+     /* border-style: solid;
+  border-width: 0 4px; 
+
+  border-image: linear-gradient(to bottom, purple, pink) 1; */
+    border-radius:15px;
+    padding: 20px;
+    margin-bottom: 15px;
+     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0px 4px 10px 4px rgba(0, 0, 0, 0.08); */
+}
+.personalityConBody{
+    margin-bottom: 24px;
+    padding: 15px 0;
+}
+.whoCanDetails{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    text-align: left;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.whoCanDetails p {
+    font-weight: 400;
+}
+
+
+/* Application Process */
+.applicationCon{
+    background-color: #FAFDFF;
+    margin-top: 24px;
+}
+
+.ApplicationContainer h2{
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.ApplicationContainer button{
+    width: 100%;
+    cursor: pointer;
+    max-width: 60%;
+    /* margin-left: 2rem; */
+    padding: 12px 20px;
+    border: none;
+    background-color: #0D519A;
+    border-radius: 10px;
+    /* color: #F1F5F9; */
+    font-size: 16px;
+    font-weight: 600;
+}
+.applicationbody {
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr;
+ align-items: center;
+ justify-content: space-evenly;
+width: 100%;
+position: relative;
+}
+.applicationList{
+    display: flex;
+    align-items: center;
+    gap: 63px;
+}
+
+
+/* ChooseTrack */
+.ChooseTrackContainer{
+    text-align: center;
+    background-color: #FAFDFF;
+}
+.chooseTrackBodyCon{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.chooseTrackContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 68px;
+    row-gap: 24px;
+}
+
+.chooseTrackContainer div{
+    border: 10px solid #20A89F;
+    border-radius: 10px;
+    padding: 0.5rem 0;
+}
+.ChooseTrackSubTitle{
+    font-size: 20px;
+    color: #7C8084;
+    margin-bottom: 32px;
+    margin-top: 20px;
+}
+
+.chooseImg{
+    margin-left: auto;
+}
+
+/* WorkOn */
+
+.workOnCon{
+    background-color: #FAFDFF;
+}
+.workOnContainer h2, .workOnContainer p{
+    text-align: center;
+}
+.workOnSubTitle{
+    font-size: 20px;
+    color: #7C8084;
+    margin-bottom: 32px;
+    margin-top: 20px;
+}
+
+  
+.workOnBodyContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    margin-top: 2rem;
+    
+}
+
+.workOnChallenges p, .workOnIdeas p{
+    text-align: left;
+}
+
+.workOnChallenges h5, .workOnContainer h5{
+    color: #FF6B35;
+    /* margin-bottom: 0.5rem; */
+}
+.workOnChallenges h3, .workOnContainer h3{
+    /* color: #FF6B35; */
+    margin-bottom: 1rem;
+}
+
+.workOnChallenges{
+    margin-bottom: 2rem;
+}
+.ideaBody{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 0.5rem;
+}
+.workOnChallengeCon{
+    margin-top: 1rem;
+}
+.ideaBody{
+    margin-bottom: 0.5rem;
+}
+
+/* GotQuestions */
+
+.whoGotQuestionsContainer{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-content: start;
+    align-items: start;
+    gap: 2rem;
+}
+
+.gotQuestionTitle, .gotQuestionSubTitle {
+    text-align: center;
+}
+ .gotQuestionSubTitle{
+ font-size: 20px;
+    color: #7C8084;
+    margin-bottom: 32px;
+    margin-top: 20px;
+ }
+  
+.gotQuestionFaQ{
+    margin-top: 1rem;
+}
+.gotQuestionFaQListText{
+    font-weight: 600;
+}
+.gotQuestionFaQList{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    background-color: #E7EEF5;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 4 0 #0000000A;
+}
+
+.gotQuestionFaQListSubtitle{
+    padding-left: 1rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.5rem;
+    text-align: start;
+    margin-bottom: 20px;
+    margin-top: -30px;
+    background-color: #E7EEF5;
+}
+
+/* RealSolutions */
+
+.realSolutionContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+.realSolutionImg{
+    border-radius: 10px;
+}
+.realSolutionBody{
+    background-color: #0D519A;
+      background-image: url(/realSolutionImages.png); 
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 0 1rem;
+}
+
+.realSolutionSubTitle{
+    margin: 1.5rem 0;
+    font-weight: 400;
+}
+
+.realSolutionBody button{
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border: 2px solid white;
+    background-color: #0D519A;
+    border-radius: 10px;
+    color: #F1F5F9;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Footer */
+.footerContainer{
+    background-color: #E7EEF5;
+}
+.footerCon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.footerCon .parentOrgBtn{
+       background-color: transparent;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 3px solid #0D519A;
+    border-color: #0D519A;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    color: #0D519A;
+    box-shadow: 0px -2px 4px #00000026;
+    margin-bottom: 2rem;
+}
+
+.poweredContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+.footerCon p{
+    text-align: center;
+}
+.followSocialText{
+    margin-top: 1rem;
+}
+ 
+.exploreBtn{
+    /* width: 100%; */
+    cursor: pointer;
+    /* max-width: 15%; */
+    margin-left: 2rem;
+    padding: 10px 20px;
+    border: none;
+    background-color: #0D519A;
+    border-radius: 10px;
+    color: #F1F5F9;
+    font-size: 16px;
+    font-weight: 500;
+}
+.copy{
+    background-color: #0D519A;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    padding: 1.5rem 0;
+}
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.iconImg{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1400px) {
+   
+.modalContainer .joinBtn{
+    width: 100%;
+    max-width: 25%;
+   
+}
+}
+
+@media screen and (max-width: 1320px) {
+   
+.modalContainer .joinBtn{
+    width: 100%;
+    max-width: 25%;
+   
+}
+.headerContainer{
+    grid-template-columns: 4fr 1fr;
+ 
+}
+.applicationList button{
+    /* width: 100%;
+    max-width: 70%; */
+}
+.applicationList button:last-child{
+    margin-left: auto;
+    /* background-color: yellow; */
+}
+.applicationbody .applicationList:nth-child(2) button {
+  margin-left: auto;
+}
+}
+
+@media screen and (max-width: 1275px) {
+   
+
+.applicationList button:last-child{
+    margin-left: auto;
+    width: 100%;
+    max-width: 75%;
+}
+.titleHeaders {
+    cursor: pointer;
+    width: 70%;
+    /* background-color: green; */
+}
+.navListContainer{
+    width: 100%;
+    max-width: 100%;
+}
+.headerContainer .navList{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+}
+
+/* .applicationbody .applicationList:nth-child(2) button {
+  margin-left: auto;
+} */
+}
+
+@media screen and (max-width: 1127px) {
+    .ApplicationContainer,.ChooseTrackContainer,.whoGotQuestionsContainer,.modalDiv,.realSolutionContainer,.whoCanApplyContainer, .whyRootContainer,.workOnContainer{
+        margin-left:1rem;
+        margin-right: 1rem;
+    
+    }
+    /* .footerContainer{
+
+    } */
+    .headerContainer{
+          padding-left: 1rem;
+          padding-right: 1rem;
+    }
+
+.applicationList button:last-child{
+    margin-left: auto;
+    width: 100%;
+    max-width: 75%;
+}
+.titleHeaders{
+    cursor: pointer;
+    width: 70%;
+}
+
+}
+
+@media screen and (max-width: 1097px) {
+    .whyRootImg{
+        width: 400px;
+        height: 600px;
+    }
+    /* .realSolutionContainer{
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+    } */
+    .realSolutionImg{
+        width: 100%;
+        max-width: 100% !important;
+        height: 450px !important;
+    }
+}
+@media screen and (max-width: 920px) {
+     .menuToggle {
+    display: block;
+  }
+  
+}
+
+
+@media screen and (max-width: 920px) {
+    .applicationbody {
+ display: flex;
+ /* grid-template-columns: 1fr 1fr; */
+ align-items: center;
+ justify-content: space-around;
+ flex-wrap: wrap;
+ gap: 2rem;
+/* width: 100%; */
+position: relative;
+}
+
+
+.modalContainer .joinBtn{
+    width: 100%;
+    cursor: pointer;
+    max-width: 40%;
+}
+}
+
+@media screen and (max-width: 920px) {
+    .whyRootBody{
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+}
+.whyRootImg{
+    width: 100%;
+    height: 450px;
+}
+.whyRootBodyCon{
+     margin-bottom: 5px;
+}
+.whoCanApplyCon{
+    background-color: #FAFDFF;
+    margin-top: 20px;
+}
+.whoCanBody{
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    /* grid-template-columns: repeat(2,1fr); */
+    justify-items: center;
+    /* gap: 20px; */
+    align-items: center;
+    margin-top: 32px;
+}
+.whoCanDetails{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    text-align: left;
+    /* gap: 16px;
+    margin-bottom: 24px; */
+}
+.personality{
+    width: 100%;
+}
+
+.applicationbody {
+ display: grid;
+ grid-template-columns: 1fr;
+ align-items: center;
+ justify-content: center;
+ 
+width: 100%;
+/* position: relative; */
+}
+.applicationList button:last-child{
+    margin-left: 0;
+    background-color: yellow;
+}
+.applicationbody .applicationList:nth-child(2) button {
+  margin-left: 0;
+}
+.chooseTrackBodyCon{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.chooseImg{
+    order: 1;
+    margin: 0 auto;
+    transform: rotate(-90deg);
+}
+.chooseTrackContainer{
+    order: 2;
+    width: 100%;
+}
+.workOnBodyContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.workOnBodySection{
+    order: 2;
+}
+.workOnImg{
+    order: 1;
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+}
+.whoGotQuestionsContainer{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: start;
+    align-items: start;
+    gap: 2rem;
+}
+.whoGotImg{
+    width: 95%;
+    margin: 0 auto;
+}
+.realSolutionContainer{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+.realSolutionBody{
+    margin-top: 0px;
+    height: 500px;
+}
+.realSolutionImg{
+    display: none;
+}
+.chooseImg{
+    width: 97.09px;
+    height: 100px;
+}
+}
+
+
+@media screen and (max-width: 920px) {
+    .applicationList button{
+        width: 100%;
+    }
+    .applicationList{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.applicationImg1{
+    transform: rotate(90deg);
+}
+    }
+
+@media screen and (max-width: 927px) {
+    .navListContainer{
+        display: none;
+    }
+    .chooseTrackContainer{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+.joinRootBtn{
+    display: none;
+}
+
+}
+@media screen and (max-width: 593px) {
+    .modalImg{
+        width: 100%;
+    }
+    .fransunisoftImg{
+         width: 150px
+    }
+
+}
+
+@media screen and (max-width: 593px) {
+    .modalImg{
+        width: 100%;
+    }
+    .fransunisoftImg{
+         width: 150px
+    }
+
+}
+
+@media screen and (max-width: 593px) {
+    .footerCon{
+        margin: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+.titleHeaders{
+    font-size: 25px;
+}
+   .modalImg{
+    height: auto;
+}
+.whyRootImg{
+    height: auto;
+}
+.modalContainer{
+    margin-top:0.5rem;
+}
+.modalContainer .joinBtn{
+    width: 100%;
+    max-width: 100%;
+}
+.workOnImg{
+    height: auto;
+}
+.whoGotImg{
+    height: auto;
+}
+.curvedArrowImg{
+    position: absolute;
+    top: 70;
+    left: 0;
+}
+
+.graphicDesignerImg{
+    position: absolute;
+    bottom: 90;
+    left: 0;
+}
+.codeImg{
+    position: absolute;
+    right: 0;
+    top: 140;
+}
+}
+
+@media screen and (max-width: 361px) {
+    .poweredContainer h2{
+        font-size: 20px;
+    }
+    .titleHeaders h2{
+        font-size: 20px;
+    }
+  
+}
