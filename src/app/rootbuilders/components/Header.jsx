@@ -36,9 +36,16 @@ export default function Header() {
     <>
       <div className={styles.headerContainer}>
         <div className={styles.navBarContainer}>
-          <Link href="/root-buiders" className={styles.titleHeaders}>
-            <h2>Root Builders</h2>
-          </Link>
+         <Link href="/root-buiders" className={styles.titleHeaders}>
+  <img 
+    src="/rootbuilders_logo.png" 
+    alt="Root Builders Logo" 
+   width="150"   
+    height="50"  
+    className={styles.logo}
+  />
+</Link>
+
           <div
             className={`${styles.navListContainer} ${
               menuOpen ? styles.open : ""
