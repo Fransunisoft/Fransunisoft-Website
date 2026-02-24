@@ -57,12 +57,13 @@ export default function Header() {
             </ul>
           </div>
         </div>
-        <button className={styles.joinRootBtn}>Join Root Builders</button>
+      
+        <button className={styles.joinRootBtn}>   <a href="https://docs.google.com/forms/d/e/1FAIpQLSc07jkQrxzrXlAMuykYnvouWHBQfSv3Y8I1knfbfU2pfpSkXA/viewform?usp=preview" target="_blank">Join Root Builders </a></button>
         <button
           className={styles.menuToggle}
           onClick={toggleMenu}
           aria-label="Toggle menu"
-        >
+        > 
           {menuOpen ? "✖" : "☰"}
         </button>
       </div>
