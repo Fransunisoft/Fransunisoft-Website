@@ -99,7 +99,7 @@ export default function Footer() {
            
           </div>
         </section>
-        <button className={styles.exploreBtn}>Explore Fransunisoft</button>
+        <button className={styles.exploreBtn}><a href="/" >Explore Fransunisoft </a></button>
       </section>
       <div className={styles.copy}>
         &copy;  {new Date().getFullYear()} Root Builders by Fransunisoft. All Rights Reserved.

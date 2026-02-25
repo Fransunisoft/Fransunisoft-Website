@@ -18,6 +18,10 @@
   cursor: pointer;
   flex-shrink: 0;
 }
+
+.joinRootBtnss{
+    
+}
 .navToggle{
     margin-top: 6rem;
     /* background-color: green; */
@@ -723,6 +727,30 @@ position: relative;
 }
 
 @media screen and (max-width: 920px) {
+    /* .joinRootBtn{
+        display: block;
+    } */
+    .navListToggless{
+        padding-top: 0.5rem;
+        position: fixed;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 1000;
+    }
+    .navItemLinks span{
+        font-size: 1.2rem;
+        font-weight: 700;
+        padding-bottom: 1rem;
+    }
+    .navItemLinks{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
     .whyRootBody{
     margin-top: 32px;
     display: flex;
@@ -836,6 +864,13 @@ width: 100%;
 .chooseImg{
     width: 97.09px;
     height: 100px;
+}
+.codeImg{
+    display: none;
+}
+
+.graphicDesignerImg{
+    display: none;
 }
 }
 

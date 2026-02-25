@@ -58,7 +58,9 @@ export default function Header() {
           </div>
         </div>
       
-        <button className={styles.joinRootBtn}>   <a href="https://docs.google.com/forms/d/e/1FAIpQLSc07jkQrxzrXlAMuykYnvouWHBQfSv3Y8I1knfbfU2pfpSkXA/viewform?usp=preview" target="_blank">Join Root Builders </a></button>
+        <button className={styles.joinRootBtn}>  
+           <a href="https://docs.google.com/forms/d/e/1FAIpQLSc07jkQrxzrXlAMuykYnvouWHBQfSv3Y8I1knfbfU2pfpSkXA/viewform?usp=preview" target="_blank">Join Root Builders </a>
+        </button>
         <button
           className={styles.menuToggle}
           onClick={toggleMenu}
@@ -68,7 +70,7 @@ export default function Header() {
         </button>
       </div>
       {menuOpen ? <div className={styles.navToggle}>
-        <ul className={styles.navList}>
+        <ul className={styles.navList + " " + styles.navListToggless}>
           <li className={`${styles.navItem}  ${styles.navItemLinks}`} onClick={scrollToContact}>
             <span>Why Root Builders</span>
           </li>
@@ -79,6 +81,9 @@ export default function Header() {
             <span>FAQs</span>
           </li>
         </ul>
+        <button className={styles.joinRootBtnss}>  <a href="https://docs.google.com/forms/d/e/1FAIpQLSc07jkQrxzrXlAMuykYnvouWHBQfSv3Y8I1knfbfU2pfpSkXA/viewform?usp=preview" target="_blank">Join Root Builders </a></button>
+      
+        
       </div> : ""
 }
     </>

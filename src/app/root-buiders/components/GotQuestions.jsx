@@ -55,10 +55,12 @@ export default function GotQuestions() {
       />
 
       <div>
-        <h3 className={styles.gotQuestionTitle}>You’ve Got Questions?</h3>
-        <p className={styles.gotQuestionSubTitle}>
-          We’ve got you covered on any of your doubts
-        </p>
+        <div className={styles.gotQuestionTitleHeader}>
+          <h3 className={styles.gotQuestionTitle}>You’ve Got Questions?</h3>
+          <p className={styles.gotQuestionSubTitle}>
+            We’ve got you covered on any of your doubts
+          </p>
+        </div>
         <div className={styles.gotQuestionFaQ}>
           {gotQuestions.map((text, index) => {
             return (
