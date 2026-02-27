@@ -314,9 +314,9 @@
 }
 
 .ApplicationContainer button{
-    width: 100%;
+    /* width: 100%; */
     cursor: pointer;
-    max-width: 60%;
+    /* max-width: 60%; */
     /* margin-left: 2rem; */
     padding: 12px 20px;
     border: none;
@@ -327,11 +327,18 @@
     font-weight: 600;
 }
 .applicationbody {
- display: grid;
- grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem;
+ /* display: grid;
+ grid-template-columns: 1fr 1fr 1fr; */
  align-items: center;
- justify-content: space-evenly;
-width: 100%;
+ /* justify-content: space-evenly; */
+ /* justify-content: center; */
+ /* width: 100%;
+ margin: 0 auto; */
+
 position: relative;
 }
 .applicationList{

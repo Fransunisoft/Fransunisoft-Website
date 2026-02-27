@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Image from "next/image";
 import styles from "../root-builders.module.css";
 import { useState } from "react";
@@ -30,20 +30,21 @@ export default function GotQuestions() {
     },
     {
       title: "Can I continue working on my project with FSX after the program?",
-      subTitle: "Yes you can keep working on your project with FSX after the Program",
+      subTitle:
+        "Yes you can keep working on your project with FSX after the Program",
     },
   ];
 
   const [isActive, setIsActive] = useState([]);
- const handleClick = (index) => {
-  setIsActive((prev) => {
-    if (prev.includes(index)) {
-      return prev.filter((item) => item !== index);
-    } else {
-      return [...prev, index];
-    }
-  });
-};
+  const handleClick = (index) => {
+    setIsActive((prev) => {
+      if (prev.includes(index)) {
+        return prev.filter((item) => item !== index);
+      } else {
+        return [...prev, index];
+      }
+    });
+  };
   return (
     <section className={styles.whoGotQuestionsContainer} id="faq">
       <Image
@@ -56,7 +57,7 @@ export default function GotQuestions() {
 
       <div>
         <div className={styles.gotQuestionTitleHeader}>
-          <h3 className={styles.gotQuestionTitle}>You’ve Got Questions?</h3>
+          <h3 className={styles.gotQuestionTitle }>You’ve Got Questions?</h3>
           <p className={styles.gotQuestionSubTitle}>
             We’ve got you covered on any of your doubts
           </p>
@@ -65,36 +66,40 @@ export default function GotQuestions() {
           {gotQuestions.map((text, index) => {
             return (
               <>
-              <div key={index} className={styles.gotQuestionFaQList} onClick={() => handleClick(index)}>
-                <p className={styles.gotQuestionFaQListText}>{text.title}</p>
-               {isActive.includes(index) ? <Image
-                  src="/minuses.png"
-                  alt="aaaaaa"
-                  width={16}
-                  height={4}
-                  className={styles.gotQuestionImg}
-                />  : 
-                
-                <Image
-                  src="/cross.png"
-                  alt="aaaaaa"
-                  width={16}
-                  height={16}
-                  className={styles.gotQuestionImg}
-                /> 
-                }
-              </div> 
-             {/* {isActive.include(index) && <div className={styles.gotQuestionFaQListSubtitle}>
+                <div
+                  key={index}
+                  className={styles.gotQuestionFaQList}
+                  onClick={() => handleClick(index)}
+                >
+                  <p className={styles.gotQuestionFaQListText}>{text.title}</p>
+                  {isActive.includes(index) ? (
+                    <Image
+                      src="/minuses.png"
+                      alt="aaaaaa"
+                      width={16}
+                      height={4}
+                      className={styles.gotQuestionImg}
+                    />
+                  ) : (
+                    <Image
+                      src="/cross.png"
+                      alt="aaaaaa"
+                      width={16}
+                      height={16}
+                      className={styles.gotQuestionImg}
+                    />
+                  )}
+                </div>
+                {/* {isActive.include(index) && <div className={styles.gotQuestionFaQListSubtitle}>
                    <p>{text.subTitle}</p>
               </div>}
                   */}
-                  {isActive.includes(index) && (
-  <div className={styles.gotQuestionFaQListSubtitle}>
-    <p>{text.subTitle}</p>
-  </div>
-)}
-             
-                </>
+                {isActive.includes(index) && (
+                  <div className={styles.gotQuestionFaQListSubtitle}>
+                    <p>{text.subTitle}</p>
+                  </div>
+                )}
+              </>
             );
           })}
         </div>
