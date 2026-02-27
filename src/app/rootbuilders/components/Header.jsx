@@ -2,92 +2,103 @@
 import styles from "../root-builders.module.css";
 import { useState } from "react";
 import Link from "next/link";
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen((prev) => !prev);
+  const closeMenu = () => setMenuOpen(false);
 
-  const scrollToContact = (e) => {
+  const scrollToSection = (e, sectionId) => {
     e.preventDefault();
-    const contactSection = document.getElementById("root-builders");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-    closeMobileMenu();
+    const section = document.getElementById(sectionId);
+    if (section) section.scrollIntoView({ behavior: "smooth" });
+    closeMenu();
   };
 
-  const scrollToFaq = (e) => {
-    e.preventDefault();
-    const contactSection = document.getElementById("faq");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-    closeMobileMenu();
-  };
-
-  const scrollToTrack = (e) => {
-    e.preventDefault();
-    const section = document.getElementById("track");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-    closeMobileMenu();
-  };
   return (
-    <>
-      <div className={styles.headerContainer}>
-        <div className={styles.navBarContainer}>
-         <Link href="/root-buiders" className={styles.titleHeaders}>
-  <img 
-    src="/rootbuilders_logo.png" 
-    alt="Root Builders Logo" 
-   width="150"   
-    height="50"  
-    className={styles.logo}
-  />
-</Link>
+    <div className={styles.headerContainer}>
+      <div className={styles.navBarContainer}>
+        {/* LOGO */}
+        <Link href="/rootbuilders" className={styles.titleHeaders}>
+          <img
+            src="/rootbuilders_logo.png"
+            alt="Root Builders Logo"
+            width="150"
+            height="50"
+            className={styles.logo}
+          />
+        </Link>
 
-          <div
-            className={`${styles.navListContainer} ${
-              menuOpen ? styles.open : ""
-            }`}
-          >
-            <ul className={styles.navList}>
-              <li className={styles.navItem} onClick={scrollToContact}>
+        {/* DESKTOP NAV (Hidden on Mobile via CSS) */}
+        <div className={styles.navbarContainer}>
+          <ul className={styles.navList}>
+            <li className={styles.navItem}>
+              <button type="button" className={styles.navLinkButton} onClick={(e) => scrollToSection(e, "root-builders")}>
                 Why Root Builders
-              </li>
-              <li className={styles.navItem} onClick={scrollToTrack}>
+              </button>
+            </li>
+            <li className={styles.navItem}>
+              <button type="button" className={styles.navLinkButton} onClick={(e) => scrollToSection(e, "track")}>
                 Tracks
-              </li>
-              <li className={styles.navItem} onClick={scrollToFaq}>
+              </button>
+            </li>
+            <li className={styles.navItem}>
+              <button type="button" className={styles.navLinkButton} onClick={(e) => scrollToSection(e, "faq")}>
                 FAQs
-              </li>
-            </ul>
-          </div>
+              </button>
+            </li>
+          </ul>
+        
+
+        {/* DESKTOP BUTTON (Hidden on Mobile via CSS) */}
+        <button type="button" className={styles.joinRootBtn}>
+           <a href="https://docs.google.com/forms/d/e/1FAIpQLSc07jkQrxzrXlAMuykYnvouWHBQfSv3Y8I1knfbfU2pfpSkXA/viewform?usp=preview" target="_blank" rel="noopener noreferrer">
+              Join Root Builders
+            </a>
+        </button>
         </div>
-      
-        <button className={styles.joinRootBtn}>   <a href="https://docs.google.com/forms/d/e/1FAIpQLSc07jkQrxzrXlAMuykYnvouWHBQfSv3Y8I1knfbfU2pfpSkXA/viewform?usp=preview" target="_blank">Join Root Builders </a></button>
+
+
+
+        {/* HAMBURGER TOGGLE (Visible on Mobile via CSS) */}
         <button
+          type="button"
           className={styles.menuToggle}
           onClick={toggleMenu}
           aria-label="Toggle menu"
-        > 
+        >
           {menuOpen ? "✖" : "☰"}
         </button>
       </div>
-      {menuOpen ? <div className={styles.navToggle}>
-        <ul className={styles.navList}>
-          <li className={`${styles.navItem}  ${styles.navItemLinks}`} onClick={scrollToContact}>
-            <span>Why Root Builders</span>
-          </li>
-          <li className={`${styles.navItem}  ${styles.navItemLinks}`} onClick={scrollToTrack}>
-            <span>Tracks</span>
-          </li>
-          <li className={`${styles.navItem}  ${styles.navItemLinks}`} onClick={scrollToFaq}>
-            <span>FAQs</span>
-          </li>
-        </ul>
-      </div> : ""
-}
-    </>
+
+      {/* MOBILE OVERLAY */}
+      {menuOpen && (
+        <div className={styles.navToggle}>
+          <ul className={styles.navList}>
+            <li className={styles.navItem}>
+              <button type="button" className={styles.navLinkButton} onClick={(e) => scrollToSection(e, "root-builders")}>
+                Why Root Builders
+              </button>
+            </li>
+            <li className={styles.navItem}>
+              <button type="button" className={styles.navLinkButton} onClick={(e) => scrollToSection(e, "track")}>
+                Tracks
+              </button>
+            </li>
+            <li className={styles.navItem}>
+              <button type="button" className={styles.navLinkButton} onClick={(e) => scrollToSection(e, "faq")}>
+                FAQs
+              </button>
+            </li>
+          </ul>
+
+          <button type="button" className={styles.joinRootBtn}>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc07jkQrxzrXlAMuykYnvouWHBQfSv3Y8I1knfbfU2pfpSkXA/viewform?usp=preview" target="_blank" rel="noopener noreferrer">
+              Join Root Builders
+            </a>
+          </button>
+        </div>
+      )}
+    </div>
   );
 }
