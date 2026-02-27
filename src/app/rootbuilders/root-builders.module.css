@@ -18,6 +18,10 @@
   cursor: pointer;
   flex-shrink: 0;
 }
+
+.joinRootBtnss{
+    
+}
 .navToggle{
     margin-top: 6rem;
     /* background-color: green; */
@@ -310,9 +314,9 @@
 }
 
 .ApplicationContainer button{
-    width: 100%;
+    /* width: 100%; */
     cursor: pointer;
-    max-width: 60%;
+    /* max-width: 60%; */
     /* margin-left: 2rem; */
     padding: 12px 20px;
     border: none;
@@ -323,11 +327,18 @@
     font-weight: 600;
 }
 .applicationbody {
- display: grid;
- grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem;
+ /* display: grid;
+ grid-template-columns: 1fr 1fr 1fr; */
  align-items: center;
- justify-content: space-evenly;
-width: 100%;
+ /* justify-content: space-evenly; */
+ /* justify-content: center; */
+ /* width: 100%;
+ margin: 0 auto; */
+
 position: relative;
 }
 .applicationList{
@@ -723,6 +734,30 @@ position: relative;
 }
 
 @media screen and (max-width: 920px) {
+    /* .joinRootBtn{
+        display: block;
+    } */
+    .navListToggless{
+        padding-top: 0.5rem;
+        position: fixed;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 1000;
+    }
+    .navItemLinks span{
+        font-size: 1.2rem;
+        font-weight: 700;
+        padding-bottom: 1rem;
+    }
+    .navItemLinks{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
     .whyRootBody{
     margin-top: 32px;
     display: flex;
@@ -836,6 +871,13 @@ width: 100%;
 .chooseImg{
     width: 97.09px;
     height: 100px;
+}
+.codeImg{
+    display: none;
+}
+
+.graphicDesignerImg{
+    display: none;
 }
 }
 
