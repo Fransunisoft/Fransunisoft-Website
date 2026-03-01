@@ -8,259 +8,7 @@
     font-family:Roboto, sans-serif;
     background-color: white;
 }
-
-
 /* Header */
-.headerContainer {
-  display: grid;
-  padding: 1.5rem 7rem; 
-   grid-template-columns: 5fr 1fr;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  background-color: #FFFFFF; 
-  position: fixed;
-  top: 0;
-  z-index: 1111;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); 
-   
-}
-
- .headerContainer .navBarContainer{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-.titleHeaders {
-  cursor: pointer;
-  width:  50%;
-
-}
-
-.titleHeaders .logo {
-  max-height: 50px; 
-}
-
-
-.navbarContainer {
-  display: flex;
-  align-items: center;
-}
-
-.navListContainer {
-  display: flex;
-   width: 100%;
-    max-width: 100%;
-}
-
-.navList {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-    margin-left: auto;
-  list-style: none;
-  gap: 2rem;
-   position: relative;
-   
-}
-
-.navList li::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 3px;
-    background-color: #0D519A;
-    transition: width 0.3s ease;
-}
-
-
-.navLinkButton.underline {
-  border-bottom: 3px solid #0D519A; 
-      width: 100%;
-}
-
-.joinRootBtn {
-  cursor: pointer;
-  margin-left: 3rem;
-  padding: 10px 20px;
-  border: none;
-  background-color: #0D519A; 
-  border-radius: 10px;
-  color: #F1F5F9; 
-  font-size: 16px;
-  font-weight: 600; 
-}
-
-.joinRootBtn:hover {
-  background-color: #0c4785; 
-}
-
-
-.navToggle.open {
-  opacity: 1;
-  visibility: visible;
-}
-
-
-.navToggle .navListContainer {
-  display: block;
-  margin-top: 6rem;
-  padding: 1rem;
-   width: 100%;
-    max-width: 100%;
-}
-
-.navToggle .navList {
-  flex-direction: column;
-  align-items: left; 
-  gap: 1.5rem; 
-  margin-bottom: 2rem; 
-}
-
-.navToggle .navLinkButton {
-  font-size: 1.5rem;
-  display: block;
-  width: 100%;
-  text-align: left;
-}
-
-.navToggle .navLinkButton.underline {
-  border-bottom: none; 
-  color: #0D519A; 
-  font-weight: 600; 
-}
-
-.navToggle .joinRootBtn {
-  margin-left: 0;
-  width: 100%; 
-  padding: 1rem;
-  text-align: center;
-  border-radius: 10px; 
-}
-
-/* Standard Mobile Styles (Breakpoints) */
-@media (max-width: 768px) {
-  .headerContainer {
-    padding: 1rem 2rem; 
-  }
-
-  /* Hide Desktop elements */
-  .headerContainer .navbarContainer,
-  .headerContainer .joinRootBtn {
-    display: none !important;
-  }
-
-  /* Show Menu Toggle on mobile */
-  .menuToggle {
-    display: block; /* Hamburger icon needed in header */
-  }
-}
-
-@media (max-width: 480px) {
-  .titleHeaders {
-    width: 60%;
-  }
-
-  .navToggle .navLinkButton {
-    font-size: 1.25rem;
-       position: relative;
-  }
-}
-.headerContainer .titleHeaders{
-    color: #0D519A;
-    font-weight: 700;
-}
-
-/* --- Desktop vs Mobile Visibility --- */
-@media (max-width: 768px) {
-  .headerContainer {
-    padding: 1rem 2rem;
-    display: flex; /* Ensures logo and hamburger stay on one line */
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  /* Hide the desktop-only nav items */
-  .navBarContainer > .navbarContainer,
-  .navBarContainer > .joinRootBtn {
-    display: none !important;
-  }
-
-  .menuToggle {
-    display: block !important;
-    position: relative;
-    z-index: 10001; 
-  }
-}
-
-/* --- Mobile Menu Overlay --- */
-.navToggle {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #FFFFFF;
-  z-index: 10000;
-  display: flex; 
-  flex-direction: column;
-  justify-content: center; 
-  align-items: flex-start;  
-  padding: 2rem 10%;      
-}
-
-
-
-/* --- Hover Effect Fix --- */
-.navLinkButton {
-  background: none;
-  border: none;
-  font: inherit;
-  color: #2C3E50;
-  cursor: pointer;
-  padding: 5px 0;
-  transition: color 0.3s ease;
-  text-align: left;
-     position: relative;
-}
-
-.navLinkButton:hover {
-  color: #0D519A;
-}
-
-
-/* The Underline Effect moved to the button */
-.navLinkButton::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 3px;
-  background-color: #0D519A;
-  transition: width 0.3s ease;
-}
-
-.navLinkButton:hover::after {
-  width: 100%;
-}
-
-
-
-
-/* This is the class that makes it show up */
-.navToggle.visible {
-  display: flex !important;
-  margin-top: 6rem;
-    padding: 1rem;
-}
-
-
 .menuToggle {
   display: none;
   font-size: 1.8rem;
@@ -269,19 +17,199 @@
   color: #0D519A;
   cursor: pointer;
   flex-shrink: 0;
+
+
 }
 
-@media (max-width: 768px) {
-  .menuToggle {
-    display: block; 
-  }
+
+.joinRootBtnss {
+  background-color: #0D519A;
+  color: white;
+  align-items: center; 
+    justify-content: center;
+  padding: 12px 24px;
+  margin-top: 1rem; 
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
   
-  .headerContainer .navbarContainer,
-  .headerContainer > .joinRootBtn {
-    display: none; 
-  }
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+.joinRootBtnss:hover {
+  background-color:  #0c4785; 
+
+  transform: translateY(-2px);
+}
+.navToggle { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;  
+  justify-content: center; 
+  background: #fff; 
+  width: 70%;
+  height: 70vh;
+  padding: 50px; 
+  position: absolute;
+  z-index: 999; 
+}
+
+/* Anchor tags styled as buttons */
+.navToggle a {
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 10px 0;
+  background-color:  #0D519A;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center; /* centers text inside button */
+  transition: background-color 0.3s ease;
+}
+
+.navToggle a:hover {
+  background-color: #0c4785; 
+}
+
+
+
+.headerContainer{
+    display: grid;
+    padding: 1.5rem 7rem;
+    grid-template-columns: 5fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #FFFFFF;
+    position: fixed;
+    top:0;
+    z-index: 1111;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+.titleHeaders {
+    cursor: pointer;
+    width: 50%;
+}
+ .headerContainer .navBarContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navListContainer{
+    width: 100%;
+    max-width: 100%;
+}
+.headerContainer .navList{
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+}
+.navList li{
+    list-style: none;
+    font-weight: 500;
+    color: #2C3E50;
+    cursor: pointer;
+      position: relative;
+
+}
+
+.navList li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #0D519A;
+    transition: width 0.3s ease;
+    
+}
+.navList li:hover::after {
+    width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+
+    .navListContainer{
+    width: 100%;
+    max-width: 100%;
+}
+.headerContainer .navList{
+    width: 45%;
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+    margin-left: 0;
+}
+.navList li{
+    list-style: none;
+    font-weight: 500;
+    color: #2C3E50;
+    cursor: pointer;
+      position: relative;
+
+}
+
+
+    .navList li{
+         position: relative;
+  top: 0;
+  left: 0;
+text-align: left !important;
+    font-weight: 200;
+    color: #2C3E50;
+    cursor: pointer;
+    
+    }
+
+
+
+.navList li::after {
+     content: "";
+  position: absolute;
+
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  justify-items: center;
+  background-color: #0D519A;
+  transition: width 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.navList li:hover::after {
+    width: 80%;
+  
+}
+}
+
+.joinRootBtn{
+    cursor: pointer;
+    margin-left: auto;
+    padding: 10px 20px;
+    border: none;
+    background-color: #0D519A;
+    border-radius: 10px;
+    color: #F1F5F9;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.joinRootBtn:hover {
+  background-color: #0c4785; 
+}
+
+
+.headerContainer .titleHeaders{
+    color: #0D519A;
+    font-weight: 700;
+}
 
 
 
@@ -302,7 +230,7 @@
    flex-direction: column;
    position: relative;
    margin-top: 80px;
-  
+   /* margin-bottom: 45px; */
 }
 
 .fsxAcademyInitBtn{
@@ -324,7 +252,7 @@
     font-size: 70px;
     font-weight: 700;
     color: #0D519A;
-
+    /* line-height: 57.6px; */
 }
 .modalImg{
     margin-top: 2px;
@@ -413,8 +341,8 @@
 /* Who can APply */
 .whoCanApplyCon{
     background-color: #FAFDFF;
+    /* margin-top: 24px; */
 }
-
 .whoCanApplyContainer{
     text-align: center;
     margin-top: 0px !important;
@@ -428,7 +356,7 @@
 }
 
 .whoCanBody{
-  
+    /* width: 100%; */
     display: grid;
     grid-template-columns: repeat(2,1fr);
     justify-items: space-between;
@@ -436,9 +364,12 @@
     align-items: center;
     margin-top: 32px;
 }
+.personality{
+   /* width: 100%; */
+}
 
 .personalitySection{
-   
+    /* width: 100%; */
      background-color: #E7EEF5;
     color: #333333;
     padding: 1rem;
@@ -451,12 +382,15 @@
         linear-gradient(216.35deg, #FF6B35, #0D519A) border-box;
 
     border: 2px solid transparent;
-  
+     /* border-style: solid;
+  border-width: 0 4px; 
+
+  border-image: linear-gradient(to bottom, purple, pink) 1; */
     border-radius:15px;
     padding: 20px;
     margin-bottom: 15px;
      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-   
+    /* box-shadow: 0px 4px 10px 4px rgba(0, 0, 0, 0.08); */
 }
 .personalityConBody{
     margin-bottom: 24px;
@@ -488,24 +422,31 @@
 }
 
 .ApplicationContainer button{
-    width: 100%;
+    /* width: 100%; */
     cursor: pointer;
-    max-width: 60%;
-
+    /* max-width: 60%; */
+    /* margin-left: 2rem; */
     padding: 12px 20px;
     border: none;
     background-color: #0D519A;
     border-radius: 10px;
-
+    /* color: #F1F5F9; */
     font-size: 16px;
     font-weight: 600;
 }
 .applicationbody {
- display: grid;
- grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem;
+ /* display: grid;
+ grid-template-columns: 1fr 1fr 1fr; */
  align-items: center;
- justify-content: space-evenly;
-width: 100%;
+ /* justify-content: space-evenly; */
+ /* justify-content: center; */
+ /* width: 100%;
+ margin: 0 auto; */
+
 position: relative;
 }
 .applicationList{
@@ -523,7 +464,7 @@ position: relative;
 .chooseTrackBodyCon{
     display: grid;
     grid-template-columns: 2fr 1fr;
-
+    /* justify-content: center; */
     align-items: center;
     gap: 2rem;
     margin-top: 2rem;
@@ -582,10 +523,10 @@ position: relative;
 
 .workOnChallenges h5, .workOnContainer h5{
     color: #FF6B35;
-
+    /* margin-bottom: 0.5rem; */
 }
 .workOnChallenges h3, .workOnContainer h3{
-
+    /* color: #FF6B35; */
     margin-bottom: 1rem;
 }
 
@@ -597,16 +538,18 @@ position: relative;
     align-items: center;
     justify-content: start;
     gap: 0.5rem;
-
 }
 .workOnChallengeCon{
     margin-top: 1rem;
 }
+.ideaBody{
+    margin-bottom: 0.5rem;
+}
+
 
 
 /* GotQuestions */
-
-.whoGotQuestionsContainer{
+.whoGotQuestionsContainer {
     display: grid;
     grid-template-columns: 1fr 2fr;
     justify-content: start;
@@ -614,15 +557,54 @@ position: relative;
     gap: 2rem;
 }
 
-.gotQuestionTitle, .gotQuestionSubTitle {
+.gotQuestionTitle, 
+.gotQuestionSubTitle {
     text-align: center;
 }
- .gotQuestionSubTitle{
- font-size: 20px;
+
+.gotQuestionSubTitle {
+    font-size: 20px;
     color: #7C8084;
     margin-bottom: 32px;
     margin-top: 20px;
- }
+}
+
+/* --- Mobile Logic --- */
+@media (max-width: 768px) {
+    
+    .whoGotQuestionsContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+   
+    .whoGotImg {
+        order: 2;
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        margin: 1rem 0 2rem 0; 
+    }
+
+   
+    .whoGotQuestionsContainer > div {
+        order: 1; 
+        display: contents; 
+    }
+
+
+    .gotQuestionTitleHeader {
+        order: 1; 
+        width: 100%;
+    }
+
+    .gotQuestionFaQ {
+        order: 3;
+        width: 100%;
+    }
+}
+
   
 .gotQuestionFaQ{
     margin-top: 1rem;
@@ -637,6 +619,7 @@ position: relative;
     margin-bottom: 20px;
     cursor: pointer;
     background-color: #E7EEF5;
+    color: #0D519A;
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 0 4 0 #0000000A;
@@ -650,6 +633,7 @@ position: relative;
     margin-bottom: 20px;
     margin-top: -30px;
     background-color: #E7EEF5;
+    color: #0D519A;
 }
 
 /* RealSolutions */
@@ -658,7 +642,8 @@ position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-
+    /* align-items: center; */
+    /* justify-content: center; */
 }
 .realSolutionImg{
     border-radius: 10px;
@@ -736,9 +721,9 @@ position: relative;
 }
  
 .exploreBtn{
-   
+    /* width: 100%; */
     cursor: pointer;
-   
+    /* max-width: 15%; */
     margin-left: 2rem;
     padding: 10px 20px;
     border: none;
@@ -785,10 +770,13 @@ position: relative;
     grid-template-columns: 4fr 1fr;
  
 }
-
+.applicationList button{
+    /* width: 100%;
+    max-width: 70%; */
+}
 .applicationList button:last-child{
     margin-left: auto;
-   
+    /* background-color: yellow; */
 }
 .applicationbody .applicationList:nth-child(2) button {
   margin-left: auto;
@@ -806,7 +794,7 @@ position: relative;
 .titleHeaders {
     cursor: pointer;
     width: 70%;
-  
+    /* background-color: green; */
 }
 .navListContainer{
     width: 100%;
@@ -820,7 +808,9 @@ position: relative;
     margin-left: auto;
 }
 
-
+/* .applicationbody .applicationList:nth-child(2) button {
+  margin-left: auto;
+} */
 }
 
 @media screen and (max-width: 1127px) {
@@ -829,23 +819,36 @@ position: relative;
         margin-right: 1rem;
     
     }
+    /* .footerContainer{
 
-    } 
- 
+    } */
+    .headerContainer{
+          padding-left: 1rem;
+          padding-right: 1rem;
+    }
+
 .applicationList button:last-child{
     margin-left: auto;
     width: 100%;
     max-width: 75%;
 }
+.titleHeaders{
+    cursor: pointer;
+    width: 70%;
+}
 
-
+}
 
 @media screen and (max-width: 1097px) {
     .whyRootImg{
         width: 400px;
         height: 600px;
     }
- 
+    /* .realSolutionContainer{
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+    } */
     .realSolutionImg{
         width: 100%;
         max-width: 100% !important;
@@ -863,12 +866,12 @@ position: relative;
 @media screen and (max-width: 920px) {
     .applicationbody {
  display: flex;
-
+ /* grid-template-columns: 1fr 1fr; */
  align-items: center;
  justify-content: space-around;
  flex-wrap: wrap;
  gap: 2rem;
-
+/* width: 100%; */
 position: relative;
 }
 
@@ -881,6 +884,31 @@ position: relative;
 }
 
 @media screen and (max-width: 920px) {
+      .menuToggle {
+    display: block; 
+  }
+  
+    .navListToggless{
+        padding-top: 0.5rem;
+        position: fixed;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 1000;
+    }
+    .navItemLinks span{
+        font-size: 1.2rem;
+        font-weight: 700;
+        padding-bottom: 1rem;
+    }
+    .navItemLinks{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
     .whyRootBody{
     margin-top: 32px;
     display: flex;
@@ -901,12 +929,12 @@ position: relative;
     margin-top: 20px;
 }
 .whoCanBody{
- 
+    /* width: 100%; */
     display: flex;
     flex-direction: column;
- 
+    /* grid-template-columns: repeat(2,1fr); */
     justify-items: center;
- 
+    /* gap: 20px; */
     align-items: center;
     margin-top: 32px;
 }
@@ -915,7 +943,8 @@ position: relative;
     align-items: start;
     justify-content: start;
     text-align: left;
-  
+    /* gap: 16px;
+    margin-bottom: 24px; */
 }
 .personality{
     width: 100%;
@@ -928,7 +957,7 @@ position: relative;
  justify-content: center;
  
 width: 100%;
-
+/* position: relative; */
 }
 .applicationList button:last-child{
     margin-left: 0;
@@ -947,8 +976,6 @@ width: 100%;
     order: 1;
     margin: 0 auto;
     transform: rotate(-90deg);
-    width: 97.09px;
-    height: 100px;
 }
 .chooseTrackContainer{
     order: 2;
@@ -992,7 +1019,17 @@ width: 100%;
 .realSolutionImg{
     display: none;
 }
+.chooseImg{
+    width: 97.09px;
+    height: 100px;
+}
+.codeImg{
+    display: none;
+}
 
+.graphicDesignerImg{
+    display: none;
+}
 }
 
 
@@ -1078,8 +1115,9 @@ width: 100%;
 }
 .curvedArrowImg{
     position: absolute;
-    top: 70;
+    top: 80;
     left: 0;
+    max-width: 20%;
 }
 
 .graphicDesignerImg{
