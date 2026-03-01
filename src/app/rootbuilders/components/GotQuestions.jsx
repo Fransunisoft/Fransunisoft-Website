@@ -64,7 +64,10 @@ export default function GotQuestions() {
         </div>
         <div className={styles.gotQuestionFaQ}>
           {gotQuestions.map((text, index) => {
-            return (
+           
+           
+           
+           return (
               <>
                 <div
                   key={index}

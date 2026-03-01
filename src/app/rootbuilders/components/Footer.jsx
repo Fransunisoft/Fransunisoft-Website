@@ -8,7 +8,7 @@ export default function Footer() {
         <div className={styles.poweredContainer}>
           <h2>Powered by </h2>
           <Image
-            src="/Fransunisoft_Logo_footer.png"
+            src="/Fransunisoft Logo2.png"
             alt="aaaaaa"
             width={292}
             height={50}

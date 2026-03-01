@@ -17,17 +17,64 @@
   color: #0D519A;
   cursor: pointer;
   flex-shrink: 0;
-}
 
-.joinRootBtnss{
-    
-}
-.navToggle{
-    margin-top: 6rem;
-    /* background-color: green; */
-    padding: 1rem;
 
 }
+
+
+.joinRootBtnss {
+  background-color: #0D519A;
+  color: white;
+  align-items: center; 
+    justify-content: center;
+  padding: 12px 24px;
+  margin-top: 1rem; 
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.joinRootBtnss:hover {
+  background-color:  #0c4785; 
+
+  transform: translateY(-2px);
+}
+.navToggle { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;  
+  justify-content: center; 
+  background: #fff; 
+  width: 70%;
+  height: 70vh;
+  padding: 50px; 
+  position: absolute;
+  z-index: 999; 
+}
+
+/* Anchor tags styled as buttons */
+.navToggle a {
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 10px 0;
+  background-color:  #0D519A;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center; /* centers text inside button */
+  transition: background-color 0.3s ease;
+}
+
+.navToggle a:hover {
+  background-color: #0c4785; 
+}
+
+
 
 .headerContainer{
     display: grid;
@@ -78,17 +125,70 @@
     left: 0;
     bottom: 0;
     width: 0%;
-    height: 3px;
+    height: 2px;
     background-color: #0D519A;
     transition: width 0.3s ease;
+    
 }
 .navList li:hover::after {
     width: 100%;
 }
 
-/* .navList li:hover span::after {
-  transform: scaleX(1);
-} */
+@media screen and (max-width: 480px) {
+
+    .navListContainer{
+    width: 100%;
+    max-width: 100%;
+}
+.headerContainer .navList{
+    width: 45%;
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+    margin-left: 0;
+}
+.navList li{
+    list-style: none;
+    font-weight: 500;
+    color: #2C3E50;
+    cursor: pointer;
+      position: relative;
+
+}
+
+
+    .navList li{
+         position: relative;
+  top: 0;
+  left: 0;
+text-align: left !important;
+    font-weight: 200;
+    color: #2C3E50;
+    cursor: pointer;
+    
+    }
+
+
+
+.navList li::after {
+     content: "";
+  position: absolute;
+
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  justify-items: center;
+  background-color: #0D519A;
+  transition: width 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.navList li:hover::after {
+    width: 80%;
+  
+}
+}
+
 .joinRootBtn{
     cursor: pointer;
     margin-left: auto;
@@ -100,10 +200,18 @@
     font-size: 16px;
     font-weight: 500;
 }
+
+.joinRootBtn:hover {
+  background-color: #0c4785; 
+}
+
+
 .headerContainer .titleHeaders{
     color: #0D519A;
     font-weight: 700;
 }
+
+
 
 /* Modal */
 .modalDiv{
@@ -438,9 +546,10 @@ position: relative;
     margin-bottom: 0.5rem;
 }
 
-/* GotQuestions */
 
-.whoGotQuestionsContainer{
+
+/* GotQuestions */
+.whoGotQuestionsContainer {
     display: grid;
     grid-template-columns: 1fr 2fr;
     justify-content: start;
@@ -448,15 +557,54 @@ position: relative;
     gap: 2rem;
 }
 
-.gotQuestionTitle, .gotQuestionSubTitle {
+.gotQuestionTitle, 
+.gotQuestionSubTitle {
     text-align: center;
 }
- .gotQuestionSubTitle{
- font-size: 20px;
+
+.gotQuestionSubTitle {
+    font-size: 20px;
     color: #7C8084;
     margin-bottom: 32px;
     margin-top: 20px;
- }
+}
+
+/* --- Mobile Logic --- */
+@media (max-width: 768px) {
+    
+    .whoGotQuestionsContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+   
+    .whoGotImg {
+        order: 2;
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        margin: 1rem 0 2rem 0; 
+    }
+
+   
+    .whoGotQuestionsContainer > div {
+        order: 1; 
+        display: contents; 
+    }
+
+
+    .gotQuestionTitleHeader {
+        order: 1; 
+        width: 100%;
+    }
+
+    .gotQuestionFaQ {
+        order: 3;
+        width: 100%;
+    }
+}
+
   
 .gotQuestionFaQ{
     margin-top: 1rem;
@@ -471,6 +619,7 @@ position: relative;
     margin-bottom: 20px;
     cursor: pointer;
     background-color: #E7EEF5;
+    color: #0D519A;
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 0 4 0 #0000000A;
@@ -484,6 +633,7 @@ position: relative;
     margin-bottom: 20px;
     margin-top: -30px;
     background-color: #E7EEF5;
+    color: #0D519A;
 }
 
 /* RealSolutions */
@@ -734,9 +884,10 @@ position: relative;
 }
 
 @media screen and (max-width: 920px) {
-    /* .joinRootBtn{
-        display: block;
-    } */
+      .menuToggle {
+    display: block; 
+  }
+  
     .navListToggless{
         padding-top: 0.5rem;
         position: fixed;
@@ -964,8 +1115,9 @@ width: 100%;
 }
 .curvedArrowImg{
     position: absolute;
-    top: 70;
+    top: 80;
     left: 0;
+    max-width: 20%;
 }
 
 .graphicDesignerImg{
