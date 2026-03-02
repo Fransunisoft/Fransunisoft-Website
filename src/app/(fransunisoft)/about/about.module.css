@@ -46,6 +46,27 @@
   font-size: 1.5rem;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.82);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  text-align: center;
+  padding: 2rem;
+}
+
+.heroDescription{
+  max-width: 800px;
+}
+
 
 @media (max-width: 768px) {
   .title {
@@ -80,7 +101,7 @@
   z-index: 10;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.82);
   display: flex;
   flex-direction: column;
   justify-content: center;

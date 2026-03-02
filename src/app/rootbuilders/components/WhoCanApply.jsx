@@ -41,9 +41,7 @@ export default function WhoCanApply() {
     },
   ];
 
-  // const whyRootMap = whyRootBuilders.map(root => {
-  //     if(root) return root;
-  // })
+
   return (
     <div  className={styles.whoCanApplyCon}>
       <section className={styles.whoCanApplyContainer}>

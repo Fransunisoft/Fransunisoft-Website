@@ -5,9 +5,9 @@ import Image from "next/image";
 import styles from "./events.module.css";
 import OurProcess from "./components/process.jsx";
 import { useCallback, useEffect } from "react";
-import ButtonGroup from "@/app/components/ButtonGroup";
+import ButtonGroup from "@/app/(fransunisoft)/components/ButtonGroup";
 import AOS from "aos";
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
 
 const PAGE_TITLE = "FSX Events";
 const PAGE_DESCRIPTION =
@@ -102,17 +102,16 @@ const ALL_CARDS = [
 
 // --- EventServicesSection Component ---
 function EventServicesSection() {
- 
   const handleScrollToContact = (e) => {
-  e.preventDefault();
-  const section = document.getElementById("contact");
-  if (section) section.scrollIntoView({ behavior: "smooth" });
-};
+    e.preventDefault();
+    const section = document.getElementById("contact");
+    if (section) section.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     // <section id="ourservices" className={styles.servicesSection}>
     <section id="ourservices" data-aos="fade-up">
-      <div className="sectionHead" >
+      <div className="sectionHead">
         <h2>Our Event Services</h2>
         <h6>
           Comprehensive event solutions designed to elevate your brand and
@@ -122,36 +121,38 @@ function EventServicesSection() {
 
       <div className="grid">
         {ALL_CARDS.map((card, index) => (
-          <div key={index} className='card1'>
+          <div key={index} className="card1">
             <Image
-                src={card.imageSrc}
-                alt={card.title}
-                width={320}
-                height={163}
-                objectFit="contain"
-                className={styles.cardImage}
-              />
+              src={card.imageSrc}
+              alt={card.title}
+              width={320}
+              height={163}
+              objectFit="contain"
+              className={styles.cardImage}
+            />
             <h3 className={styles.cardTitle}>{card.title}</h3>
             <p className={styles.cardDescription}>{card.description}</p>
 
             {card.services.map((service, i) => (
               <div key={i} className={styles.serviceListItem}>
                 <Image
-                src="/checkmark-event.png"
-                alt={card.title}
-                width={29.17}
-                height={29.17}
-                // className={styles.cardImage}
-              />
-              <p>{service.text}</p>
+                  src="/checkmark-event.png"
+                  alt={card.title}
+                  width={29.17}
+                  height={29.17}
+                  // className={styles.cardImage}
+                />
+                <p>{service.text}</p>
               </div>
             ))}
-           <Link href="#contact" className={styles.cardLink} onClick={handleScrollToContact}>
+            <Link
+              href="#contact"
+              className={styles.cardLink}
+              onClick={handleScrollToContact}
+            >
               <div className={styles.cardLinkText}>
-                <p>
-                  {card.linkText}
-                </p>
-              
+                <p>{card.linkText}</p>
+
                 <Image
                   src="/arrow-event.png"
                   alt="arrow right"
@@ -166,8 +167,6 @@ function EventServicesSection() {
     </section>
   );
 }
-
-
 
 function HeroSection() {
   const scrollToContact = useCallback((e) => {
@@ -213,18 +212,16 @@ function HeroSection() {
   );
 }
 
-
-
 // --- Main Page Component ---
 export default function EventHeroPage() {
-   useEffect(() => {
-          setTimeout(() => {
-            AOS.init({
-              duration: 1000,
-              once: false,
-            });
-          }, 100);
-        }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      AOS.init({
+        duration: 1000,
+        once: false,
+      });
+    }, 100);
+  }, []);
   return (
     <div className={styles.mainContainer}>
       <HeroSection />

@@ -1139,7 +1139,7 @@ padding: 4rem 2rem;
 }
 
   .cardTitlew::after { 
-  margin: 5rem auto 0 auto; 
+  margin: 1rem auto 0 auto; 
   content: ""; 
   display: block; 
   width: 70%; 
@@ -1351,7 +1351,7 @@ width: 100%;
   border: 1px solid #3D74AE;
   border-radius: 10px;
   background-color:  #E7EEF5;
-  color:#3D74AE;
+
   font-weight: bold;
   font-size: 0.7rem;
   text-align: center;
