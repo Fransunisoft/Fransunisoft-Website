@@ -15,7 +15,7 @@ export default function RealSolutions() {
       </div>
       <Image
         src="/build_businessman-working.png"
-        alt="aaaaaa"
+        alt="tech-talent image"
         width={607}
         height={607}
         className={styles.realSolutionImg}

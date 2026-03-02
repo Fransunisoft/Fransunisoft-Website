@@ -6,7 +6,7 @@ import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import ButtonGroup from "@/app/components/ButtonGroup";
+import ButtonGroup from "@/app/(fransunisoft)/components/ButtonGroup";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -36,21 +36,21 @@ const roboto = Roboto({
 // };
 
 const scrollToContact = (e) => {
-    e.preventDefault();
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-    closeMobileMenu();
-  };
+  e.preventDefault();
+  const contactSection = document.getElementById("contact");
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: "smooth" });
+  }
+  closeMobileMenu();
+};
 
-  const scrollToAcademyService = (e) => {
-    e.preventDefault();
-    const section = document.getElementById('fsx-academy');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+const scrollToAcademyService = (e) => {
+  e.preventDefault();
+  const section = document.getElementById("fsx-academy");
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
 export default function FsxAcademy() {
   useEffect(() => {
     setTimeout(() => {
@@ -62,9 +62,7 @@ export default function FsxAcademy() {
   }, []);
 
   return (
-    <div
-      className=""
-    >
+    <div className="">
       <div className={styles.fsxAcademyContainer}>
         <div
           className="hero"
@@ -74,25 +72,25 @@ export default function FsxAcademy() {
           // className={styles.heroContainer}
         >
           {/* <div className={styles.heroTextContainer}> */}
-            <div className="heroText">
+          <div className="heroText">
             {/* <div className="" id={styles.heroText}> */}
-              <h1>FSX Academy</h1>
-              <p>
-                Education is only powerful when it connects to real-world skills.
-                FSX Academy equips entrepreneurs, professionals, and students in
-                Nigeria with the knowledge they need to succeed from tech to
-                strategy to leadership.
-              </p>
+            <h1>FSX Academy</h1>
+            <p>
+              Education is only powerful when it connects to real-world skills.
+              FSX Academy equips entrepreneurs, professionals, and students in
+              Nigeria with the knowledge they need to succeed from tech to
+              strategy to leadership.
+            </p>
             {/* </div> */}
-            <div className={styles.heroBtns} >
-            <ButtonGroup
-              filterKeys={['fsxacademy1', 'ExploreAcademy']}
-              onClickHandlers={{
-               fsxacademy1: scrollToContact,
-               ExploreAcademy: scrollToAcademyService,
-              }}
-            />
-          </div>
+            <div className={styles.heroBtns}>
+              <ButtonGroup
+                filterKeys={["fsxacademy1", "ExploreAcademy"]}
+                onClickHandlers={{
+                  fsxacademy1: scrollToContact,
+                  ExploreAcademy: scrollToAcademyService,
+                }}
+              />
+            </div>
           </div>
           {/* <div className={styles.heroImg}> */}
           <div className={styles.heroImageContainer}>
@@ -109,51 +107,50 @@ export default function FsxAcademy() {
         </div>
 
         <section className={styles.whatWeDoSection} data-aos="fade-up">
-  
-            <div className={styles.whatWeDoTextContainer}>
-              <h3 className={styles.whatWeDoTitle}>What We Do</h3>
-              <p className={styles.whatWeDoDescription}>
-                At FSX Academy, we believe learning is more than theory — it’s
-                mentorship, application, and connection. From companies staff
-                upskilling to enterprise-wide training programs, we deliver
-                growth-focused experiences that prepare people for tomorrow’s
-                opportunities.
-              </p>
-              <h5 className={styles.whatWeDoSubTitle}>Organizational Training</h5>
-              <p className={styles.whatWeDoSubDescription}>
-                Customized programs to empower teams and drive growth.
-              </p>
-              <h5 className={styles.whatWeDoSubTitle}>Mentorship Programs</h5>
-              <p className={styles.whatWeDoSubDescription}>
-                Guided by industry experts who’ve walked the path.
-              </p>
-              <h5 className={styles.whatWeDoSubTitle}>
-                Tech & Career Upskilling
-              </h5>
-              <p className={styles.whatWeDoSubDescription}>
-                Practical, future-ready skills for real-world impact.
-              </p>
-            </div>
-            <div className={styles.whatWeDoImageContainer}>
-              <Image
-                src="/academy-what-we-do-icon.png"
-                alt="What We Do"
-                width={501}
-                height={501}
-                className={styles.whatWeDoImage}
-                objectFit="cover"
-              />
-            </div>
-          </section>
-      
+          <div className={styles.whatWeDoTextContainer}>
+            <h3 className={styles.whatWeDoTitle}>What We Do</h3>
+            <p className={styles.whatWeDoDescription}>
+              At FSX Academy, we believe learning is more than theory — it’s
+              mentorship, application, and connection. From companies staff
+              upskilling to enterprise-wide training programs, we deliver
+              growth-focused experiences that prepare people for tomorrow’s
+              opportunities.
+            </p>
+            <h5 className={styles.whatWeDoSubTitle}>Organizational Training</h5>
+            <p className={styles.whatWeDoSubDescription}>
+              Customized programs to empower teams and drive growth.
+            </p>
+            <h5 className={styles.whatWeDoSubTitle}>Mentorship Programs</h5>
+            <p className={styles.whatWeDoSubDescription}>
+              Guided by industry experts who’ve walked the path.
+            </p>
+            <h5 className={styles.whatWeDoSubTitle}>
+              Tech & Career Upskilling
+            </h5>
+            <p className={styles.whatWeDoSubDescription}>
+              Practical, future-ready skills for real-world impact.
+            </p>
+          </div>
+          <div className={styles.whatWeDoImageContainer}>
+            <Image
+              src="/academy-what-we-do-icon.png"
+              alt="What We Do"
+              width={501}
+              height={501}
+              className={styles.whatWeDoImage}
+              objectFit="cover"
+            />
+          </div>
+        </section>
 
         <section className={styles.valuePropSection} data-aos="fade-up">
-         
-            <button className={styles.valuePropBtn}>
-              <p>Our Value Proposition</p>
-              </button>
-               <div className="sectionHead">
-            <h2 className={styles.valuePropTitle}>Why Learn with FSX Academy?</h2>
+          <button className={styles.valuePropBtn}>
+            <p>Our Value Proposition</p>
+          </button>
+          <div className="sectionHead">
+            <h2 className={styles.valuePropTitle}>
+              Why Learn with FSX Academy?
+            </h2>
             <h6 className={styles.valuePropDescription}>
               Traditional education often stops at theory. FSX Academy takes it
               further by focusing on hands-on, applicable skills that drive real
@@ -293,8 +290,8 @@ export default function FsxAcademy() {
             </h2>
             <h6 className={styles.whatYouGetDescription}>
               {" "}
-              Think FSX, Think of limitless opportunities where you also belong to
-              a community. Below is a listed few of what you stand to gain.
+              Think FSX, Think of limitless opportunities where you also belong
+              to a community. Below is a listed few of what you stand to gain.
             </h6>
           </div>
           <div className="grid">
@@ -386,10 +383,11 @@ export default function FsxAcademy() {
             <div className="sectionHead">
               <h2 className={styles.trainningTitle}>Trainings we Offer</h2>
               <h6 className={styles.trainningDescription}>
-                We provide hands-on training programs designed to equip individuals
-                and teams with practical skills for today’s tech-driven world. From
-                software development to product design and business innovation, our
-                courses blend theory with real-world application.
+                We provide hands-on training programs designed to equip
+                individuals and teams with practical skills for today’s
+                tech-driven world. From software development to product design
+                and business innovation, our courses blend theory with
+                real-world application.
               </h6>
             </div>
             <div className="grid">
@@ -397,14 +395,16 @@ export default function FsxAcademy() {
                 <h5 className={styles.trainingCardTitle}>Data Science</h5>
                 <p className={styles.trainingCardDescription}>
                   Unlock the power of data with our comprehensive Data Science
-                  course. From statistical analysis to machine learning, gain the
-                  skills to drive innovation and make data-driven decisions.
+                  course. From statistical analysis to machine learning, gain
+                  the skills to drive innovation and make data-driven decisions.
                 </p>
                 <ul className={styles.trainingList}>
                   <li className={styles.trainingListItem}>
                     Statistical modeling
                   </li>
-                  <li className={styles.trainingListItem}>Data visualization</li>
+                  <li className={styles.trainingListItem}>
+                    Data visualization
+                  </li>
                   <li className={styles.trainingListItem}>
                     Machine learning algorithms
                   </li>
@@ -438,8 +438,8 @@ export default function FsxAcademy() {
               <div className="card1">
                 <h5 className={styles.trainingCardTitle}>Cybersecurity</h5>
                 <p className={styles.trainingCardDescription}>
-                  Secure your digital assets with our Cybersecurity course. Learn
-                  to defend against cyber threats and safeguard your
+                  Secure your digital assets with our Cybersecurity course.
+                  Learn to defend against cyber threats and safeguard your
                   organization's future with our expert-led training.
                 </p>
                 <ul className={styles.trainingList}>
@@ -460,9 +460,9 @@ export default function FsxAcademy() {
               <div className="card1">
                 <h5 className={styles.trainingCardTitle}>UI/UX Design</h5>
                 <p className={styles.trainingCardDescription}>
-                  Craft exceptional user experiences with our UI/UX Design course.
-                  Learn design thinking and create user-centered designs that
-                  drive engagement and satisfaction.
+                  Craft exceptional user experiences with our UI/UX Design
+                  course. Learn design thinking and create user-centered designs
+                  that drive engagement and satisfaction.
                 </p>
                 <ul className={styles.trainingList}>
                   <li className={styles.trainingListItem}>
@@ -504,18 +504,22 @@ export default function FsxAcademy() {
                 </ul>
               </div>
               <div className="card1">
-                <h5 className={styles.trainingCardTitle}>Software Development</h5>
+                <h5 className={styles.trainingCardTitle}>
+                  Software Development
+                </h5>
                 <p className={styles.trainingCardDescription}>
-                  Embark on a transformative journey with our Software Development
-                  course. From coding basics to advanced techniques, gain the
-                  skills to build innovative applications and shape the digital
-                  world.
+                  Embark on a transformative journey with our Software
+                  Development course. From coding basics to advanced techniques,
+                  gain the skills to build innovative applications and shape the
+                  digital world.
                 </p>
                 <ul className={styles.trainingList}>
                   <li className={styles.trainingListItem}>
                     Market trend analysis
                   </li>
-                  <li className={styles.trainingListItem}>Agile methodologies</li>
+                  <li className={styles.trainingListItem}>
+                    Agile methodologies
+                  </li>
                   <li className={styles.trainingListItem}>
                     Full-stack development
                   </li>
