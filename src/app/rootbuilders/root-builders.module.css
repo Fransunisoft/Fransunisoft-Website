@@ -157,36 +157,6 @@
 }
 
 
-    .navList li{
-         position: relative;
-  top: 0;
-  left: 0;
-text-align: left !important;
-    font-weight: 200;
-    color: #2C3E50;
-    cursor: pointer;
-    
-    }
-
-
-
-.navList li::after {
-     content: "";
-  position: absolute;
-
-  bottom: 0;
-  width: 0%;
-  height: 3px;
-  justify-items: center;
-  background-color: #0D519A;
-  transition: width 0.3s ease;
-  margin-bottom: 1rem;
-}
-
-.navList li:hover::after {
-    width: 80%;
-  
-}
 }
 
 .joinRootBtn{
@@ -229,8 +199,7 @@ text-align: left !important;
    text-align: center;
    flex-direction: column;
    position: relative;
-   margin-top: 80px;
-   /* margin-bottom: 45px; */
+   margin-top: 0px;
 }
 
 .fsxAcademyInitBtn{
@@ -239,8 +208,7 @@ text-align: left !important;
     font-size: 20px;
     font-weight: 600;
     border-bottom: 3px solid #0D519A;
-    border-color: #0D519A;
-    padding: 15.5px 15.5px;
+    padding: 15.5px 14px;
     border-radius: 15px;
     color: #0D519A;
     box-shadow: 0px -2px 4px #00000026;
@@ -252,10 +220,11 @@ text-align: left !important;
     font-size: 70px;
     font-weight: 700;
     color: #0D519A;
-    /* line-height: 57.6px; */
+
 }
 .modalImg{
     margin-top: 2px;
+
 }
 
 .modalContainer h5{
@@ -322,6 +291,10 @@ text-align: left !important;
 }
 .whyRootBodyContainer{
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
    
 }
 .whyRootBodyCon{
@@ -341,7 +314,6 @@ text-align: left !important;
 /* Who can APply */
 .whoCanApplyCon{
     background-color: #FAFDFF;
-    /* margin-top: 24px; */
 }
 .whoCanApplyContainer{
     text-align: center;
@@ -356,7 +328,7 @@ text-align: left !important;
 }
 
 .whoCanBody{
-    /* width: 100%; */
+
     display: grid;
     grid-template-columns: repeat(2,1fr);
     justify-items: space-between;
@@ -364,12 +336,9 @@ text-align: left !important;
     align-items: center;
     margin-top: 32px;
 }
-.personality{
-   /* width: 100%; */
-}
 
 .personalitySection{
-    /* width: 100%; */
+
      background-color: #E7EEF5;
     color: #333333;
     padding: 1rem;
@@ -382,15 +351,12 @@ text-align: left !important;
         linear-gradient(216.35deg, #FF6B35, #0D519A) border-box;
 
     border: 2px solid transparent;
-     /* border-style: solid;
-  border-width: 0 4px; 
 
-  border-image: linear-gradient(to bottom, purple, pink) 1; */
     border-radius:15px;
     padding: 20px;
     margin-bottom: 15px;
      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    /* box-shadow: 0px 4px 10px 4px rgba(0, 0, 0, 0.08); */
+
 }
 .personalityConBody{
     margin-bottom: 24px;
@@ -412,40 +378,34 @@ text-align: left !important;
 /* Application Process */
 .applicationCon{
     background-color: #FAFDFF;
-    margin-top: 24px;
+
 }
 
 .ApplicationContainer h2{
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
 }
 
 .ApplicationContainer button{
-    /* width: 100%; */
+
     cursor: pointer;
-    /* max-width: 60%; */
-    /* margin-left: 2rem; */
+
     padding: 12px 20px;
     border: none;
     background-color: #0D519A;
     border-radius: 10px;
-    /* color: #F1F5F9; */
+
     font-size: 16px;
     font-weight: 600;
 }
 .applicationbody {
     display: flex;
-    align-items: center;
     justify-content: space-evenly;
     gap: 2rem;
- /* display: grid;
- grid-template-columns: 1fr 1fr 1fr; */
+
  align-items: center;
- /* justify-content: space-evenly; */
- /* justify-content: center; */
- /* width: 100%;
- margin: 0 auto; */
+
 
 position: relative;
 }
@@ -464,9 +424,9 @@ position: relative;
 .chooseTrackBodyCon{
     display: grid;
     grid-template-columns: 2fr 1fr;
-    /* justify-content: center; */
+
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     margin-top: 2rem;
 }
 .chooseTrackContainer{
@@ -489,7 +449,7 @@ position: relative;
 }
 
 .chooseImg{
-    margin-left: auto;
+    margin-left: 100px;
 }
 
 /* WorkOn */
@@ -523,10 +483,10 @@ position: relative;
 
 .workOnChallenges h5, .workOnContainer h5{
     color: #FF6B35;
-    /* margin-bottom: 0.5rem; */
+
 }
 .workOnChallenges h3, .workOnContainer h3{
-    /* color: #FF6B35; */
+
     margin-bottom: 1rem;
 }
 
@@ -581,8 +541,8 @@ position: relative;
    
     .whoGotImg {
         order: 2;
-        width: 100%;
-        max-width: 320px;
+        width: auto;
+        max-width: 400px;
         height: auto;
         margin: 1rem 0 2rem 0; 
     }
@@ -603,6 +563,19 @@ position: relative;
         order: 3;
         width: 100%;
     }
+
+    .curvedArrowImg{
+    position: absolute;
+    top: 70;
+    left: 120;
+}
+
+.modalBody{
+    margin-top: 20px;
+}
+.modalImg{
+    width: 50%;
+}
 }
 
   
@@ -619,10 +592,10 @@ position: relative;
     margin-bottom: 20px;
     cursor: pointer;
     background-color: #E7EEF5;
-    color: #0D519A;
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 0 4 0 #0000000A;
+    transition: ease-in-out;
 }
 
 .gotQuestionFaQListSubtitle{
@@ -633,7 +606,6 @@ position: relative;
     margin-bottom: 20px;
     margin-top: -30px;
     background-color: #E7EEF5;
-    color: #0D519A;
 }
 
 /* RealSolutions */
@@ -642,14 +614,11 @@ position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    /* align-items: center; */
-    /* justify-content: center; */
 }
 .realSolutionImg{
-    border-radius: 10px;
+    border-radius: 20px;
 }
 .realSolutionBody{
-    background-color: #0D519A;
       background-image: url(/realSolutionImages.png); 
    background-position: center;
    background-repeat: no-repeat;
@@ -658,7 +627,7 @@ position: relative;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 20px;
     text-align: center;
     color: #FFFFFF;
     padding: 0 1rem;
@@ -721,9 +690,7 @@ position: relative;
 }
  
 .exploreBtn{
-    /* width: 100%; */
     cursor: pointer;
-    /* max-width: 15%; */
     margin-left: 2rem;
     padding: 10px 20px;
     border: none;
@@ -770,13 +737,9 @@ position: relative;
     grid-template-columns: 4fr 1fr;
  
 }
-.applicationList button{
-    /* width: 100%;
-    max-width: 70%; */
-}
 .applicationList button:last-child{
     margin-left: auto;
-    /* background-color: yellow; */
+
 }
 .applicationbody .applicationList:nth-child(2) button {
   margin-left: auto;
@@ -787,14 +750,12 @@ position: relative;
    
 
 .applicationList button:last-child{
-    margin-left: auto;
+
     width: 100%;
-    max-width: 75%;
 }
 .titleHeaders {
     cursor: pointer;
     width: 70%;
-    /* background-color: green; */
 }
 .navListContainer{
     width: 100%;
@@ -808,20 +769,21 @@ position: relative;
     margin-left: auto;
 }
 
-/* .applicationbody .applicationList:nth-child(2) button {
-  margin-left: auto;
-} */
+    .graphicDesignerImg{
+    display: block;
+    top: 450px;
+    left: 10px;
+}
+
+.curvedArrowImg{
+    position: absolute;
+    top: 70;
+    left: 120;
+}
 }
 
 @media screen and (max-width: 1127px) {
-    .ApplicationContainer,.ChooseTrackContainer,.whoGotQuestionsContainer,.modalDiv,.realSolutionContainer,.whoCanApplyContainer, .whyRootContainer,.workOnContainer{
-        margin-left:1rem;
-        margin-right: 1rem;
-    
-    }
-    /* .footerContainer{
 
-    } */
     .headerContainer{
           padding-left: 1rem;
           padding-right: 1rem;
@@ -830,11 +792,23 @@ position: relative;
 .applicationList button:last-child{
     margin-left: auto;
     width: 100%;
-    max-width: 75%;
+
 }
 .titleHeaders{
     cursor: pointer;
     width: 70%;
+}
+
+    .graphicDesignerImg{
+    display: block;
+    top: 450px;
+    left: 10px;
+}
+
+.curvedArrowImg{
+    position: absolute;
+    top: 70;
+    left: 60;
 }
 
 }
@@ -844,11 +818,20 @@ position: relative;
         width: 400px;
         height: 600px;
     }
-    /* .realSolutionContainer{
-        width: 100% !important;
-        display: flex;
-        flex-direction: column;
-    } */
+
+        .graphicDesignerImg{
+    display: block;
+    top: 450px;
+    left: -20px;
+}
+
+.curvedArrowImg{
+    position: absolute;
+    top: 70;
+    left: 1;
+}
+
+
     .realSolutionImg{
         width: 100%;
         max-width: 100% !important;
@@ -866,12 +849,11 @@ position: relative;
 @media screen and (max-width: 920px) {
     .applicationbody {
  display: flex;
- /* grid-template-columns: 1fr 1fr; */
+
  align-items: center;
- justify-content: space-around;
  flex-wrap: wrap;
  gap: 2rem;
-/* width: 100%; */
+
 position: relative;
 }
 
@@ -887,28 +869,10 @@ position: relative;
       .menuToggle {
     display: block; 
   }
-  
-    .navListToggless{
-        padding-top: 0.5rem;
-        position: fixed;
-        top: 100px;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        z-index: 1000;
-    }
-    .navItemLinks span{
-        font-size: 1.2rem;
-        font-weight: 700;
-        padding-bottom: 1rem;
-    }
-    .navItemLinks{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-    }
+
+
+
+
     .whyRootBody{
     margin-top: 32px;
     display: flex;
@@ -926,15 +890,15 @@ position: relative;
 }
 .whoCanApplyCon{
     background-color: #FAFDFF;
-    margin-top: 20px;
+
 }
 .whoCanBody{
-    /* width: 100%; */
+
     display: flex;
     flex-direction: column;
-    /* grid-template-columns: repeat(2,1fr); */
+
     justify-items: center;
-    /* gap: 20px; */
+
     align-items: center;
     margin-top: 32px;
 }
@@ -943,8 +907,7 @@ position: relative;
     align-items: start;
     justify-content: start;
     text-align: left;
-    /* gap: 16px;
-    margin-bottom: 24px; */
+
 }
 .personality{
     width: 100%;
@@ -956,12 +919,12 @@ position: relative;
  align-items: center;
  justify-content: center;
  
-width: 100%;
-/* position: relative; */
+
 }
 .applicationList button:last-child{
     margin-left: 0;
     background-color: yellow;
+    width: fit-content;
 }
 .applicationbody .applicationList:nth-child(2) button {
   margin-left: 0;
@@ -1013,7 +976,7 @@ width: 100%;
     gap: 20px;
 }
 .realSolutionBody{
-    margin-top: 0px;
+    margin-top: -50px;
     height: 500px;
 }
 .realSolutionImg{
@@ -1034,9 +997,6 @@ width: 100%;
 
 
 @media screen and (max-width: 920px) {
-    .applicationList button{
-        width: 100%;
-    }
     .applicationList{
     display: flex;
     align-items: center;
@@ -1061,6 +1021,11 @@ width: 100%;
 .joinRootBtn{
     display: none;
 }
+.curvedArrowImg{
+    position: absolute;
+    top: 70;
+    left: -30;
+}
 
 }
 @media screen and (max-width: 593px) {
@@ -1070,23 +1035,54 @@ width: 100%;
     .fransunisoftImg{
          width: 150px
     }
+.curvedArrowImg{
+    position: absolute;
+    top: 90;
+    left: -55;
+    width: 80px;
+    height: 70px;
+}
 
 }
 
 @media screen and (max-width: 593px) {
     .modalImg{
-        width: 100%;
+        width: 60%;
     }
     .fransunisoftImg{
          width: 150px
     }
 
-}
+
+.curvedArrowImg{
+    position: absolute;
+    top: 120;
+    left: -30;
+}}
 
 @media screen and (max-width: 593px) {
     .footerCon{
         margin: 0 1rem;
     }
+
+    .fsxAcademyInitBtn{
+    background-color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 3px solid #0D519A;
+    padding: 15.5px 10px;
+    border-radius: 15px;
+    color: #0D519A;
+    box-shadow: 0px -2px 4px #00000026;
+}
+
+.curvedArrowImg{
+    position: absolute;
+    top: 70;
+    left: -30;
+    max-width: 20%;
+}
 }
 
 @media screen and (max-width: 450px) {
@@ -1101,11 +1097,11 @@ width: 100%;
     height: auto;
 }
 .modalContainer{
-    margin-top:0.5rem;
+    margin-top:0rem;
 }
 .modalContainer .joinBtn{
     width: 100%;
-    max-width: 100%;
+    max-width: fit-content;
 }
 .workOnImg{
     height: auto;
@@ -1115,7 +1111,7 @@ width: 100%;
 }
 .curvedArrowImg{
     position: absolute;
-    top: 80;
+    top: 70;
     left: 0;
     max-width: 20%;
 }
@@ -1130,6 +1126,27 @@ width: 100%;
     right: 0;
     top: 140;
 }
+
+ .fsxAcademyInitBtn{
+    background-color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 3px solid #0D519A;
+    padding: 10px 10px;
+    border-radius: 15px;
+    color: #0D519A;
+    box-shadow: 0px -2px 4px #00000026;
+}
+
+.copy{
+    background-color: #0D519A;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 1.5rem 0.5;
+}
 }
 
 @media screen and (max-width: 361px) {
@@ -1139,5 +1156,243 @@ width: 100%;
     .titleHeaders h2{
         font-size: 20px;
     }
+  
+}
+
+
+
+
+
+
+/* Adelani Header */
+
+/* ===== Header (Desktop) ===== */
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 80;
+  background: #ffffff;
+  width: 100%;
+}
+
+.headerInner {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  border-bottom: 1.5px solid #dbdbdb;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo {
+  display: block;
+  width: 150px;
+  height: auto;
+}
+
+/* Desktop Nav aligned right like your UI */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-left: auto;
+}
+
+.navLink {
+  position: relative;
+  text-decoration: none;
+  color: #333333;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 10px 6px;
+}
+
+/* Underline for active nav (matches UI) */
+.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 3px;
+  background: #0b56a6;
+  border-radius: 999px;
+}
+
+/* CTA button on far right */
+.ctaBtn {
+  margin-left: 12px;
+  background: #0b56a6;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 22px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.ctaBtn:hover {
+  opacity: 0.92;
+}
+
+/* ===== Mobile Top Bar (matches your black bar screenshot) ===== */
+.mobileMenuBtn {
+  display: none;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  color: #0b56a6;
+  cursor: pointer;
+}
+
+/* ===== Mobile Fullscreen Menu (white) ===== */
+.mobileOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.mobilePanel {
+  position: fixed;
+  inset: 0;
+  height: fit-content;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background: #ffffff;
+  padding: 28px 22px;
+}
+
+.mobileClose {
+  position: absolute;
+  top: 15px;
+  right: 16px;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  font-weight: normal;
+  color: #0b56a6;
+  cursor: pointer;
+}
+
+.mobileNav {
+  margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.mobileLink {
+  text-decoration: none;
+  color: #333333;
+  font-size: 20px; 
+  font-weight: normal;
+  width: fit-content;
+}
+
+.mobileActive {
+  position: relative;
+}
+
+.mobileActive::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 4px;
+  background: #0b56a6;
+  border-radius: 999px;
+}
+
+/* Big CTA button */
+.mobileCta {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  width: min(520px, 92%);
+  padding: 22px 24px;
+  background: #0b56a6;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 15px;
+}
+
+/* ===== Responsive rules ===== */
+@media (max-width: 980px) {
+  .desktopNav {
+    display: none;
+  }
+  .mobileMenuBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .headerInner {
+    padding: 0 30px;
+    box-shadow: #151515;
+  }
+
+  .brand {
+    background: #ffffff;
+    padding: 10px 12px;
+    border-radius: 4px;
+  }
+
+  .mobileClose {
+  position: absolute;
+  top: 32px;
+  right: 50px;
+  border: none;
+  background: transparent;
+  font-size: 30px;
+  font-weight: normal;
+  color: #0b56a6;
+  cursor: pointer;
+}
+}
+
+@media (max-width: 480px) {
+  .headerInner {
+    padding: 0 16px;
+    height: 100px;
+  }
+
+  .logo {
+    width: 140px;
+  }
+
+  .mobileLink {
+    font-size: 20px;
+  }
+
+  .mobileCta {
+    font-size: 20px;
+    padding: 18px 20px;
+    border-radius: 15px;
+  }
+
+  .mobileClose {
+  position: absolute;
+  top: 32px;
+  right: 16px;
+  border: none;
+  background: transparent;
+  font-size: 30px;
+  font-weight: normal;
+  color: #0b56a6;
+  cursor: pointer;
+}
   
 }

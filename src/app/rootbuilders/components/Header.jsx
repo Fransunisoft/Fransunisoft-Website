@@ -1,107 +1,145 @@
 "use client";
-import styles from "../root-builders.module.css";
+
 import { useState } from "react";
-import Link from "next/link";
+import styles from "../root-builders.module.css";
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [active, setActive] = useState("root-builders");
+
   const toggleMenu = () => setMenuOpen((prev) => !prev);
+  const closeMenu = () => setMenuOpen(false);
 
-  const scrollToContact = (e) => {
+  const scrollToSection = (id) => (e) => {
     e.preventDefault();
-    const contactSection = document.getElementById("root-builders");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-    closeMobileMenu();
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    setActive(id);
+    closeMenu();
   };
 
-  const scrollToFaq = (e) => {
-    e.preventDefault();
-    const contactSection = document.getElementById("faq");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-    closeMobileMenu();
-  };
+  const joinLink =
+    "https://docs.google.com/forms/d/e/1FAIpQLSc07jkQrxzrXlAMuykYnvouWHBQfSv3Y8I1knfbfU2pfpSkXA/viewform?usp=preview";
 
-  const scrollToTrack = (e) => {
-    e.preventDefault();
-    const section = document.getElementById("track");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-    closeMobileMenu();
-  };
   return (
-    <>
-      <div className={styles.headerContainer}>
-        <div className={styles.navBarContainer}>
-         <Link href="/root-buiders" className={styles.titleHeaders}>
-  <img 
-    src="/rootbuilders_logo.png" 
-    alt="Root Builders Logo" 
-   width="150"   
-    height="50"  
-    className={styles.logo}
-  />
-</Link>
+    <header className={styles.header}>
+      <div className={styles.headerInner}>
+        {/* Logo */}
+        <a href="/rootbuilders" className={styles.brand} aria-label="RootBuilders home">
+          <img
+            src="/rootbuilders_logo.png"
+            alt="Root Builders Logo"
+            width="150"
+            height="50"
+            className={styles.logo}
+          />
+        </a>
 
-          <div
-            className={`${styles.navListContainer} ${
-              menuOpen ? styles.open : ""
-            }`}
+        {/* Desktop Nav */}
+        <nav className={styles.desktopNav} aria-label="Primary navigation">
+          <a
+            href="#root-builders"
+            onClick={scrollToSection("root-builders")}
+            className={`${styles.navLink} ${active === "root-builders" ? styles.active : ""}`}
           >
-            <ul className={styles.navList}>
-              <li className={styles.navItem} onClick={scrollToContact}>
-                Why Root Builders
-              </li>
-              <li className={styles.navItem} onClick={scrollToTrack}>
-                Tracks
-              </li>
-              <li className={styles.navItem} onClick={scrollToFaq}>
-                FAQs
-              </li>
-            </ul>
-          </div>
-        </div>
-      
-        <button className={styles.joinRootBtn}>  
-           <a href="https://docs.google.com/forms/d/e/1FAIpQLSc07jkQrxzrXlAMuykYnvouWHBQfSv3Y8I1knfbfU2pfpSkXA/viewform?usp=preview" target="_blank">Join Root Builders </a>
-        </button>
+            Why Root Builders
+          </a>
 
+          <a
+            href="#track"
+            onClick={scrollToSection("track")}
+            className={`${styles.navLink} ${active === "track" ? styles.active : ""}`}
+          >
+            Tracks
+          </a>
 
-        
+          <a
+            href="#faq"
+            onClick={scrollToSection("faq")}
+            className={`${styles.navLink} ${active === "faq" ? styles.active : ""}`}
+          >
+            FAQs
+          </a>
+
+          <a
+            href={joinLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.ctaBtn}
+          >
+            Join Root Builders
+          </a>
+        </nav>
+
+        {/* Mobile Menu Button */}
         <button
-          className={styles.menuToggle}
+          type="button"
+          className={styles.mobileMenuBtn}
           onClick={toggleMenu}
-          aria-label="Toggle menu"
-        > 
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+        >
           {menuOpen ? "✖" : "☰"}
         </button>
       </div>
-     {menuOpen ? (
-  <div className={styles.navToggle}>
-    <ul className={`${styles.navList} ${styles.navListToggless}`}>
-      <li className={`${styles.navItem} ${styles.navItemLinks}`} onClick={scrollToContact}>
-        <span>Why Root Builders</span>
-      </li>
-      <li className={`${styles.navItem} ${styles.navItemLinks}`} onClick={scrollToTrack}>
-        <span>Tracks</span>
-      </li>
-      <li className={`${styles.navItem} ${styles.navItemLinks}`} onClick={scrollToFaq}>
-        <span>FAQs</span>
-      </li>
-    </ul>
 
-      {/* Anchor styled as button */}
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc07jkQrxzrXlAMuykYnvouWHBQfSv3Y8I1knfbfU2pfpSkXA/viewform?usp=preview" target="_blank" rel="noopener noreferrer" className={styles.joinRootBtnss} >
-      Join Root Builders
-    </a>
-  </div>
-) : (
-  ""
-)}
+      {/* Mobile Overlay Menu */}
+      {menuOpen && (
+        <div className={styles.mobileOverlay}>
+          <div className={styles.mobilePanel}>
+            <button
+              type="button"
+              className={styles.mobileClose}
+              onClick={closeMenu}
+              aria-label="Close menu"
+            >
+              ✖
+            </button>
 
-    </>
+            <nav className={styles.mobileNav} aria-label="Mobile navigation">
+              <a
+                href="#root-builders"
+                onClick={scrollToSection("root-builders")}
+                className={`${styles.mobileLink} ${
+                  active === "root-builders" ? styles.mobileActive : ""
+                }`}
+              >
+                Why Root Builders
+              </a>
+
+              <a
+                href="#track"
+                onClick={scrollToSection("track")}
+                className={`${styles.mobileLink} ${
+                  active === "track" ? styles.mobileActive : ""
+                }`}
+              >
+                Tracks
+              </a>
+
+              <a
+                href="#faq"
+                onClick={scrollToSection("faq")}
+                className={`${styles.mobileLink} ${
+                  active === "faq" ? styles.mobileActive : ""
+                }`}
+              >
+                FAQs
+              </a>
+            </nav>
+
+            <a
+              className={styles.mobileCta}
+              href={joinLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMenu}
+            >
+              Join Root Builders
+            </a>
+          </div>
+        </div>
+      )}
+    </header>
   );
 }

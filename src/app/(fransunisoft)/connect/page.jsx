@@ -1,13 +1,13 @@
-'use client'
+"use client";
 import Image from "next/image";
 import styles from "./connect.module.css";
 import { Roboto } from "next/font/google";
 // import Link from "next/link";
 import AOS from "aos";
-import 'aos/dist/aos.css';
-import CountUp from 'react-countup';
-import { useEffect } from "react"
-import ButtonGroup from "@/app/components/ButtonGroup";
+import "aos/dist/aos.css";
+import CountUp from "react-countup";
+import { useEffect } from "react";
+import ButtonGroup from "@/app/(fransunisoft)/components/ButtonGroup";
 
 // const roboto = Roboto({
 //   variable: "--font-roboto",
@@ -20,8 +20,6 @@ import ButtonGroup from "@/app/components/ButtonGroup";
 //   description: "Connect with entrepreneurs, investors, mentors, and innovators across Africa and beyond.",
 // };
 
-
-
 // const scrollToContact = (e, sectionId) => {
 //   e.preventDefault();
 //   const section = document.getElementById(sectionId);
@@ -30,41 +28,35 @@ import ButtonGroup from "@/app/components/ButtonGroup";
 //   }
 // };
 const scrollToContact = (e) => {
-    e.preventDefault();
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-    closeMobileMenu();
-  };
+  e.preventDefault();
+  const contactSection = document.getElementById("contact");
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: "smooth" });
+  }
+  closeMobileMenu();
+};
 
-
-  const scrollToExplore = (e) => {
-    e.preventDefault();
-    const section = document.getElementById('joinCommunity');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-     closeMobileMenu();
-  };
-
-
-
+const scrollToExplore = (e) => {
+  e.preventDefault();
+  const section = document.getElementById("joinCommunity");
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+  closeMobileMenu();
+};
 
 export default function FsxConnect() {
   useEffect(() => {
-        setTimeout(() => {
-          AOS.init({
-            duration: 1000,
-            once: false,
-          });
-        }, 100);
-      }, []);
+    setTimeout(() => {
+      AOS.init({
+        duration: 1000,
+        once: false,
+      });
+    }, 100);
+  }, []);
 
   return (
-    <div
-      className=""
-    >
+    <div className="">
       <div className={styles.fsxConnectContainer}>
         <div className="hero" data-aos="fade-up">
           <div className="heroText">
@@ -74,15 +66,15 @@ export default function FsxConnect() {
               with entrepreneurs, investors, mentors, and innovators across
               Africa and beyond.
             </p>
-             <div className={styles.heroBtns} >
-                        <ButtonGroup
-                          filterKeys={['fsxconnect1', 'ExploreConnect']}
-                          onClickHandlers={{
-                           fsxconnect1: scrollToContact,
-                           ExploreConnect: scrollToExplore,
-                          }}
-                        />
-                      </div>
+            <div className={styles.heroBtns}>
+              <ButtonGroup
+                filterKeys={["fsxconnect1", "ExploreConnect"]}
+                onClickHandlers={{
+                  fsxconnect1: scrollToContact,
+                  ExploreConnect: scrollToExplore,
+                }}
+              />
+            </div>
             {/* <div className={styles.heroBtnContainer}>
            <button className={styles.exploreBtn}  onClick={(e) => scrollToSection(e, "joinCommunity" )}>Explore Network</button>
               <button className={styles.joinBtn} onClick={(e) => scrollToSection(e, "contact")}>Join Community</button> 
@@ -158,7 +150,6 @@ export default function FsxConnect() {
             </div>
           </div>
         </section>
-      
 
         {/* <section  data-aos="fade-up">
           <div className={styles.cardParticipation}>
@@ -181,7 +172,6 @@ export default function FsxConnect() {
           </div>
         </section> */}
 
-        
         <section data-aos="fade-up">
           <div className="sectionHead">
             <h2>Our Connection Services</h2>
@@ -190,8 +180,8 @@ export default function FsxConnect() {
               and programs designed to foster collaboration and growth.
             </h6>
           </div>
-          <div className='grid' id="connection" >
-            <div className='card2'>
+          <div className="grid" id="connection">
+            <div className="card2">
               <Image
                 src="/networkIcon.png"
                 alt="Network Icon"
@@ -357,7 +347,12 @@ export default function FsxConnect() {
               </div>
             </div>
           </div>
-          <button className={styles.joinCommunityButton} onClick={scrollToContact}>Join community</button>
+          <button
+            className={styles.joinCommunityButton}
+            onClick={scrollToContact}
+          >
+            Join community
+          </button>
         </section>
 
         <section data-aos="fade-up">
@@ -389,7 +384,7 @@ export default function FsxConnect() {
                 height={60}
                 src="/diverse-community-icon.svg"
                 alt="Diverse Community Icon"
-                 className={styles.cardImg}
+                className={styles.cardImg}
               />
               <h5 className={styles.whyJoinCardTitle}>Diverse Community</h5>
               <p className={styles.whyJoinCardDescription}>
@@ -404,7 +399,7 @@ export default function FsxConnect() {
                 height={60}
                 src="/innovation-hub-icon.png"
                 alt="Innovation Hub Icon"
-                 className={styles.cardImg}
+                className={styles.cardImg}
               />
               <h5 className={styles.whyJoinCardTitle}>Innovation Hub</h5>
               <p className={styles.whyJoinCardDescription}>
@@ -421,7 +416,9 @@ export default function FsxConnect() {
               nation building, youth development, SDG support and innovation
               strategy?
             </p>
-            <button className={styles.ctaButton}  onClick={ scrollToContact }>Join Us Today</button> 
+            <button className={styles.ctaButton} onClick={scrollToContact}>
+              Join Us Today
+            </button>
           </div>
           <div className={styles.ctaImageContainer}>
             <Image
@@ -431,7 +428,7 @@ export default function FsxConnect() {
               className={styles.ctaImage}
               // width={550}
               // height={350}
-               width={600}
+              width={600}
               height={400}
               objectFit="cover"
             />

@@ -1,43 +1,39 @@
-'use client'
+"use client";
 
-import { useEffect } from "react"
+import { useEffect } from "react";
 import React from "react";
 import styles from "./consulting.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import AOS from "aos";
-import ButtonGroup from "@/app/components/ButtonGroup";
-
-
+import ButtonGroup from "@/app/(fransunisoft)/components/ButtonGroup";
 
 const scrollToContact = (e) => {
-    e.preventDefault();
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-    closeMobileMenu();
-  };
+  e.preventDefault();
+  const contactSection = document.getElementById("contact");
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: "smooth" });
+  }
+  closeMobileMenu();
+};
 
-  const scrollToConsultingService = (e) => {
-    e.preventDefault();
-    const section = document.getElementById('consulting-service');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
+const scrollToConsultingService = (e) => {
+  e.preventDefault();
+  const section = document.getElementById("consulting-service");
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 const Consulting = () => {
   useEffect(() => {
-      setTimeout(() => {
-        AOS.init({
-          duration: 1000,
-          once: true,
-        });
-      }, 100); 
-    }, []);
-
+    setTimeout(() => {
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    }, 100);
+  }, []);
 
   return (
     <div className={styles.consulting}>
@@ -208,8 +204,8 @@ const Consulting = () => {
 
             <div className={styles.coreMissionText}>
               <h3>
-                The Mission Behind  
-                  <span> Consulting</span>
+                The Mission Behind
+                <span> Consulting</span>
               </h3>
               <p>
                 FSX Consulting exists to equip startups and enterprises with
@@ -241,9 +237,7 @@ const Consulting = () => {
           <div>
             <h3>95%</h3>
             <h6>Client Retention</h6>
-            <span className={styles.statp}>
-              Because execution matters
-            </span>
+            <span className={styles.statp}>Because execution matters</span>
           </div>
           <div>
             <h3>50+</h3>
@@ -260,7 +254,8 @@ const Consulting = () => {
         <div className="sectionHead">
           <h2>Why FSX Consulting Works</h2>
           <h6>
-            Empowering businesses with expert insights to thrive, adapt, and grow.
+            Empowering businesses with expert insights to thrive, adapt, and
+            grow.
           </h6>
         </div>
 

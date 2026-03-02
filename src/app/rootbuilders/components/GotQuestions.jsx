@@ -49,7 +49,7 @@ export default function GotQuestions() {
     <section className={styles.whoGotQuestionsContainer} id="faq">
       <Image
         src="/gotQuestionImage.png"
-        alt="aaaaaa"
+        alt="faq image"
         width={381}
         height={600}
         className={styles.whoGotImg}
@@ -93,10 +93,6 @@ export default function GotQuestions() {
                     />
                   )}
                 </div>
-                {/* {isActive.include(index) && <div className={styles.gotQuestionFaQListSubtitle}>
-                   <p>{text.subTitle}</p>
-              </div>}
-                  */}
                 {isActive.includes(index) && (
                   <div className={styles.gotQuestionFaQListSubtitle}>
                     <p>{text.subTitle}</p>
