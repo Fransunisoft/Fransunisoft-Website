@@ -34,7 +34,7 @@ const LEVELS = [
   {
     num: "3",
     title: "Claude Certified Architect",
-    duration: "6 weeks · Coding taught",
+    duration: "6 weeks",
     desc: "Full CCA-F exam prep. Claude API, agents, MCP, RAG — hands-on. Exam fee included.",
     color: "#FF6B35",
   },
