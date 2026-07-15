@@ -11,7 +11,7 @@ const OUTCOMES = [
   "Claude Certified Associate – Fundamentals (CCA-F) credential",
   "Hands-on Claude API, agents, MCP & RAG skills",
   "A portfolio of real, deployed AI projects",
-  "Access to the Biz Boosters associate engineer network",
+  "Access to the Fransunisoft & Biz Boosters associate engineer network",
   "Project placement opportunities via Fransunisoft",
   "Confidence to build & sell AI — from zero",
 ];
@@ -35,7 +35,7 @@ const LEVELS = [
     num: "3",
     title: "Claude Certified Architect",
     duration: "6 weeks · Coding taught",
-    desc: "Full CCA-F exam prep. Claude API, agents, MCP, RAG — hands-on. Exam fee included via Biz Boosters.",
+    desc: "Full CCA-F exam prep. Claude API, agents, MCP, RAG — hands-on. Exam fee included.",
     color: "#FF6B35",
   },
 ];
@@ -51,7 +51,7 @@ const WHY_ITEMS = [
   {
     icon: "🤝",
     title: "Authorised Anthropic Claude Partner Programme",
-    desc: "Biz Boosters (UK) is an authorised Anthropic Claude Partner. The CCA-F exam is partner-gated — enrolling with us is your direct route to it.",
+    desc: "Fransunisoft is the official Biz Boosters partner for Nigeria. The CCA-F exam is partner-gated — enrolling here is your direct route to it.",
   },
   {
     icon: "🇳🇬",
@@ -85,7 +85,7 @@ export default function ClaudeAcceleratorPage() {
         <div className={styles.heroInner} data-aos="fade-up">
           <div className={styles.partnerBadge}>
             <span className={styles.badgeDot} />
-            Delivered by Biz Boosters · Official Anthropic Partner
+            Powered by Fransunisoft · Official Biz Boosters Partner for Nigeria
           </div>
 
           <div className={styles.heroProgrammeBadge}>AI ARCHITECT ACCELERATOR</div>
@@ -98,8 +98,7 @@ export default function ClaudeAcceleratorPage() {
           <p className={styles.heroSub}>
             A career &amp; business transformation programme — from zero technical skills to a
             Certified Claude AI Architect. Delivered in Nigeria by{" "}
-            <strong>Fransunisoft</strong> in partnership with{" "}
-            <strong>Biz Boosters (UK)</strong>.
+            <strong>Fransunisoft</strong>.
           </p>
 
           <div className={styles.cohortPills}>
@@ -273,7 +272,7 @@ export default function ClaudeAcceleratorPage() {
         <div className={styles.ctaInner}>
           <div className={styles.partnerBadge} style={{ justifyContent: "center", marginBottom: "1.5rem" }}>
             <span className={styles.badgeDot} />
-            Powered by Biz Boosters (UK) · Authorised Anthropic Claude Partner
+            Powered by Fransunisoft · Official Biz Boosters Partner for Nigeria
           </div>
           <h2 className={styles.ctaTitle}>
             Be among the first Certified<br />
