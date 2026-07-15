@@ -109,6 +109,15 @@ export default function Navbar() {
           </Link>
         </li>
 
+        <li className={styles.navItem}>
+          <Link
+            href="/claude-accelerator"
+            onClick={closeMobileMenu}
+            className={pathname === '/claude-accelerator' ? styles.activeLink : ''}
+          >
+            Claude Accelerator
+          </Link>
+        </li>
 
         {/* FSX Brands Dropdown */}
         <li
