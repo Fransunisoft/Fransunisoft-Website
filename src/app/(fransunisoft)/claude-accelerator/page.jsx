@@ -50,8 +50,8 @@ const PRICING = [
 const WHY_ITEMS = [
   {
     icon: "🤝",
-    title: "Official Anthropic Claude Partner",
-    desc: "Biz Boosters is an authorised Anthropic Claude Partner. The CCA-F exam is partner-gated — enrolling with us is your direct route to it.",
+    title: "Authorised Anthropic Claude Partner Programme",
+    desc: "Biz Boosters (UK) is an authorised Anthropic Claude Partner. The CCA-F exam is partner-gated — enrolling with us is your direct route to it.",
   },
   {
     icon: "🇳🇬",
@@ -85,7 +85,7 @@ export default function ClaudeAcceleratorPage() {
         <div className={styles.heroInner} data-aos="fade-up">
           <div className={styles.partnerBadge}>
             <span className={styles.badgeDot} />
-            Official Anthropic Claude Partner
+            Delivered by Biz Boosters · Official Anthropic Partner
           </div>
 
           <div className={styles.heroProgrammeBadge}>AI ARCHITECT ACCELERATOR</div>
@@ -273,7 +273,7 @@ export default function ClaudeAcceleratorPage() {
         <div className={styles.ctaInner}>
           <div className={styles.partnerBadge} style={{ justifyContent: "center", marginBottom: "1.5rem" }}>
             <span className={styles.badgeDot} />
-            Powered by Biz Boosters · Official Anthropic Claude Partner
+            Powered by Biz Boosters (UK) · Authorised Anthropic Claude Partner
           </div>
           <h2 className={styles.ctaTitle}>
             Be among the first Certified<br />
