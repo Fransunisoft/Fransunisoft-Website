@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fransunisoft Website
+
+Official website project for Fransunisoft, an AI venture and AI talent studio focused on building Africa's next generation of startups.
+
+This project is built with Next.js, React, TypeScript, and Tailwind CSS.
+
+## Tech Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- ESLint
+
+## Requirements
+
+Use Node.js `20.19.0` or newer.
+
+```bash
+node -v
+```
+
+If your Node version is below `20.19.0`, upgrade Node before installing dependencies. Some packages in this project require that minimum version.
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+npm ci
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the site in your browser:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Available Scripts
 
-## Learn More
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Runs the local development server.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Creates a production build.
 
-## Deploy on Vercel
+```bash
+npm run start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Starts the production server after a build.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run lint
+```
+
+Runs ESLint.
+
+## Project Structure
+
+```text
+app/
+  globals.css      Global styles, Tailwind import, color tokens, and typography
+  layout.tsx       Root HTML layout and metadata
+  page.tsx         Home page
+public/            Static assets
+tailwind.config.ts Tailwind theme configuration
+```
+
+## Typography
+
+The project uses:
+
+- Fraunces for headings
+- Manrope for body, paragraph, list, and general sans text
+
+Font tokens are defined in `app/globals.css` and mapped into Tailwind in `tailwind.config.ts` as:
+
+- `font-heading`
+- `font-body`
+- `font-sans`
+
+## Notes
+
+If TypeScript reports missing React JSX types, reinstall dependencies with a clean `node_modules` folder:
+
+```powershell
+Remove-Item -LiteralPath node_modules -Recurse -Force
+npm ci
+```
+
+The current home page may still contain starter content from the initial Next.js scaffold. Update `app/page.tsx` as the site design is implemented.

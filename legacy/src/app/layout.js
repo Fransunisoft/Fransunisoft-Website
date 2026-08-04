@@ -3,7 +3,7 @@ import "@/app/globals.css";
 export const metadata = {
   title: "Fransunisoft Official Website",
   description:
-    "Fransunisoft — a venture & talent studio building Africa’s next generation of startups.",
+    "Fransunisoft — an AI venture & AI talent studio building Africa’s next generation of startups.",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
