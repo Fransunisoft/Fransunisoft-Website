@@ -1,26 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @import "tailwindcss";
+@config "../tailwind.config.ts";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-heading: "Fraunces", ui-serif, Georgia, serif;
+  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --primary-50: #e7eef5;
+  --primary-100: #b4c9e0;
+  --primary-200: #90afd1;
+  --primary-300: #5d8abb;
+  --primary-400: #3d74ae;
+  --primary-500: #0d519a;
+  --primary-600: #0c4a8c;
+  --primary-700: #093a6d;
+  --primary-800: #072d55;
+  --primary-900: #052241;
+
+  --secondary-50: #e9f6f5;
+  --secondary-100: #bae4e1;
+  --secondary-200: #98d7d3;
+  --secondary-300: #6ac5bf;
+  --secondary-400: #4db9b2;
+  --secondary-500: #20a89f;
+  --secondary-600: #1d9991;
+  --secondary-700: #177771;
+  --secondary-800: #125c57;
+  --secondary-900: #0d4743;
+
+  --accent-50: #fff0eb;
+  --accent-100: #ffd1c0;
+  --accent-200: #ffbba2;
+  --accent-300: #ff9c78;
+  --accent-400: #ff895d;
+  --accent-500: #ff6b35;
+  --accent-600: #e86130;
+  --accent-700: #b54c26;
+  --accent-800: #8c3b1d;
+  --accent-900: #6b2d16;
+
+
+  --neutral-light: #ffffff;
+  --neutral-border: #dbdbdc;
+  --neutral-card-border: #e7e7e8;
+  --neutral-muted-text: #9ea6af;
+  --neutral-secondary-text: #7c8084;
+  --neutral-primary-text: #333333;
+
+  --background: #FAFAFA;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--neutral-primary-text);
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.section-layout {
+  margin-inline: 20px;
+  padding-block: 20px;
+}
+
+@media (min-width: 768px) {
+  .section-layout {
+    margin-inline: 50px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-layout {
+    margin-inline: 100px;
+    padding-block: 40px;
+  }
+}
+
+
+
+/* RB DESKTOP TYPROGRAPHY SYSTEM */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 600;
+}
+h2 {
+  font-size: 40px;
+  font-weight: 600;
+}
+h3 {
+  font-size: 32px;
+  font-weight: 500;
+}
+h4 {
+  font-size: 28px;
+  font-weight: 500;
+}
+h5 {
+  font-size: 24px;
+  font-weight: 500;
+}
+h6 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+
+p,
+li,
+span {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 2.0;
+}
+
+.caption{
+  font-size: 14px;
+}
+
+/* RB Mobile Typography style */
+@media (max-width: 480px) {
+  h1 {
+  font-size: 32px;
+  font-weight: 600;
+}
+h2 {
+  font-size: 28px;
+  font-weight: 600;
+}
+h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+h4 {
+  font-size: 20px;
+  font-weight: 500;
+}
+h5 {
+  font-size: 18px;
+  font-weight: 500;
+}
+h6 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+p,
+li,
+span {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 2.0;
+}
+
+.caption{
+  font-size: 12px;
+}
 }
