@@ -31,13 +31,6 @@ const LEVELS = [
     desc: "Apply AI to your work — advanced prompting, workflow design, AI strategy. Prepares for certification.",
     color: "#0D519A",
   },
-  {
-    num: "3",
-    title: "Claude Certified Architect",
-    duration: "6 weeks",
-    desc: "Full CCA-F exam prep. Claude API, agents, MCP, RAG — hands-on. Exam fee included.",
-    color: "#FF6B35",
-  },
 ];
 
 const PRICING = [
