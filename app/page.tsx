@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Button from "./components/ui/Button";
+import Header from "./components/layout/Header/Header";
 
 const focusAreas = [
   "AI venture building",
@@ -26,35 +28,7 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-background text-neutral-primary">
       <section className="relative min-h-screen border-b border-neutral-card-border bg-[radial-gradient(circle_at_top_left,#e9f6f5_0,#fafafa_32%,#ffffff_72%)]">
-        <div className="section-layout flex min-h-screen flex-col">
-          <header className="flex items-center justify-between gap-4">
-            <a className="flex items-center gap-3" href="/" aria-label="Fransunisoft home">
-              <Image
-                src="/favicon.png"
-                alt=""
-                width={44}
-                height={68}
-                className="h-11 w-8 object-contain"
-                priority
-              />
-              <span className="text-sm font-extrabold uppercase tracking-[0.18em] text-primary-800">
-                Fransunisoft
-              </span>
-            </a>
-
-            <nav className="hidden items-center gap-8 text-sm font-semibold text-neutral-secondary md:flex">
-              <a className="transition hover:text-primary-700" href="#focus">
-                Focus
-              </a>
-              <a className="transition hover:text-primary-700" href="#studio">
-                Studio
-              </a>
-              <a className="transition hover:text-primary-700" href="mailto:hello@fransunisoft.com">
-                Contact
-              </a>
-            </nav>
-          </header>
-
+        <div >
           <div className="grid flex-1 items-center gap-12 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:py-10">
             <div className="max-w-3xl">
               <p className="mb-5 inline-flex rounded-full border border-secondary-200 bg-white px-4 py-2 text-sm font-bold uppercase tracking-[0.14em] text-secondary-800 shadow-sm">
@@ -89,7 +63,7 @@ export default function Home() {
               <div className="absolute -left-6 top-10 h-28 w-28 rounded-full bg-accent-500/15" />
               <div className="absolute -right-8 bottom-8 h-36 w-36 rounded-full bg-secondary-500/15" />
               <div className="relative border border-neutral-card-border bg-white p-6 shadow-[0_24px_80px_rgba(5,34,65,0.12)]">
-                <div className="flex min-h-[420px] flex-col justify-between overflow-hidden bg-primary-900 p-7 text-white">
+                <div className="flex min-h-105 flex-col justify-between overflow-hidden bg-primary-900 p-7 text-white">
                   <div className="flex items-start justify-between gap-6">
                     <Image
                       src="/favicon.png"
@@ -159,19 +133,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-neutral-card-border bg-primary-900 text-white">
-        <div className="section-layout flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-primary-50">
-            Fransunisoft official website is being shaped.
-          </p>
-          <a
-            href="mailto:hello@fransunisoft.com"
-            className="text-sm font-bold text-secondary-100 transition hover:text-white"
-          >
-            hello@fransunisoft.com
-          </a>
-        </div>
-      </footer>
+     
     </main>
   );
 }

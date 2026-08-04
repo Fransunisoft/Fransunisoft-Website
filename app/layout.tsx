@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "@/app/components/layout/Header/Header";
+import Footer from "@/app/components/layout/Footer/Footer"
 
 export const metadata: Metadata = {
   title: "Fransunisoft Official Website",
@@ -19,7 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
