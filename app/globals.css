@@ -102,6 +102,43 @@ select {
   animation: fadeIn 0.2s ease-out;
 }
 
+.consulting-tab-panel {
+  animation: consultingTabReveal 320ms ease-out;
+}
+
+@keyframes consultingTabReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.marquee-track {
+  animation: marqueeLeft 28s linear infinite;
+}
+
+@keyframes marqueeLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .consulting-tab-panel,
+  .marquee-track {
+    animation: none;
+  }
+}
+
 .section-layout {
   margin-inline: 20px;
   padding-block: 20px;

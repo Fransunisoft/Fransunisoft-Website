@@ -12,7 +12,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="section-layout flex min-h-screen flex-col">
+    <header className="section-layout relative z-20 flex flex-col bg-background">
       <nav className="flex items-center justify-between">
         <Logo />
 
