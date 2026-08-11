@@ -6,7 +6,7 @@ export default function Challenge() {
   return (
     <>
       <main className="p-10">
-        <section className="grid grid-cols-2  items-center gap-10 lg:grid-cols-2">
+        <section className="flex flex-col gap-8 md:flex-row md:gap-10">
           {/* Left Content */}
           <div>
             <div className="flex items-center gap-4">

@@ -8,6 +8,7 @@ import ConsultMenu from "./components/HomeComponent/ConsultMenu";
 import StatsSection from "./components/HomeComponent/StatsSection";
 import SectorSection from "./components/HomeComponent/SectorSection";
 import TrustedPartners from "./components/HomeComponent/TrustedPartners";
+import PreFooter from "./components/layout/PreFooter";
 // import Sector from "./components/HomeComponent/Sector";
 
 
@@ -25,6 +26,7 @@ export default function Home() {
       <StatsSection />
       <SectorSection />
       <TrustedPartners />
+      <PreFooter />
     </main>
   );
 }

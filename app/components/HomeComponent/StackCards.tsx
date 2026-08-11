@@ -13,7 +13,8 @@ import Stack5 from "./images/stack5.png";
 import Stack6 from "./images/stack6.png";
 
 gsap.registerPlugin(ScrollTrigger);
-
+const TOP_STEP = 16; // px — controls the peek visible at the TOP
+const RIGHT_STEP = 14;
 export default function StackCards() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -116,64 +117,75 @@ export default function StackCards() {
   ];
 
   return (
-    <section ref={sectionRef} className="relative mx-auto max-w-7xl px-6">
+    <section
+      ref={sectionRef}
+      className="relative mx-auto max-w-7xl px-4 sm:px-6"
+    >
       {StackCardDetails.map((stack, index) => (
+        // OUTER wrapper: this is what's sticky, and its top offset per index
+        // is what creates the peeking-strip effect from earlier cards
         <div
           key={index}
-          ref={(el) => {
-            cardsRef.current[index] = el;
-          }}
+          className="sticky mb-16 sm:mb-28"
           style={{
+            top: `${90 + index * TOP_STEP}px`,
             zIndex: index + 1,
-            top: `${100 + index * 15}px`,
           }}
-          className={`sticky mb-6 flex items-center  gap-8 rounded-2xl p-6 shadow-xl ${stack.bg}`}
         >
-          {/* Image */}
-          <div className="w-1/2">
-            <Image
-              src={stack.imgsrc}
-              alt={stack.title}
-              className="h-full w-full rounded-xl object-cover"
-            />
-          </div>
+          {/* INNER wrapper: this is what GSAP scales, kept separate from the
+              sticky element so scaling never fights with sticky positioning */}
+          <div
+            ref={(el) => {
+              cardsRef.current[index] = el;
+            }}
+            className={`flex flex-col items-center gap-5 rounded-[20px] p-5 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.25)] ring-1 ring-black/5 sm:rounded-[28px] sm:p-6 lg:flex-row lg:gap-8 ${stack.bg}`}
+          >
+            {/* Image */}
+            <div className="w-full lg:w-1/2">
+              <Image
+                src={stack.imgsrc}
+                alt={stack.title}
+                className="w-full rounded-xl object-cover lg:rounded-2xl"
+              />
+            </div>
 
-          {/* Text */}
-          <div className="w-1/2">
-            <h2
-              className={`text-xl font-bold leading-tight lg:text-2xl ${stack.textColor}`}
-            >
-              {stack.title}
-            </h2>
-
-            <p
-              className={`mt-3 text-sm leading-6 lg:text-base lg:leading-7 ${stack.textColor}`}
-            >
-              {stack.description}
-            </p>
-
-            <div
-              className={`mt-5 border-t pt-4 ${
-                stack.textColor === "text-white"
-                  ? "border-white/20"
-                  : "border-neutral-300"
-              }`}
-            >
-              <h3 className={`text-sm font-semibold ${stack.idealForColor}`}>
-                Ideal For
-              </h3>
+            {/* Text */}
+            <div className="w-full lg:w-1/2">
+              <h2
+                className={`text-xl font-bold leading-tight lg:text-2xl ${stack.textColor}`}
+              >
+                {stack.title}
+              </h2>
 
               <p
-                className={`mt-2 text-sm leading-6 lg:text-base lg:leading-7 ${stack.textColor}`}
+                className={`mt-3 text-sm leading-6 lg:text-base lg:leading-7 ${stack.textColor}`}
               >
-                {stack.idealFor}
+                {stack.description}
               </p>
+
+              <div
+                className={`mt-5 border-t pt-4 ${
+                  stack.textColor === "text-white"
+                    ? "border-white/20"
+                    : "border-neutral-300"
+                }`}
+              >
+                <h3 className={`text-sm font-semibold ${stack.idealForColor}`}>
+                  Ideal For
+                </h3>
+
+                <p
+                  className={`mt-2 text-sm leading-6 lg:text-base lg:leading-7 ${stack.textColor}`}
+                >
+                  {stack.idealFor}
+                </p>
+              </div>
             </div>
           </div>
         </div>
       ))}
 
-      {/* Spacer so the last card fully settles before the section ends */}
+      {/* spacer so the last card gets to fully settle before the section ends */}
       <div className="h-[50vh]" aria-hidden />
     </section>
   );

@@ -130,11 +130,11 @@ export default function Sector() {
   ];
 
   return (
-    <section className=" p-8 grid grid-cols-3">
+    <section className="grid grid-cols-1 p-4 sm:grid-cols-2 sm:p-6 lg:grid-cols-3 lg:p-8">
       {PartnersDetails.map((partner, index) => {
         const isHover = hoveredIndex === index;
         return (
-          <div key={index} className="p-8 ">
+          <div key={index} className="p-4 sm:p-6 lg:p-8">
             <div
               onMouseEnter={() => {
                 setHoveredIndex(index);
@@ -144,8 +144,8 @@ export default function Sector() {
               }}
               className={`${
                 isHover
-                  ? "bg-[#0D519A] text-white p-8 relative rounded-[20px]"
-                  : "bg-[#E1E6EB]  p-8 relative rounded-[20px] h-75 cursor-pointer"
+                  ? "bg-[#0D519A] text-white p-5 relative rounded-[20px] sm:p-6 lg:p-8"
+                  : "bg-[#E1E6EB] p-5 relative rounded-[20px] min-h-56 cursor-pointer sm:p-6 sm:min-h-64 lg:p-8 lg:h-75"
               }`}
             >
               <Image
@@ -166,11 +166,15 @@ export default function Sector() {
                 src={isHover ? arrowUp : arrowDown}
                 alt={isHover ? "arrow upwards" : "arrow downwards"}
                 className={`absolute transition-all duration-300 ${
-                  isHover ? "bottom-10 right-10" : "bottom-5 right-10"
+                  isHover
+                    ? "bottom-6 right-6 sm:bottom-8 sm:right-8 lg:bottom-10 lg:right-10"
+                    : "bottom-4 right-6 sm:bottom-5 sm:right-8 lg:right-10"
                 }`}
               />
               {isHover && (
-                <p className="font-body text-[16px]">{partner.details}</p>
+                <p className="font-body text-sm sm:text-base lg:text-[16px]">
+                  {partner.details}
+                </p>
               )}
             </div>
           </div>

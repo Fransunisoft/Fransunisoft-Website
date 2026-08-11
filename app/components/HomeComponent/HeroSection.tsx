@@ -29,8 +29,8 @@ const slides = [
     description: (
       <>
         We combine AI strategy, workforce development, technology <br />
-        implementation, venture building, and ecosystem programs <br />to help
-        organizations prepare for the future.
+        implementation, venture building, and ecosystem programs <br />
+        to help organizations prepare for the future.
       </>
     ),
     image: sliderOne,
@@ -43,11 +43,11 @@ const slides = [
         Transform With AI
       </>
     ),
-     description: (
+    description: (
       <>
         We combine AI strategy, workforce development, technology <br />
-        implementation, venture building, and ecosystem programs <br />to help
-        organizations prepare for the future.
+        implementation, venture building, and ecosystem programs <br />
+        to help organizations prepare for the future.
       </>
     ),
     image: sliderTwo,
@@ -63,8 +63,8 @@ const slides = [
     description: (
       <>
         We combine AI strategy, workforce development, technology <br />
-        implementation, venture building, and ecosystem programs <br />to help
-        organizations prepare for the future.
+        implementation, venture building, and ecosystem programs <br />
+        to help organizations prepare for the future.
       </>
     ),
     image: sliderThree,
@@ -106,23 +106,24 @@ export default function HeroSection() {
               {/* Overlay */}
               <div className="absolute inset-0 bg-black/60" />
 
+           
               {/* Content */}
-              <div className="relative z-10  px-16 py-8  flex h-full items-center">
-                <div className="mx-auto w-full max-w-7xl px-6">
+              <div className="relative z-10 flex h-full items-center px-4 py-8 sm:px-6 md:px-16">
+                <div className="mx-auto w-full max-w-7xl px-2 sm:px-4 md:px-6">
                   <div className="max-w-2xl text-white">
-                    <h1 className="text-[48px] font-bold   leading-tight ">
+                    <h1 className="text-3xl font-bold leading-tight sm:text-4xl md:text-[48px]">
                       {slide.title}
                     </h1>
 
-                    <p className="mt-6 text-base leading-8 text-gray-200 md:text-lg">
+                    <p className="mt-4 text-sm leading-6 text-gray-200 sm:mt-5 sm:text-base sm:leading-7 md:mt-6 md:text-lg md:leading-8">
                       {slide.description}
                     </p>
 
-                    <div className="mt-10 flex flex-wrap gap-4">
+                    <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-4 md:mt-10">
                       <Link href="/contact">
                         <Button
                           variant="accent"
-                          className="flex items-center gap-2 "
+                          className="flex items-center gap-2"
                           size="lg"
                           icon={<ArrowRight size={18} />}
                         >
