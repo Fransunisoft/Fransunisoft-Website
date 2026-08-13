@@ -18,7 +18,7 @@ const ecosystemLinks = [
   { name: "FSX Labs - AI Products & Venture Studio", href: "#" },
   { name: "FSX Tech - Implementation & Infrastructure", href: "#" },
   { name: "FSX Events - Innovation Programs", href: "#" },
-  { name: "FSX Connect - Network & Partnerships", href: "#" },
+  { name: "FSX Connect - Network & Partnerships", href: "/connect" },
 ];
 
 const quickLinks = [
