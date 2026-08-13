@@ -75,6 +75,17 @@ select {
   font: inherit;
 }
 
+button,
+[role="button"],
+summary {
+  cursor: pointer;
+}
+
+button:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -120,6 +131,16 @@ select {
   animation: marqueeLeft 28s linear infinite;
 }
 
+.connect-audience-image-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 260px;
+  aspect-ratio: 1.5 / 1;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
 @keyframes marqueeLeft {
   from {
     transform: translateX(0);
@@ -152,6 +173,10 @@ select {
   .section-layout {
     margin-inline: 100px;
     padding-block: 40px;
+  }
+
+  .connect-audience-image-frame {
+    min-height: 320px;
   }
 }
 
@@ -208,7 +233,7 @@ span {
 .swiper-pagination {
   position: absolute !important;
   bottom: 40px !important;
-  left: 40% !important;
+  left: 50% !important;
   transform: translateX(-50%);
 
   display: flex !important;

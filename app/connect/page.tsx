@@ -8,11 +8,11 @@ export default function ConnectPage() {
       <HeroSection
         title={
           <>
-            The <span className="text-primary-700">Network</span> That
+            The <span className="text-[48px]! font-bold text-primary-700">Network</span> That
             <br />
             Makes
             <br />
-            <span className="text-primary-700">Transformation</span>
+            <span className="text-[48px]! text-primary-700">Transformation</span>
             <br />
             Possible.
           </>
@@ -37,7 +37,7 @@ export default function ConnectPage() {
       />
 
       <div className="section-layout py-0">
-        <div className="flex items-center gap-4 border-t border-neutral-card-border pt-4">
+        <div className="flex items-center gap-4 ">
           <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-primary-600">
             Who we serve
           </p>

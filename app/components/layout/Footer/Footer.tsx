@@ -29,7 +29,7 @@ const quickLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative w-full overflow-hidden bg-primary-900 text-white">
+    <footer className="relative w-full overflow-hidden bg-primary-700 text-white">
       {/* Background World Map */}
       <Image
         src={map}

@@ -14,7 +14,7 @@ export default function ConsultingPage() {
             Transformation
             <br />
             Advisory.{" "}
-            <span className="text-primary-700">Measurable Outcomes.</span>
+            <span className="text-[48px]! text-primary-700">Measurable Outcomes.</span>
           </>
         }
         description="FSX Consulting helps organizations define where AI fits, build practical adoption roadmaps, govern digital transformation, and execute strategy with the rigour of a world-class advisory firm - built for the African context."

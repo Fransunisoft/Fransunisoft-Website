@@ -49,7 +49,7 @@ export default function ConnectAudienceSection() {
   }
 
   return (
-    <section className="bg-secondary-900 text-white">
+    <section className="bg-secondary-900 text-white lg:mb-20 ">
       <div className="section-layout py-16 lg:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-4xl font-semibold text-white lg:text-5xl">
@@ -92,7 +92,7 @@ export default function ConnectAudienceSection() {
                     "mt-6 rounded-full border-white/70 px-6 text-sm font-bold text-white hover:bg-white/10"
                   )}
                 >
-                  Speak With Our Team
+                  Learn More
                   <span aria-hidden="true">{"->"}</span>
                 </button>
               </div>
@@ -100,17 +100,18 @@ export default function ConnectAudienceSection() {
               <button
                 type="button"
                 onClick={() => setActiveModalId(audience.id)}
-                className="group overflow-hidden rounded-card text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-secondary-900"
+                className="group block w-full overflow-hidden rounded-card text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-secondary-900"
                 aria-label={`Open details for ${audience.title}`}
               >
-                <Image
-                  src={audience.image.src}
-                  alt={audience.image.alt}
-                  width={2400}
-                  height={2640}
-                  sizes="(min-width: 1024px) 43vw, 100vw"
-                  className="aspect-[1.5/1] w-full object-cover object-center transition duration-300 group-hover:scale-[1.02]"
-                />
+                <span className="connect-audience-image-frame">
+                  <Image
+                    src={audience.image.src}
+                    alt={audience.image.alt}
+                    fill
+                    sizes="(min-width: 1024px) 43vw, 100vw"
+                    className="object-cover object-center transition duration-300 group-hover:scale-[1.02]"
+                  />
+                </span>
               </button>
             </article>
           ))}
@@ -119,7 +120,7 @@ export default function ConnectAudienceSection() {
 
       {activeAudience && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+          className="no-scrollbar fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/70 p-4 py-8"
           role="dialog"
           aria-modal="true"
           aria-labelledby="connect-modal-title"
@@ -129,7 +130,7 @@ export default function ConnectAudienceSection() {
             }
           }}
         >
-          <div className="relative grid max-h-[92vh] w-full max-w-6xl overflow-hidden rounded-[40px] bg-secondary-50 shadow-2xl lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="relative grid w-full max-w-7xl overflow-hidden rounded-[40px] bg-secondary-50 shadow-2xl lg:min-h-[680px] lg:grid-cols-[45%_55%]">
             <button
               type="button"
               onClick={() => setActiveModalId(null)}
@@ -139,14 +140,14 @@ export default function ConnectAudienceSection() {
               <X size={32} aria-hidden="true" />
             </button>
 
-            <div className="overflow-y-auto p-8 sm:p-12 lg:p-14">
+            <div className="p-8 sm:p-12 lg:p-12">
               <h2
                 id="connect-modal-title"
                 className="text-4xl font-semibold text-secondary-900 lg:text-5xl"
               >
                 {activeAudience.modal.title}
               </h2>
-              <ul className="mt-8 space-y-6 pl-6 text-xl leading-9 text-neutral-primary">
+              <ul className="mt-7 space-y-5 pl-6 text-lg leading-8 text-neutral-primary">
                 {activeAudience.modal.bullets.map((bullet) => (
                   <li key={bullet} className="list-disc pl-2">
                     {bullet}
@@ -155,14 +156,17 @@ export default function ConnectAudienceSection() {
               </ul>
             </div>
 
-            <Image
-              src={activeAudience.modal.image.src}
-              alt={activeAudience.modal.image.alt}
-              width={2400}
-              height={2640}
-              sizes="(min-width: 1024px) 55vw, 100vw"
-              className="hidden h-full max-h-[92vh] w-full object-cover lg:block"
-            />
+            <div className="relative h-72 overflow-hidden border-t border-secondary-900/10 lg:h-auto lg:min-h-[680px] lg:border-l lg:border-t-0">
+              <Image
+                src={activeAudience.modal.image.src}
+                alt={activeAudience.modal.image.alt}
+                width={1352}
+                height={1163}
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="h-full w-full object-cover object-center"
+                loading="eager"
+              />
+            </div>
           </div>
         </div>
       )}
