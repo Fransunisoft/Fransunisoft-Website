@@ -11,7 +11,7 @@ export const buttonVariants = cva(
         secondary: "bg-secondary text-white hover:opacity-90",
         accent: "bg-accent text-white hover:opacity-90",
         transparent:
-          "bg-transparent border border-primary text-primary hover:bg-primary/10",
+          "bg-transparent border border-neutral-light text-neutral-light hover:bg-primary/10",
       },
 
       size: {

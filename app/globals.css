@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 @import "tailwindcss";
 @config "../tailwind.config.ts";
 
@@ -40,7 +40,6 @@
   --accent-800: #8c3b1d;
   --accent-900: #6b2d16;
 
-
   --neutral-light: #ffffff;
   --neutral-border: #dbdbdc;
   --neutral-card-border: #e7e7e8;
@@ -48,7 +47,7 @@
   --neutral-secondary-text: #7c8084;
   --neutral-primary-text: #333333;
 
-  --background: #FAFAFA;
+  --background: #fafafa;
 }
 
 *,
@@ -68,7 +67,6 @@ body {
   font-family: var(--font-body);
   font-weight: 400;
 }
-
 
 button,
 input,
@@ -157,8 +155,6 @@ select {
   }
 }
 
-
-
 /* RB DESKTOP TYPROGRAPHY SYSTEM */
 
 h1,
@@ -196,57 +192,82 @@ h6 {
   font-weight: 500;
 }
 
-
 p,
 li,
 span {
   font-family: inherit;
   font-weight: 400;
   font-size: 18px;
-  line-height: 2.0;
+  line-height: 2;
 }
 
-.caption{
+.caption {
   font-size: 14px;
 }
+/* Position */
+.swiper-pagination {
+  position: absolute !important;
+  bottom: 40px !important;
+  left: 40% !important;
+  transform: translateX(-50%);
 
+  display: flex !important;
+  gap: 28px;
+}
+
+.hero-bullet {
+  width: 110px !important;
+  height: 3px !important;
+
+  display: block !important;
+  margin: 0 !important;
+
+  border-radius: 6px !important; /* rectangle */
+  background: #B5B5B5 !important;
+
+  opacity: 1 !important;
+}
+
+.hero-bullet.swiper-pagination-bullet-active {
+  background: #FF6B35 !important;
+}
 /* RB Mobile Typography style */
 @media (max-width: 480px) {
   h1 {
-  font-size: 32px;
-  font-weight: 600;
-}
-h2 {
-  font-size: 28px;
-  font-weight: 600;
-}
-h3 {
-  font-size: 24px;
-  font-weight: 500;
-}
-h4 {
-  font-size: 20px;
-  font-weight: 500;
-}
-h5 {
-  font-size: 18px;
-  font-weight: 500;
-}
-h6 {
-  font-size: 16px;
-  font-weight: 500;
-}
+    font-size: 32px;
+    font-weight: 600;
+  }
+  h2 {
+    font-size: 28px;
+    font-weight: 600;
+  }
+  h3 {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  h4 {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  h5 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  h6 {
+    font-size: 16px;
+    font-weight: 500;
+  }
 
-p,
-li,
-span {
-  font-family: inherit;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 2.0;
-}
+  p,
+  li,
+  span {
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 2;
+  }
 
-.caption{
-  font-size: 12px;
-}
+  .caption {
+    font-size: 12px;
+  }
 }

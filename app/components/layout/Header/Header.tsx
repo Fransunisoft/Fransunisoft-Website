@@ -12,29 +12,31 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="section-layout relative z-20 flex flex-col bg-background">
-      <nav className="flex items-center justify-between">
-        <Logo />
+    <>
+      <header className="fixed top-0 left-0 w-full bg-white z-50 px-8 py-6">
+        <nav className="flex items-center justify-between">
+          <Logo />
 
-        <NavLinks />
+          <NavLinks />
 
-        <div className="hidden lg:block">
-          <Button>Book an AI Session</Button>
-        </div>
+          <div className="hidden lg:block">
+            <Button>Book an AI Session</Button>
+          </div>
 
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden"
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </nav>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden"
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </nav>
 
-      <MobileMenu
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-      />
-    </header>
+        <MobileMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      </header>
+
+      {/* Reserves space for the fixed header */}
+      <div className="h-22" />
+    </>
   );
 }
