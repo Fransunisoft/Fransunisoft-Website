@@ -12,7 +12,7 @@ const navLinks = [
     dropdown: [
       {
         name: "FSX Consulting -- AI Strategy & Advisory",
-        href: "/services/fsx-ai",
+        href: "/consulting",
       },
       {
         name: "FSX Academy -- AI Workforce Development",
@@ -32,7 +32,7 @@ const navLinks = [
       },
       {
         name: "FSX Connect - Network & Partnerships",
-        href: "/services/fsx-academy",
+        href: "/connect",
       },
     ],
   },

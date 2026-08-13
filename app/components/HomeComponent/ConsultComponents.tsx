@@ -82,19 +82,19 @@ export default function ConsultComponents({
                   <Image
                     src={isActive ? activeArrowImage : inactiveArrowImage}
                     alt=""
-                    className="hidden h-5 w-5 object-contain xs:block"
+                    className="hidden h-5 w-auto object-contain xs:block"
                   />
 
                   <Image
                     src={isActive ? activeArrowImage : inactiveArrowImage}
                     alt=""
-                    className="h-4 w-4 object-contain sm:h-5 sm:w-5"
+                    className="h-4 w-auto object-contain sm:h-5"
                   />
 
                   <Image
                     src={isActive ? activeArrowImage : inactiveArrowImage}
                     alt=""
-                    className="h-4 w-4 object-contain sm:h-5 sm:w-5"
+                    className="h-4 w-auto object-contain sm:h-5"
                   />
                 </div>
               </button>

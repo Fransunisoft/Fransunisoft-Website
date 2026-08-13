@@ -125,9 +125,9 @@ export default function HeroSection() {
                           variant="accent"
                           className="flex items-center gap-2"
                           size="lg"
-                          icon={<ArrowRight size={18} />}
                         >
                           Book an AI Session
+                          <ArrowRight size={18} aria-hidden="true" />
                         </Button>
                       </Link>
 
@@ -136,9 +136,9 @@ export default function HeroSection() {
                           variant="transparent"
                           className="flex items-center gap-2"
                           size="lg"
-                          icon={<ArrowRight size={18} />}
                         >
                           Explore Ecosystem
+                          <ArrowRight size={18} aria-hidden="true" />
                         </Button>
                       </Link>
                     </div>

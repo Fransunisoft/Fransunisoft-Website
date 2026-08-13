@@ -9,6 +9,8 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
+  { name: "FSX Consulting", href: "/consulting" },
+  { name: "FSX Connect", href: "/connect" },
   { name: "Contact", href: "/contact" },
 ];
 

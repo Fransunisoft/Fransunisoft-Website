@@ -2,8 +2,8 @@ import { ButtonHTMLAttributes, ReactNode } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/app/lib/utils";
 
-const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-colors duration-200 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50",
+export const buttonVariants = cva(
+  "inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -46,9 +46,8 @@ export default function Button({
       className={cn(buttonVariants({ variant, size }), className)}
       {...props}
     >
-      
+      {icon && <span className="inline-flex shrink-0" aria-hidden="true">{icon}</span>}
       {children}
-      {icon && <span>{icon}</span>}
     </button>
   );
 }

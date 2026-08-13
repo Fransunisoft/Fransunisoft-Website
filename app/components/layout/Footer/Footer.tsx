@@ -13,12 +13,12 @@ import map from "@/public/Dotted World Map.png";
 import Image from "next/image";
 
 const ecosystemLinks = [
-  "FSX Consulting – AI Strategy & Advisory",
-  "FSX Academy – AI Workforce Development",
-  "FSX Labs – AI Products & Venture Studio",
-  "FSX Tech – Implementation & Infrastructure",
-  "FSX Events – Innovation Programs",
-  "FSX Connect – Network & Partnerships",
+  { name: "FSX Consulting - AI Strategy & Advisory", href: "/consulting" },
+  { name: "FSX Academy - AI Workforce Development", href: "#" },
+  { name: "FSX Labs - AI Products & Venture Studio", href: "#" },
+  { name: "FSX Tech - Implementation & Infrastructure", href: "#" },
+  { name: "FSX Events - Innovation Programs", href: "#" },
+  { name: "FSX Connect - Network & Partnerships", href: "/connect" },
 ];
 
 const quickLinks = [
@@ -29,7 +29,7 @@ const quickLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative w-full overflow-hidden bg-primary-900 text-white">
+    <footer className="relative w-full overflow-hidden bg-primary-700 text-white">
       {/* Background World Map */}
       <Image
         src={map}
@@ -106,12 +106,12 @@ export default function Footer() {
 
             <ul className="space-y-4">
               {ecosystemLinks.map((item) => (
-                <li key={item}>
+                <li key={item.name}>
                   <Link
-                    href="#"
+                    href={item.href}
                     className="text-sm leading-6 text-white/80 transition hover:text-white"
                   >
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}
