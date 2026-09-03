@@ -8,11 +8,9 @@ export default function ConnectPage() {
       <HeroSection
         title={
           <>
-            The <span className="text-[48px]! font-bold text-primary-700">Network</span> That
+            The <span className="font-bold text-primary-700">Network</span> That
             <br />
-            Makes
-            <br />
-            <span className="text-[48px]! text-primary-700">Transformation</span>
+            Makes <span className="text-primary-700">Transformation</span>
             <br />
             Possible.
           </>
@@ -32,7 +30,8 @@ export default function ConnectPage() {
         secondaryAction={{
           label: "Partner With FSX",
           href: "#who-we-serve",
-          variant: "transparent",
+          variant: "outline",
+          trailingArrow: true,
         }}
       />
 

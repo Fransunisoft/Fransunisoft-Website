@@ -16,7 +16,7 @@ const navLinks = [
       },
       {
         name: "FSX Academy -- AI Workforce Development",
-        href: "/services/fsx-labs",
+        href: "/academy",
       },
       {
         name: "FSX Labs - AI Products & Venture Studio",
@@ -28,7 +28,7 @@ const navLinks = [
       },
       {
         name: "FSX Events - Innovation Programs",
-        href: "/services/fsx-academy",
+        href: "/events",
       },
       {
         name: "FSX Connect - Network & Partnerships",
