@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/app/components/layout/Header/Header";
-import Footer from "@/app/components/layout/Footer/Footer"
+import SiteChrome from "@/app/components/layout/SiteChrome";
 
 export const metadata: Metadata = {
   title: "Fransunisoft Official Website",
@@ -22,9 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

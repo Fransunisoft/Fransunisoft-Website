@@ -36,7 +36,7 @@ const navLinks = [
       },
     ],
   },
-  { name: "Root Builders", href: "/contact" },
+  { name: "Root Builders", href: "/root-builders" },
   { name: "Contact", href: "/contact" },
 ];
 
