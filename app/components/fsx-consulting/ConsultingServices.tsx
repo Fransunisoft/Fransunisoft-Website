@@ -55,15 +55,15 @@ export default function ConsultingServices() {
 
   return (
     <section id="consulting-service" className="section-layout bg-background">
-      <div className="space-y-8 lg:space-y-10">
-        <h2 className="text-4xl font-semibold text-neutral-primary lg:text-[40px]">
+      <div className="space-y-5 lg:space-y-10">
+        <h2 className="text-2xl font-semibold text-neutral-primary lg:text-[40px]">
           What FSX Consulting Does
         </h2>
 
         <div
           role="tablist"
           aria-label="FSX Consulting services"
-          className="no-scrollbar flex gap-4 overflow-x-auto pb-2 lg:justify-center lg:gap-6"
+          className="no-scrollbar -mx-5 flex gap-3 overflow-x-auto px-5 pb-2 lg:mx-0 lg:justify-center lg:gap-6 lg:px-0"
         >
           {consultingServices.map((service) => {
             const isActive = service.id === activeId;
@@ -80,7 +80,7 @@ export default function ConsultingServices() {
                 onClick={() => setActiveId(service.id)}
                 onKeyDown={handleKeyDown}
                 className={cn(
-                  "h-14 shrink-0 rounded-full border px-7 text-base font-extrabold shadow-sm transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+                  "h-9 shrink-0 rounded-full border px-4 text-xs font-extrabold shadow-sm transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 lg:h-14 lg:px-7 lg:text-base",
                   isActive
                     ? "border-primary-700 bg-primary-700 text-white"
                     : "border-neutral-card-border bg-white text-neutral-primary hover:border-primary-200 hover:text-primary-800"
@@ -97,7 +97,7 @@ export default function ConsultingServices() {
           id={`panel-${activeService.id}`}
           role="tabpanel"
           aria-labelledby={`tab-${activeService.id}`}
-          className="consulting-tab-panel grid items-center gap-9 rounded-section bg-primary-50 p-6 md:p-10 lg:grid-cols-[1.25fr_0.75fr] lg:gap-14 lg:p-14"
+          className="consulting-tab-panel grid items-center gap-5 rounded-section bg-primary-50 p-4 md:p-10 lg:grid-cols-[1.25fr_0.75fr] lg:gap-14 lg:p-14"
         >
           <div className="overflow-hidden rounded-card">
             <Image
@@ -111,10 +111,10 @@ export default function ConsultingServices() {
           </div>
 
           <div className="max-w-md">
-            <h3 className="text-3xl font-semibold leading-tight text-secondary-500 lg:text-[34px]">
+            <h3 className="text-lg font-semibold leading-tight text-secondary-700 lg:text-[34px]">
               {activeService.title}
             </h3>
-            <p className="mt-5 text-base leading-7 text-neutral-secondary">
+            <p className="mt-3 text-xs leading-5 text-neutral-secondary lg:mt-5 lg:text-base lg:leading-7">
               {activeService.description}
             </p>
           </div>

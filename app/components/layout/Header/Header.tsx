@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full bg-white z-50 px-8 py-6">
+      <header className="fixed left-0 top-0 z-50 w-full bg-white px-3 py-2 lg:px-8 lg:py-6">
         <nav className="flex items-center justify-between">
           <Logo />
 
@@ -39,7 +39,7 @@ export default function Header() {
       </header>
 
       {/* Reserves space for the fixed header */}
-      <div className="h-22" />
+      <div className="h-13 lg:h-22" />
     </>
   );
 }

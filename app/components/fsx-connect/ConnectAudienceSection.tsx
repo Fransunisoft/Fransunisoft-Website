@@ -49,13 +49,13 @@ export default function ConnectAudienceSection() {
   }
 
   return (
-    <section className="bg-secondary-900 text-white lg:mb-20 ">
-      <div className="section-layout py-16 lg:py-20">
+    <section className="bg-secondary-900 text-white lg:mb-20">
+      <div className="section-layout py-7 lg:py-20">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-4xl font-semibold text-white lg:text-5xl">
+          <h2 className="text-2xl font-semibold text-white lg:text-5xl">
             Who fsx connect is for
           </h2>
-          <p className="mt-5 text-base leading-7 text-white/75">
+          <p className="mt-3 text-xs leading-5 text-white/75 lg:mt-5 lg:text-base lg:leading-7">
             FSX Connect bringing together senior mentors, strategic advisors,
             institutional partners, and investors to{" "}
             <strong className="font-semibold text-white">
@@ -64,39 +64,16 @@ export default function ConnectAudienceSection() {
           </p>
         </div>
 
-        <div className="mt-12 space-y-14">
+        <div className="mt-8 space-y-9 lg:mt-12 lg:space-y-14">
           {connectAudiences.map((audience, index) => (
             <article
               key={audience.id}
               className={cn(
-                "grid items-center gap-8 lg:grid-cols-2 lg:gap-12",
-                index % 2 === 1 && "lg:[&>*:first-child]:order-2"
+                "grid items-center gap-5 lg:grid-cols-2 lg:gap-12",
+                index % 2 === 1 && "lg:[&>*:first-child]:order-2",
+                index % 2 === 1 && "lg:[&>*:last-child]:order-1"
               )}
             >
-              <div className="max-w-xl">
-                <h3 className="text-3xl font-semibold text-white">
-                  {audience.title}
-                </h3>
-                <p className="mt-5 text-lg font-bold text-white">
-                  {audience.subtitle}
-                </p>
-                <p className="mt-4 text-base leading-7 text-white/72">
-                  {audience.description}
-                </p>
-                <button
-                  type="button"
-                  onClick={() => setActiveModalId(audience.id)}
-                  onKeyDown={(event) => handleCardKeyDown(event, audience)}
-                  className={cn(
-                    buttonVariants({ variant: "transparent", size: "md" }),
-                    "mt-6 rounded-full border-white/70 px-6 text-sm font-bold text-white hover:bg-white/10"
-                  )}
-                >
-                  Learn More
-                  <span aria-hidden="true">{"->"}</span>
-                </button>
-              </div>
-
               <button
                 type="button"
                 onClick={() => setActiveModalId(audience.id)}
@@ -113,6 +90,30 @@ export default function ConnectAudienceSection() {
                   />
                 </span>
               </button>
+
+              <div className="max-w-xl">
+                <h3 className="text-lg font-semibold text-white lg:text-3xl">
+                  {audience.title}
+                </h3>
+                <p className="mt-3 text-sm font-bold text-white lg:mt-5 lg:text-lg">
+                  {audience.subtitle}
+                </p>
+                <p className="mt-2 text-xs leading-5 text-white/72 lg:mt-4 lg:text-base lg:leading-7">
+                  {audience.description}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setActiveModalId(audience.id)}
+                  onKeyDown={(event) => handleCardKeyDown(event, audience)}
+                  className={cn(
+                    buttonVariants({ variant: "transparent", size: "md" }),
+                    "mt-4 h-9 rounded-full border-white/70 px-4 text-xs font-bold text-white hover:bg-white/10 lg:mt-6 lg:h-11 lg:px-6 lg:text-sm"
+                  )}
+                >
+                  Learn More
+                  <span aria-hidden="true">{"->"}</span>
+                </button>
+              </div>
             </article>
           ))}
         </div>

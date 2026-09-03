@@ -43,7 +43,7 @@ export default function HeroSection() {
         <div ref={heroRef}>
           <div className="hero-item">
             <h1 className="font-heading font-bold leading-[1.05]">
-              We Are Africa's
+              We Are Africa&apos;s
               <br />
               AI Transformation,
               <br />

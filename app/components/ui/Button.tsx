@@ -10,6 +10,8 @@ export const buttonVariants = cva(
         primary: "bg-primary text-white hover:opacity-90",
         secondary: "bg-secondary text-white hover:opacity-90",
         accent: "bg-accent text-white hover:opacity-90",
+        outline:
+          "border border-primary bg-transparent text-primary hover:bg-primary-50",
         transparent:
           "bg-transparent border border-neutral-light text-neutral-light hover:bg-primary/10",
       },
