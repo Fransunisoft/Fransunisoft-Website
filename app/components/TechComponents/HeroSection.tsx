@@ -1,33 +1,31 @@
 "use client";
 import Image from "next/image";
-import collaboration from "../LabsComponents/images/labsHero.png";
+import collaboration from "./images/tech.png";
 import Button from "../ui/Button";
 import { ArrowRight } from "lucide-react";
 
-export default function LabsHero() {
+export default function HeroSection() {
   return (
-     <section className="p-8 mt-9">
+    <section className="p-8 mt-9">
       <div className="flex justify-between">
         <div>
           <div className="hero-item">
             <div className="flex items-center gap-2">
-              <h2 className="font-heading font-bold leading-[1.05]">Where</h2>
-              <h2 className="text-primary-400">AI Products</h2>
-            </div>
-            <h2>Are Built And</h2>
-            <div className="flex items-center gap-2">
-              <h2 className="font-heading text-primary-400 font-bold leading-[1.05]">
-                Ventures
+              <h2 className="font-heading font-bold leading-[1.05]">
+                Technology That
               </h2>
-              <h2>Are Born.</h2>
+            </div>
+            <h2>Works. Infrastructure</h2>
+            <div>
+              <h2>That Scales.</h2>
             </div>
           </div>
 
           <p className="mt-5 text-sm">
-            FSX Labs is the product and venture studio at the heart of <br />
-            Fransunisoft — combining AI capability, execution <br />
-            infrastructure, and shared ownership to build the next <br />
-            generation of African technology companies
+            FSX Tech is the engineering and implementation arm of <br />
+            Fransunisoft — ensuring every product, system, and AI <br />
+            solution we build is stable, secure, performant, and ready to <br />
+            scale in the African market.
           </p>
 
           <div className="hero-item mt-5 flex gap-4">
@@ -37,7 +35,7 @@ export default function LabsHero() {
               size="lg"
               icon={<ArrowRight size={18} />}
             >
-              Talk to FSX Labs
+              Talk to FSX Tech
             </Button>
           </div>
         </div>
@@ -49,5 +47,5 @@ export default function LabsHero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

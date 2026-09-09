@@ -24,7 +24,7 @@ const navLinks = [
       },
       {
         name: "FSX Tech - Implementation & Infrastructure",
-        href: "/services/fsx-academy",
+        href: "/Tech",
       },
       {
         name: "FSX Events - Innovation Programs",
