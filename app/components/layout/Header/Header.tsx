@@ -7,6 +7,7 @@ import Logo from "./Logo";
 import NavLinks from "./NavLinks";
 import MobileMenu from "./MobileMenu";
 import Button from "@/app/components/ui/Button";
+import Link from "next/link";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,13 +24,15 @@ export default function Header() {
             <Button>Book an AI Session</Button>
           </div>
 
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <Link href='#contact'>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="lg:hidden"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </Link>
         </nav>
 
         <MobileMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />

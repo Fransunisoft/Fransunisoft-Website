@@ -20,11 +20,11 @@ const navLinks = [
       },
       {
         name: "FSX Labs - AI Products & Venture Studio",
-        href: "/services/fsx-academy",
+        href: "/labs",
       },
       {
         name: "FSX Tech - Implementation & Infrastructure",
-        href: "/services/fsx-academy",
+        href: "/Tech",
       },
       {
         name: "FSX Events - Innovation Programs",
