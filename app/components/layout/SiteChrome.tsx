@@ -6,7 +6,8 @@ import Header from "@/app/components/layout/Header/Header";
 
 export default function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const usesMicrositeChrome = pathname === "/root-builders";
+  const usesMicrositeChrome =
+    pathname === "/rootbuilders" || pathname === "/root-builders";
 
   if (usesMicrositeChrome) {
     return <>{children}</>;

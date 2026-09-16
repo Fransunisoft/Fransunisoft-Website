@@ -2,16 +2,17 @@
 
 import Image from "next/image";
 import { X } from "lucide-react";
-import { KeyboardEvent, useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import styles from "./ConnectAudienceSection.module.css";
 import { buttonVariants } from "@/app/components/ui/Button";
 import { cn } from "@/app/lib/utils";
 import {
   connectAudiences,
-  type ConnectAudience,
   type ConnectAudienceId,
 } from "@/app/components/fsx-connect/connect-data";
 
 export default function ConnectAudienceSection() {
+  const dialogRef = useRef<HTMLDialogElement>(null);
   const [activeModalId, setActiveModalId] = useState<ConnectAudienceId | null>(
     null
   );
@@ -21,32 +22,20 @@ export default function ConnectAudienceSection() {
   );
 
   useEffect(() => {
-    if (!activeModalId) return;
+    const dialog = dialogRef.current;
+    if (!activeModalId || !dialog) return;
 
-    const handleKeyDown = (event: globalThis.KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setActiveModalId(null);
-      }
-    };
-
+    const trigger = document.activeElement;
+    const previousOverflow = document.body.style.overflow;
+    dialog.showModal();
     document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", handleKeyDown);
+      dialog.close();
+      document.body.style.overflow = previousOverflow;
+      if (trigger instanceof HTMLElement) trigger.focus({ preventScroll: true });
     };
   }, [activeModalId]);
-
-  function handleCardKeyDown(
-    event: KeyboardEvent<HTMLButtonElement>,
-    audience: ConnectAudience
-  ) {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      setActiveModalId(audience.id);
-    }
-  }
 
   return (
     <section className="bg-secondary-900 text-white lg:mb-20">
@@ -79,6 +68,7 @@ export default function ConnectAudienceSection() {
                 onClick={() => setActiveModalId(audience.id)}
                 className="group block w-full overflow-hidden rounded-card text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-secondary-900"
                 aria-label={`Open details for ${audience.title}`}
+                aria-haspopup="dialog"
               >
                 <span className="connect-audience-image-frame">
                   <Image
@@ -104,7 +94,7 @@ export default function ConnectAudienceSection() {
                 <button
                   type="button"
                   onClick={() => setActiveModalId(audience.id)}
-                  onKeyDown={(event) => handleCardKeyDown(event, audience)}
+                  aria-haspopup="dialog"
                   className={cn(
                     buttonVariants({ variant: "transparent", size: "md" }),
                     "mt-4 h-9 rounded-full border-white/70 px-4 text-xs font-bold text-white hover:bg-white/10 lg:mt-6 lg:h-11 lg:px-6 lg:text-sm"
@@ -120,44 +110,66 @@ export default function ConnectAudienceSection() {
       </div>
 
       {activeAudience && (
-        <div
-          className="no-scrollbar fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/70 p-4 py-8"
-          role="dialog"
+        <dialog
+          ref={dialogRef}
+          className={styles.dialog}
           aria-modal="true"
           aria-labelledby="connect-modal-title"
+          onCancel={() => setActiveModalId(null)}
+          onKeyDown={(event) => {
+            if (event.key !== "Tab") return;
+            const targets = event.currentTarget.querySelectorAll<HTMLElement>(
+              'button, [tabindex="0"]'
+            );
+            const first = targets[0];
+            const last = targets[targets.length - 1];
+            if (event.shiftKey && document.activeElement === first) {
+              event.preventDefault();
+              last?.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+              event.preventDefault();
+              first?.focus();
+            }
+          }}
           onMouseDown={(event) => {
             if (event.target === event.currentTarget) {
               setActiveModalId(null);
             }
           }}
         >
-          <div className="relative grid w-full max-w-7xl overflow-hidden rounded-[40px] bg-secondary-50 shadow-2xl lg:min-h-[680px] lg:grid-cols-[45%_55%]">
-            <button
-              type="button"
-              onClick={() => setActiveModalId(null)}
-              className="absolute right-6 top-6 z-10 flex h-14 w-14 items-center justify-center rounded-full bg-white/80 text-neutral-primary transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-              aria-label="Close modal"
-            >
-              <X size={32} aria-hidden="true" />
-            </button>
+          <button
+            type="button"
+            onClick={() => setActiveModalId(null)}
+            className={styles.closeButton}
+            aria-label="Close modal"
+            autoFocus
+          >
+            <X size={32} aria-hidden="true" />
+          </button>
 
-            <div className="p-8 sm:p-12 lg:p-12">
+          <div
+            className={styles.scroller}
+            tabIndex={0}
+            role="region"
+            aria-label={`${activeAudience.modal.title} details`}
+          >
+            <div className={styles.content}>
               <h2
                 id="connect-modal-title"
-                className="text-4xl font-semibold text-secondary-900 lg:text-5xl"
+                className={styles.title}
               >
                 {activeAudience.modal.title}
               </h2>
-              <ul className="mt-7 space-y-5 pl-6 text-lg leading-8 text-neutral-primary">
+              <ul className={styles.bullets}>
                 {activeAudience.modal.bullets.map((bullet) => (
-                  <li key={bullet} className="list-disc pl-2">
+                  <li key={bullet}>
                     {bullet}
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="relative h-72 overflow-hidden border-t border-secondary-900/10 lg:h-auto lg:min-h-[680px] lg:border-l lg:border-t-0">
+            <div className={styles.image}>
               <Image
                 src={activeAudience.modal.image.src}
                 alt={activeAudience.modal.image.alt}
@@ -169,7 +181,7 @@ export default function ConnectAudienceSection() {
               />
             </div>
           </div>
-        </div>
+        </dialog>
       )}
     </section>
   );

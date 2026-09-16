@@ -32,7 +32,7 @@ export default function ChallengeCard() {
   ];
 
   return (
-    <section className="grid grid-cols-1  md:grid-cols-2">
+    <section className="grid grid-cols-1 section-layout md:grid-cols-2">
   {challenges.map((challenge, index) => (
     <div
       key={index}

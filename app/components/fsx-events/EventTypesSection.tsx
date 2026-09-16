@@ -5,15 +5,14 @@ export default function EventTypesSection() {
   return (
     <section className="section-layout bg-background py-10 lg:py-14">
       <div className="flex items-center gap-4">
-        <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-primary-600">
-          Event Types
+        <p className="text-xs font-extrabold whitespace-nowrap uppercase text-primary-600">
+           01-Event Types
         </p>
         <div className="h-px flex-1 bg-neutral-card-border" />
       </div>
 
       <h2 className="mt-5 max-w-3xl text-4xl font-semibold leading-tight text-neutral-primary">
         Programs That Bring Africa&apos;s
-        <br />
         AI Ecosystem Together.
       </h2>
 
@@ -35,9 +34,9 @@ export default function EventTypesSection() {
               key={event.title}
               className="border-b border-neutral-card-border pb-8 pt-8 first:pt-0 last:border-b-0 last:pb-0"
             >
-              <h3 className="text-3xl font-semibold leading-tight text-primary-500">
+              <h4 className="text-3xl font-semibold leading-tight text-primary-500">
                 {event.title}
-              </h3>
+              </h4>
               <p className="mt-4 max-w-3xl text-base leading-7 text-neutral-secondary">
                 {event.description}
               </p>

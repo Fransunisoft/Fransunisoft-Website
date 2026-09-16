@@ -74,7 +74,7 @@ export default function ContactSection() {
         </aside>
 
         <div className="relative">
-          <div className="absolute -right-3 bottom-2 h-[92%] w-[92%] rounded-card bg-secondary-700 lg:-right-4 lg:bottom-15" />
+          <div className="absolute -right-3 bottom-2 h-[82%] w-[92%] rounded-card bg-secondary-700 lg:-right-4 lg:bottom-35" />
           <form
             className="relative grid gap-4 rounded-card bg-white p-5 shadow-sm md:p-8 lg:gap-5"
             aria-label="Contact Fransunisoft"

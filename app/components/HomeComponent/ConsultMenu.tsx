@@ -40,7 +40,7 @@ export default function ConsultMenu() {
           Our advisory and strategy arm. We work with organizations to define
           AI vision, build <br />
           transformation roadmaps, structure governance, and oversee execution
-          from strategy to <br />
+          from strategy to
           outcome.
         </>
       ),
@@ -57,7 +57,7 @@ export default function ConsultMenu() {
           Our learning and talent development arm. We design and deliver AI
           literacy programs, <br />
           technical upskilling initiatives, and workforce transformation
-          cohorts for organizations and <br />
+          cohorts for organizations and
           individual builders.
         </>
       ),
@@ -72,9 +72,9 @@ export default function ConsultMenu() {
       message: (
         <>
           Our product and venture-building arm. We build AI-powered products,
-          MVPs, and venture <br />
+          MVPs, and venture
           backed companies — combining FSX talent, execution infrastructure,
-          and shared <br />
+          and shared
           ownership to take ideas from concept to launch.
         </>
       ),
@@ -91,7 +91,7 @@ export default function ConsultMenu() {
           Our engineering and implementation arm. We deploy, integrate, and
           maintain the <br />
           technology infrastructure that organizations need to run modern,
-          AI-ready operations at <br />
+          AI-ready operations at
           scale.
         </>
       ),
@@ -106,9 +106,9 @@ export default function ConsultMenu() {
       message: (
         <>
           Our activation and program delivery arm. We design and run innovation
-          summits, demo <br />
+          summits, demo 
           days, challenge programs, and ecosystem events that connect
-          organizations, builders <br />
+          organizations, builders 
           investors, and government.
         </>
       ),
@@ -123,9 +123,9 @@ export default function ConsultMenu() {
       message: (
         <>
           Our ecosystem and network arm. We bring together senior mentors,
-          strategic advisors, <br />
+          strategic advisors,
           institutional partners, and investors to support the organizations,
-          founders, and talent <br />
+          founders, and talent
           inside the FSX ecosystem.
         </>
       ),
@@ -137,7 +137,7 @@ export default function ConsultMenu() {
 
   return (
     <div>
-      <section className="p-8">
+      <section className="">
         <ConsultComponents
           menu={menu}
           activeIndex={activeIndex}

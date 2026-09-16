@@ -40,7 +40,7 @@ export default function Footer() {
       />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-5 py-8 lg:px-12 lg:py-16">
+      <div className="relative z-10 section-layout">
         <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:gap-12 xl:grid-cols-[1.3fr_1.2fr_0.8fr_1.3fr]">
           {/* Company */}
           <div className="space-y-4 lg:space-y-6">
@@ -102,7 +102,7 @@ export default function Footer() {
 
           {/* Ecosystem */}
           <div>
-            <h5 className="mb-3 text-base font-semibold text-secondary lg:mb-6 lg:text-2xl">FSX Ecosystem</h5>
+            <h5 className="mb-3 text-base font-semibold text-secondary-300 lg:mb-6 lg:text-2xl">FSX Ecosystem</h5>
 
             <ul className="space-y-2 lg:space-y-4">
               {ecosystemLinks.map((item) => (
@@ -120,7 +120,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h5 className="mb-3 text-base font-semibold text-secondary lg:mb-6 lg:text-2xl">Quick Links</h5>
+            <h5 className="mb-3 text-base font-semibold text-secondary-300 lg:mb-6 lg:text-2xl">Quick Links</h5>
 
             <ul className="space-y-2 lg:space-y-4">
               {quickLinks.map((link) => (
@@ -138,7 +138,7 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h5 className="mb-3 text-base font-semibold text-secondary lg:mb-6 lg:text-2xl">Newsletter</h5>
+            <h5 className="mb-3 text-base font-semibold text-secondary-300 lg:mb-6 lg:text-2xl">Newsletter</h5>
 
             <p className="mb-4 text-xs leading-5 text-white/80 lg:mb-6 lg:text-sm lg:leading-7">
               Stay ahead of AI adoption in Africa. Subscribe to FSX Insights —

@@ -5,9 +5,10 @@ import github from "./images/githab.png";
 import linkedin from "./images/linkedin.png";
 import x from "./images/X.png";
 import instagram from "./images/instagram.png";
+import styles from "./AboutMobile.module.css";
 export default function Founder() {
   return (
-    <div className="p-8">
+    <div id="founder" className={`section-layout ${styles.founder}`}>
       <div className="flex items-center gap-4">
         <p className="font-body whitespace-nowrap text-primary-500">
           04 - FOUNDER & CEO
@@ -20,16 +21,16 @@ export default function Founder() {
           <Image src={ceo} alt="founder and ceo image" />
         </div>
         <div>
-          <h2>Oluwaseyi Franci Ayodele</h2>
+          <h2>Oluwaseyi Francis Ayodele</h2>
           <p className="text-[#20A89F] font-body">
             Founder & Chief Executive Officer, Fransunisoft
-          </p>
+          </p><br />
           <div>
             <p className="text-justify">
               Oluwaseyi Francis Ayodele is a software engineer, ecosystem
-              builder, and the founder of Fransunisoft — Africa's AI
+              builder, and the founder of Fransunisoft — Africa&apos;s AI
               Transformation, Talent & Technology Company.
-            </p>
+            </p> <br />
 
             <p className="text-justify ">
               With over a decade of experience spanning software development,
@@ -37,25 +38,25 @@ export default function Founder() {
               Oluwaseyi has mentored thousands of young African professionals
               and led programs that engaged over 150,000 youths across the
               continent.
-            </p>
+            </p><br />
 
             <div>
               <div className="border-l-[5px] border-[#FF5A1F] pl-7">
                 <h4 className="text-justify">
-                  He founded Fransunisoft with a conviction that Africa's most
+                  He founded Fransunisoft with a conviction that Africa&apos;s most
                   pressing problem is not lack of ideas or talent — but lack of
                   execution infrastructure. Under his leadership, Fransunisoft
                   has evolved from a venture and talent studio into an
                   integrated AI transformation engine serving organizations
                   across Nigeria and Africa.
-                </h4>
+                </h4> <br />
               </div>
             </div>
 
             <p className="text-justify">
               He is building Fransunisoft to become the organization Africa
               turns to when it needs transformation done right.
-            </p>
+            </p> <br />   
           </div>
           <div className="flex gap-2">
             <Image src={github} alt="github" />

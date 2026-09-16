@@ -5,7 +5,6 @@ import {
   BookOpen,
   Calendar,
   CheckCircle2,
-  ChevronDown,
   Code2,
   MapPin,
   Sparkles,
@@ -17,13 +16,14 @@ import {
   FaLinkedinIn,
   FaYoutube,
 } from "react-icons/fa6";
-import RootBuildersStack from "@/app/components/root-builders/RootBuildersStack";
+import RootBuildersStack from "@/app/components/rootbuilders/RootBuildersStack";
+import RootBuildersHeader from "@/app/components/rootbuilders/RootBuildersHeader";
 import {
   eligibilityCards,
   faqs,
   requirements,
   tracks,
-} from "@/app/components/root-builders/rootbuilders-data";
+} from "@/app/components/rootbuilders/rootbuilders-data";
 import { cn } from "@/app/lib/utils";
 
 const processSteps = [
@@ -52,41 +52,6 @@ export default function RootBuildersPage() {
   );
 }
 
-function RootBuildersHeader() {
-  return (
-    <header className="sticky top-0 z-50 border-b-3 border-[#e3e6e8] bg-white/95 backdrop-blur">
-      <nav className="mx-auto flex h-16 section-layout items-center justify-between px-5 lg:h-20">
-        <Link href="/root-builders" className="flex items-center gap-2">
-          <Image
-            src="/Rootbuilders.png"
-            alt="RootBuilders Summit audience session"
-            width={150}
-            height={48}
-            className="h-auto w-full object-cover"
-          />
-        </Link>
-
-        <div className="hidden items-center gap-8 text-sm font-semibold text-[#334155] lg:flex">
-          <a href="#why">Why Root Builders</a>
-          <a href="#tracks">Tracks</a>
-          <a href="#faq">FAQs</a>
-        </div>
-
-        <Link
-          href="#apply"
-          className="hidden h-10 items-center rounded-full bg-primary-600 px-6 text-sm font-bold text-white transition hover:bg-primary-700 lg:inline-flex"
-        >
-          Join Root Builders
-        </Link>
-
-        <button className="lg:hidden" aria-label="Open RootBuilders menu">
-          <ChevronDown className="h-5 w-5" />
-        </button>
-      </nav>
-    </header>
-  );
-}
-
 function Hero() {
   return (
     <section className="relative overflow-hidden bg-white">
@@ -103,9 +68,9 @@ function Hero() {
           <Code2 className="pointer-events-none absolute -right-36 top-8 hidden h-12 w-12 rounded-full bg-primary-600 p-2 text-white lg:block" />
 
           <h1 className="text-[38px] font-black leading-[1.02] sm:text-5xl lg:text-[62px]">
-            Solve <span className="text-primary-600">Real Problems.</span>
+            Solve <span className="text-primary-600 text-2xl! sm:text-5xl! font-bold!">Real Problems.</span>
             <br />
-            Build With <span className="text-accent-500">AI.</span> Create
+            Build With <span className="text-accent-500 text-2xl! sm:text-5xl! font-bold!">AI.</span> Create
             Real Impact.
           </h1>
           <p className="mx-auto mt-5 max-w-[650px] text-sm leading-7 ">
@@ -155,7 +120,7 @@ function WhyRootBuilders() {
       <SectionEyebrow number="01" label="Why RootBuilders" />
       <h2 className="mt-6 max-w-[960px] font-black leading-tight text-[#333] lg:text-[42px]">
         From learning to execution.
-        <br />
+
         From talent to transformation.
       </h2>
       <p className="mt-3 max-w-[540px] text-sm font-bold leading-6 lg:text-base">
@@ -426,20 +391,21 @@ function Faq() {
           We&apos;ve got you covered on any of your doubts
         </p>
         <div className="mt-7 space-y-3">
-          {faqs.map((question) => (
+          {faqs.map(({ question, answer }) => (
             <details
               key={question}
+              name="rootbuilders-faq"
               className="group rounded-[6px] bg-[#e7f1f8] px-5 py-3"
             >
               <summary className="flex list-none items-center justify-between gap-4 text-sm font-bold text-[#44515c]">
                 {question}
-                <span className="text-lg font-black text-primary-600 group-open:rotate-45">
-                  +
+                <span aria-hidden="true" className="shrink-0 text-lg font-black text-primary-600">
+                  <span className="group-open:hidden">+</span>
+                  <span className="hidden group-open:inline">−</span>
                 </span>
               </summary>
               <p className="mt-3 text-sm leading-6 text-[#5c6872]">
-                Applications, timelines, and project details are shared during
-                each cohort intake.
+                {answer}
               </p>
             </details>
           ))}

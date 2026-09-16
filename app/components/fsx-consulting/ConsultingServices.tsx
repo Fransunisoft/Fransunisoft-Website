@@ -55,7 +55,13 @@ export default function ConsultingServices() {
 
   return (
     <section id="consulting-service" className="section-layout bg-background">
-      <div className="space-y-5 lg:space-y-10">
+      <div className="space-y-5 lg:space-y-8">
+        <div className="flex items-center gap-4">
+          <p className="text-xs font-extrabold uppercase whitespace-nowrap text-primary-600">
+           01-services
+          </p>
+          <div className="h-px flex-1 bg-neutral-card-border" />
+        </div>
         <h2 className="text-2xl font-semibold text-neutral-primary lg:text-[40px]">
           What FSX Consulting Does
         </h2>
@@ -83,7 +89,7 @@ export default function ConsultingServices() {
                   "h-9 shrink-0 rounded-full border px-4 text-xs font-extrabold shadow-sm transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 lg:h-14 lg:px-7 lg:text-base",
                   isActive
                     ? "border-primary-700 bg-primary-700 text-white"
-                    : "border-neutral-card-border bg-white text-neutral-primary hover:border-primary-200 hover:text-primary-800"
+                    : "border-neutral-card-border bg-white text-neutral-primary  hover:text-primary-800 hover:bg-primary-50"
                 )}
               >
                 {service.label}

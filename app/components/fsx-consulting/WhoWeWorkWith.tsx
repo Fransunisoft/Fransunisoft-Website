@@ -7,8 +7,8 @@ export default function WhoWeWorkWith() {
     <section className="section-layout overflow-hidden bg-background">
       <div className="space-y-5 lg:space-y-8">
         <div className="flex items-center gap-4">
-          <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-primary-600">
-            Who We Work With
+          <p className="text-xs font-extrabold uppercase whitespace-nowrap text-primary-600">
+           02-Who We Work With
           </p>
           <div className="h-px flex-1 bg-neutral-card-border" />
         </div>

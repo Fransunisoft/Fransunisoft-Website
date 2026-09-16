@@ -12,7 +12,7 @@ export const stackCards: StackCard[] = [
     title: "Real Problems. Not Simulations.",
     description:
       "Every project is anchored to a real challenge submitted by an organization, startup, government agency, or institution. Participants build deployed solutions, not hypothetical case studies.",
-    color: "#c84d27",
+    color: "#b54c26",
     image: "/rootbuilders-stack-real-problems.png",
   },
   {
@@ -20,7 +20,8 @@ export const stackCards: StackCard[] = [
     title: "Supervised Execution.",
     description:
       "Builders work with mentors, technical reviewers, and delivery leads who help them move from idea to practical implementation.",
-    color: "#0d4d86",
+    color: "#093A6D",
+    image: "/rootbuilders-stack-real-problems.png"
   },
   {
     id: "pipeline",
@@ -28,6 +29,7 @@ export const stackCards: StackCard[] = [
     description:
       "RootBuilders helps identify capable African builders and connects them to opportunities across the Fransunisoft ecosystem.",
     color: "#373737",
+    image: "/rootbuilders-stack-real-problems.png"
   },
   {
     id: "integrated",
@@ -35,6 +37,7 @@ export const stackCards: StackCard[] = [
     description:
       "Every track teaches builders how to use AI as part of research, design, development, testing, delivery, and decision-making.",
     color: "#12675f",
+    image: "/rootbuilders-stack-real-problems.png"
   },
 ];
 
@@ -77,10 +80,28 @@ export const tracks = [
 ];
 
 export const faqs = [
-  "How do I apply for Root Builders?",
-  "Is Root Builders bootcamp free?",
-  "Who can apply?",
-  "What projects will participants work on?",
-  "What is the main benefit of joining Root Builders?",
-  "Can I continue working on my project with FSX after the program?",
+  {
+    question: "What is RootBuilders?",
+    answer: "RootBuilders is a program by Fransunisoft that connects builders (developers, designers, and product managers), founders, and real businesses (SMEs) to solve real operational problems and build real ventures — in structured, time-bound cohorts.",
+  },
+  {
+    question: "How do I join?",
+    answer: "You register on the platform and select your role first — Builder, Founder, or SME/Organisation — since each path has its own application form. Admin accounts are internal only; there's no public sign-up for admins",
+  },
+  {
+    question: "Do I get a certificate?",
+    answer: "Yes — once admin marks you as Graduated, a shareable completion certificate is generated with your name, cohort details, and the products you contributed to.",
+  },
+  {
+    question: "What do I need to apply as a founder?",
+    answer: "Your startup stage, a problem statement (100–600 characters), your target customer, team size, and a motivation statement. A startup name is optional if you're pre-idea.",
+  },
+  {
+    question: "As an Organization, what happens after I submit a problem?",
+    answer: "You get a reference number and a confirmation email. Admin reviews it for quality and fit, then either approves it, declines it with a reason, or asks for more information.",
+  },
+  {
+    question: "What is Demo Day / the Showcase?",
+    answer: "An event — in-person, virtual, or hybrid — where teams present what they've built. There's a public pre-event page with event details and featured teams, and, after the event, an archive page summarizing outcomes and demo links.",
+  },
 ];

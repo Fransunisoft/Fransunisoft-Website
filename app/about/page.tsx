@@ -4,15 +4,16 @@ import Vision from '../AboutComponent/Vision'
 import CoreValue from '../AboutComponent/CoreValue'
 import Founder from '../AboutComponent/Founder'
 import PreFooter from '../components/layout/PreFooter'
+import styles from '../AboutComponent/AboutMobile.module.css'
 
 export default function page() {
   return (
-    <div>
+    <main className={styles.page}>
       <HeroSection />
       <Vision />
       <CoreValue />
       <Founder />
-      <PreFooter />
-    </div>
+      <div className={styles.preFooter}><PreFooter /></div>
+    </main>
   )
 }

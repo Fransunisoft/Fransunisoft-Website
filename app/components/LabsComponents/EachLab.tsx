@@ -12,11 +12,11 @@ export default function EachLab({ image, title }: EachLabProps) {
       <Image src={image} alt={title} fill className="object-cover" />
 
       {/* Dark gradient */}
-      <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />
 
       {/* Text */}
       <div className="absolute bottom-14 left-0 w-full px-4 text-center">
-        <h3 className="font-serif text-2xl font-bold text-white">{title}</h3>
+        <h4 className="font-serif text-2xl font-bold text-white">{title}</h4>
       </div>
     </div>
   );
