@@ -1,71 +1,52 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  {
-    name: "FSX Ecosystem",
-    href: "/services",
-    dropdown: [
-      {
-        name: "FSX Consulting -- AI Strategy & Advisory",
-        href: "/consulting",
-      },
-      {
-        name: "FSX Academy -- AI Workforce Development",
-        href: "/academy",
-      },
-      {
-        name: "FSX Labs - AI Products & Venture Studio",
-        href: "/labs",
-      },
-      {
-        name: "FSX Tech - Implementation & Infrastructure",
-        href: "/Tech",
-      },
-      {
-        name: "FSX Events - Innovation Programs",
-        href: "/events",
-      },
-      {
-        name: "FSX Connect - Network & Partnerships",
-        href: "/connect",
-      },
-    ],
-  },
-  { name: "Root Builders", href: "/contact" },
-  { name: "Contact", href: "/contact" },
-];
+import { navLinks } from "./navigation";
 
 export default function NavLinks() {
+  const pathname = usePathname();
+  const isActive = (href: string) =>
+    pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
+
   return (
-    <ul className="hidden lg:flex items-center gap-8">
+    <ul className="hidden lg:flex items-center gap-3 xl:gap-6">
       {navLinks.map((link) => (
         <li
           key={link.name}
-          className={`relative group ${
-            link.dropdown
-              ? "after:absolute after:left-0 after:top-full after:h-3 after:w-full"
-              : ""
-          }`}
+          className={`relative group whitespace-nowrap text-sm xl:text-base ${link.dropdown
+            ? "after:absolute after:left-0 after:top-full after:h-3 after:w-full"
+            : ""
+            }`}
         >
           <div className="flex items-center">
-            <Link
-              href={link.href}
-              className="flex items-center gap-1 hover:text-primary transition-colors"
-            >
-              {link.name}
-
-              {link.dropdown && (
+            {link.dropdown ? (
+              <button
+                type="button"
+                className={`flex items-center gap-1 font-medium! hover:text-primary-500 hover:underline underline-offset-6 transition-colors ${link.dropdown.some((item) => isActive(item.href))
+                  ? "text-primary-500 underline"
+                  : ""
+                  }`}
+              >
+                {link.name}
                 <ChevronDown
                   size={16}
-                  className="transition-transform duration-200 group-hover:rotate-180"
+                  aria-hidden="true"
+                  className="transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180"
                 />
-              )}
-            </Link>
+              </button>
+            ) : (
+              <Link
+                href={link.href}
+                aria-current={isActive(link.href) ? "page" : undefined}
+                className={`flex items-center gap-1 font-medium hover:text-primary-500 hover:underline underline-offset-6 transition-colors ${isActive(link.href) ? "text-primary-500 underline" : ""
+                  }`}
+              >
+                {link.name}
+              </Link>
+            )}
           </div>
 
           {link.dropdown && (
@@ -84,6 +65,10 @@ export default function NavLinks() {
                 group-hover:visible
                 group-hover:translate-y-0
                 group-hover:pointer-events-auto
+                group-focus-within:opacity-100
+                group-focus-within:visible
+                group-focus-within:translate-y-0
+                group-focus-within:pointer-events-auto
               "
             >
               <div className="w-[320px] rounded-lg bg-white p-2 shadow-[0_4px_20px_rgba(0,0,0,0.15)]">
@@ -91,7 +76,11 @@ export default function NavLinks() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="block rounded-md px-4 py-3 text-[13px] font-normal text-[#333] transition-colors hover:bg-gray-100"
+                    aria-current={isActive(item.href) ? "page" : undefined}
+                    className={`block rounded-md px-4 py-3 text-[13px] font-semibold transition-colors hover:bg-gray-100 hover:underline underline-offset-6 ${isActive(item.href)
+                      ? "bg-primary-50 text-primary-500 underline"
+                      : "text-[#333]"
+                      }`}
                   >
                     {item.name}
                   </Link>

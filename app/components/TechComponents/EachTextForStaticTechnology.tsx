@@ -32,11 +32,11 @@ export default function EachTextForStaticTechnology() {
       {technologyServices.map((service) => (
         <div
           key={service.title}
-          className="border-b border-neutral-200 py-5 first:pt-0"
+          className="border-b border-neutral-300 py-5 first:pt-0"
         >
-          <h2 className="font-serif text-2xl font-bold leading-tight text-[#0D519A]">
+          <h4 className="font-serif text-2xl font-bold leading-tight text-[#0D519A]">
             {service.title}
-          </h2>
+          </h4>
 
           <p className="mt-3 text-sm leading-6 text-[#333333]">
             {service.description}

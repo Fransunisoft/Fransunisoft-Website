@@ -5,8 +5,8 @@ export default function Challenge() {
     
   return (
     <>
-      <main className="p-10">
-        <section className="flex flex-col gap-8 md:flex-row md:gap-10">
+      <main className="">
+        <section className="flex section-layout flex-col gap-8 md:flex-row md:gap-10">
           {/* Left Content */}
           <div>
             <div className="flex items-center gap-4">
@@ -19,9 +19,9 @@ export default function Challenge() {
 
             <div className="mt-6">
               <h2 className="font-heading text-2xl text-[#2c3e50]">
-                Africa is at an AI Inflection <br />
+                Africa is at an AI Inflection
                 Point. Most Organizations <br />
-                Aren't Ready.
+                Aren&apos;t Ready.
               </h2>
 
               <p className="mt-6 font-heading leading-tight text-neutral-secondary">

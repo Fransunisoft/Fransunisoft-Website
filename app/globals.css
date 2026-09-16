@@ -170,13 +170,21 @@ button:disabled,
 
 @media (min-width: 1024px) {
   .section-layout {
-    margin-inline: 100px;
+    margin-inline: 70px;
     padding-block: 40px;
   }
 
   .connect-audience-image-frame {
     min-height: 320px;
   }
+}
+
+@media (min-width: 1224px) {
+  .section-layout {
+    margin-inline: 100px;
+    padding-block: 40px;
+  }
+
 }
 
 /* FU DESKTOP TYPROGRAPHY SYSTEM */
@@ -240,13 +248,14 @@ span {
 }
 
 .hero-bullet {
-  width: 110px !important;
-  height: 3px !important;
+  place-self: center !important; 
+  width: 40px !important;
+  height: 5px !important;
 
   display: block !important;
   margin: 0 !important;
 
-  border-radius: 6px !important; /* rectangle */
+  border-radius: 10px !important; /* rectangle */
   background: #B5B5B5 !important;
 
   opacity: 1 !important;

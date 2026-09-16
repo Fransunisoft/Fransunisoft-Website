@@ -1,9 +1,10 @@
 "use client";
 
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, type CSSProperties } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import styles from "./StackCards.module.css";
 
 import Stack1 from "./images/stack1.png";
 import Stack2 from "./images/stack2.png";
@@ -119,7 +120,7 @@ export default function StackCards() {
   return (
     <section
       ref={sectionRef}
-      className="relative mx-auto max-w-7xl px-4 sm:px-6"
+      className="relative mx-auto max-w-7xl section-layout"
     >
       {StackCardDetails.map((stack, index) => (
         // OUTER wrapper: this is what's sticky, and its top offset per index
@@ -130,7 +131,8 @@ export default function StackCards() {
           style={{
             top: `${90 + index * TOP_STEP}px`,
             zIndex: index + 1,
-          }}
+            "--stack-top": `${90 + index * TOP_STEP}px`,
+          } as CSSProperties}
         >
           {/* INNER wrapper: this is what GSAP scales, kept separate from the
               sticky element so scaling never fights with sticky positioning */}
@@ -138,7 +140,10 @@ export default function StackCards() {
             ref={(el) => {
               cardsRef.current[index] = el;
             }}
-            className={`flex flex-col items-center gap-5 rounded-[20px] p-5 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.25)] ring-1 ring-black/5 sm:rounded-[28px] sm:p-6 lg:flex-row lg:gap-8 ${stack.bg}`}
+            tabIndex={0}
+            role="region"
+            aria-label={stack.title}
+            className={`${styles.mobileCard} flex flex-col items-center gap-5 rounded-[20px] p-5 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.25)] ring-1 ring-black/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-400 sm:rounded-[28px] sm:p-6 lg:flex-row lg:gap-8 ${stack.bg}`}
           >
             {/* Image */}
             <div className="w-full lg:w-1/2">
@@ -151,11 +156,11 @@ export default function StackCards() {
 
             {/* Text */}
             <div className="w-full lg:w-1/2">
-              <h2
+              <h3
                 className={`text-xl font-bold leading-tight lg:text-2xl ${stack.textColor}`}
               >
                 {stack.title}
-              </h2>
+              </h3>
 
               <p
                 className={`mt-3 text-sm leading-6 lg:text-base lg:leading-7 ${stack.textColor}`}
@@ -170,9 +175,9 @@ export default function StackCards() {
                     : "border-neutral-300"
                 }`}
               >
-                <h3 className={`text-sm font-semibold ${stack.idealForColor}`}>
+                <h4 className={`text-sm font-semibold ${stack.idealForColor}`}>
                   Ideal For
-                </h3>
+                </h4>
 
                 <p
                   className={`mt-2 text-sm leading-6 lg:text-base lg:leading-7 ${stack.textColor}`}

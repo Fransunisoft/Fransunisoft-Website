@@ -10,10 +10,7 @@ export default function AcademyPage() {
         title={
           <>
             Workforce Ready For
-            <br />
-            AI. Built By
-            <br />
-            <span className="text-[48px]! text-primary-700">
+            AI. Built By <span className=" text-3xl! sm:text-5xl! text-primary-500 font-semibold!">
               Fransunisoft.
             </span>
           </>
@@ -40,8 +37,8 @@ export default function AcademyPage() {
 
       <section id="who-we-serve" className="section-layout bg-background py-0">
         <div className="flex items-center gap-4">
-          <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-primary-600">
-            Who we serve
+          <p className=" font-extrabold whitespace-nowrap uppercase text-primary-600">
+            01-Who we serve
           </p>
           <div className="h-px flex-1 bg-neutral-card-border" />
         </div>

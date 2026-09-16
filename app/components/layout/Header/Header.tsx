@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
 
 import Logo from "./Logo";
 import NavLinks from "./NavLinks";
-import MobileMenu from "./MobileMenu";
+import MobileMenu, { MobileMenuToggle } from "./MobileMenu";
+import { headerAction } from "./navigation";
 import Button from "@/app/components/ui/Button";
 import Link from "next/link";
 
@@ -14,25 +14,20 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed left-0 top-0 z-50 w-full bg-white px-3 py-2 lg:px-8 lg:py-6">
-        <nav className="flex items-center justify-between">
+      <header className="fixed left-0 top-0 z-50 w-full  bg-white shadow-md ">
+        <nav className="flex items-center section-layout justify-between">
           <Logo />
 
           <NavLinks />
 
           <div className="hidden lg:block">
-            <Button>Book an AI Session</Button>
+            <Link href={headerAction.href}>
+            <Button className="whitespace-nowrap px-4 text-sm xl:px-6 xl:text-base">{headerAction.name}</Button>
+            </Link>
+            
           </div>
 
-          <Link href='#contact'>
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden"
-              aria-label="Toggle menu"
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </Link>
+          <MobileMenuToggle isOpen={isOpen} onToggle={() => setIsOpen(!isOpen)} />
         </nav>
 
         <MobileMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />

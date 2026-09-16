@@ -5,7 +5,7 @@ export default function AcademyCapabilitySection() {
   return (
     <section className="bg-secondary-900 text-white">
       <div className="section-layout py-10 lg:py-16">
-        <div className="grid items-start gap-12 lg:grid-cols-[0.82fr_1fr] lg:gap-20">
+        <div className="grid items-start gap-4 lg:grid-cols-[0.82fr_1fr] lg:gap-20">
           <div className="overflow-hidden rounded-[24px]">
             <Image
               src="/academy-organizations.png"
@@ -17,16 +17,16 @@ export default function AcademyCapabilitySection() {
             />
           </div>
 
-          <div className="pt-4 lg:pt-5">
-            <p className="font-heading text-lg font-bold leading-6 text-accent">
+          <div className=" lg:pt-5">
+            <p className="font-heading text-lg font-bold! leading-6 text-accent-400">
               For Organizations
             </p>
             <div className="mt-4 space-y-7">
               {academyHighlights.map((highlight) => (
                 <div key={highlight.title}>
-                  <h3 className="max-w-xl text-3xl font-semibold leading-tight text-white">
+                  <h4 className="max-w-xl text-3xl font-semibold leading-tight text-white">
                     {highlight.title}
-                  </h3>
+                  </h4>
                   <p className="mt-3 max-w-2xl text-base leading-7 text-white/75">
                     {highlight.description}
                   </p>
@@ -36,21 +36,20 @@ export default function AcademyCapabilitySection() {
           </div>
         </div>
 
-        <div className="mt-16 grid items-center gap-12 lg:grid-cols-[1fr_0.92fr] lg:gap-20">
+        <div className="mt-16 grid items-center lg:grid-cols-[1fr_0.92fr] lg:gap-20">
           <div>
-            <p className="font-heading text-lg font-bold leading-6 text-accent">
+            <p className="font-heading pt-3 text-lg font-bold! leading-6 text-accent-400 lg:pt-0">
               For Individual Talent
             </p>
-            <h3 className="mt-4 text-3xl font-semibold leading-tight text-white">
+            <h4 className="mt-4 text-3xl font-semibold leading-tight text-white">
               Learn. Build. Deploy. Own.
-            </h3>
+            </h4>
             <p className="mt-4 max-w-2xl text-base leading-7 text-white/75">
               FSX Academy gives individual builders the skills, experience, and
               ecosystem connections needed to build AI-powered solutions - and
               the opportunity to earn equity in the ventures they help create
             </p>
           </div>
-
           <div className="overflow-hidden rounded-[24px]">
             <Image
               src="/academy-rootbuilders.png"

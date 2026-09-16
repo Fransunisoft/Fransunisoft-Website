@@ -1,0 +1,37 @@
+@media (max-width: 768px) {
+  .mobileCard {
+    max-height: calc(100svh - var(--stack-top) - 16px);
+    align-items: stretch;
+    gap: 14px;
+    padding: 16px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(100 116 139 / 65%) transparent;
+  }
+
+  /* Keep the content readable and scrollable instead of squeezing flex items. */
+  .mobileCard > div {
+    flex-shrink: 0;
+  }
+
+  .mobileCard img {
+    height: clamp(96px, 18svh, 160px);
+    object-fit: cover;
+  }
+
+  .mobileCard h3 {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+  .mobileCard h4 {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .mobileCard p {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}

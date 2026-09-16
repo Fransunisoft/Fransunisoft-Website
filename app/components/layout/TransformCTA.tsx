@@ -9,7 +9,7 @@ export default function TransformCTA() {
         <h2 className="max-w-xl text-2xl font-semibold leading-tight text-white md:text-5xl lg:text-[64px]">
           Ready To Transform
           <br />
-          <span className="text-accent-400">With AI?</span>
+          <span className="text-accent-400 text-2xl! sm:text-3xl! font-bold!">With AI?</span>
         </h2>
 
         <div className="flex flex-col items-center gap-3 lg:gap-5">

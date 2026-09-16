@@ -28,8 +28,7 @@ const slides = [
     ),
     description: (
       <>
-        We combine AI strategy, workforce development, technology <br />
-        implementation, venture building, and ecosystem programs <br />
+        We combine AI strategy, workforce development, technology implementation, venture building, and ecosystem programs
         to help organizations prepare for the future.
       </>
     ),
@@ -45,8 +44,8 @@ const slides = [
     ),
     description: (
       <>
-        We combine AI strategy, workforce development, technology <br />
-        implementation, venture building, and ecosystem programs <br />
+        We combine AI strategy, workforce development, technology
+        implementation, venture building, and ecosystem programs
         to help organizations prepare for the future.
       </>
     ),
@@ -62,8 +61,8 @@ const slides = [
     ),
     description: (
       <>
-        We combine AI strategy, workforce development, technology <br />
-        implementation, venture building, and ecosystem programs <br />
+        We combine AI strategy, workforce development, technology
+        implementation, venture building, and ecosystem programs
         to help organizations prepare for the future.
       </>
     ),
@@ -106,7 +105,7 @@ export default function HeroSection() {
               {/* Overlay */}
               <div className="absolute inset-0 bg-black/60" />
 
-           
+
               {/* Content */}
               <div className="relative z-10 flex h-full items-center px-4 py-8 sm:px-6 md:px-16">
                 <div className="mx-auto w-full max-w-7xl px-2 sm:px-4 md:px-6">
@@ -120,7 +119,7 @@ export default function HeroSection() {
                     </p>
 
                     <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-4 md:mt-10">
-                      <Link href="/contact">
+                      <Link href="/#contact">
                         <Button
                           variant="accent"
                           className="flex items-center gap-2"
@@ -131,7 +130,7 @@ export default function HeroSection() {
                         </Button>
                       </Link>
 
-                      <Link href="/ecosystem">
+                      <Link href="/#ecosystem">
                         <Button
                           variant="transparent"
                           className="flex items-center gap-2"

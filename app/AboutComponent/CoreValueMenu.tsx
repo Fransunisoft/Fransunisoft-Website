@@ -2,8 +2,15 @@
 
 import Image, { StaticImageData } from "next/image";
 import React, { useState } from "react";
-import meetings from "./images/meeting.png";
+import cv1 from "@/public/cv1.png";
+import cv2 from "@/public/cv2.png";
+import cv3 from "@/public/cv3.png";
+import cv4 from "@/public/cv4.png";
+import cv5 from "@/public/cv5.png";
+import cv6 from "@/public/cv6.png";
 import arrow from "./images/arrow.png";
+import { ChevronRight } from "lucide-react";
+import styles from "./AboutMobile.module.css";
 
 type CoreValue = {
   menuTitle: string;
@@ -17,42 +24,42 @@ export default function CoreValueMenu() {
     {
       menuTitle: "Innovation",
       detailsH3: "Innovation",
-      imgDiff: meetings,
+      imgDiff: cv1,
       details:
         "We design bold, Africa-first solutions to real organizational problems. We do not copy global models — we build what the African context requires.",
     },
     {
       menuTitle: "Executive Excellence",
       detailsH3: "Executive Excellence",
-      imgDiff: meetings,
+      imgDiff: cv2,
       details:
         "We value results over plans, outcomes over outputs, and delivery over discussion. Execution is not a department — it is our culture.",
     },
     {
       menuTitle: "Collaboration",
       detailsH3: "Collaboration",
-      imgDiff: meetings,
+      imgDiff: cv5,
       details:
         "We work with people and organizations to create meaningful solutions that deliver real impact.",
     },
     {
       menuTitle: "Impact",
       detailsH3: "Impact",
-      imgDiff: meetings,
+      imgDiff: cv4,
       details:
         "We focus on creating solutions that produce measurable and lasting value.",
     },
     {
       menuTitle: "Integrity",
       detailsH3: "Integrity",
-      imgDiff: meetings,
+      imgDiff: cv3,
       details:
         "We operate with honesty, transparency, and accountability in everything we do.",
     },
     {
       menuTitle: "Growth",
       detailsH3: "Growth",
-      imgDiff: meetings,
+      imgDiff: cv6,
       details:
         "We continuously learn, adapt, and improve to create better outcomes for the people and organizations we serve.",
     },
@@ -60,12 +67,22 @@ export default function CoreValueMenu() {
 
   // Keeps track of which menu item is selected
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [openMobileIndex, setOpenMobileIndex] = useState<number | null>(0);
+  const mobileValues = [
+    CoreValueProp[0],
+    { ...CoreValueProp[1], menuTitle: "Execution Excellence", detailsH3: "Execution Excellence" },
+    CoreValueProp[4],
+    { ...CoreValueProp[3], menuTitle: "Shared Ownership", detailsH3: "Shared Ownership" },
+    { ...CoreValueProp[2], menuTitle: "Community", detailsH3: "Community" },
+    CoreValueProp[5],
+  ];
 
   // Get the currently selected item
   const selectedValue = CoreValueProp[selectedIndex];
 
   return (
-    <div className="rounded-[20px] border border-dashed mt-3 border-white/20 bg-[#0C4A8C] p-8">
+    <>
+    <div className={`rounded-[20px] border border-dashed mt-3 border-white/20 bg-[#0C4A8C] ${styles.desktopValues}`}>
       <div className="grid grid-cols-2 gap-10">
         {/* SIDEBAR */}
         <div className="flex flex-col">
@@ -115,5 +132,26 @@ export default function CoreValueMenu() {
         </div>
       </div>
     </div>
+    <div className={styles.mobileValues}>
+      {mobileValues.map((value, index) => {
+        const expanded = openMobileIndex === index;
+        return (
+          <article key={value.menuTitle} className={styles.valueItem} data-open={expanded}>
+            <h3>
+              <button type="button" id={`about-value-${index}`} aria-expanded={expanded} aria-controls={`about-value-panel-${index}`} onClick={() => setOpenMobileIndex(expanded ? null : index)}>
+                {value.menuTitle}
+                {expanded ? <Image src={arrow} alt="" width={50} height={20} /> : <ChevronRight size={28} strokeWidth={4} aria-hidden="true" />}
+              </button>
+            </h3>
+            <div id={`about-value-panel-${index}`} role="region" aria-labelledby={`about-value-${index}`} hidden={!expanded} className={styles.valuePanel}>
+              <Image src={value.imgDiff} alt={`${value.detailsH3} at Fransunisoft`} sizes="(max-width: 1023px) 90vw, 1px" />
+              <h4>{value.detailsH3}</h4>
+              <p>{value.details}</p>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+    </>
   );
 }

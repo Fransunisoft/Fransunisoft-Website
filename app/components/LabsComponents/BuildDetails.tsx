@@ -31,9 +31,10 @@ export default function BuildDetails() {
   const activeMenu = eachBuildMenu[activeIndex];
 
   return (
-    <section>
+    <section className="section-layout">
+      <h2 className="max-w-xl">What we build and who we build for</h2>
       {/* Menu */}
-      <div className="flex flex-wrap gap-4">
+      <div className="no-scrollbar mt-6 flex w-full gap-3 overflow-x-auto pb-3 lg:flex-wrap lg:gap-4">
         {eachBuildMenu.map((menu, index) => {
           const isActive = activeIndex === index;
 
@@ -41,33 +42,34 @@ export default function BuildDetails() {
             <button
               key={menu.menuDetails}
               type="button"
+              aria-pressed={isActive}
               onClick={() => setActiveIndex(index)}
-              className={`group mt-9 flex h-20 w-70 items-center justify-center rounded-full p-4 shadow-2xl transition-all duration-300 ${
+              className={`group flex h-10 shrink-0 items-center justify-center whitespace-nowrap rounded-full px-5 shadow-sm transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 lg:h-15 lg:w-70 lg:p-4 ${
                 isActive
                   ? "bg-primary-500"
-                  : "bg-white hover:bg-primary-500"
+                  : "bg-white hover:bg-primary-500 "
               }`}
             >
               <div className="flex items-center justify-center gap-2">
                 <Image
                   src={frame}
                   alt=""
-                  className={`transition-all duration-300 ${
+                  className={`h-4 w-4 sm:h-5 w-5 shrink-0 object-contain transition-all duration-300 ${
                     isActive
                       ? "brightness-0 invert"
                       : "group-hover:brightness-0 group-hover:invert"
                   }`}
                 />
 
-                <p
-                  className={`transition-colors duration-300 ${
+                <span
+                  className={`font-heading! text-base! font-semibold! transition-colors duration-300 ${
                     isActive
                       ? "text-white"
-                      : "text-neutral-primary group-hover:text-white"
+                      : "text-primary-500 group-hover:text-white"
                   }`}
                 >
                   {menu.menuDetails}
-                </p>
+                </span>
               </div>
             </button>
           );
