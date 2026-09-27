@@ -31,8 +31,8 @@ export default function AcademyTracks() {
                 key={track}
                 type="button"
                 className={[
-                  "flex h-16 w-full items-center justify-center rounded-lg bg-primary px-8 text-center font-heading text-lg font-bold leading-tight text-white",
-                  "shadow-[0_4px_10px_rgba(13,81,154,0.35)] transition hover:bg-primary-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+                  "flex h-16 w-full items-center justify-center rounded-lg  bg-primary px-8 text-center font-heading text-lg font-bold leading-tight text-white",
+                  "shadow-[0_4px_10px_rgba(13,81,154,0.35)] transition  hover:bg-accent-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
                   row.length === 3 ? "lg:w-[31.5%]" : "lg:w-[31.5%]",
                   rowIndex === 3 && track.length > 30
                     ? "text-base xl:text-lg"

@@ -221,7 +221,7 @@ export default function ConsultComponents({
         </p>
 
         <div className="home-consult-action mt-6 sm:mt-8">
-          <Button>{buttonDetails}<ArrowRight className="home-consult-cta-arrow" size={24} aria-hidden="true" /></Button>
+          <Button className=" hover:bg-accent-500">{buttonDetails}<ArrowRight className="home-consult-cta-arrow" size={24} aria-hidden="true" /></Button>
         </div>
       </section>
     </div>

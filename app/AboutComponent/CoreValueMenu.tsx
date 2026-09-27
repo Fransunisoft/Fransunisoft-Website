@@ -85,7 +85,7 @@ export default function CoreValueMenu() {
     <div className={`rounded-[20px] border border-dashed mt-3 border-white/20 bg-[#0C4A8C] ${styles.desktopValues}`}>
       <div className="grid grid-cols-2 gap-10">
         {/* SIDEBAR */}
-        <div className="flex flex-col">
+        <div className="flex flex-col p-10">
           {CoreValueProp.map((eachValue, index) => (
             <button
               key={eachValue.menuTitle}

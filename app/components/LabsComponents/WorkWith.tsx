@@ -60,7 +60,7 @@ export default function WorkWith() {
           tabIndex={0}
           role="region"
           aria-label="Who we work with carousel"
-          className="overflow-x-auto rounded-[35px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary-700 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="overflow-x-auto rounded-[35px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary-700 [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden"
         >
           <div className="flex w-max gap-8">
             <div className="w-72 shrink-0 sm:w-80">

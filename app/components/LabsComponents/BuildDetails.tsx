@@ -47,7 +47,7 @@ export default function BuildDetails() {
               className={`group flex h-10 shrink-0 items-center justify-center whitespace-nowrap rounded-full px-5 shadow-sm transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 lg:h-15 lg:w-70 lg:p-4 ${
                 isActive
                   ? "bg-primary-500"
-                  : "bg-white hover:bg-primary-500 "
+                  : "bg-white hover:bg-primary-100  "
               }`}
             >
               <div className="flex items-center justify-center gap-2">

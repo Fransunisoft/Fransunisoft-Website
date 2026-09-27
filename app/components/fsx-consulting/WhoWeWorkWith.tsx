@@ -17,15 +17,15 @@ export default function WhoWeWorkWith() {
           Who We Work With
         </h2>
 
-        <div className="relative -mx-5 overflow-hidden sm:-mx-[50px] lg:-mx-[100px]">
-          <div className="marquee-track flex w-max gap-4 px-4 sm:px-[40px] lg:gap-8 lg:px-[80px]">
+        <div className="relative -mx-5 overflow-hidden sm:-mx-12.5 lg:-mx-25 ">
+          <div className="marquee-track flex w-max gap-4 px-4 sm:px-10  lg:gap-8 lg:px-20">
             {repeatedAudiences.map((audience, index) => (
               <article
                 key={`${audience}-${index}`}
                 aria-hidden={index >= workWithAudiences.length}
-                className="flex h-16 w-[170px] shrink-0 items-center justify-center rounded-card border border-neutral-card-border bg-white px-3 text-center shadow-sm md:w-[330px] lg:h-22 lg:w-[330px] lg:px-4"
+                className="flex h-16 w-42.5 shrink-0 hover:bg-primary-500  items-center justify-center rounded-card border border-neutral-card-border bg-white px-3 text-center shadow-sm md:w-82.5 lg:h-22 lg:w-82.5 lg:px-4"
               >
-                <h5 className="text-xs font-semibold text-neutral-primary lg:text-xl">
+                <h5 className="text-xs font-semibold hover:text-white text-neutral-primary lg:text-xl">
                   {audience}
                 </h5>
               </article>

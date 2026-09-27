@@ -16,19 +16,21 @@ export default function NavLinks() {
       {navLinks.map((link) => (
         <li
           key={link.name}
-          className={`relative group whitespace-nowrap text-sm xl:text-base ${link.dropdown
-            ? "after:absolute after:left-0 after:top-full after:h-3 after:w-full"
-            : ""
-            }`}
+          className={`relative group whitespace-nowrap text-sm xl:text-base ${
+            link.dropdown
+              ? "after:absolute after:left-0 after:top-full after:h-3 after:w-full"
+              : ""
+          }`}
         >
           <div className="flex items-center">
             {link.dropdown ? (
               <button
                 type="button"
-                className={`flex items-center gap-1 font-medium! hover:text-primary-500 hover:underline underline-offset-6 transition-colors ${link.dropdown.some((item) => isActive(item.href))
-                  ? "text-primary-500 underline"
-                  : ""
-                  }`}
+                className={`flex items-center gap-1 font-medium! hover:text-primary-500 hover:underline underline-offset-6 transition-colors ${
+                  link.dropdown.some((item) => isActive(item.href))
+                    ? "text-primary-500 underline"
+                    : ""
+                }`}
               >
                 {link.name}
                 <ChevronDown
@@ -41,8 +43,9 @@ export default function NavLinks() {
               <Link
                 href={link.href}
                 aria-current={isActive(link.href) ? "page" : undefined}
-                className={`flex items-center gap-1 font-medium hover:text-primary-500 hover:underline underline-offset-6 transition-colors ${isActive(link.href) ? "text-primary-500 underline" : ""
-                  }`}
+                className={`flex items-center gap-1 font-medium hover:text-primary-500 hover:underline underline-offset-6 transition-colors ${
+                  isActive(link.href) ? "text-primary-500 underline" : ""
+                }`}
               >
                 {link.name}
               </Link>
@@ -77,10 +80,11 @@ export default function NavLinks() {
                     key={item.name}
                     href={item.href}
                     aria-current={isActive(item.href) ? "page" : undefined}
-                    className={`block rounded-md px-4 py-3 text-[13px] font-semibold transition-colors hover:bg-gray-100 hover:underline underline-offset-6 ${isActive(item.href)
-                      ? "bg-primary-50 text-primary-500 underline"
-                      : "text-[#333]"
-                      }`}
+                    className={`block rounded-md px-4 py-3 text-[13px] font-semibold transition-colors hover:bg-gray-100 hover:underline underline-offset-6 ${
+                      isActive(item.href)
+                        ? "bg-primary-50 text-primary-500 underline"
+                        : "text-[#333]"
+                    }`}
                   >
                     {item.name}
                   </Link>

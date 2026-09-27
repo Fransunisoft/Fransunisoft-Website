@@ -6,12 +6,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./StackCards.module.css";
 
-import Stack1 from "./images/stack1.png";
-import Stack2 from "./images/stack2.png";
-import Stack3 from "./images/stack3.png";
-import Stack4 from "./images/stack4.png";
-import Stack5 from "./images/stack5.png";
-import Stack6 from "./images/stack6.png";
+import Stack1 from "./images/strategy.png";
+import Stack2 from "./images/aiworkforce.png";
+import Stack3 from "./images/aisolutions.png";
+import Stack4 from "./images/innovationprogram.png";
+import Stack5 from "./images/venturebuilding.png";
+import Stack6 from "./images/technology.png";
 
 gsap.registerPlugin(ScrollTrigger);
 const TOP_STEP = 16; // px — controls the peek visible at the TOP

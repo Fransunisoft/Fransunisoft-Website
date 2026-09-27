@@ -17,7 +17,7 @@ export default function TransformCTA() {
             href="#contact"
             className={cn(
               buttonVariants({ variant: "accent", size: "md" }),
-              "h-9 rounded-full px-5 text-xs font-bold lg:h-11 lg:px-8 lg:text-base"
+              "h-9 rounded-full px-5 text-xs font-bold hover:bg-secondary-700 lg:h-11 lg:px-8 lg:text-base"
             )}
           >
             Book a Session
@@ -27,7 +27,7 @@ export default function TransformCTA() {
             href="mailto:hello@fransunisoft.com"
             className={cn(
               buttonVariants({ variant: "transparent", size: "md" }),
-              "h-9 rounded-full border-white/80 px-5 text-xs font-bold text-white hover:bg-white/10 lg:h-11 lg:px-8 lg:text-base"
+              "h-9 rounded-full border-white/80 px-5 text-xs font-bold hover:bg-primary-500 text-white lg:h-11 lg:px-8 lg:text-base"
             )}
           >
             Speak With Our Team

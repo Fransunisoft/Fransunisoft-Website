@@ -3,6 +3,7 @@ import trevauty from "./images/trevauty.png";
 import gdg from "./images/GDG.png";
 import andela from "./images/andela.png";
 import subtract from "./images/Subtract.png";
+import paystack from "./images/paystack.png";
 import Image from "next/image";
 
 const partners = [
@@ -11,6 +12,7 @@ const partners = [
   { image: gdg, name: "Google Developer Groups", width: "w-20 sm:w-28 lg:w-44.75" },
   { image: andela, name: "Andela", width: "w-16 sm:w-20 lg:w-30.5" },
   { image: subtract, name: "Partner logo", width: "w-14 sm:w-16 lg:w-24.5" },
+  { image: paystack, name: "Paystack", width: "w-14 sm:w-16 lg:w-24.5" },
 ];
 
 export default function TrustedPartners() {

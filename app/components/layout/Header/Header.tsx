@@ -22,7 +22,7 @@ export default function Header() {
 
           <div className="hidden lg:block">
             <Link href={headerAction.href}>
-            <Button className="whitespace-nowrap px-4 text-sm xl:px-6 xl:text-base">{headerAction.name}</Button>
+            <Button className="whitespace-nowrap hover:bg-accent-600 px-4 text-sm xl:px-6 xl:text-base">{headerAction.name}</Button>
             </Link>
             
           </div>

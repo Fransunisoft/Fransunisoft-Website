@@ -56,7 +56,7 @@ export default function HeroSection({
                   variant: primaryAction.variant ?? "primary",
                   size: "lg",
                 }),
-                "h-10 w-full rounded-full px-7 text-sm font-bold sm:w-auto lg:h-12"
+                "h-10 w-full rounded-full hover:bg-accent-500 hover:text-black px-7 text-sm font-bold sm:w-auto lg:h-12"
               )}
             >
               {primaryAction.label}
@@ -70,7 +70,7 @@ export default function HeroSection({
                   variant: secondaryAction.variant ?? "transparent",
                   size: "lg",
                 }),
-                  "h-10 w-full rounded-full px-7 text-sm font-bold sm:w-auto lg:h-12"
+                  "h-10 w-full rounded-full hover:bg-primary-500 hover:text-white px-7 text-sm font-bold sm:w-auto lg:h-12"
                 )}
               >
                 {secondaryAction.label}

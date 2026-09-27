@@ -112,12 +112,12 @@ export default function ConsultingServices() {
               width={899}
               height={599}
               sizes="(min-width: 1024px) 52vw, 100vw"
-              className="aspect-[1.5/1] w-full object-cover"
+              className="aspect-1.5/1 w-full object-cover"
             />
           </div>
 
           <div className="max-w-md">
-            <h3 className="text-lg font-semibold leading-tight text-secondary-700 lg:text-[34px]">
+            <h3 className="text-lg font-bold leading-tight text-secondary-700 lg:text-[34px]">
               {activeService.title}
             </h3>
             <p className="mt-3 text-xs leading-5 text-neutral-secondary lg:mt-5 lg:text-base lg:leading-7">
