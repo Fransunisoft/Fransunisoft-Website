@@ -1,27 +1,29 @@
 import Image from "next/image";
-import Link from "next/link";
 import {
   ArrowRight,
-  BookOpen,
   Calendar,
   CheckCircle2,
   Code2,
   MapPin,
-  Sparkles,
   Target,
 } from "lucide-react";
 import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
+  FaTiktok,
   FaYoutube,
+  FaXTwitter,
 } from "react-icons/fa6";
+import type { IconType } from "react-icons";
+import Button from "@/app/components/ui/Button";
 import RootBuildersStack from "@/app/components/rootbuilders/RootBuildersStack";
 import RootBuildersHeader from "@/app/components/rootbuilders/RootBuildersHeader";
 import {
   eligibilityCards,
   faqs,
   requirements,
+  rootBuildersApplicationUrl,
   tracks,
 } from "@/app/components/rootbuilders/rootbuilders-data";
 import { cn } from "@/app/lib/utils";
@@ -32,6 +34,15 @@ const processSteps = [
   "A dedicated talent team is assigned and briefed.",
   "Teams build and iterate over 8-10 weeks under FSX supervision.",
   "You review the solution at Demo Day and decide on deployment.",
+];
+
+const rootBuildersSocialLinks: { Icon: IconType; label: string; href: string }[] = [
+  { Icon: FaFacebookF, label: "Facebook", href: "https://www.facebook.com/fransunisoft" },
+  { Icon: FaXTwitter, label: "X", href: "https://twitter.com/fransunisoft" },
+  { Icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/fransunisoft" },
+  { Icon: FaLinkedinIn, label: "LinkedIn", href: "https://www.linkedin.com/company/fransunisoft/" },
+  { Icon: FaYoutube, label: "YouTube", href: "https://www.youtube.com/@fransunisoft" },
+  { Icon: FaTiktok, label: "TikTok", href: "https://www.tiktok.com/@fransunisoft" },
 ];
 
 export default function RootBuildersPage() {
@@ -63,8 +74,22 @@ function Hero() {
             A FSX Academy initiative by Fransunisoft
           </div>
 
-          <div className="pointer-events-none absolute -left-28 top-4 hidden h-24 w-24 rounded-full border-2 border-dashed border-[#9aa7b1] lg:block" />
-          <Sparkles className="pointer-events-none absolute -left-40 bottom-16 hidden h-9 w-9 text-accent-500 lg:block" />
+          <Image
+            src="/arrow.png"
+            alt=""
+            aria-hidden="true"
+            width={160}
+            height={160}
+            className="pointer-events-none absolute -left-28 top-4 hidden h-24 w-24 object-contain lg:block"
+          />
+          <Image
+            src="/Graphic designer.png"
+            alt=""
+            aria-hidden="true"
+            width={160}
+            height={160}
+            className="pointer-events-none absolute -left-40 bottom-16 hidden h-16 w-16 object-contain lg:block"
+          />
           <Code2 className="pointer-events-none absolute -right-36 top-8 hidden h-12 w-12 rounded-full bg-primary-600 p-2 text-white lg:block" />
 
           <h1 className="text-[38px] font-black leading-[1.02] sm:text-5xl lg:text-[62px]">
@@ -80,19 +105,25 @@ function Hero() {
           </p>
 
           <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link
-              href="#apply"
-              className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-primary-600 px-7 text-sm font-bold text-white shadow-sm transition hover:bg-primary-700"
+            <Button
+              href={rootBuildersApplicationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="primary"
+              size="md"
+              className="h-11 px-7 text-sm font-bold shadow-sm"
             >
               Apply to RootBuilders
               <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="#challenge"
-              className="inline-flex h-11 items-center justify-center rounded-full border border-[#aeb8c2] bg-white px-7 text-sm font-bold text-[#333]"
+            </Button>
+            <Button
+              href="/#contact"
+              variant="outline"
+              size="md"
+              className="h-11 border-[#aeb8c2] bg-white px-7 text-sm font-bold text-[#333]"
             >
               Submit Organizational Challenge
-            </Link>
+            </Button>
           </div>
         </div>
       </div>
@@ -146,13 +177,14 @@ function SummitBand() {
             built during RootBuilders cohorts and exploring the future of
             AI-driven problem solving across Africa.
           </p>
-          <Link
+          <Button
             href="/events"
-            className="mt-7 inline-flex h-10 items-center gap-2 rounded-full border border-white/70 px-5 text-sm font-bold text-white"
+            variant="outlineLight"
+            className="mt-7 h-10 px-5 text-sm font-bold"
           >
             Explore FSX Event
             <ArrowRight className="h-4 w-4" />
-          </Link>
+          </Button>
         </div>
         <div className="relative mx-auto w-full max-w-[340px] rotate-[-3deg] ">
           <Image
@@ -189,13 +221,14 @@ function ChallengeBand() {
             RootBuilders. A supervised team of AI-trained builders will work to
             design and develop a solution during the cohort cycle.
           </p>
-          <Link
-            href="#apply"
-            className="mt-7 inline-flex h-10 items-center gap-2 rounded-full bg-accent-500 px-5 text-sm font-bold text-white"
+          <Button
+            href="/#contact"
+            variant="accent"
+            className="mt-7 h-10 px-5 text-sm font-bold"
           >
             Submit Organizational Challenge
             <ArrowRight className="h-4 w-4" />
-          </Link>
+          </Button>
         </div>
         <ol className="space-y-0">
           {processSteps.map((step, index) => (
@@ -432,20 +465,24 @@ function BottomCta() {
           open now.
         </p>
         <div className="relative items-center mt-7 flex flex-col gap-3">
-          <Link
-            href="#"
-            className="inline-flex h-10 items-center justify-center w-fit gap-2 rounded-full bg-accent-500 px-6 text-sm font-bold text-white"
+          <Button
+            href={rootBuildersApplicationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="accent"
+            className="h-10 w-fit px-6 text-sm font-bold"
           >
             Apply to RootBuilders
             <ArrowRight className="h-4 w-4" />
-          </Link>
-          <Link
-            href="#challenge"
-            className="inline-flex h-10 items-center justify-center  w-fit gap-2 rounded-full border border-white/70 px-6 text-sm font-bold text-white"
+          </Button>
+          <Button
+            href="/#contact"
+            variant="outlineLight"
+            className="h-10 w-fit px-6 text-sm font-bold"
           >
             Submit Your Organization Challenge
             <ArrowRight className="h-4 w-4" />
-          </Link>
+          </Button>
         </div>
       </div>
       <Image
@@ -468,10 +505,13 @@ function RootBuildersFooter() {
           <span className="font-heading text-[30px] font-black text-primary-700">
             Powered by
           </span>
-          <span className="text-accent-500">/</span>
-          <span className="text-[30px] font-black text-primary-600">
-            Fransunisoft
-          </span>
+          <Image
+            src="/logo.png"
+            alt="Fransunisoft"
+            width={220}
+            height={36}
+            className="h-8 w-auto object-contain"
+          />
         </div>
         <p className="mx-auto mt-4 max-w-[720px] text-sm leading-7 text-[#5e6872]">
           Root Builders is an initiative of Fransunisoft - a venture studio
@@ -484,23 +524,26 @@ function RootBuildersFooter() {
           and tech insights.
         </p>
         <div className="mt-5 flex justify-center gap-3 text-primary-700">
-          {[FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, BookOpen].map((Icon, index) => (
+          {rootBuildersSocialLinks.map(({ Icon, label, href }) => (
             <a
-              key={index}
-              href="#"
-              className="grid h-8 w-8 place-items-center rounded bg-white shadow-sm"
-              aria-label="Social link"
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="grid h-8 w-8 place-items-center rounded bg-white shadow-sm transition hover:-translate-y-0.5 hover:bg-accent-100"
+              aria-label={`Fransunisoft on ${label}`}
             >
               <Icon className="h-4 w-4" />
             </a>
           ))}
         </div>
-        <Link
+        <Button
           href="/"
-          className="mt-7 inline-flex h-10 items-center rounded-full bg-primary-600 px-6 text-sm font-bold text-white hover:bg-accent-600"
+          variant="primary"
+          className="mt-7 h-10 px-6 text-sm font-bold"
         >
           Explore Fransunisoft
-        </Link>
+        </Button>
       </div>
       <div className="bg-primary-600 px-5 py-4">
         <p className="text-xs font-semibold text-white/85">

@@ -6,6 +6,9 @@ export type StackCard = {
   image?: string;
 };
 
+export const rootBuildersApplicationUrl =
+  "https://docs.google.com/forms/d/e/1FAIpQLSc07jkQrxzrXlAMuykYnvouWHBQfSv3Y8I1knfbfU2pfpSkXA/viewform?usp=preview";
+
 export const stackCards: StackCard[] = [
   {
     id: "real-problems",

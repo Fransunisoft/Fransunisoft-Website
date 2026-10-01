@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
+import Button from "@/app/components/ui/Button";
 import { headerAction, navLinks, type NavigationItem } from "./navigation";
 import styles from "./MobileMenu.module.css";
 
@@ -12,7 +13,7 @@ type MobileMenuProps = {
   onClose: () => void;
   id?: string;
   items?: NavigationItem[];
-  action?: { name: string; href: string };
+  action?: { name: string; href: string; target?: string; rel?: string };
 };
 
 export function MobileMenuToggle({
@@ -125,7 +126,7 @@ export default function MobileMenu({
               );
             })}
           </ul>
-          <Link href={action.href} onClick={onClose} className={styles.action}>{action.name}</Link>
+          <Button href={action.href} target={action.target} rel={action.rel} onClick={onClose} className={styles.action}>{action.name}</Button>
         </nav>
       </div>
     </div>

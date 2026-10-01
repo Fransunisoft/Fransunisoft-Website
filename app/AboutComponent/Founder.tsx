@@ -59,10 +59,16 @@ export default function Founder() {
             </p> <br />   
           </div>
           <div className="flex gap-2">
-            <Image src={github} alt="github" />
-            <Image src={linkedin} alt="linkedin" />
-            <Image src={x} alt="x formerly twitter" />
-            <Image src={instagram} alt="instagram" />
+            <Image src={github} alt="GitHub" />
+            <a href="https://www.linkedin.com/in/oluwaseyiayodele/" target="_blank" rel="noopener noreferrer" aria-label="Founder on LinkedIn">
+              <Image src={linkedin} alt="LinkedIn" />
+            </a>
+            <a href="https://x.com/seyifayodele" target="_blank" rel="noopener noreferrer" aria-label="Founder on X">
+              <Image src={x} alt="X" />
+            </a>
+            <a href="https://www.instagram.com/seyifayodele/" target="_blank" rel="noopener noreferrer" aria-label="Founder on Instagram">
+              <Image src={instagram} alt="Instagram" />
+            </a>
           </div>
         </div>
       </div>

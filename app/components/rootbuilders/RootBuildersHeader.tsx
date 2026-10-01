@@ -4,13 +4,20 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import MobileMenu, { MobileMenuToggle } from "@/app/components/layout/Header/MobileMenu";
+import Button from "@/app/components/ui/Button";
+import { rootBuildersApplicationUrl } from "@/app/components/rootbuilders/rootbuilders-data";
 
 const links = [
   { name: "Why Root Builders", href: "#why" },
   { name: "Tracks", href: "#tracks" },
   { name: "FAQs", href: "#faq" },
 ];
-const action = { name: "Join Root Builders", href: "#apply" };
+const action = {
+  name: "Join Root Builders",
+  href: rootBuildersApplicationUrl,
+  target: "_blank",
+  rel: "noopener noreferrer",
+};
 
 export default function RootBuildersHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,19 +29,27 @@ export default function RootBuildersHeader() {
           <Image
             src="/Rootbuilders.png"
             alt="RootBuilders"
-            width={62}
+            width={70}
             height={48}
             className="h-auto w-full object-cover"
           />
         </Link>
 
         <div className="hidden items-center gap-8 text-lg font-semibold text-[#334155] lg:flex">
-          {links.map((link) => <a key={link.href} href={link.href}>{link.name}</a>)}
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="transition-colors duration-200 hover:text-primary-600 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary-600"
+            >
+              {link.name}
+            </a>
+          ))}
         </div>
 
-        <Link href={action.href} className="hidden h-10 items-center rounded-full bg-primary-600 px-6 text-sm font-bold text-white transition hover:bg-primary-700 lg:inline-flex">
+        <Button href={action.href} target={action.target} rel={action.rel} variant="primary" className="hidden h-10 px-6 text-sm font-bold lg:inline-flex">
           {action.name}
-        </Link>
+        </Button>
 
         <MobileMenuToggle isOpen={isOpen} onToggle={() => setIsOpen(!isOpen)} menuId="rootbuilders-mobile-navigation" label="RootBuilders menu" />
       </nav>

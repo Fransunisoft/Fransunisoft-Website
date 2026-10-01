@@ -1,4 +1,5 @@
-import { ButtonHTMLAttributes, ReactNode } from "react";
+import Link from "next/link";
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/app/lib/utils";
 
@@ -11,7 +12,9 @@ export const buttonVariants = cva(
         secondary: "bg-secondary text-white hover:bg-secondary-500",
         accent: "bg-accent text-white hover:bg-secondary-700",
         outline:
-          "border border-primary bg-transparent text-primary hover:bg-primary-50",
+          "border  bg-transparent text-primary hover:bg-primary-50",
+        outlineLight:
+          "border border-white/70 bg-transparent text-white hover:bg-white/10 hover:text-white",
         transparent:
           "bg-transparent border border-neutral-light text-neutral-light hover:bg-primary",
       },
@@ -30,26 +33,43 @@ export const buttonVariants = cva(
   }
 );
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
-  VariantProps<typeof buttonVariants> & {
-    icon?: ReactNode;
-  };
+type ButtonCommonProps = VariantProps<typeof buttonVariants> & {
+  icon?: ReactNode;
+  className?: string;
+  children?: ReactNode;
+};
 
-export default function Button({
-  className,
-  variant,
-  size,
-  icon,
-  children,
-  ...props
-}: ButtonProps) {
-  return (
-    <button
-      className={cn(buttonVariants({ variant, size }), className)}
-      {...props}
-    >
-      {icon && <span className="inline-flex shrink-0" aria-hidden="true">{icon}</span>}
-      {children}
-    </button>
-  );
+type ButtonProps = ButtonCommonProps &
+  (ButtonHTMLAttributes<HTMLButtonElement> & { href?: never } |
+    Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & { href: string });
+
+type ButtonElementProps = ButtonCommonProps &
+  ButtonHTMLAttributes<HTMLButtonElement> & { href?: never };
+type ButtonLinkProps = ButtonCommonProps &
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & { href: string };
+
+export default function Button(props: ButtonProps) {
+  const className = cn(buttonVariants({ variant: props.variant, size: props.size }), props.className);
+  const content = <>{props.icon && <span className="inline-flex shrink-0" aria-hidden="true">{props.icon}</span>}{props.children}</>;
+
+  if ("href" in props && typeof props.href === "string") {
+    const linkProps = props as ButtonLinkProps;
+    const { href, variant, size, icon, className: _className, children, ...anchorProps } = linkProps;
+    void variant;
+    void size;
+    void icon;
+    void _className;
+    void children;
+    return <Link href={href} className={className} {...anchorProps}>{content}</Link>;
+  }
+
+  const buttonElementProps = props as ButtonElementProps;
+  const { href: _href, variant, size, icon, className: _className, children, ...buttonProps } = buttonElementProps;
+  void _href;
+  void variant;
+  void size;
+  void icon;
+  void _className;
+  void children;
+  return <button className={className} {...buttonProps}>{content}</button>;
 }
