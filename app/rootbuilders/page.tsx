@@ -102,11 +102,11 @@ function Hero() {
 
 function SectionEyebrow({ number, label }: { number: string; label: string }) {
   return (
-    <div className="flex items-center gap-4">
-      <p className="text-[11px] font-black uppercase tracking-[0.2em] text-primary-500">
+    <div className="flex items-center gap-4 whitespace-nowrap">
+      <p className="text-[11px] font-black uppercase whitespace-nowrap text-primary-500">
         {number}
-      </p>
-      <p className="text-[11px] font-black uppercase tracking-[0.2em] text-primary-500">
+      </p> -
+      <p className="text-[11px] font-black uppercase whitespace-nowrap] text-primary-500">
         {label}
       </p>
       <div className="h-px flex-1 bg-[#dde5eb]" />
@@ -291,10 +291,10 @@ function Tracks() {
             key={track}
             className="grid min-h-[118px] place-items-center rounded-[18px] bg-secondary-800 px-5 py-6 text-center shadow-[0_8px_18px_rgba(0,0,0,0.18)] lg:min-h-[176px] lg:rounded-[20px] lg:px-8"
           >
-            <h3 className="font-black leading-tight text-white lg:text-[39px]">
+            <h3 className="font-black leading-tight text-white ">
               {track}
             </h3>
-            <p className="mt-2 text-base font-semibold leading-tight text-white/90 lg:text-[27px]">
+            <p className=" text-base font-semibold leading-tight text-white/90 ">
               {caption}
             </p>
           </div>
@@ -397,16 +397,16 @@ function Faq() {
               name="rootbuilders-faq"
               className="group rounded-[6px] bg-[#e7f1f8] px-5 py-3"
             >
-              <summary className="flex list-none items-center justify-between gap-4 text-sm font-bold text-[#44515c]">
+              <summary className="flex list-none items-center justify-between gap-4 text-md font-bold text-[#333]">
                 {question}
-                <span aria-hidden="true" className="shrink-0 text-lg font-black text-primary-600">
-                  <span className="group-open:hidden">+</span>
+                <span aria-hidden="true" className="shrink-0 text-3xl font-black text-primary-600">
+                  <span className="group-open:hidden text-2xl">+</span>
                   <span className="hidden group-open:inline">−</span>
                 </span>
               </summary>
-              <p className="mt-3 text-sm leading-6 text-[#5c6872]">
-                {answer}
-              </p>
+              <div className="-mx-5 -mb-3 mt-3 rounded-b-[6px] bg-white px-5 pb-3 pt-3 shadow-md">
+                <p className="text-sm leading-6 text-[#5c6872]">{answer}</p>
+              </div>
             </details>
           ))}
         </div>
@@ -497,7 +497,7 @@ function RootBuildersFooter() {
         </div>
         <Link
           href="/"
-          className="mt-7 inline-flex h-10 items-center rounded-full bg-primary-600 px-6 text-sm font-bold text-white"
+          className="mt-7 inline-flex h-10 items-center rounded-full bg-primary-600 px-6 text-sm font-bold text-white hover:bg-accent-600"
         >
           Explore Fransunisoft
         </Link>

@@ -122,7 +122,7 @@ export default function HeroSection() {
                       <Link href="/#contact">
                         <Button
                           variant="accent"
-                          className="flex hover:text-black items-center gap-2"
+                          className="flex items-center gap-2"
                           size="lg"
                         >
                           Book an AI Session
