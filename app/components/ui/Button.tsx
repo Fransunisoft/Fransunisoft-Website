@@ -1,0 +1,55 @@
+import { ButtonHTMLAttributes, ReactNode } from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/app/lib/utils";
+
+export const buttonVariants = cva(
+  "inline-flex flex-wrap cursor-pointer items-center justify-center gap-2 rounded-full font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+  {
+    variants: {
+      variant: {
+        primary: "bg-primary text-white hover:bg-accent-600",
+        secondary: "bg-secondary text-white hover:bg-secondary-500",
+        accent: "bg-accent text-white hover:bg-secondary-700",
+        outline:
+          "border border-primary bg-transparent text-primary hover:bg-primary-50",
+        transparent:
+          "bg-transparent border border-neutral-light text-neutral-light hover:bg-primary",
+      },
+
+      size: {
+        sm: "h-9 px-4 text-sm",
+        md: "h-11 px-6 text-base",
+        lg: "h-12 px-8 text-lg",
+      },
+    },
+
+    defaultVariants: {
+      variant: "primary",
+      size: "md",
+    },
+  }
+);
+
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
+  VariantProps<typeof buttonVariants> & {
+    icon?: ReactNode;
+  };
+
+export default function Button({
+  className,
+  variant,
+  size,
+  icon,
+  children,
+  ...props
+}: ButtonProps) {
+  return (
+    <button
+      className={cn(buttonVariants({ variant, size }), className)}
+      {...props}
+    >
+      {icon && <span className="inline-flex shrink-0" aria-hidden="true">{icon}</span>}
+      {children}
+    </button>
+  );
+}

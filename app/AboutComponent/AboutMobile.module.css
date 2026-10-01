@@ -1,0 +1,138 @@
+.mobileValues, .mobileSpecialties { display: none; }
+
+@media (max-width: 1023px) {
+  .page { --font-heading: "Times New Roman", Georgia, serif; padding-top: 16px; background: white; }
+  .page :global(.section-layout) { margin-inline: 16px; padding-block: 20px; }
+  .page :global(.section-layout) > div:first-child > p:global(.whitespace-nowrap), .story > div:first-child p { font-size: 16px; line-height: 1.5; }
+  .page :global(.section-layout) > div:first-child { min-width: 0; }
+  .page [id] { scroll-margin-top: 88px; }
+  .page a:focus-visible, .page button:focus-visible { outline: 3px solid var(--accent-400); outline-offset: 3px; }
+  .page .hero { margin-top: 0; padding-top: 16px; padding-bottom: 0; }
+  .heroGrid { display: flex; flex-direction: column; gap: 20px; }
+  .heroCopy { min-width: 0; text-align: center; }
+  .heroCopy h1 { font-size: clamp(25px, 7.9vw, 36px); line-height: 1.7; font-weight: 700; }
+  .heroLastLine { justify-content: center; gap: 7px; }
+  .heroLastLine h1 { white-space: nowrap; font-size: clamp(24px, 7.5vw, 34px); line-height: 1.5; }
+  .heroLastLine h1:first-child { color: var(--primary-500); }
+  .heroCopy > p { margin-top: 16px; font-size: 16px; line-height: 1.5; }
+  .heroCopy > p br { display: none; }
+  .heroActions { flex-direction: column; gap: 12px; margin-top: 22px; }
+  .heroActions a { width: 100%; min-height: 48px; font-size: 18px; font-weight: 500; }
+  .specialties { display: none; }
+  .mobileSpecialties { display: grid; gap: 10px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--neutral-border); text-align: left; }
+  .mobileSpecialties p { font-size: 14px; line-height: 1.7; }
+  .mobileSpecialties span { display: inline-block; margin-inline: 8px; font-size: 14px; line-height: 1; }
+  .mobileSpecialties p:nth-child(2) span:first-child { margin-left: 0; }
+  .specialties p { font-size: 14px; line-height: 1.7; }
+  .specialties > div { display: contents; }
+  .specialties img { width: 6px; height: 6px; object-fit: contain; }
+  .heroArt { width: calc(100% - 20px); margin-left: 20px; padding-right: 12px; padding-bottom: 18px; }
+  .heroArt > div:nth-child(2) { position: absolute; inset: 18px 0 0 12px; width: auto; height: auto; margin: 0; border-radius: 10px; background: var(--accent-400); }
+  .heroArt > div:last-child { position: relative; inset: auto; width: 100%; height: auto; margin: 0; padding: 12px; border-radius: 10px; }
+  .heroArt > div:last-child img { display: block; width: 100%; height: auto; }
+  .heroArt > div:first-child { bottom: 0; left: -20px; z-index: 1; max-width: 150px; padding: 2px 6px; }
+  .heroArt > div:first-child span { font-size: 12px; line-height: 1.5; white-space: nowrap; }
+  .story { margin-top: 48px; }
+  .story > div:first-child p { font-family: var(--font-heading); font-weight: 600; }
+  .storyDetails { grid-template-columns: 1fr; gap: 20px; margin-top: 16px; }
+  .storyDetails h1 { font-size: 30px; line-height: 1.15; font-weight: 650; color: #000; }
+  .storyDetails p { font-size: 18px; line-height: 1.7; }
+  .storyDetails > div:last-child > br { display: none; }
+  .storyDetails p + br + p { margin-top: 24px; }
+  .storyDetails > div:last-child > div { margin-top: 24px; }
+  .storyDetails :global(.border-l-\[5px\]) { border-left-width: 4px; padding-left: 20px; }
+  .storyDetails h3 { font-size: 32px; line-height: 1.0625; text-align: left; font-weight: 600; }
+  .page .vision { padding-top: 36px; padding-bottom: 20px; }
+  .vision > div:first-child br { display: none; }
+  .visionCards { margin-top: 20px; padding: 16px; border-radius: 20px; }
+  .visionCards > div { grid-template-columns: 1fr; gap: 14px; }
+  .visionCards > div > div:not(:nth-child(2)) { padding: 20px 16px; border-radius: 16px; }
+  .visionCards > div > div:nth-child(2) { width: 100%; height: 1px; margin: 0; }
+  .visionCards p { margin-bottom: 28px; font-family: monospace; font-size: 16px; line-height: 1.5; }
+  .visionCards h3 { font-size: 27px; line-height: 1.08; font-weight: 600; }
+  .values > h1 { margin-top: 18px; font-size: 30px; line-height: 1.2; font-weight: 600; }
+  .desktopValues { display: none; }
+  .mobileValues { display: grid; gap: 12px; margin-top: 26px; }
+  .valueItem { min-width: 0; background: #124d8a; color: white; }
+  .valueItem h3 { margin: 0; }
+  .valueItem button { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; min-height: 98px; padding: 24px 32px 30px; text-align: left; font-family: var(--font-heading); font-size: 30px; font-weight: 600; line-height: 1.2; }
+  .valueItem button::after { content: ''; position: absolute; bottom: 16px; left: 16px; right: 16px; height: 1px; background: white; }
+  .valueItem[data-open="true"] button { min-height: 66px; padding: 14px 16px; border: 1px solid var(--accent-500); }
+  .valueItem[data-open="true"] button::after { display: none; }
+  .valueItem svg, .valueItem button img { flex-shrink: 0; }
+  .valuePanel { margin-top: 24px; padding: 16px; border-radius: 20px 20px 0 0; background: var(--primary-500); animation: reveal 200ms ease-out; }
+  .valuePanel > img { width: 100%; height: auto; border-radius: 0 0 24px 0; }
+  .valuePanel h4 { margin-top: 28px; color: var(--accent-500); font-size: 28px; font-weight: 600; }
+  .valuePanel p { margin-top: 16px; font-family: var(--font-heading); font-size: 18px; line-height: 1.25; color: white; }
+  .page .founder { padding-top: 28px; padding-bottom: 40px; }
+  .founder > div:nth-child(2) { grid-template-columns: 1fr; gap: 32px; margin-top: 16px; }
+  .founder > div:nth-child(2) > div:first-child { padding: 0; }
+  .founder > div:nth-child(2) > div:first-child img { width: 100%; height: auto; }
+  .founder h2 { font-size: 26px; font-weight: 650; line-height: 1.2; text-align: center; }
+  .founder h2 + p { margin-top: 12px; color: var(--secondary-500); font-family: var(--font-heading); font-size: 17px; font-weight: 600; line-height: 1.35; text-align: center; }
+  .founder h2 ~ br { display: none; }
+  .founder h2 ~ div:not(:last-child) { margin-top: 16px; }
+  .founder h2 ~ div:not(:last-child) > br { display: none; }
+  .founder p { font-size: 16px; line-height: 1.5; text-align: left; }
+  .founder p + br + p { margin-top: 20px; }
+  .founder p + br + div { margin-top: 18px; margin-bottom: 18px; }
+  .founder :global(.border-l-\[5px\]) { padding-left: 16px; border-left-width: 4px; }
+  .founder :global(.border-l-\[5px\]) br { display: none; }
+  .founder h4 { font-size: 18px; line-height: 1.35; text-align: left; font-weight: 600; }
+  .founder h2 ~ div:last-child { margin-top: 16px; gap: 10px; }
+  .founder h2 ~ div:last-child img { width: 36px; height: 36px; object-fit: contain; }
+  .preFooter > section:not([id]) { height: auto; min-height: 328px; }
+  .preFooter > section:not([id]) > div { display: flex; flex-direction: column; justify-content: center; min-height: 328px; padding-block: 56px; gap: 22px; text-align: center; }
+  .preFooter > section:not([id]) h2 { font-size: 30px; line-height: 1.12; }
+  .preFooter > section:not([id]) h2 span { font-size: 30px !important; }
+  .preFooter > section:not([id]) a { min-height: 48px; padding-inline: 24px; font-size: 18px; font-weight: 500; }
+  .preFooter > section:not([id]) a span { font-size: 20px; line-height: 1; }
+  .preFooter > section:not([id]) > div > div { gap: 24px; }
+  .page :global(#contact) { margin-inline: 4px 16px; padding-block: 40px 32px; background: white; }
+  .page :global(#contact) > div { gap: 56px; padding-block: 0; }
+  .page :global(#contact) aside { min-height: 850px; padding: 90px 28px 80px; border-radius: 10px; background-color: #092d50; transform: rotate(-1deg); }
+  .page :global(#contact) aside > div:last-child > p:first-child { font-size: 16px; font-family: monospace; font-weight: 400; letter-spacing: 0; }
+  .page :global(#contact) aside h2 { margin-top: 20px; font-size: 30px; line-height: 1.15; }
+  .page :global(#contact) aside h2 + p { margin-top: 24px; font-size: 17px; line-height: 1.6; }
+  .page :global(#contact) aside > div:last-child > div { margin-top: 24px; }
+  .page :global(#contact) aside > div:last-child > div > div { gap: 24px; margin-bottom: 44px; }
+  .page :global(#contact) aside span { width: 56px; height: 56px; border-width: 2px; }
+  .page :global(#contact) aside svg { width: 24px; height: 24px; }
+  .page :global(#contact) aside h3 { font-size: 21px; }
+  .page :global(#contact) aside h3 ~ p { font-size: 17px; line-height: 1.6; }
+  .page :global(#contact) form { gap: 24px; padding: 24px 24px 44px; border-radius: 24px; background: #fafafa; }
+  .page :global(#contact) form > p { margin-top: -60px; margin-bottom: 0; padding: 10px 18px; font-size: 16px; line-height: 1.5; transform: rotate(-5deg); }
+  .page :global(#contact) form input:not([type="file"]), .page :global(#contact) form select { height: 76px; padding-inline: 30px; background: #fafafa; font-family: var(--font-heading); font-size: 17px; border-radius: 10px; }
+  .page :global(#contact) form label:has(input[type="tel"]) { position: relative; }
+  .page :global(#contact) form label:has(input[type="tel"])::before { content: ''; position: absolute; left: 28px; top: 27px; width: 32px; height: 22px; border-radius: 3px; background: linear-gradient(90deg, #008751 33%, white 33%, white 67%, #008751 67%); }
+  .page :global(#contact) form input[type="tel"] { padding-left: 80px; }
+  .page :global(#contact) form textarea { min-height: 212px; padding: 28px 20px; padding-right: 100px; background: #fafafa; font-family: var(--font-heading); font-size: 16px; border-radius: 10px; }
+  .page :global(#contact) form label label { top: 32px; font-family: var(--font-heading); font-size: 13px; }
+  .page :global(#contact) form button { min-height: 70px; font-family: var(--font-heading); font-size: 22px; font-weight: 600; border-radius: 14px; }
+  .page :global(#contact) > div > div > div:first-child { right: -12px; bottom: -18px; width: 100%; height: 100%; border-radius: 24px; }
+  :global(body):has(.page) :global(header nav.section-layout) { margin-inline: 16px; padding-block: 8px; }
+  :global(body):has(.page) :global(header nav > a img) { width: min(252px, 62vw); height: 52px; }
+  :global(body):has(.page) :global(header button[aria-controls="mobile-navigation"]) { background: transparent; }
+  :global(body):has(.page) :global(footer > div.section-layout) { margin-inline: 30px; padding-block: 76px 28px; }
+  :global(body):has(.page) :global(footer) { --font-heading: "Times New Roman", Georgia, serif; }
+  :global(body):has(.page) :global(footer > div.section-layout > div:first-child) { grid-template-columns: 1fr; gap: 28px; }
+  :global(body):has(.page) :global(footer p), :global(body):has(.page) :global(footer a) { font-size: 16px; line-height: 1.5; }
+  :global(body):has(.page) :global(footer h5) { font-size: 21px; }
+  :global(body):has(.page) :global(footer a > img) { width: 252px; height: 52px; }
+  :global(body):has(.page) :global(footer svg) { width: 23px; height: 23px; }
+  :global(body):has(.page) :global(footer a.rounded-md) { padding: 8px; }
+}
+
+@media (max-width: 374px) {
+  .heroCopy h1 { font-size: 26px; }
+  .heroLastLine { gap: 5px; }
+  .heroLastLine h1 { font-size: 24px; }
+  .valueItem button { padding-inline: 20px; font-size: 25px; }
+  .storyDetails h3 { font-size: 27px; }
+  .page :global(#contact) aside { padding-inline: 22px; }
+  .page :global(#contact) aside > div:last-child > div > div { gap: 14px; }
+  .page :global(#contact) form { padding-inline: 18px; }
+}
+
+@keyframes reveal { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .valuePanel { animation: none; } }
