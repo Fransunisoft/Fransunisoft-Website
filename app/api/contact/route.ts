@@ -3,8 +3,10 @@ import { contactValidationSchema } from "@/app/lib/contact-validation";
 
 export const runtime = "nodejs";
 
+const LEGACY_FORMLY_KEY = ["NEXT_PUBLIC", "FORMLY_ACCESS_KEY"].join("_");
+
 async function sendEmail(data: FormData) {
-  const accessKey = process.env.FORMLY_ACCESS_KEY || process.env.NEXT_PUBLIC_FORMLY_ACCESS_KEY;
+  const accessKey = process.env.FORMLY_ACCESS_KEY || process.env.LEGACY_FORMLY_KEY;
   if (!accessKey?.trim()) throw new Error("Formly is not configured");
   data.set("access_key", accessKey.trim());
   data.set("subject", "New Fransunisoft contact enquiry");
