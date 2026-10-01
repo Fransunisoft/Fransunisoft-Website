@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
@@ -11,11 +12,22 @@ export default function NavLinks() {
   const isActive = (href: string) =>
     pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
 
+  // Tracks which dropdown (by link.name) was just closed via a click,
+  // so we can force it shut even while the mouse is still hovering it.
+  const [closedViaClick, setClosedViaClick] = useState<string | null>(null);
+
+  // Reset once navigation actually happens, so the dropdown behaves
+  // normally again the next time it's opened.
+  useEffect(() => {
+    setClosedViaClick(null);
+  }, [pathname]);
+
   return (
     <ul className="hidden lg:flex items-center gap-3 xl:gap-6">
       {navLinks.map((link) => (
         <li
           key={link.name}
+          onMouseLeave={() => setClosedViaClick(null)}
           className={`relative group whitespace-nowrap text-sm xl:text-base ${
             link.dropdown
               ? "after:absolute after:left-0 after:top-full after:h-3 after:w-full"
@@ -54,7 +66,7 @@ export default function NavLinks() {
 
           {link.dropdown && (
             <div
-              className="
+              className={`
                 absolute left-1/2 top-full z-50
                 -translate-x-1/2
                 pt-3
@@ -72,13 +84,19 @@ export default function NavLinks() {
                 group-focus-within:visible
                 group-focus-within:translate-y-0
                 group-focus-within:pointer-events-auto
-              "
+                ${
+                  closedViaClick === link.name
+                    ? "!opacity-0 !invisible !translate-y-2 !pointer-events-none"
+                    : ""
+                }
+              `}
             >
               <div className="w-[320px] rounded-lg bg-white p-2 shadow-[0_4px_20px_rgba(0,0,0,0.15)]">
                 {link.dropdown.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
+                    onClick={() => setClosedViaClick(link.name)}
                     aria-current={isActive(item.href) ? "page" : undefined}
                     className={`block rounded-md px-4 py-3 text-[13px] font-semibold transition-colors hover:bg-gray-100 hover:underline underline-offset-6 ${
                       isActive(item.href)

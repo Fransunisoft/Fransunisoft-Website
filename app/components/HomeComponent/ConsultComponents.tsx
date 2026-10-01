@@ -140,6 +140,11 @@ export default function ConsultComponents({
                     alt=""
                     className="h-4 w-auto object-contain sm:h-5"
                   />
+                  <Image
+                    src={isActive ? activeArrowImage : inactiveArrowImage}
+                    alt=""
+                    className="h-4 w-auto object-contain sm:h-5"
+                  />
 
                   <Image
                     src={isActive ? activeArrowImage : inactiveArrowImage}
