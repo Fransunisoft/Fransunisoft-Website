@@ -3,7 +3,7 @@ import styles from "./AboutMobile.module.css";
 export default function StoryDetails() {
   return (
     <div className={`grid grid-cols-2 ${styles.storyDetails}`}>
-      <div>
+      <div className="lg:sticky lg:top-28 lg:self-start">
         <h1>
           Built to Bridge Africa&apos;s <br />
           Execution Gap.
