@@ -15,7 +15,7 @@ export default function Header() {
   return (
     <>
       <header className="fixed left-0 top-0 z-50 w-full  bg-white shadow-md ">
-        <nav className="flex items-center section-layout justify-between">
+        <nav className="flex items-center section-layout section-layout--flush justify-between">
           <Logo />
 
           <NavLinks />

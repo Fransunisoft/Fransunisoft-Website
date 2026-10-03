@@ -6,12 +6,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./StackCards.module.css";
 
-import Stack1 from "./images/strategy.png";
-import Stack2 from "./images/aiworkforce.png";
-import Stack3 from "./images/aisolutions.png";
-import Stack4 from "./images/innovationprogram.png";
-import Stack5 from "./images/venturebuilding.png";
-import Stack6 from "./images/technology.png";
+import Stack1 from "./images/strategy.webp";
+import Stack2 from "./images/aiworkforce.webp";
+import Stack3 from "./images/aisolutions.webp";
+import Stack4 from "./images/innovationprogram.webp";
+import Stack5 from "./images/venturebuilding.webp";
+import Stack6 from "./images/technology.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 const TOP_STEP = 16; // px — controls the peek visible at the TOP
@@ -150,6 +150,7 @@ export default function StackCards() {
               <Image
                 src={stack.imgsrc}
                 alt={stack.title}
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 className="w-full rounded-xl object-cover lg:rounded-2xl"
               />
             </div>

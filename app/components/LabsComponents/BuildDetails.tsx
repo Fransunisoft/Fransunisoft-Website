@@ -57,7 +57,7 @@ export default function BuildDetails() {
                   className={`h-4 w-4 sm:h-5 w-5 shrink-0 object-contain transition-all duration-300 ${
                     isActive
                       ? "brightness-0 invert"
-                      : "group-hover:brightness-0 group-hover:invert"
+                      : "group-hover:brightness-100 "
                   }`}
                 />
 
@@ -65,7 +65,7 @@ export default function BuildDetails() {
                   className={`font-heading! text-base! font-semibold! transition-colors duration-300 ${
                     isActive
                       ? "text-white"
-                      : "text-primary-500 group-hover:text-white"
+                      : "text-primary-500 group-hover:text-primary"
                   }`}
                 >
                   {menu.menuDetails}

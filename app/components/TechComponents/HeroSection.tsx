@@ -13,7 +13,7 @@ export default function LabsHero() {
       description="FSX Tech is the engineering and implementation arm of Fransunisoft — ensuring every product, system, and AI solution we build is stable, secure, performant, and ready to scale in the African market.
 "
       image={{
-        src: "/fsxtechPhoto.png",
+        src: "/fsxtechPhoto.webp",
         alt: "FSX Consulting AI strategy advisory meeting",
         width: 1824,
         height: 1308,

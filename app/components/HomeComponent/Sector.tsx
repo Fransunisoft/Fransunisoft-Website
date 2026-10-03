@@ -152,7 +152,7 @@ export default function Sector() {
       <style>{`
         .home-sector-mobile-card { display: none; }
         @media (max-width: 1023px) {
-          .home-sector { margin-inline: 16px; padding: 0 0 20px; grid-template-columns: minmax(0, 1fr); gap: 12px; }
+          .home-sector { grid-template-columns: minmax(0, 1fr); gap: 12px; }
           .home-sector-item { min-width: 0; padding: 0; }
           .home-sector-item[data-mobile-hidden="true"], .home-sector-desktop-card { display: none; }
           .home-sector-mobile-card { display: block; min-height: 267px; padding: 16px; border-radius: 20px; background: #0d519a; color: white; box-shadow: 0 2px 3px rgb(0 0 0 / 8%); }

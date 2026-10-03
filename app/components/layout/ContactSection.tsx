@@ -90,8 +90,8 @@ export default function ContactSection() {
   ) : null;
 
   return (
-    <section id="contact" className="section-layout bg-background">
-      <div className="grid gap-10 py-8 lg:grid-cols-[0.78fr_1fr] lg:gap-20 lg:py-20">
+    <section id="contact" className="bg-background">
+      <div className="section-layout grid gap-10 lg:grid-cols-[0.78fr_1fr] lg:gap-20">
         <aside className="relative overflow-hidden rounded-card bg-primary-900 p-6 text-white lg:p-10">
           <div className="absolute -bottom-20 -right-24 h-56 w-56 rounded-full bg-secondary-500/35 blur-2xl" />
 
@@ -222,7 +222,7 @@ export default function ContactSection() {
               {attachmentName && <p className="mt-1 break-all text-sm text-neutral-secondary">Attached: {attachmentName}</p>}
             </div>
 
-            <Button type="submit" disabled={formik.isSubmitting} size="lg" className="w-full rounded-lg">
+            <Button type="submit" disabled={formik.isSubmitting} size="lg" className="w-full rounded-full">
               {formik.isSubmitting ? "Sending..." : "Contact Us"}
             </Button>
             {status && <p role={status.type === "error" ? "alert" : "status"} className={`text-sm ${status.type === "error" ? "text-red-600" : "text-green-700"}`}>{status.message}</p>}

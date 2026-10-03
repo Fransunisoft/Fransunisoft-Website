@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 import {
   FaFacebookF,
@@ -19,21 +19,34 @@ import Image from "next/image";
 const ecosystemLinks = [
   { name: "FSX Consulting - AI Strategy & Advisory", href: "/consulting" },
   { name: "FSX Academy - AI Workforce Development", href: "/academy" },
-  { name: "FSX Labs - AI Products & Venture Studio", href: "#" },
-  { name: "FSX Tech - Implementation & Infrastructure", href: "#" },
+  { name: "FSX Labs - AI Products & Venture Studio", href: "/labs" },
+  { name: "FSX Tech - Implementation & Infrastructure", href: "/tech" },
   { name: "FSX Events - Innovation Programs", href: "/events" },
   { name: "FSX Connect - Network & Partnerships", href: "/connect" },
 ];
 
 const quickLinks = [
   { name: "About Us", href: "/about" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/contact" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export default function Footer() {
   const [newsletterStatus, setNewsletterStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const statusTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => () => {
+    if (statusTimer.current) clearTimeout(statusTimer.current);
+  }, []);
+
+  function showNewsletterStatus(message: string) {
+    if (statusTimer.current) clearTimeout(statusTimer.current);
+    setNewsletterStatus(message);
+    statusTimer.current = setTimeout(() => {
+      setNewsletterStatus("");
+      statusTimer.current = null;
+    }, 5000);
+  }
 
   async function handleNewsletterSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -41,6 +54,8 @@ export default function Footer() {
 
     const form = event.currentTarget;
     setIsSubmitting(true);
+    if (statusTimer.current) clearTimeout(statusTimer.current);
+    statusTimer.current = null;
     setNewsletterStatus("");
     try {
       const response = await fetch("/api/contact", {
@@ -55,9 +70,9 @@ export default function Footer() {
       }
 
       form.reset();
-      setNewsletterStatus(result.message || "Thank you for subscribing to FSX Insights!");
+      showNewsletterStatus(result.message || "Thank you for subscribing to FSX Insights!");
     } catch (error) {
-      setNewsletterStatus(error instanceof Error ? error.message : "We could not confirm your subscription. Please try again.");
+      showNewsletterStatus(error instanceof Error ? error.message : "We could not confirm your subscription. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -70,7 +85,7 @@ export default function Footer() {
         src={map}
         alt=""
         fill
-        priority
+        sizes="100vw"
         className="pointer-events-none absolute inset-0 z-0 object-cover opacity-30"
       />
 

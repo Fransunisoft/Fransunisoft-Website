@@ -61,7 +61,7 @@ export default function ConsultComponents({
         .home-consult-tab h4 span { font: inherit; }
         .home-consult-mobile-label, .home-consult-cta-arrow { display: none; }
         @media (max-width: 1023px) {
-          .home-consult { margin-inline: 12px; padding-block: 20px; gap: 32px; }
+          .home-consult { gap: 32px; }
           .home-consult-tabs { flex-direction: row; gap: 20px; overflow-x: auto; padding: 0 18px 3px; scrollbar-width: none; }
           .home-consult-tabs::-webkit-scrollbar { display: none; }
           .home-consult-tab { width: auto; flex-shrink: 0; justify-content: center; }

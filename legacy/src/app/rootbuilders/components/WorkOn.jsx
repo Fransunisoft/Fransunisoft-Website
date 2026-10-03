@@ -90,7 +90,7 @@ export default function WorkOn() {
             </div>
           </div>
           <Image
-            src="/workOn_student-home.png"
+            src="/workOn_student-home.webp"
             alt="aaaaaa"
             width={463}
             height={694}

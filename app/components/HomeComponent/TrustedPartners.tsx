@@ -30,13 +30,13 @@ export default function TrustedPartners() {
           Organizations That Have Worked, <br />
           With Us
         </h2>
-        <div className="mt-5 overflow-hidden">
-          <div className="marquee-track flex w-max min-w-[200%]">
+        <div className="partners-marquee mt-5 overflow-hidden">
+          <div className="partners-marquee-track flex w-max">
             {[0, 1].map((copy) => (
               <div
                 key={copy}
                 aria-hidden={copy === 1 ? true : undefined}
-                className="flex flex-1 shrink-0 items-center justify-around gap-8 pr-8 sm:gap-12 sm:pr-12 lg:gap-16 lg:pr-16"
+                className="flex w-max shrink-0 items-center gap-8 pr-8 sm:gap-12 sm:pr-12 lg:gap-16 lg:pr-16"
               >
                 {partners.map((partner) => (
                   <Image

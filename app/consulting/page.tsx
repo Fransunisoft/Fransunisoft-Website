@@ -17,7 +17,7 @@ export default function ConsultingPage() {
         }
         description="FSX Consulting helps organizations define where AI fits, build practical adoption roadmaps, govern digital transformation, and execute strategy with the rigour of a world-class advisory firm - built for the African context."
         image={{
-          src: "/consulting-hero.png",
+          src: "/consulting-hero.webp",
           alt: "FSX Consulting AI strategy advisory meeting",
           width: 1824,
           height: 1308,

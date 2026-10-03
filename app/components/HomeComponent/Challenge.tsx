@@ -37,6 +37,7 @@ export default function Challenge() {
             <Image
               src={challengeImage}
               alt="Challenge"
+              sizes="(min-width: 768px) 50vw, 100vw"
               className="w-full h-full object-cover rounded-2xl"
             />
           </div>

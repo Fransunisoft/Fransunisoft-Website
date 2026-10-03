@@ -83,7 +83,7 @@ export default function FsxConnect() {
           {/* <div className={styles.heroImageContainer}> */}
           <div className={styles.heroImg}>
             <Image
-              src="/fsx_connect_hero_img.png"
+              src="/fsx_connect_hero_img.webp"
               alt="FSX Connect"
               width={600}
               height={330}
@@ -285,7 +285,7 @@ export default function FsxConnect() {
             <div className={styles.communityCard}>
               <div className={styles.communityCardImage}>
                 <Image
-                  src="/tech-innovator-icon.png"
+                  src="/tech-innovator-icon.webp"
                   alt="tech innovator Icon"
                   width={400}
                   height={280}
@@ -316,7 +316,7 @@ export default function FsxConnect() {
               </div>
               <div className={styles.communityCardImage}>
                 <Image
-                  src="/enterpreneur-icon.png"
+                  src="/enterpreneur-icon.webp"
                   alt="entrepreneur Icon"
                   width={400}
                   height={280}
@@ -328,7 +328,7 @@ export default function FsxConnect() {
             <div className={styles.communityCard}>
               <div className={styles.communityCardImage}>
                 <Image
-                  src="/creative-mind-icon.png"
+                  src="/creative-mind-icon.webp"
                   alt="Creative Mind Icon"
                   width={400}
                   height={280}
@@ -423,7 +423,7 @@ export default function FsxConnect() {
           <div className={styles.ctaImageContainer}>
             <Image
               // src="/ellipse-globe-icon.svg"
-              src="/globes-icon.png"
+              src="/globes-icon.webp"
               alt="Call to Action Image"
               className={styles.ctaImage}
               // width={550}

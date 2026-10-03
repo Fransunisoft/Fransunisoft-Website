@@ -67,7 +67,7 @@ function Hero() {
   return (
     <section className="relative overflow-hidden bg-white">
       <div className="absolute inset-0 bg-[linear-gradient(#eef2f5_1px,transparent_1px),linear-gradient(90deg,#eef2f5_1px,transparent_1px)] bg-[size:48px_48px] opacity-80" />
-      <div className="relative mx-auto grid min-h-[420px] section-layout place-items-center px-5 py-14 text-center lg:min-h-[560px]">
+      <div className="relative mx-auto grid min-h-[420px] section-layout place-items-center text-center lg:min-h-[560px]">
         <div className="relative max-w-[760px]">
           <div className="mx-auto mb-5 inline-flex items-center gap-2 rounded-full border  bg-white px-4 py-3 text-sm font-semibold shadow-sm text-[#333333] shadow-sm">
             <span className="h-2 w-2 rounded-full bg-accent-500" />
@@ -80,6 +80,7 @@ function Hero() {
             aria-hidden="true"
             width={160}
             height={160}
+            sizes="96px"
             className="pointer-events-none absolute -left-28 top-4 hidden h-24 w-24 object-contain lg:block"
           />
           <Image
@@ -88,6 +89,7 @@ function Hero() {
             aria-hidden="true"
             width={160}
             height={160}
+            sizes="64px"
             className="pointer-events-none absolute -left-40 bottom-16 hidden h-16 w-16 object-contain lg:block"
           />
           <Code2 className="pointer-events-none absolute -right-36 top-8 hidden h-12 w-12 rounded-full bg-primary-600 p-2 text-white lg:block" />
@@ -166,7 +168,7 @@ function WhyRootBuilders() {
 function SummitBand() {
   return (
     <section className="bg-primary-800">
-      <div className="mx-auto grid section-layout items-center gap-8 px-5 py-14 lg:grid-cols-[1fr_0.8fr] lg:py-20">
+      <div className="mx-auto grid section-layout items-center gap-8 lg:grid-cols-[1fr_0.8fr]">
         <div>
           <h2 className="text-[30px] font-black text-accent-500 lg:text-[40px]">
             RootBuilders Summit
@@ -188,10 +190,11 @@ function SummitBand() {
         </div>
         <div className="relative mx-auto w-full max-w-[340px] rotate-[-3deg] ">
           <Image
-            src="/summitband.png"
+            src="/summitband.webp"
             alt="RootBuilders Summit audience session"
             width={1540}
             height={1640}
+            sizes="(min-width: 1024px) 340px, 90vw"
             className="h-auto w-full object-cover"
           />
         </div>
@@ -203,7 +206,7 @@ function SummitBand() {
 function ChallengeBand() {
   return (
     <section id="challenge" className="bg-primary-800 mt-5 lg:mt-20">
-      <div className="mx-auto grid section-layout gap-10 border-t border-white/10 px-5 py-14 lg:grid-cols-[0.9fr_1.1fr] lg:py-20">
+      <div className="mx-auto grid section-layout gap-10 border-t border-white/10 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
           <p className="mb-5 text-xs font-black tracking-[0.15em] text-accent-400">
             Partner With RootBuilders
@@ -318,11 +321,15 @@ function Tracks() {
         Across Every Discipline.
       </h2>
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:gap-x-10 lg:gap-y-9">
-        {tracks.map(([track, caption]) => (
+      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-12 lg:gap-x-7 lg:gap-y-7">
+        {tracks.map(([track, caption], index) => (
           <div
             key={track}
-            className="grid min-h-[118px] place-items-center rounded-[18px] bg-secondary-800 px-5 py-6 text-center shadow-[0_8px_18px_rgba(0,0,0,0.18)] lg:min-h-[176px] lg:rounded-[20px] lg:px-8"
+            className={`flex min-h-[118px] flex-col items-center justify-center gap-2 rounded-[18px] bg-secondary-800 px-5 py-6 text-center shadow-[0_8px_18px_rgba(0,0,0,0.18)] lg:min-h-[150px] lg:rounded-[20px] lg:px-8 ${
+              index % 4 === 1 || index % 4 === 2
+                ? "lg:col-span-5"
+                : "lg:col-span-7"
+            }`}
           >
             <h3 className="font-black leading-tight text-white ">
               {track}
@@ -362,7 +369,7 @@ function Projects() {
   ];
 
   return (
-    <section className="section-layout grid gap-10 bg-[#fbfbfb] py-12 lg:grid-cols-[1.12fr_0.88fr] lg:items-start lg:py-20">
+    <section className="section-layout grid gap-10 bg-[#fbfbfb] lg:grid-cols-[1.12fr_0.88fr] lg:items-start">
       <div>
         <SectionEyebrow number="04" label="Projects" />
         <h2 className="mt-7 text-[34px] font-black leading-tight text-[#333] lg:text-[48px]">
@@ -396,10 +403,11 @@ function Projects() {
         </div>
       </div>
       <Image
-        src="/projectRoot.png"
+        src="/projectRoot.webp"
         alt="RootBuilders participant working on a laptop"
         width={1820}
         height={3650}
+        sizes="(min-width: 1280px) 560px, (min-width: 768px) 45vw, 100vw"
         className="mx-auto h-auto w-full max-w-[560px] rounded-[22px] object-cover lg:mt-28"
       />
     </section>
@@ -408,12 +416,13 @@ function Projects() {
 
 function Faq() {
   return (
-    <section id="faq" className="mx-auto grid section-layout gap-10 px-5 py-14 lg:grid-cols-[0.52fr_1fr] lg:items-center lg:py-20">
+    <section id="faq" className="mx-auto grid section-layout gap-10 lg:grid-cols-[0.52fr_1fr] lg:items-center">
       <Image
-        src="/faqRoot.png"
+        src="/faqRoot.webp"
         alt="Person raising a hand during a RootBuilders session"
         width={1500}
         height={2300}
+        sizes="400px"
         className="mx-auto hidden h-auto max-h-[530px] w-full max-w-[400px] rounded-[12px] object-cover grayscale lg:block"
       />
       <div>
@@ -450,7 +459,7 @@ function Faq() {
 
 function BottomCta() {
   return (
-    <section id="apply" className="mx-auto grid section-layout gap-5 px-5 py-10 lg:grid-cols-2">
+    <section id="apply" className="mx-auto grid section-layout gap-5 lg:grid-cols-2">
       <div className="relative overflow-hidden items-center text-center rounded-[10px] bg-primary-600 p-8 text-white lg:p-10">
         <div className="absolute -bottom-12 -left-10 h-32 w-32 rotate-45 bg-primary-800/45" />
         <div className="absolute -bottom-12 -right-10 h-32 w-32 rotate-45 bg-primary-800/45" />
@@ -486,10 +495,11 @@ function BottomCta() {
         </div>
       </div>
       <Image
-        src="/rootbuilders-cta.png"
+        src="/rootbuilders-cta.webp"
         alt="Builder joining a remote cohort session"
         width={2400}
         height={2400}
+        sizes="(min-width: 1024px) 50vw, 100vw"
         className="h-full min-h-[300px] w-full rounded-[10px] object-cover"
       />
     </section>
@@ -499,56 +509,60 @@ function BottomCta() {
 function RootBuildersFooter() {
   return (
     <footer className="bg-[#e8f2f8] text-center">
-      <div className="mx-auto max-w-[860px] px-5 py-10">
-        <p className="text-sm font-bold text-[#8b98a5]">Our Parent Organization</p>
-        <div className="mt-2 flex items-center justify-center gap-3">
-          <span className="font-heading text-[30px] font-black text-primary-700">
-            Powered by
-          </span>
-          <Image
-            src="/logo.png"
-            alt="Fransunisoft"
-            width={220}
-            height={36}
-            className="h-8 w-auto object-contain"
-          />
+      <div className="section-layout">
+        <div className="mx-auto max-w-[860px]">
+          <p className="text-sm font-bold text-[#8b98a5]">Our Parent Organization</p>
+          <div className="mt-2 flex items-center justify-center gap-3">
+            <span className="font-heading text-[30px] font-black text-primary-700">
+              Powered by
+            </span>
+            <Image
+              src="/logo.png"
+              alt="Fransunisoft"
+              width={220}
+              height={36}
+              className="h-8 w-auto object-contain"
+            />
+          </div>
+          <p className="mx-auto mt-4 max-w-[720px] text-sm leading-7 text-[#5e6872]">
+            Root Builders is an initiative of Fransunisoft - a venture studio
+            building the next generation of African tech talent and products.
+            Through FSX Academy and our portfolio of ventures, we&apos;re creating
+            opportunities for builders across Africa.
+          </p>
+          <p className="mt-4 text-sm font-bold text-[#58636d]">
+            Follow us on social media to stay updated on opportunities, events,
+            and tech insights.
+          </p>
+          <div className="mt-5 flex justify-center gap-3 text-primary-700">
+            {rootBuildersSocialLinks.map(({ Icon, label, href }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="grid h-8 w-8 place-items-center rounded bg-white shadow-sm transition hover:-translate-y-0.5 hover:bg-accent-100"
+                aria-label={`Fransunisoft on ${label}`}
+              >
+                <Icon className="h-4 w-4" />
+              </a>
+            ))}
+          </div>
+          <Button
+            href="/"
+            variant="primary"
+            className="mt-7 h-10 px-6 text-sm font-bold"
+          >
+            Explore Fransunisoft
+          </Button>
         </div>
-        <p className="mx-auto mt-4 max-w-[720px] text-sm leading-7 text-[#5e6872]">
-          Root Builders is an initiative of Fransunisoft - a venture studio
-          building the next generation of African tech talent and products.
-          Through FSX Academy and our portfolio of ventures, we&apos;re creating
-          opportunities for builders across Africa.
-        </p>
-        <p className="mt-4 text-sm font-bold text-[#58636d]">
-          Follow us on social media to stay updated on opportunities, events,
-          and tech insights.
-        </p>
-        <div className="mt-5 flex justify-center gap-3 text-primary-700">
-          {rootBuildersSocialLinks.map(({ Icon, label, href }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="grid h-8 w-8 place-items-center rounded bg-white shadow-sm transition hover:-translate-y-0.5 hover:bg-accent-100"
-              aria-label={`Fransunisoft on ${label}`}
-            >
-              <Icon className="h-4 w-4" />
-            </a>
-          ))}
-        </div>
-        <Button
-          href="/"
-          variant="primary"
-          className="mt-7 h-10 px-6 text-sm font-bold"
-        >
-          Explore Fransunisoft
-        </Button>
       </div>
-      <div className="bg-primary-600 px-5 py-4">
-        <p className="text-xs font-semibold text-white/85">
-          2026 Root Builders by Fransunisoft. All Rights Reserved.
-        </p>
+      <div className="bg-primary-600">
+        <div className="section-layout section-layout--compact text-center">
+          <p className="text-xs font-semibold text-white/85">
+            2026 Root Builders by Fransunisoft. All Rights Reserved.
+          </p>
+        </div>
       </div>
     </footer>
   );

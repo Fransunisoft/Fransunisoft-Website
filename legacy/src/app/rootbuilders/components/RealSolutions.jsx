@@ -14,7 +14,7 @@ export default function RealSolutions() {
           </button>
       </div>
       <Image
-        src="/build_businessman-working.png"
+        src="/build_businessman-working.webp"
         alt="tech-talent image"
         width={607}
         height={607}

@@ -16,7 +16,7 @@ export const stackCards: StackCard[] = [
     description:
       "Every project is anchored to a real challenge submitted by an organization, startup, government agency, or institution. Participants build deployed solutions, not hypothetical case studies.",
     color: "#b54c26",
-    image: "/rootbuilders-stack-real-problems.png",
+    image: "/rootbuilders-stack-real-problems.webp",
   },
   {
     id: "supervised",
@@ -24,7 +24,7 @@ export const stackCards: StackCard[] = [
     description:
       "Builders work with mentors, technical reviewers, and delivery leads who help them move from idea to practical implementation.",
     color: "#093A6D",
-    image: "/rootbuilders-stack-real-problems.png"
+    image: "/rootbuilders-stack-real-problems.webp"
   },
   {
     id: "pipeline",
@@ -32,7 +32,7 @@ export const stackCards: StackCard[] = [
     description:
       "RootBuilders helps identify capable African builders and connects them to opportunities across the Fransunisoft ecosystem.",
     color: "#373737",
-    image: "/rootbuilders-stack-real-problems.png"
+    image: "/rootbuilders-stack-real-problems.webp"
   },
   {
     id: "integrated",
@@ -40,7 +40,7 @@ export const stackCards: StackCard[] = [
     description:
       "Every track teaches builders how to use AI as part of research, design, development, testing, delivery, and decision-making.",
     color: "#12675f",
-    image: "/rootbuilders-stack-real-problems.png"
+    image: "/rootbuilders-stack-real-problems.webp"
   },
 ];
 

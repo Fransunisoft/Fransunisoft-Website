@@ -38,7 +38,7 @@ export default function ClaudeAcceleratorPage() {
         <dl className={cn("section-layout", styles.stats)} aria-label="Programme at a glance">
           {[['14 Weeks', 'Full Pathway'], ['₦150k', 'Starting from'], ['Live', 'Weekend Sessions'], ['CCA-F', 'Certification']].map(([value, label]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
         </dl>
-        <section id="pathway" className={cn("section-layout", styles.section)} aria-labelledby="pathway-title">
+        <section id="pathway" className="section-layout" aria-labelledby="pathway-title">
           <SectionLabel>The Pathway</SectionLabel>
           <h2 id="pathway-title">From zero technical skills to a<br />Certified Claude AI Architect</h2>
           <p className={styles.sectionIntro}>Three progressive levels. Start anywhere — or take the Full<br className={styles.desktopBreak} /> Pathway and we&apos;ll take you all the way.</p>
@@ -50,22 +50,22 @@ export default function ClaudeAcceleratorPage() {
             </article>
           </div>
         </section>
-        <section className={cn("section-layout", styles.section)} aria-labelledby="outcomes-title">
+        <section className="section-layout" aria-labelledby="outcomes-title">
           <SectionLabel>What You Leave With</SectionLabel><h2 id="outcomes-title">Programme Outcomes</h2>
           <ul className={styles.outcomeList}>{outcomes.map(outcome => <li key={outcome}><Check size={18} aria-hidden="true" /><span>{outcome}</span></li>)}</ul>
         </section>
-        <section className={cn("section-layout", styles.section)} aria-labelledby="why-title">
+        <section className="section-layout" aria-labelledby="why-title">
           <SectionLabel>WHY LEARN WITH US</SectionLabel><h2 id="why-title">Built for Real Outcomes</h2>
           <div className={styles.reasonGrid}>{reasons.map(reason => <article key={reason.title} className={styles.reason}><h3>{reason.title}</h3><p>{reason.description}</p></article>)}</div>
         </section>
-        <section id="pricing" className={cn("section-layout", styles.section)} aria-labelledby="pricing-title">
+        <section id="pricing" className="section-layout" aria-labelledby="pricing-title">
           <SectionLabel>NIGERIA PRICING</SectionLabel><h2 id="pricing-title">Pick Your Package</h2><p className={styles.sectionIntro}>Instalment plans available. Employer invoice on request.</p>
           <div className={styles.pricingPanel}>
             <div className={styles.priceGrid}>{packages.map((item, index) => <article key={item.title} className={cn(styles.priceCard, index === 3 && styles.featuredPrice)}>{index === 3 && <span className={styles.featuredLabel}>Most Complete</span>}<p className={styles.price}>{item.price}</p><h3>{item.title}</h3><p className={styles.packageDetail}>{item.detail}</p></article>)}</div>
             <p className={styles.pricingNote}>UK diaspora rate: £249. Early-bird discount (25% off) for the first 20 registrations. All prices subject to confirmation — register interest first.</p>
           </div>
         </section>
-        <section id="cohorts" className={cn("section-layout", styles.section, styles.cohortSection)} aria-labelledby="cohorts-title">
+        <section id="cohorts" className="section-layout" aria-labelledby="cohorts-title">
           <SectionLabel>COHORT SCHEDULE</SectionLabel><h2 id="cohorts-title">Upcoming Cohorts</h2>
           <div className={styles.cohortGrid}>{cohorts.map(cohort => <article key={cohort.name} className={styles.cohort}><p className={styles.cohortName}>{cohort.name}</p><h3>{cohort.dates}</h3><p className={styles.cohortDetail}>Weekend sessions · Live on Zoom · WhatsApp community</p><RegisterLink>{cohort.action}</RegisterLink></article>)}</div>
         </section>

@@ -3,9 +3,9 @@
 
 import Image from "next/image";
 import teachingDetails from "./images/poweredAiproduct.png";
-import labbuildPhoto from "@/public/labbuildPhoto.png";
-import labbuildPhoto2 from "@/public/labbuildPhoto2.png";
-import labbuildPhoto3 from "@/public/labuildPhoto3.png";
+import labbuildPhoto from "@/public/labbuildPhoto.webp";
+import labbuildPhoto2 from "@/public/labbuildPhoto2.webp";
+import labbuildPhoto3 from "@/public/labuildPhoto3.webp";
 
 interface EachDetailsProps {
   menu: string;
@@ -52,7 +52,7 @@ export default function EachDetails({ menu }: EachDetailsProps) {
   const activeDetails = details[menu] ?? details["AI Products"];
 
   return (
-    <section className="pt-6 pb-8 lg:px-8">
+    <section className="section-layout">
       <div className="mx-auto flex w-full max-w-[1400px] flex-col-reverse overflow-hidden rounded-3xl bg-[#e7eef5] p-6 lg:min-h-[435px] lg:flex-row lg:p-0">
         <div className="flex w-full min-w-0 items-center justify-center pt-7 lg:w-[42%] lg:px-12 lg:py-12">
           <div className="w-full max-w-[500px]">
@@ -72,7 +72,6 @@ export default function EachDetails({ menu }: EachDetailsProps) {
             alt={activeDetails.title}
             fill
             sizes="(min-width: 1024px) 58vw, 100vw"
-            priority
             className="object-cover"
           />
         </div>

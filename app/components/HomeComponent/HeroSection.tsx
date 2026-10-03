@@ -8,9 +8,9 @@ import { Autoplay, Pagination, EffectFade } from "swiper/modules";
 
 import { ArrowRight } from "lucide-react";
 
-import sliderOne from "@/app/components/HomeComponent/images/sliderImg1.png";
-import sliderTwo from "@/app/components/HomeComponent/images/sliderImg2.png";
-import sliderThree from "@/app/components/HomeComponent/images/sliderImg3.png";
+import sliderOne from "@/app/components/HomeComponent/images/sliderImg1.webp";
+import sliderTwo from "@/app/components/HomeComponent/images/sliderImg2.webp";
+import sliderThree from "@/app/components/HomeComponent/images/sliderImg3.webp";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -72,14 +72,14 @@ const slides = [
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen">
+    <section className="relative h-[calc(100svh-3.25rem)] min-h-[560px] lg:h-[calc(100svh-5.5rem)] lg:min-h-[640px]">
       <Swiper
         modules={[Autoplay, Pagination, EffectFade]}
         effect="fade"
         loop={true}
         speed={1000}
         autoplay={{
-          delay: 5000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -88,18 +88,19 @@ export default function HeroSection() {
             return `<span class="${className} hero-bullet" data-index="${index}"></span>`;
           },
         }}
-        className="h-screen"
+        className="h-full"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="relative h-screen w-full overflow-hidden">
+            <div className="relative h-full w-full overflow-hidden">
               {/* Background Image */}
               <Image
                 src={slide.image}
                 alt={"Slide Background"}
                 fill
-                priority={index === 0}
-                className="object-cover"
+                preload={index === 0}
+                sizes="100vw"
+                className="object-cover object-[68%_center] sm:object-center"
               />
 
               {/* Overlay */}
@@ -107,10 +108,10 @@ export default function HeroSection() {
 
 
               {/* Content */}
-              <div className="relative z-10 flex h-full items-center px-4 py-8 sm:px-6 md:px-16">
-                <div className="mx-auto w-full max-w-7xl px-2 sm:px-4 md:px-6">
+              <div className="relative z-10 flex h-full items-center section-layout">
+                <div className="">
                   <div className="max-w-2xl text-white">
-                    <h1 className="text-3xl font-bold leading-tight sm:text-4xl md:text-[48px]">
+                    <h1 className=" font-bold leading-tight ">
                       {slide.title}
                     </h1>
 

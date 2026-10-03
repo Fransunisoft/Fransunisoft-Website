@@ -19,7 +19,7 @@ export default function EventsPage() {
         }
         description="FSX Events is the activation and program delivery arm of Fransunisoft - designing and running the innovation summits, challenge programs, demo days, and ecosystem events that connect Africa's most important organizations with its best builders."
         image={{
-          src: "/events-hero.png",
+          src: "/events-hero.webp",
           alt: "FSX Events innovation ecosystem gathering",
           width: 2675,
           height: 1870,

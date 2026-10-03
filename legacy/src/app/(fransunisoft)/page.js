@@ -124,7 +124,7 @@ export default function HomePage() {
 
           <div className={styles.fsxImage}>
             <Image
-              src="/F_What.png"
+              src="/F_What.webp"
               alt="FSX Advantage"
               width={700}
               height={700}
@@ -340,7 +340,7 @@ export default function HomePage() {
             <div className="wrapperw">
               <h3 className={styles.cardTitlew}>For Talents</h3>
               <Image
-                src="/young-manager.png"
+                src="/young-manager.webp"
                 alt="For Talents"
                 width={400}
                 height={280}
@@ -356,7 +356,7 @@ export default function HomePage() {
             <div>
               <h3 className={styles.cardTitlew}>For Startups</h3>
               <Image
-                src="/corporate-team.png"
+                src="/corporate-team.webp"
                 alt="For Startup"
                 width={400}
                 height={280}
@@ -372,7 +372,7 @@ export default function HomePage() {
             <div>
               <h3 className={styles.cardTitlew}>For Investors</h3>
               <Image
-                src="/startup-team.png"
+                src="/startup-team.webp"
                 alt="For Investor"
                 width={400}
                 height={280}

@@ -29,13 +29,13 @@ export const connectAudiences: ConnectAudience[] = [
     description:
       "FSX Connect brings together senior professionals across AI, technology, product, finance, government, and ecosystem building to mentor builders, advise ventures, and shape the organizations we work with.",
     image: {
-      src: "/connect-modal-mentors.png",
+      src: "/connect-modal-mentors.webp",
       alt: "FSX Connect mentoring builders session",
     },
     modal: {
       title: "For mentors and advisors",
       image: {
-        src: "/connect-modal-mentors.png",
+        src: "/connect-modal-mentors.webp",
         alt: "FSX Connect mentors and advisors modal image",
       },
       bullets: [
@@ -54,13 +54,13 @@ export const connectAudiences: ConnectAudience[] = [
     description:
       "FSX Connect manages Fransunisoft's institutional partnerships - with universities, government agencies, development organizations, corporate partners, and international ecosystem bodies.",
     image: {
-      src: "/connect-modal-partners.png",
+      src: "/connect-modal-partners.webp",
       alt: "FSX Connect partnership handshake",
     },
     modal: {
       title: "For partner and institution",
       image: {
-        src: "/connect-modal-partners.png",
+        src: "/connect-modal-partners.webp",
         alt: "FSX Connect partners and institutions modal image",
       },
       bullets: [
@@ -80,13 +80,13 @@ export const connectAudiences: ConnectAudience[] = [
     description:
       "Investors connected through FSX Connect get early access to ventures built inside FSX Labs and RootBuilders - with the benefit of FSX's execution oversight and the confidence of teams that have shipped real products.",
     image: {
-      src: "/connect-modal-investors.png",
+      src: "/connect-modal-investors.webp",
       alt: "FSX Connect investor deal flow",
     },
     modal: {
       title: "For investors",
       image: {
-        src: "/connect-modal-investors.png",
+        src: "/connect-modal-investors.webp",
         alt: "FSX Connect investors modal image",
       },
       bullets: [

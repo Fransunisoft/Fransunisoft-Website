@@ -18,7 +18,11 @@ export default function Founder() {
       </div>
       <div className="grid grid-cols-2 gap-2">
         <div className="p-4">
-          <Image src={ceo} alt="founder and ceo image" />
+          <Image
+            src={ceo}
+            alt="founder and ceo image"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+          />
         </div>
         <div>
           <h2>Oluwaseyi Francis Ayodele</h2>

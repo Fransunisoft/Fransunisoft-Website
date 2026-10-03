@@ -12,11 +12,11 @@ export const buttonVariants = cva(
         secondary: "bg-secondary text-white hover:bg-secondary-500",
         accent: "bg-accent text-white hover:bg-secondary-700",
         outline:
-          "border  bg-transparent text-primary hover:bg-primary-50",
+          "border  bg-transparent text-primary hover:bg-primary hover:text-white ",
         outlineLight:
           "border border-white/70 bg-transparent text-white hover:bg-white/10 hover:text-white",
         transparent:
-          "bg-transparent border border-neutral-light text-neutral-light hover:bg-primary",
+          "bg-transparent border border-neutral-light text-neutral-light hover:bg-primary hover:border-none",
       },
 
       size: {

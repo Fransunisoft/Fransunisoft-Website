@@ -24,7 +24,7 @@ export default function RootBuildersHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b-3 border-[#e3e6e8] bg-white/95 backdrop-blur">
-      <nav className="mx-auto flex h-16 section-layout items-center justify-between px-5 lg:h-20">
+      <nav className="mx-auto flex h-16 section-layout section-layout--flush items-center justify-between lg:h-20">
         <Link href="/rootbuilders" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
           <Image
             src="/Rootbuilders.png"
