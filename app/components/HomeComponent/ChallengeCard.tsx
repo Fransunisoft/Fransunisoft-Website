@@ -38,7 +38,7 @@ export default function ChallengeCard() {
       key={index}
       className={`${challenge.bg} rounded-2xl border border-neutral-border p-8`}
     >
-      <h3 className={`font-heading font-extrabold text-2xl ${challenge.titleColor}`}>
+      <h3 className={`font-heading  text-2xl ${challenge.titleColor}`}>
         {challenge.title}
       </h3>
 

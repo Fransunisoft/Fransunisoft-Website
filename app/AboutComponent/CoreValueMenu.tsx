@@ -2,12 +2,12 @@
 
 import Image, { StaticImageData } from "next/image";
 import React, { useState } from "react";
-import cv1 from "@/public/cv1.png";
-import cv2 from "@/public/cv2.png";
-import cv3 from "@/public/cv3.png";
-import cv4 from "@/public/cv4.png";
-import cv5 from "@/public/cv5.png";
-import cv6 from "@/public/cv6.png";
+import cv1 from "@/public/cv1.webp";
+import cv2 from "@/public/cv2.webp";
+import cv3 from "@/public/cv3.webp";
+import cv4 from "@/public/cv4.webp";
+import cv5 from "@/public/cv5.webp";
+import cv6 from "@/public/cv6.webp";
 import arrow from "./images/arrow.png";
 import { ChevronRight } from "lucide-react";
 import styles from "./AboutMobile.module.css";
@@ -82,10 +82,10 @@ export default function CoreValueMenu() {
 
   return (
     <>
-    <div className={`rounded-[20px] border border-dashed mt-3 border-white/20 bg-[#0C4A8C] ${styles.desktopValues}`}>
-      <div className="grid grid-cols-2 gap-10">
+    <div className={`mt-3 rounded-[20px] bg-[#0C4A8C] ${styles.desktopValues}`}>
+      <div className="grid grid-cols-[0.8fr_1.2fr] gap-6 lg:gap-10">
         {/* SIDEBAR */}
-        <div className="flex flex-col p-10">
+        <div className="flex flex-col p-6">
           {CoreValueProp.map((eachValue, index) => (
             <button
               key={eachValue.menuTitle}
@@ -115,19 +115,23 @@ export default function CoreValueMenu() {
         </div>
 
         {/* DETAILS */}
-        <div className="flex flex-col bg-[#0D519A] p-4">
-          <Image
-            src={selectedValue.imgDiff}
-            alt={selectedValue.detailsH3}
-            className="w-full rounded-2xl object-cover"
-          />
+        <div className="flex flex-col bg-[#0D519A] p-6 lg:p-8">
+          <div className="relative aspect-video w-full overflow-hidden rounded-2xl">
+            <Image
+              src={selectedValue.imgDiff}
+              alt={selectedValue.detailsH3}
+              fill
+              sizes="(min-width: 1024px) 45vw, 90vw"
+              className="object-cover"
+            />
+          </div>
 
-          <div className="mt-6">
+          <div className="mt-6 lg:mt-8">
             <h3 className="mb-3 font-heading text-2xl font-bold text-accent-500">
               {selectedValue.detailsH3}
             </h3>
 
-            <p className="text-white/80">{selectedValue.details}</p>
+            <p className="text-sm leading-6 text-white/90 lg:text-base lg:leading-7">{selectedValue.details}</p>
           </div>
         </div>
       </div>
@@ -137,12 +141,12 @@ export default function CoreValueMenu() {
         const expanded = openMobileIndex === index;
         return (
           <article key={value.menuTitle} className={styles.valueItem} data-open={expanded}>
-            <h3>
+            <h4>
               <button type="button" id={`about-value-${index}`} aria-expanded={expanded} aria-controls={`about-value-panel-${index}`} onClick={() => setOpenMobileIndex(expanded ? null : index)}>
                 {value.menuTitle}
                 {expanded ? <Image src={arrow} alt="" width={50} height={20} /> : <ChevronRight size={28} strokeWidth={4} aria-hidden="true" />}
               </button>
-            </h3>
+            </h4>
             <div id={`about-value-panel-${index}`} role="region" aria-labelledby={`about-value-${index}`} hidden={!expanded} className={styles.valuePanel}>
               <Image src={value.imgDiff} alt={`${value.detailsH3} at Fransunisoft`} sizes="(max-width: 1023px) 90vw, 1px" />
               <h4>{value.detailsH3}</h4>

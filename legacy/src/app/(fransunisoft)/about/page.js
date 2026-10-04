@@ -52,7 +52,7 @@ export default function AboutPage() {
       <div className={styles.hero}>
         <div className={styles.imageWrapper}>
           <Image
-            src="/About_hands.png"
+            src="/About_hands.webp"
             alt="FSX Hero Background"
             fill
             priority

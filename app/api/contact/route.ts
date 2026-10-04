@@ -3,11 +3,11 @@ import { contactValidationSchema } from "@/app/lib/contact-validation";
 
 export const runtime = "nodejs";
 
-async function sendEmail(data: FormData) {
+async function sendEmail(data: FormData, subject = "New Fransunisoft contact enquiry") {
   const accessKey = process.env.FORMLY_ACCESS_KEY || process.env.LEGACY_FORMLY_KEY;
   if (!accessKey?.trim()) throw new Error("Formly is not configured");
   data.set("access_key", accessKey.trim());
-  data.set("subject", "New Fransunisoft contact enquiry");
+  data.set("subject", subject);
   const response = await fetch("https://formly.email/submit", {
     method: "POST",
     headers: { Accept: "application/json" },
@@ -64,6 +64,39 @@ export async function POST(request: Request) {
   } catch {
     return NextResponse.json({ success: false, message: "Invalid contact form data" }, { status: 400 });
   }
+
+  if (raw.type === "newsletter") {
+    const email = typeof raw.email === "string" ? raw.email.trim() : "";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return NextResponse.json({ success: false, message: "Please enter a valid email address" }, { status: 400 });
+    }
+
+    const newsletterData = { type: "newsletter", email, source: "FSX Insights newsletter" };
+    const emailData = new FormData();
+    Object.entries(newsletterData).forEach(([key, value]) => emailData.set(key, value));
+
+    const [emailResult, crmResult] = await Promise.allSettled([
+      sendEmail(emailData, `New FSX Insights newsletter subscriber: ${email}`),
+      saveToSheet(newsletterData),
+    ]);
+    const emailSent = emailResult.status === "fulfilled";
+    const crmSaved = crmResult.status === "fulfilled";
+
+    if (!emailSent) console.error("Newsletter Formly delivery failed:", emailResult.reason instanceof Error ? emailResult.reason.message : "Unknown error");
+    if (!crmSaved) console.error("Newsletter CRM delivery failed:", crmResult.reason instanceof Error ? crmResult.reason.message : "Unknown error");
+
+    const success = emailSent || crmSaved;
+    return NextResponse.json({
+      success,
+      emailSent,
+      crmSaved,
+      partial: success && !(emailSent && crmSaved),
+      message: success
+        ? "Thank you for subscribing to FSX Insights!"
+        : "We could not confirm your subscription. Please try again later.",
+    }, { status: success ? 200 : 502 });
+  }
+
   let values;
   try {
     values = await contactValidationSchema.validate(raw, { abortEarly: false, stripUnknown: true });

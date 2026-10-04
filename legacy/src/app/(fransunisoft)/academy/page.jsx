@@ -95,7 +95,7 @@ export default function FsxAcademy() {
           {/* <div className={styles.heroImg}> */}
           <div className={styles.heroImageContainer}>
             <Image
-              src="/fsx-academy-hero-icon.png"
+              src="/fsx-academy-hero-icon.webp"
               alt="FSX Connect"
               width={581}
               height={382}
@@ -222,7 +222,7 @@ export default function FsxAcademy() {
             <div className={styles.communityCard}>
               <div className={styles.communityCardImage}>
                 <Image
-                  src="/organization-icon.png"
+                  src="/organization-icon.webp"
                   alt="organization Icon"
                   width={486}
                   height={324}
@@ -248,7 +248,7 @@ export default function FsxAcademy() {
               </div>
               <div className={styles.communityCardImage}>
                 <Image
-                  src="/institution-icon.png"
+                  src="/institution-icon.webp"
                   alt="institution Icon"
                   width={486}
                   height={324}
@@ -260,7 +260,7 @@ export default function FsxAcademy() {
             <div className={styles.communityCard}>
               <div className={styles.communityCardImage}>
                 <Image
-                  src="/individuals.png"
+                  src="/individuals.webp"
                   alt="Individuals Icon"
                   width={486}
                   height={324}

@@ -18,7 +18,11 @@ export default function Founder() {
       </div>
       <div className="grid grid-cols-2 gap-2">
         <div className="p-4">
-          <Image src={ceo} alt="founder and ceo image" />
+          <Image
+            src={ceo}
+            alt="founder and ceo image"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+          />
         </div>
         <div>
           <h2>Oluwaseyi Francis Ayodele</h2>
@@ -59,10 +63,16 @@ export default function Founder() {
             </p> <br />   
           </div>
           <div className="flex gap-2">
-            <Image src={github} alt="github" />
-            <Image src={linkedin} alt="linkedin" />
-            <Image src={x} alt="x formerly twitter" />
-            <Image src={instagram} alt="instagram" />
+            <Image src={github} alt="GitHub" />
+            <a href="https://www.linkedin.com/in/oluwaseyiayodele/" target="_blank" rel="noopener noreferrer" aria-label="Founder on LinkedIn">
+              <Image src={linkedin} alt="LinkedIn" />
+            </a>
+            <a href="https://x.com/seyifayodele" target="_blank" rel="noopener noreferrer" aria-label="Founder on X">
+              <Image src={x} alt="X" />
+            </a>
+            <a href="https://www.instagram.com/seyifayodele/" target="_blank" rel="noopener noreferrer" aria-label="Founder on Instagram">
+              <Image src={instagram} alt="Instagram" />
+            </a>
           </div>
         </div>
       </div>

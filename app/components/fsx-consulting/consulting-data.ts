@@ -22,7 +22,7 @@ export const consultingServices: ConsultingService[] = [
     description:
       "We evaluate your organization's current AI maturity - people, processes, data, and technology - and produce a clear readiness report with prioritised recommendations.",
     image: {
-      src: "/consulting-ai-readiness.png",
+      src: "/consulting-ai-readiness.webp",
       alt: "AI readiness assessment workshop with scorecard dashboard",
     },
   },
@@ -33,7 +33,7 @@ export const consultingServices: ConsultingService[] = [
     description:
       "We define your AI vision and build a phased adoption roadmap that connects AI investment to real business outcomes across your specific industry and context.",
     image: {
-      src: "/consulting-strategy-roadmap.png",
+      src: "/consulting-strategy-roadmap.webp",
       alt: "AI strategy roadmap presentation in a boardroom",
     },
   },
@@ -44,7 +44,7 @@ export const consultingServices: ConsultingService[] = [
     description:
       "We provide senior-level advisory on enterprise digital transformation - from governance design to change management, operating model redesign, and innovation program structure.",
     image: {
-      src: "/consulting-advisory.png",
+      src: "/consulting-advisory.webp",
       alt: "Digital transformation advisory session with AI governance framework",
     },
   },
@@ -55,7 +55,7 @@ export const consultingServices: ConsultingService[] = [
     description:
       "We design structured innovation programs for organisations and government agencies - including challenge frameworks, problem sourcing, talent deployment, and delivery oversight.",
     image: {
-      src: "/consulting-program-design.png",
+      src: "/consulting-program-design.webp",
       alt: "Innovation program design workshop with AI capability board",
     },
   },
@@ -66,7 +66,7 @@ export const consultingServices: ConsultingService[] = [
     description:
       "We oversee the delivery of technology and AI initiatives - providing programme management, vendor governance, and outcome accountability for major transformation projects.",
     image: {
-      src: "/consulting-execution-oversight.png",
+      src: "/consulting-execution-oversight.webp",
       alt: "Execution oversight dashboard presentation",
     },
   },

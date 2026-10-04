@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import type { FormEvent } from "react";
 import {
   FaFacebookF,
   FaInstagram,
@@ -15,19 +19,65 @@ import Image from "next/image";
 const ecosystemLinks = [
   { name: "FSX Consulting - AI Strategy & Advisory", href: "/consulting" },
   { name: "FSX Academy - AI Workforce Development", href: "/academy" },
-  { name: "FSX Labs - AI Products & Venture Studio", href: "#" },
-  { name: "FSX Tech - Implementation & Infrastructure", href: "#" },
+  { name: "FSX Labs - AI Products & Venture Studio", href: "/labs" },
+  { name: "FSX Tech - Implementation & Infrastructure", href: "/tech" },
   { name: "FSX Events - Innovation Programs", href: "/events" },
   { name: "FSX Connect - Network & Partnerships", href: "/connect" },
 ];
 
 const quickLinks = [
   { name: "About Us", href: "/about" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/contact" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export default function Footer() {
+  const [newsletterStatus, setNewsletterStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const statusTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => () => {
+    if (statusTimer.current) clearTimeout(statusTimer.current);
+  }, []);
+
+  function showNewsletterStatus(message: string) {
+    if (statusTimer.current) clearTimeout(statusTimer.current);
+    setNewsletterStatus(message);
+    statusTimer.current = setTimeout(() => {
+      setNewsletterStatus("");
+      statusTimer.current = null;
+    }, 5000);
+  }
+
+  async function handleNewsletterSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (isSubmitting) return;
+
+    const form = event.currentTarget;
+    setIsSubmitting(true);
+    if (statusTimer.current) clearTimeout(statusTimer.current);
+    statusTimer.current = null;
+    setNewsletterStatus("");
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+        signal: AbortSignal.timeout(45000),
+      });
+      const result = await response.json();
+      if (!response.ok || result?.success !== true) {
+        throw new Error(result?.message || "We could not confirm your subscription. Please try again.");
+      }
+
+      form.reset();
+      showNewsletterStatus(result.message || "Thank you for subscribing to FSX Insights!");
+    } catch (error) {
+      showNewsletterStatus(error instanceof Error ? error.message : "We could not confirm your subscription. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
   return (
     <footer className="relative w-full overflow-hidden bg-primary-700 text-white">
       {/* Background World Map */}
@@ -35,7 +85,7 @@ export default function Footer() {
         src={map}
         alt=""
         fill
-        priority
+        sizes="100vw"
         className="pointer-events-none absolute inset-0 z-0 object-cover opacity-30"
       />
 
@@ -57,42 +107,60 @@ export default function Footer() {
 
             <div className="flex flex-wrap gap-2 lg:gap-3">
               <a
-                href="#"
+                href="https://www.facebook.com/fransunisoft"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Fransunisoft on Facebook"
                 className="rounded-md bg-white p-2 text-primary transition hover:scale-105"
               >
                 <FaFacebookF size={18} />
               </a>
 
               <a
-                href="#"
+                href="https://twitter.com/fransunisoft"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Fransunisoft on X"
                 className="rounded-md bg-white p-2 text-primary transition hover:scale-105"
               >
                 <FaXTwitter size={18} />
               </a>
 
               <a
-                href="#"
+                href="https://www.instagram.com/fransunisoft"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Fransunisoft on Instagram"
                 className="rounded-md bg-white p-2 text-primary transition hover:scale-105"
               >
                 <FaInstagram size={18} />
               </a>
 
               <a
-                href="#"
+                href="https://www.linkedin.com/company/fransunisoft/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Fransunisoft on LinkedIn"
                 className="rounded-md bg-white p-2 text-primary transition hover:scale-105"
               >
                 <FaLinkedinIn size={18} />
               </a>
 
               <a
-                href="#"
+                href="https://www.youtube.com/@fransunisoft"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Fransunisoft on YouTube"
                 className="rounded-md bg-white p-2 text-primary transition hover:scale-105"
               >
                 <FaYoutube size={18} />
               </a>
 
               <a
-                href="#"
+                href="https://www.tiktok.com/@fransunisoft"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Fransunisoft on TikTok"
                 className="rounded-md bg-white p-2 text-primary transition hover:scale-105"
               >
                 <FaTiktok size={18} />
@@ -146,17 +214,28 @@ export default function Footer() {
               organizations.
             </p>
 
-            <form className="flex flex-col items-start gap-3 sm:flex-row lg:gap-4">
+            <form className="flex w-full flex-col items-start gap-3 sm:flex-row lg:gap-4" onSubmit={handleNewsletterSubmit}>
+              <input type="hidden" name="type" value="newsletter" />
               <input
+                name="email"
                 type="email"
                 placeholder="Email: johndoe@email.com"
+                aria-label="Email address for the newsletter"
+                autoComplete="email"
+                required
+                disabled={isSubmitting}
                 className="h-9 w-full rounded-full border border-transparent bg-white px-4 text-xs text-neutral-primary placeholder:text-neutral-muted outline-none focus:border-secondary sm:flex-1 lg:h-12 lg:px-5 lg:text-sm"
               />
 
-              <Button variant="accent" className="h-9 rounded-full px-5 text-xs lg:h-12 lg:px-6 lg:text-sm">
-                Subscribe
+              <Button type="submit" variant="accent" disabled={isSubmitting} className="h-9 rounded-full px-5 text-xs lg:h-12 lg:px-6 lg:text-sm">
+                {isSubmitting ? "Subscribing..." : "Subscribe"}
               </Button>
             </form>
+            {newsletterStatus && (
+              <p role="status" className="mt-3 text-xs leading-5 text-white/90 lg:text-sm">
+                {newsletterStatus}
+              </p>
+            )}
           </div>
         </div>
 

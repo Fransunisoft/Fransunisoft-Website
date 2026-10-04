@@ -2,10 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import EachLab from "./EachLab";
-import ideaStage from "./images/idea-stage.png";
-import organization from "./images/organization.png";
-import preseed from "./images/pre-seed.png";
-import lastscreen from "./images/lastscreen.png";
+import ideaStage from "./images/idea-stage.webp";
+import organization from "./images/organization.webp";
+import preseed from "./images/pre-seed.webp";
+import lastscreen from "./images/lastscreen.webp";
 
 export default function WorkWith() {
   const carouselRef = useRef<HTMLDivElement>(null);

@@ -4,11 +4,11 @@ import { academyHighlights } from "@/app/components/fsx-academy/academy-data";
 export default function AcademyCapabilitySection() {
   return (
     <section className="bg-secondary-900 text-white">
-      <div className="section-layout py-10 lg:py-16">
+      <div className="section-layout">
         <div className="grid items-start gap-4 lg:grid-cols-[0.82fr_1fr] lg:gap-20">
           <div className="overflow-hidden rounded-[24px]">
             <Image
-              src="/academy-organizations.png"
+              src="/academy-organizations.webp"
               alt="FSX Academy AI capability program presentation"
               width={2015}
               height={2415}
@@ -52,7 +52,7 @@ export default function AcademyCapabilitySection() {
           </div>
           <div className="overflow-hidden rounded-[24px]">
             <Image
-              src="/academy-rootbuilders.png"
+              src="/academy-rootbuilders.webp"
               alt="RootBuilders team learning together at FSX Academy"
               width={2040}
               height={1340}

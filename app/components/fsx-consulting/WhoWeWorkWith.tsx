@@ -23,9 +23,9 @@ export default function WhoWeWorkWith() {
               <article
                 key={`${audience}-${index}`}
                 aria-hidden={index >= workWithAudiences.length}
-                className="flex h-16 w-42.5 shrink-0 hover:bg-primary-500  items-center justify-center rounded-card border border-neutral-card-border bg-white px-3 text-center shadow-sm md:w-82.5 lg:h-22 lg:w-82.5 lg:px-4"
+                className="group flex h-16 w-42.5 shrink-0 items-center justify-center rounded-card border border-neutral-card-border bg-white px-3 text-center shadow-sm transition-colors hover:bg-primary-500 md:w-82.5 lg:h-22 lg:w-82.5 lg:px-4"
               >
-                <h5 className="text-xs font-semibold hover:text-white text-neutral-primary lg:text-xl">
+                <h5 className="text-xs font-semibold text-neutral-primary transition-colors group-hover:text-white lg:text-xl">
                   {audience}
                 </h5>
               </article>

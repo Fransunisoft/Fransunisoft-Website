@@ -16,7 +16,7 @@ export default function ConnectPage() {
         }
         description="FSX Connect is the ecosystem layer that connects the entire Fransunisoft network - bringing mentors, investors, institutional partners, and domain experts together in service of every organization, founder, and builder we work with."
         image={{
-          src: "/connect-hero.png",
+          src: "/connect-hero.webp",
           alt: "FSX Connect professional network in a modern office",
           width: 2680,
           height: 1864,
@@ -34,7 +34,7 @@ export default function ConnectPage() {
         }}
       />
 
-      <div className="section-layout py-0">
+      <div className="section-layout">
         <div className="flex items-center gap-4 ">
           <p className=" uppercase whitespace-nowrap text-primary-600">
             01-Who we serve

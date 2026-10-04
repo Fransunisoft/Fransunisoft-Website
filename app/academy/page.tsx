@@ -17,7 +17,7 @@ export default function AcademyPage() {
         }
         description="FSX Academy designs and delivers AI workforce transformation programs - for organizations upskilling their teams and for individual builders who want to build real capability, not just credentials."
         image={{
-          src: "/academy-hero.png",
+          src: "/academy-hero.webp",
           alt: "FSX Academy workforce training session",
           width: 2670,
           height: 1865,
@@ -35,7 +35,7 @@ export default function AcademyPage() {
         }}
       />
 
-      <section id="who-we-serve" className="section-layout bg-background py-0">
+      <section id="who-we-serve" className="section-layout bg-background">
         <div className="flex items-center gap-4">
           <p className=" font-extrabold whitespace-nowrap uppercase text-primary-600">
             01-Who we serve

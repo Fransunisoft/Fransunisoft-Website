@@ -9,7 +9,7 @@ export default function AcademyTracks() {
   ];
 
   return (
-    <section className="section-layout bg-background py-12 lg:py-16">
+    <section className="section-layout bg-background">
       <div className="flex items-center gap-4 mb-3">
           <p className="text-xs whitespace-nowrap uppercase text-primary-600">
             02-our track

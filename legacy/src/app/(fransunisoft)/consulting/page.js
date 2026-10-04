@@ -74,7 +74,7 @@ const Consulting = () => {
         </div>
         <div className={styles.heroImg}>
           <Image
-            src="/heroConsulting.png"
+            src="/heroConsulting.webp"
             alt="error 404 image"
             width={600}
             height={400}
@@ -166,7 +166,7 @@ const Consulting = () => {
 
           <div className={styles.approachImage}>
             <Image
-              src="/approachConsulting.png"
+              src="/approachConsulting.webp"
               alt="consulting approach image"
               width={500}
               height={500}
@@ -183,7 +183,7 @@ const Consulting = () => {
         </div>
         <div className={styles.coreMission}>
           <Image
-            src="/missionConsulting.png"
+            src="/missionConsulting.webp"
             alt="consulting approach image"
             width={650}
             height={350}

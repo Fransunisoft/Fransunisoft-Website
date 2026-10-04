@@ -202,7 +202,7 @@ function HeroSection() {
 
       <div className={styles.heroImg}>
         <Image
-          src="/events-hero.png"
+          src="/events-hero.webp"
           alt="error 404 image"
           width={600}
           height={450}

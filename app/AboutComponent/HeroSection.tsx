@@ -4,8 +4,7 @@ import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import Image from "next/image";
 import handtohand from "./images/handtohand.png";
-import Link from "next/link";
-import { buttonVariants } from "../components/ui/Button";
+import Button from "../components/ui/Button";
 import styles from "./AboutMobile.module.css";
 import ellipse from "./images/bullet.png";
 
@@ -52,7 +51,7 @@ export default function HeroSection() {
             </h1>
 
             <div className={`flex items-center gap-2 ${styles.heroLastLine}`}>
-              <h1 className="text-primary-400 italic">Talent & Tech</h1>
+              <h1 className="text-primary-500 italic">Talent & Tech</h1>
               <h1>Company.</h1>
             </div>
           </div>
@@ -65,15 +64,15 @@ export default function HeroSection() {
             venture building
           </p>
 
-          <div className={`hero-item mt-5 flex gap-4 ${styles.heroActions}`}>
-            <Link href="#contact" className={buttonVariants({ variant: "primary", size: "lg" })}>
+          <div className="hero-item mt-5 flex flex-col gap-3 sm:flex-row lg:mt-8">
+            <Button href="#contact" variant="primary" size="lg" className="h-10 w-full rounded-full px-7 text-sm font-bold hover:bg-accent-500 sm:w-auto lg:h-12">
               Build With Us
               <ArrowRight size={18} aria-hidden="true" className="shrink-0" />
-            </Link>
+            </Button>
 
-            <Link href="#founder" className="inline-flex h-12 items-center justify-center rounded-full border border-primary px-8 text-lg text-primary">
+            <Button href="#founder" variant="outline" size="lg" className="h-10 w-full rounded-full px-7 text-sm font-bold hover:bg-primary-500 hover:text-white! hover:border-none sm:w-auto lg:h-12">
               Meet the Founder
-            </Link>
+            </Button>
           </div>
 
           <div className={`hero-item ${styles.mobileSpecialties}`}>
@@ -82,26 +81,26 @@ export default function HeroSection() {
             <p>VENTURE BUILDING <span aria-hidden="true">•</span> INNOVATION PROGRAMS</p>
           </div>
           <div className={`hero-item mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 ${styles.specialties}`}>
-            <p className="font-body">AI TRANSFORMATION</p>
+            <p className="font-body text-sm!">AI TRANSFORMATION</p>
 
             <div className="flex items-center gap-3">
               <Image src={ellipse} alt="bulletpoint" />
-              <p className="font-body">TALENT DEVELOPMENT</p>
+              <p className="font-body text-sm!">TALENT DEVELOPMENT</p>
             </div>
 
             <div className="flex items-center gap-3">
               <Image src={ellipse} alt="bulletpoint" />
-              <p className="font-body">TECHNOLOGY IMPLEMENTATION</p>
+              <p className="font-body text-sm!">TECHNOLOGY IMPLEMENTATION</p>
             </div>
 
             <div className="flex items-center gap-3">
               <Image src={ellipse} alt="bulletpoint" />
-              <p className="font-body">VENTURE BUILDING</p>
+              <p className="font-body text-sm!">VENTURE BUILDING</p>
             </div>
 
             <div className="flex items-center gap-3">
               <Image src={ellipse} alt="bulletpoint" />
-              <p className="font-body">INNOVATION PROGRAMS</p>
+              <p className="font-body text-sm!">INNOVATION PROGRAMS</p>
             </div>
           </div>
         </div>
@@ -109,7 +108,12 @@ export default function HeroSection() {
           <LagosNigeria />
           <div className="bg-accent-500 w-138 h-148.75 relative left-5 bottom-5 rounded-[10px]" />
           <div className="bg-[#125c57] absolute -top-8 w-138.25 h-148.75 p-4 mb-10 rounded-[10px]">
-            <Image src={handtohand} alt="hero picture" />
+            <Image
+              src={handtohand}
+              alt="hero picture"
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              preload
+            />
           </div>
         </div>
       </div>

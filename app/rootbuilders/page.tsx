@@ -1,27 +1,29 @@
 import Image from "next/image";
-import Link from "next/link";
 import {
   ArrowRight,
-  BookOpen,
   Calendar,
   CheckCircle2,
   Code2,
   MapPin,
-  Sparkles,
   Target,
 } from "lucide-react";
 import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
+  FaTiktok,
   FaYoutube,
+  FaXTwitter,
 } from "react-icons/fa6";
+import type { IconType } from "react-icons";
+import Button from "@/app/components/ui/Button";
 import RootBuildersStack from "@/app/components/rootbuilders/RootBuildersStack";
 import RootBuildersHeader from "@/app/components/rootbuilders/RootBuildersHeader";
 import {
   eligibilityCards,
   faqs,
   requirements,
+  rootBuildersApplicationUrl,
   tracks,
 } from "@/app/components/rootbuilders/rootbuilders-data";
 import { cn } from "@/app/lib/utils";
@@ -32,6 +34,15 @@ const processSteps = [
   "A dedicated talent team is assigned and briefed.",
   "Teams build and iterate over 8-10 weeks under FSX supervision.",
   "You review the solution at Demo Day and decide on deployment.",
+];
+
+const rootBuildersSocialLinks: { Icon: IconType; label: string; href: string }[] = [
+  { Icon: FaFacebookF, label: "Facebook", href: "https://www.facebook.com/fransunisoft" },
+  { Icon: FaXTwitter, label: "X", href: "https://twitter.com/fransunisoft" },
+  { Icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/fransunisoft" },
+  { Icon: FaLinkedinIn, label: "LinkedIn", href: "https://www.linkedin.com/company/fransunisoft/" },
+  { Icon: FaYoutube, label: "YouTube", href: "https://www.youtube.com/@fransunisoft" },
+  { Icon: FaTiktok, label: "TikTok", href: "https://www.tiktok.com/@fransunisoft" },
 ];
 
 export default function RootBuildersPage() {
@@ -56,15 +67,31 @@ function Hero() {
   return (
     <section className="relative overflow-hidden bg-white">
       <div className="absolute inset-0 bg-[linear-gradient(#eef2f5_1px,transparent_1px),linear-gradient(90deg,#eef2f5_1px,transparent_1px)] bg-[size:48px_48px] opacity-80" />
-      <div className="relative mx-auto grid min-h-[420px] section-layout place-items-center px-5 py-14 text-center lg:min-h-[560px]">
+      <div className="relative mx-auto grid min-h-[420px] section-layout place-items-center text-center lg:min-h-[560px]">
         <div className="relative max-w-[760px]">
           <div className="mx-auto mb-5 inline-flex items-center gap-2 rounded-full border  bg-white px-4 py-3 text-sm font-semibold shadow-sm text-[#333333] shadow-sm">
             <span className="h-2 w-2 rounded-full bg-accent-500" />
             A FSX Academy initiative by Fransunisoft
           </div>
 
-          <div className="pointer-events-none absolute -left-28 top-4 hidden h-24 w-24 rounded-full border-2 border-dashed border-[#9aa7b1] lg:block" />
-          <Sparkles className="pointer-events-none absolute -left-40 bottom-16 hidden h-9 w-9 text-accent-500 lg:block" />
+          <Image
+            src="/arrow.png"
+            alt=""
+            aria-hidden="true"
+            width={160}
+            height={160}
+            sizes="96px"
+            className="pointer-events-none absolute -left-28 top-4 hidden h-24 w-24 object-contain lg:block"
+          />
+          <Image
+            src="/Graphic designer.png"
+            alt=""
+            aria-hidden="true"
+            width={160}
+            height={160}
+            sizes="64px"
+            className="pointer-events-none absolute -left-40 bottom-16 hidden h-16 w-16 object-contain lg:block"
+          />
           <Code2 className="pointer-events-none absolute -right-36 top-8 hidden h-12 w-12 rounded-full bg-primary-600 p-2 text-white lg:block" />
 
           <h1 className="text-[38px] font-black leading-[1.02] sm:text-5xl lg:text-[62px]">
@@ -80,19 +107,25 @@ function Hero() {
           </p>
 
           <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link
-              href="#apply"
-              className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-primary-600 px-7 text-sm font-bold text-white shadow-sm transition hover:bg-primary-700"
+            <Button
+              href={rootBuildersApplicationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="primary"
+              size="md"
+              className="h-11 px-7 text-sm font-bold shadow-sm"
             >
               Apply to RootBuilders
               <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="#challenge"
-              className="inline-flex h-11 items-center justify-center rounded-full border border-[#aeb8c2] bg-white px-7 text-sm font-bold text-[#333]"
+            </Button>
+            <Button
+              href="/#contact"
+              variant="outline"
+              size="md"
+              className="h-11 border-[#aeb8c2] bg-white px-7 text-sm font-bold text-[#333]"
             >
               Submit Organizational Challenge
-            </Link>
+            </Button>
           </div>
         </div>
       </div>
@@ -135,7 +168,7 @@ function WhyRootBuilders() {
 function SummitBand() {
   return (
     <section className="bg-primary-800">
-      <div className="mx-auto grid section-layout items-center gap-8 px-5 py-14 lg:grid-cols-[1fr_0.8fr] lg:py-20">
+      <div className="mx-auto grid section-layout items-center gap-8 lg:grid-cols-[1fr_0.8fr]">
         <div>
           <h2 className="text-[30px] font-black text-accent-500 lg:text-[40px]">
             RootBuilders Summit
@@ -146,20 +179,22 @@ function SummitBand() {
             built during RootBuilders cohorts and exploring the future of
             AI-driven problem solving across Africa.
           </p>
-          <Link
+          <Button
             href="/events"
-            className="mt-7 inline-flex h-10 items-center gap-2 rounded-full border border-white/70 px-5 text-sm font-bold text-white"
+            variant="outlineLight"
+            className="mt-7 h-10 px-5 text-sm font-bold"
           >
             Explore FSX Event
             <ArrowRight className="h-4 w-4" />
-          </Link>
+          </Button>
         </div>
         <div className="relative mx-auto w-full max-w-[340px] rotate-[-3deg] ">
           <Image
-            src="/summitband.png"
+            src="/summitband.webp"
             alt="RootBuilders Summit audience session"
             width={1540}
             height={1640}
+            sizes="(min-width: 1024px) 340px, 90vw"
             className="h-auto w-full object-cover"
           />
         </div>
@@ -171,7 +206,7 @@ function SummitBand() {
 function ChallengeBand() {
   return (
     <section id="challenge" className="bg-primary-800 mt-5 lg:mt-20">
-      <div className="mx-auto grid section-layout gap-10 border-t border-white/10 px-5 py-14 lg:grid-cols-[0.9fr_1.1fr] lg:py-20">
+      <div className="mx-auto grid section-layout gap-10 border-t border-white/10 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
           <p className="mb-5 text-xs font-black tracking-[0.15em] text-accent-400">
             Partner With RootBuilders
@@ -189,13 +224,14 @@ function ChallengeBand() {
             RootBuilders. A supervised team of AI-trained builders will work to
             design and develop a solution during the cohort cycle.
           </p>
-          <Link
-            href="#apply"
-            className="mt-7 inline-flex h-10 items-center gap-2 rounded-full bg-accent-500 px-5 text-sm font-bold text-white"
+          <Button
+            href="/#contact"
+            variant="accent"
+            className="mt-7 h-10 px-5 text-sm font-bold"
           >
             Submit Organizational Challenge
             <ArrowRight className="h-4 w-4" />
-          </Link>
+          </Button>
         </div>
         <ol className="space-y-0">
           {processSteps.map((step, index) => (
@@ -285,11 +321,15 @@ function Tracks() {
         Across Every Discipline.
       </h2>
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:gap-x-10 lg:gap-y-9">
-        {tracks.map(([track, caption]) => (
+      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-12 lg:gap-x-7 lg:gap-y-7">
+        {tracks.map(([track, caption], index) => (
           <div
             key={track}
-            className="grid min-h-[118px] place-items-center rounded-[18px] bg-secondary-800 px-5 py-6 text-center shadow-[0_8px_18px_rgba(0,0,0,0.18)] lg:min-h-[176px] lg:rounded-[20px] lg:px-8"
+            className={`flex min-h-[118px] flex-col items-center justify-center gap-2 rounded-[18px] bg-secondary-800 px-5 py-6 text-center shadow-[0_8px_18px_rgba(0,0,0,0.18)] lg:min-h-[150px] lg:rounded-[20px] lg:px-8 ${
+              index % 4 === 1 || index % 4 === 2
+                ? "lg:col-span-5"
+                : "lg:col-span-7"
+            }`}
           >
             <h3 className="font-black leading-tight text-white ">
               {track}
@@ -329,58 +369,60 @@ function Projects() {
   ];
 
   return (
-    <section className="section-layout grid gap-10 bg-[#fbfbfb] py-12 lg:grid-cols-[1.12fr_0.88fr] lg:items-start lg:py-20">
-      <div>
+    <section className="section-layout grid gap-10 bg-[#fbfbfb] lg:grid-cols-[1.12fr_0.88fr] lg:items-start">
+      <div className="lg:col-start-1 lg:row-start-1">
         <SectionEyebrow number="04" label="Projects" />
         <h2 className="mt-7 text-[34px] font-black leading-tight text-[#333] lg:text-[48px]">
           What will participants work on?
         </h2>
-        <div className="mt-14 space-y-12">
-          {blocks.map((block) => (
-            <div key={block.title}>
-              <p className="font-black leading-tight text-accent-500">
-                {block.label}
-              </p>
-              <h3 className="mt-5 text-[30px] font-black leading-tight text-[#333] lg:text-[40px]">
-                {block.title}
-              </h3>
-              <p className="mt-4 max-w-[720px] text-lg leading-8 text-[#42474d] lg:text-[22px] lg:leading-9">
-                {block.text}
-              </p>
-              <ul className="mt-5 space-y-4">
-                {block.bullets.map((bullet) => (
-                  <li
-                    key={bullet}
-                    className="flex items-center gap-4 text-lg leading-6 text-[#45494d] lg:text-[22px]"
-                  >
-                    <CheckCircle2 className="h-7 w-7 shrink-0 fill-primary-600 text-white" />
-                    {bullet}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
       </div>
       <Image
-        src="/projectRoot.png"
+        src="/projectRoot.webp"
         alt="RootBuilders participant working on a laptop"
         width={1820}
         height={3650}
-        className="mx-auto h-auto w-full max-w-[560px] rounded-[22px] object-cover lg:mt-28"
+        sizes="(min-width: 1280px) 560px, (min-width: 768px) 45vw, 100vw"
+        className="mx-auto h-auto w-full max-w-[560px] rounded-[22px] object-cover lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-28"
       />
+      <div className="space-y-12 lg:col-start-1 lg:row-start-2 lg:mt-4">
+        {blocks.map((block) => (
+          <div key={block.title}>
+            <p className="font-black leading-tight text-accent-500">
+              {block.label}
+            </p>
+            <h3 className="mt-5 text-[30px] font-black leading-tight text-[#333] lg:text-[40px]">
+              {block.title}
+            </h3>
+            <p className="mt-4 max-w-[720px] text-lg leading-8 text-[#42474d] lg:text-[22px] lg:leading-9">
+              {block.text}
+            </p>
+            <ul className="mt-5 space-y-4">
+              {block.bullets.map((bullet) => (
+                <li
+                  key={bullet}
+                  className="flex items-center gap-4 text-lg leading-6 text-[#45494d] lg:text-[22px]"
+                >
+                  <CheckCircle2 className="h-7 w-7 shrink-0 fill-primary-600 text-white" />
+                  {bullet}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
 
 function Faq() {
   return (
-    <section id="faq" className="mx-auto grid section-layout gap-10 px-5 py-14 lg:grid-cols-[0.52fr_1fr] lg:items-center lg:py-20">
+    <section id="faq" className="mx-auto grid section-layout gap-10 lg:grid-cols-[0.52fr_1fr] lg:items-center">
       <Image
-        src="/faqRoot.png"
+        src="/faqRoot.webp"
         alt="Person raising a hand during a RootBuilders session"
         width={1500}
         height={2300}
+        sizes="400px"
         className="mx-auto hidden h-auto max-h-[530px] w-full max-w-[400px] rounded-[12px] object-cover grayscale lg:block"
       />
       <div>
@@ -417,42 +459,57 @@ function Faq() {
 
 function BottomCta() {
   return (
-    <section id="apply" className="mx-auto grid section-layout gap-5 px-5 py-10 lg:grid-cols-2">
-      <div className="relative overflow-hidden items-center text-center rounded-[10px] bg-primary-600 p-8 text-white lg:p-10">
-        <div className="absolute -bottom-12 -left-10 h-32 w-32 rotate-45 bg-primary-800/45" />
-        <div className="absolute -bottom-12 -right-10 h-32 w-32 rotate-45 bg-primary-800/45" />
-        <h2 className="relative text-[30px] font-black leading-tight lg:text-[42px]">
+    <section id="apply" className="mx-auto grid section-layout gap-5 lg:grid-cols-2">
+      <div className="relative flex flex-col items-center overflow-hidden rounded-[32px] bg-primary-600 px-6 pb-40 pt-10 text-center text-white sm:px-8 sm:pt-12 lg:p-10 lg:pb-40">
+        {(["left", "right"] as const).map((side) => (
+          <svg
+            key={side}
+            aria-hidden="true"
+            viewBox="0 0 150 140"
+            className={`pointer-events-none absolute bottom-0 z-0 h-[140px] w-[150px] ${side === "left" ? "left-0" : "right-0 -scale-x-100"}`}
+          >
+            <path fill="#5b8fbe" d="M0 70 75 0h75v70l-75 70H0z" />
+            <path fill="#0a3a6f" d="m75 140 75-70v70z" />
+            <rect x="75" width="75" height="70" fill="#0a3a6f" />
+          </svg>
+        ))}
+        <h2 className="relative z-10 text-[30px] font-black leading-tight lg:text-[42px]">
           Ready to Build Solutions
           <br />
           That Matter for Africa?
         </h2>
-        <p className="relative mt-4 max-w-[460px] -center text-sm leading-6 text-white/80">
+        <p className="relative z-10 mx-auto mt-4 max-w-[460px] text-center text-sm leading-6 text-white/80">
           Join RootBuilders and become part of a generation of African builders
           using AI to solve real problems. Applications for the next cohort are
           open now.
         </p>
-        <div className="relative items-center mt-7 flex flex-col gap-3">
-          <Link
-            href="#"
-            className="inline-flex h-10 items-center justify-center w-fit gap-2 rounded-full bg-accent-500 px-6 text-sm font-bold text-white"
+        <div className="relative z-10 mt-7 flex flex-col items-center gap-3">
+          <Button
+            href={rootBuildersApplicationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="accent"
+            className="h-10 w-fit px-6 text-sm font-bold"
           >
             Apply to RootBuilders
             <ArrowRight className="h-4 w-4" />
-          </Link>
-          <Link
-            href="#challenge"
-            className="inline-flex h-10 items-center justify-center  w-fit gap-2 rounded-full border border-white/70 px-6 text-sm font-bold text-white"
+          </Button>
+          <Button
+            href="/#contact"
+            variant="outlineLight"
+            className="h-10 w-fit px-6 text-sm font-bold"
           >
             Submit Your Organization Challenge
             <ArrowRight className="h-4 w-4" />
-          </Link>
+          </Button>
         </div>
       </div>
       <Image
-        src="/rootbuilders-cta.png"
+        src="/rootbuilders-cta.webp"
         alt="Builder joining a remote cohort session"
         width={2400}
         height={2400}
+        sizes="(min-width: 1024px) 50vw, 100vw"
         className="h-full min-h-[300px] w-full rounded-[10px] object-cover"
       />
     </section>
@@ -462,50 +519,60 @@ function BottomCta() {
 function RootBuildersFooter() {
   return (
     <footer className="bg-[#e8f2f8] text-center">
-      <div className="mx-auto max-w-[860px] px-5 py-10">
-        <p className="text-sm font-bold text-[#8b98a5]">Our Parent Organization</p>
-        <div className="mt-2 flex items-center justify-center gap-3">
-          <span className="font-heading text-[30px] font-black text-primary-700">
-            Powered by
-          </span>
-          <span className="text-accent-500">/</span>
-          <span className="text-[30px] font-black text-primary-600">
-            Fransunisoft
-          </span>
+      <div className="section-layout">
+        <div className="mx-auto max-w-[860px]">
+          <p className="text-sm font-bold text-[#8b98a5]">Our Parent Organization</p>
+          <div className="mt-2 flex items-center justify-center gap-3">
+            <span className="font-heading text-[30px] font-black text-primary-700">
+              Powered by
+            </span>
+            <Image
+              src="/logo.png"
+              alt="Fransunisoft"
+              width={220}
+              height={36}
+              className="h-8 w-auto object-contain"
+            />
+          </div>
+          <p className="mx-auto mt-4 max-w-[720px] text-sm leading-7 text-[#5e6872]">
+            Root Builders is an initiative of Fransunisoft - a venture studio
+            building the next generation of African tech talent and products.
+            Through FSX Academy and our portfolio of ventures, we&apos;re creating
+            opportunities for builders across Africa.
+          </p>
+          <p className="mt-4 text-sm font-bold text-[#58636d]">
+            Follow us on social media to stay updated on opportunities, events,
+            and tech insights.
+          </p>
+          <div className="mt-5 flex justify-center gap-3 text-primary-700">
+            {rootBuildersSocialLinks.map(({ Icon, label, href }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="grid h-8 w-8 place-items-center rounded bg-white shadow-sm transition hover:-translate-y-0.5 hover:bg-accent-100"
+                aria-label={`Fransunisoft on ${label}`}
+              >
+                <Icon className="h-4 w-4" />
+              </a>
+            ))}
+          </div>
+          <Button
+            href="/"
+            variant="primary"
+            className="mt-7 h-10 px-6 text-sm font-bold"
+          >
+            Explore Fransunisoft
+          </Button>
         </div>
-        <p className="mx-auto mt-4 max-w-[720px] text-sm leading-7 text-[#5e6872]">
-          Root Builders is an initiative of Fransunisoft - a venture studio
-          building the next generation of African tech talent and products.
-          Through FSX Academy and our portfolio of ventures, we&apos;re creating
-          opportunities for builders across Africa.
-        </p>
-        <p className="mt-4 text-sm font-bold text-[#58636d]">
-          Follow us on social media to stay updated on opportunities, events,
-          and tech insights.
-        </p>
-        <div className="mt-5 flex justify-center gap-3 text-primary-700">
-          {[FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, BookOpen].map((Icon, index) => (
-            <a
-              key={index}
-              href="#"
-              className="grid h-8 w-8 place-items-center rounded bg-white shadow-sm"
-              aria-label="Social link"
-            >
-              <Icon className="h-4 w-4" />
-            </a>
-          ))}
-        </div>
-        <Link
-          href="/"
-          className="mt-7 inline-flex h-10 items-center rounded-full bg-primary-600 px-6 text-sm font-bold text-white hover:bg-accent-600"
-        >
-          Explore Fransunisoft
-        </Link>
       </div>
-      <div className="bg-primary-600 px-5 py-4">
-        <p className="text-xs font-semibold text-white/85">
-          2026 Root Builders by Fransunisoft. All Rights Reserved.
-        </p>
+      <div className="bg-primary-600">
+        <div className="section-layout section-layout--compact text-center">
+          <p className="text-xs font-semibold text-white/85">
+            2026 Root Builders by Fransunisoft. All Rights Reserved.
+          </p>
+        </div>
       </div>
     </footer>
   );

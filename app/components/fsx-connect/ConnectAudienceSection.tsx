@@ -39,7 +39,7 @@ export default function ConnectAudienceSection() {
 
   return (
     <section className="bg-secondary-900 text-white lg:mb-20">
-      <div className="section-layout py-7 lg:py-20">
+      <div className="section-layout">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-2xl font-semibold text-white lg:text-5xl">
             Who fsx connect is for

@@ -12,7 +12,7 @@ const data = [
   {
     title: "Research and Development Africa",
     text: "We explore emerging technologies and apply them to real African problems.",
-    img: "/lab2.2.png",
+    img: "/lab2.2.webp",
   },
   {
     title: "Prototype Testing",
