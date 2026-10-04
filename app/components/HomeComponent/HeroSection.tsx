@@ -92,7 +92,7 @@ export default function HeroSection() {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="relative h-full w-full overflow-hidden">
+            <div className="relative h-full w-full overflow-hidden bg-black">
               {/* Background Image */}
               <Image
                 src={slide.image}
@@ -100,7 +100,7 @@ export default function HeroSection() {
                 fill
                 preload={index === 0}
                 sizes="100vw"
-                className="object-cover object-[68%_center] sm:object-center"
+                className="object-contain object-center md:object-cover"
               />
 
               {/* Overlay */}

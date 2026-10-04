@@ -141,12 +141,12 @@ export default function CoreValueMenu() {
         const expanded = openMobileIndex === index;
         return (
           <article key={value.menuTitle} className={styles.valueItem} data-open={expanded}>
-            <h3>
+            <h4>
               <button type="button" id={`about-value-${index}`} aria-expanded={expanded} aria-controls={`about-value-panel-${index}`} onClick={() => setOpenMobileIndex(expanded ? null : index)}>
                 {value.menuTitle}
                 {expanded ? <Image src={arrow} alt="" width={50} height={20} /> : <ChevronRight size={28} strokeWidth={4} aria-hidden="true" />}
               </button>
-            </h3>
+            </h4>
             <div id={`about-value-panel-${index}`} role="region" aria-labelledby={`about-value-${index}`} hidden={!expanded} className={styles.valuePanel}>
               <Image src={value.imgDiff} alt={`${value.detailsH3} at Fransunisoft`} sizes="(max-width: 1023px) 90vw, 1px" />
               <h4>{value.detailsH3}</h4>

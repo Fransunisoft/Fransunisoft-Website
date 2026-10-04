@@ -12,7 +12,7 @@ export default function CoreValue() {
 
         <hr className="h-px flex-1 border-0 bg-neutral-border" />
       </div>
-      <h1 className="text-left">What We Stand For</h1>
+      <h2 className="text-left">What We Stand For</h2>
       <CoreValueMenu />
     </div>
   );

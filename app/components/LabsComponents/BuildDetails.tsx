@@ -32,6 +32,13 @@ export default function BuildDetails() {
 
   return (
     <section className="section-layout">
+      <div className="flex items-center gap-4">
+        <p className="font-body whitespace-nowrap text-primary-500">
+          01-WHAT WE BUILD
+        </p>
+
+        <hr className="h-px flex-1 border-0 bg-neutral-border" />
+      </div>
       <h2 className="max-w-xl">What we build and who we build for</h2>
       {/* Menu */}
       <div className="no-scrollbar mt-6 flex w-full gap-3 overflow-x-auto pb-3 lg:flex-wrap lg:gap-4">

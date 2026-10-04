@@ -19,8 +19,8 @@
 .hero h1 + p + div a { padding-inline: 20px; font-size: 16px; font-weight: 500; white-space: nowrap; }
 .hero h1 + p + div a:last-child { color: #333; border-color: #333; }
 .page .heroNote { margin-top: 38px; padding-top: 22px; border-top: 1px solid var(--neutral-border); color: #333; font-size: 13px; line-height: 1.6; }
-.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 0; margin-block: 12px 44px; background: white; box-shadow: 0 8px 15px #00000026; }
-.stats div { display: flex; flex-direction: column-reverse; align-items: center; justify-content: center; gap: 12px; min-height: 144px; padding: 20px 10px; border-right: 2px solid var(--secondary-500); font-family: var(--font-heading); text-align: center; }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 0; margin-block: 0px 44px; background: white; box-shadow: 12px 8px 15px #00000026; }
+.stats div { display: flex; flex-direction: column-reverse; align-items: center; justify-content: center; gap: 12px; min-height: 144px; padding: 0px 10px; border-right: 2px solid var(--secondary-500); font-family: var(--font-heading); text-align: center; }
 .stats div:nth-child(odd) { background: #e1e6eb; }
 .stats div:last-child { border: 0; }
 .stats dt { font-size: 24px; font-weight: 600; color: #333; }
@@ -96,8 +96,8 @@
   .stats dt { font-size: 20px; }
   .page h3 { font-size: 26px; }
   .page .button { font-size: 16px; }
-  .finalInner { grid-template-columns: 1fr; min-height: auto; }
-  .finalCta > div > a { justify-self: start; }
+  .finalInner { grid-template-columns: 1fr; min-height: auto; text-align: center; }
+  .finalCta > div > a { justify-self: center; }
 }
 @media (max-width: 639px) {
   .hero h1 { font-size: 34px; }

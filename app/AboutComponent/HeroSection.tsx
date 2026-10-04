@@ -64,13 +64,13 @@ export default function HeroSection() {
             venture building
           </p>
 
-          <div className={`hero-item mt-5 flex gap-4 ${styles.heroActions}`}>
-            <Button href="#contact" variant="primary" size="lg">
+          <div className="hero-item mt-5 flex flex-col gap-3 sm:flex-row lg:mt-8">
+            <Button href="#contact" variant="primary" size="lg" className="h-10 w-full rounded-full px-7 text-sm font-bold hover:bg-accent-500 sm:w-auto lg:h-12">
               Build With Us
               <ArrowRight size={18} aria-hidden="true" className="shrink-0" />
             </Button>
 
-            <Button href="#founder" variant="outline" size="lg">
+            <Button href="#founder" variant="outline" size="lg" className="h-10 w-full rounded-full px-7 text-sm font-bold hover:bg-primary-500 hover:text-white! hover:border-none sm:w-auto lg:h-12">
               Meet the Founder
             </Button>
           </div>

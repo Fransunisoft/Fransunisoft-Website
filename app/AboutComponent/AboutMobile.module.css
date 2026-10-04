@@ -5,7 +5,6 @@
   .page :global(.section-layout) > div:first-child > p:global(.whitespace-nowrap), .story > div:first-child p { font-size: 16px; line-height: 1.5; }
   .page :global(.section-layout) > div:first-child { min-width: 0; }
   .page [id] { scroll-margin-top: 88px; }
-  .page a:focus-visible, .page button:focus-visible { outline: 3px solid var(--accent-400); outline-offset: 3px; }
   .page .hero { margin-top: 0; }
   .heroGrid { display: flex; flex-direction: column; gap: 20px; }
   .heroCopy { min-width: 0; text-align: center; }
@@ -15,8 +14,6 @@
   .heroLastLine h1:first-child { color: var(--primary-500); }
   .heroCopy > p { margin-top: 16px; font-size: 16px; line-height: 1.5; }
   .heroCopy > p br { display: none; }
-  .heroActions { flex-direction: column; gap: 12px; margin-top: 22px; }
-  .heroActions a { width: 100%; min-height: 48px; font-size: 18px; font-weight: 500; }
   .specialties { display: none; }
   .mobileSpecialties { display: grid; gap: 10px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--neutral-border); text-align: left; }
   .mobileSpecialties p { font-size: 14px; line-height: 1.7; }
@@ -85,29 +82,6 @@
   .preFooter > section:not([id]) a { min-height: 48px; padding-inline: 24px; font-size: 18px; font-weight: 500; }
   .preFooter > section:not([id]) a span { font-size: 20px; line-height: 1; }
   .preFooter > section:not([id]) > div > div { gap: 24px; }
-  .page :global(#contact) { background: white; }
-  .page :global(#contact) > div { gap: 56px; }
-  .page :global(#contact) aside { min-height: 850px; padding: 90px 28px 80px; border-radius: 10px; background-color: #092d50; transform: rotate(-1deg); }
-  .page :global(#contact) aside > div:last-child > p:first-child { font-size: 16px; font-family: monospace; font-weight: 400; letter-spacing: 0; }
-  .page :global(#contact) aside h2 { margin-top: 20px; font-size: 30px; line-height: 1.15; }
-  .page :global(#contact) aside h2 + p { margin-top: 24px; font-size: 17px; line-height: 1.6; }
-  .page :global(#contact) aside > div:last-child > div { margin-top: 24px; }
-  .page :global(#contact) aside > div:last-child > div > div { gap: 24px; margin-bottom: 44px; }
-  .page :global(#contact) aside span { width: 56px; height: 56px; border-width: 2px; }
-  .page :global(#contact) aside svg { width: 24px; height: 24px; }
-  .page :global(#contact) aside h3 { font-size: 21px; }
-  .page :global(#contact) aside h3 ~ p { font-size: 17px; line-height: 1.6; }
-  .page :global(#contact) form { gap: 24px; padding: 24px 24px 44px; border-radius: 24px; background: #fafafa; }
-  .page :global(#contact) form > p { margin-top: -60px; margin-bottom: 0; padding: 10px 18px; font-size: 16px; line-height: 1.5; transform: rotate(-5deg); }
-  .page :global(#contact) form input:not([type="file"]), .page :global(#contact) form select { height: 76px; padding-inline: 30px; background: #fafafa; font-family: var(--font-heading); font-size: 17px; border-radius: 10px; }
-  .page :global(#contact) form label:has(input[type="tel"]) { position: relative; }
-  .page :global(#contact) form label:has(input[type="tel"])::before { content: ''; position: absolute; left: 28px; top: 27px; width: 32px; height: 22px; border-radius: 3px; background: linear-gradient(90deg, #008751 33%, white 33%, white 67%, #008751 67%); }
-  .page :global(#contact) form input[type="tel"] { padding-left: 80px; }
-  .page :global(#contact) form textarea { min-height: 212px; padding: 28px 20px; padding-right: 100px; background: #fafafa; font-family: var(--font-heading); font-size: 16px; border-radius: 10px; }
-  .page :global(#contact) form label label { top: 32px; font-family: var(--font-heading); font-size: 13px; }
-  .page :global(#contact) form button { min-height: 70px; font-family: var(--font-heading); font-size: 22px; font-weight: 600; border-radius: 9999px; }
-  .page :global(#contact) > div > div > div:first-child { right: -12px; bottom: -18px; width: 100%; height: 100%; border-radius: 24px; }
-  :global(body):has(.page) :global(header button[aria-controls="mobile-navigation"]) { background: transparent; }
   :global(body):has(.page) :global(footer) { --font-heading: "Times New Roman", Georgia, serif; }
   :global(body):has(.page) :global(footer > div.section-layout > div:first-child) { grid-template-columns: 1fr; gap: 28px; }
   :global(body):has(.page) :global(footer p), :global(body):has(.page) :global(footer a) { font-size: 16px; line-height: 1.5; }
@@ -123,9 +97,6 @@
   .heroLastLine h1 { font-size: 24px; }
   .valueItem button { padding-inline: 20px; font-size: 25px; }
   .storyDetails h3 { font-size: 27px; }
-  .page :global(#contact) aside { padding-inline: 22px; }
-  .page :global(#contact) aside > div:last-child > div > div { gap: 14px; }
-  .page :global(#contact) form { padding-inline: 18px; }
 }
 
 @keyframes reveal { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }

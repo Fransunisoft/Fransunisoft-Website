@@ -10,7 +10,7 @@ export default function StoryDetails() {
         </h1>
       </div>
       <div>
-        <p className="font-body">
+        <p className="font-body!">
           Fransunisoft was founded on a powerful and uncomfortable truth: Africa
           doesn&apos;t lack talent, ideas, or ambition. What is consistently missing
           is the execution infrastructure to turn those assets into real,
@@ -33,13 +33,13 @@ export default function StoryDetails() {
         </p> <br />
         <div>
           <div className="border-l-[5px] border-[#FF5A1F] pl-7">
-            <h3 className="text-justify">
+            <h4 className="text-justify font-bold!">
               From our pilot RootBuilders cohort — where teams of African talent
               built five real products solving real problems — to partnerships
               with leading ecosystem organizations across Nigeria and the
               continent, every step has been about one thing: execution that
               creates lasting value.
-            </h3>
+            </h4>
           </div>
         </div>
       </div>

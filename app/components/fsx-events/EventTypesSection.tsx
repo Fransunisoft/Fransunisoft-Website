@@ -11,7 +11,7 @@ export default function EventTypesSection() {
         <div className="h-px flex-1 bg-neutral-card-border" />
       </div>
 
-      <h2 className="mt-5 max-w-3xl text-4xl font-semibold leading-tight text-neutral-primary">
+      <h2 className=" max-w-3xl text-4xl font-semibold leading-tight text-neutral-primary">
         Programs That Bring Africa&apos;s
         AI Ecosystem Together.
       </h2>
@@ -24,7 +24,7 @@ export default function EventTypesSection() {
             width={2025}
             height={2215}
             sizes="(min-width: 1024px) 38vw, 100vw"
-            className="w-full object-cover"
+            className="h-full md:h-135 w-full object-cover"
           />
         </div>
 

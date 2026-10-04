@@ -17,12 +17,8 @@ export default function SectorSection() {
             Work Across Sectors, <br />
             Scales, and Stages
           </h2>
-          <p className="font-body text-[#7C8084]">
-            Whether you are a government ministry modernizing public{" "}
-     
-            services, a financial institution adopting AI, or a startup looking{" "}
-          
-            to build at speed — Fransunisoft has a path for you
+          <p className="font-body text-[#333]">
+            Whether you are a government ministry modernizing public services,  <br /> a financial institution adopting AI, or a startup looking to build at speed —  <br /> Fransunisoft has a path for you
           </p>
         </div>
       </div>

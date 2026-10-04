@@ -35,12 +35,12 @@ export default function RootBuildersHeader() {
           />
         </Link>
 
-        <div className="hidden items-center gap-8 text-lg font-semibold text-[#334155] lg:flex">
+        <div className="hidden items-center gap-8 text-lg font-semibold text-[#333] lg:flex">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="transition-colors duration-200 hover:text-primary-600 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary-600"
+              className="transition-colors duration-200 hover:text-primary-600 hover:font-bold focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary-600"
             >
               {link.name}
             </a>

@@ -199,6 +199,10 @@ button:disabled,
   padding-block: 16px;
 }
 
+.section-layout--mobile-header {
+  padding-block: 8px;
+}
+
 @media (min-width: 768px) {
   .section-layout {
     margin-inline: 50px;
@@ -209,6 +213,10 @@ button:disabled,
   .section-layout {
     margin-inline: 70px;
     padding-block: 40px;
+  }
+
+  .section-layout--mobile-header {
+    padding-block: 0;
   }
 
   .connect-audience-image-frame {

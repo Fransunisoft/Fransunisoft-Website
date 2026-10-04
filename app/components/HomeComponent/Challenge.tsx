@@ -5,7 +5,7 @@ export default function Challenge() {
     
   return (
     <>
-      <main className="mt-14">
+      <main className="">
         <section className="flex section-layout flex-col gap-8 md:flex-row md:gap-10">
           {/* Left Content */}
           <div>
@@ -17,14 +17,14 @@ export default function Challenge() {
               <hr className="h-px flex-1 border-0 bg-neutral-border" />
             </div>
 
-            <div className="mt-6">
-              <h2 className="font-heading text-[32px] text-[#2c3e50]">
+            <div className="mt-2">
+              <h2 className="font-heading text-[32px] ">
                 Africa is at an AI Inflection
                 Point. Most Organizations <br />
                 Aren&apos;t Ready.
               </h2>
 
-              <p className="mt-6 font-heading leading-tight text-neutral-secondary">
+              <p className="mt-6 font-heading leading-tight ">
                 Artificial intelligence is reshaping industries globally.
                 African organizations face a critical window — adopt now or fall
                 further behind. The barriers are real but solvable.
@@ -42,7 +42,7 @@ export default function Challenge() {
             />
           </div>
         </section>
-        <section className="mt-10">
+        <section className="mt-3">
           <ChallengeCard />
         </section>
       </main>

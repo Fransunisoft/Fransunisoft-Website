@@ -15,7 +15,7 @@ export default function EcoSystem() {
           Six Specialized Unit. One <br />
           Shared Mission.
         </h2>
-        <p className="font-body text-[#7C8084]">
+        <p className="font-body">
           Every unit inside Fransunisoft is designed to work independently <br />and
           together — so your engagement with any part of FSX connects <br />to the
           full power of our ecosystem.
