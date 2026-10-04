@@ -370,37 +370,11 @@ function Projects() {
 
   return (
     <section className="section-layout grid gap-10 bg-[#fbfbfb] lg:grid-cols-[1.12fr_0.88fr] lg:items-start">
-      <div>
+      <div className="lg:col-start-1 lg:row-start-1">
         <SectionEyebrow number="04" label="Projects" />
         <h2 className="mt-7 text-[34px] font-black leading-tight text-[#333] lg:text-[48px]">
           What will participants work on?
         </h2>
-        <div className="mt-14 space-y-12">
-          {blocks.map((block) => (
-            <div key={block.title}>
-              <p className="font-black leading-tight text-accent-500">
-                {block.label}
-              </p>
-              <h3 className="mt-5 text-[30px] font-black leading-tight text-[#333] lg:text-[40px]">
-                {block.title}
-              </h3>
-              <p className="mt-4 max-w-[720px] text-lg leading-8 text-[#42474d] lg:text-[22px] lg:leading-9">
-                {block.text}
-              </p>
-              <ul className="mt-5 space-y-4">
-                {block.bullets.map((bullet) => (
-                  <li
-                    key={bullet}
-                    className="flex items-center gap-4 text-lg leading-6 text-[#45494d] lg:text-[22px]"
-                  >
-                    <CheckCircle2 className="h-7 w-7 shrink-0 fill-primary-600 text-white" />
-                    {bullet}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
       </div>
       <Image
         src="/projectRoot.webp"
@@ -408,8 +382,34 @@ function Projects() {
         width={1820}
         height={3650}
         sizes="(min-width: 1280px) 560px, (min-width: 768px) 45vw, 100vw"
-        className="mx-auto h-auto w-full max-w-[560px] rounded-[22px] object-cover lg:mt-28"
+        className="mx-auto h-auto w-full max-w-[560px] rounded-[22px] object-cover lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-28"
       />
+      <div className="space-y-12 lg:col-start-1 lg:row-start-2 lg:mt-4">
+        {blocks.map((block) => (
+          <div key={block.title}>
+            <p className="font-black leading-tight text-accent-500">
+              {block.label}
+            </p>
+            <h3 className="mt-5 text-[30px] font-black leading-tight text-[#333] lg:text-[40px]">
+              {block.title}
+            </h3>
+            <p className="mt-4 max-w-[720px] text-lg leading-8 text-[#42474d] lg:text-[22px] lg:leading-9">
+              {block.text}
+            </p>
+            <ul className="mt-5 space-y-4">
+              {block.bullets.map((bullet) => (
+                <li
+                  key={bullet}
+                  className="flex items-center gap-4 text-lg leading-6 text-[#45494d] lg:text-[22px]"
+                >
+                  <CheckCircle2 className="h-7 w-7 shrink-0 fill-primary-600 text-white" />
+                  {bullet}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
@@ -460,20 +460,30 @@ function Faq() {
 function BottomCta() {
   return (
     <section id="apply" className="mx-auto grid section-layout gap-5 lg:grid-cols-2">
-      <div className="relative overflow-hidden items-center text-center rounded-[10px] bg-primary-600 p-8 text-white lg:p-10">
-        <div className="absolute -bottom-12 -left-10 h-32 w-32 rotate-45 bg-primary-800/45" />
-        <div className="absolute -bottom-12 -right-10 h-32 w-32 rotate-45 bg-primary-800/45" />
-        <h2 className="relative text-[30px] font-black leading-tight lg:text-[42px]">
+      <div className="relative flex flex-col items-center overflow-hidden rounded-[32px] bg-primary-600 px-6 pb-40 pt-10 text-center text-white sm:px-8 sm:pt-12 lg:p-10 lg:pb-40">
+        {(["left", "right"] as const).map((side) => (
+          <svg
+            key={side}
+            aria-hidden="true"
+            viewBox="0 0 150 140"
+            className={`pointer-events-none absolute bottom-0 z-0 h-[140px] w-[150px] ${side === "left" ? "left-0" : "right-0 -scale-x-100"}`}
+          >
+            <path fill="#5b8fbe" d="M0 70 75 0h75v70l-75 70H0z" />
+            <path fill="#0a3a6f" d="m75 140 75-70v70z" />
+            <rect x="75" width="75" height="70" fill="#0a3a6f" />
+          </svg>
+        ))}
+        <h2 className="relative z-10 text-[30px] font-black leading-tight lg:text-[42px]">
           Ready to Build Solutions
           <br />
           That Matter for Africa?
         </h2>
-        <p className="relative mt-4 max-w-[460px] -center text-sm leading-6 text-white/80">
+        <p className="relative z-10 mx-auto mt-4 max-w-[460px] text-center text-sm leading-6 text-white/80">
           Join RootBuilders and become part of a generation of African builders
           using AI to solve real problems. Applications for the next cohort are
           open now.
         </p>
-        <div className="relative items-center mt-7 flex flex-col gap-3">
+        <div className="relative z-10 mt-7 flex flex-col items-center gap-3">
           <Button
             href={rootBuildersApplicationUrl}
             target="_blank"
